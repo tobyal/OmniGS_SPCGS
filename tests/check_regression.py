@@ -7,15 +7,18 @@ from spcgs.common import *
 from tests.legacy_s_fixture import with_cached_s
 
 def main():
-    root=ROOT/'tests/regression';root.mkdir(exist_ok=True)
+    gpu=int(os.environ.get('SPCGS_TEST_GPU','0'))
+    root=Path(os.environ.get('SPCGS_TEST_OUTPUT',str(ROOT/'tests/regression')))
+    if not root.is_absolute():root=ROOT/root
+    root.mkdir(parents=True,exist_ok=True)
     source=ROOT/'runs/industrial_spcgs/quick_20261023';cfg=read(source/'config.json');name=cameras('test')[0]['name']
     old=ROOT.parent/'OmniGS_Structure';req={'width':cfg['width'],'height':cfg['height'],'split':'test','views':[name],'moments':False,'diagnostics':False}
     write(root/'legacy_request.json',req);dest=root/'legacy_render';dest.mkdir(exist_ok=True)
-    env=os.environ.copy();env.update(CUDA_VISIBLE_DEVICES='0',PF_MODE='0',SGS_MODE='0',OMP_NUM_THREADS='2');env.pop('PF_FIELD',None)
+    env=os.environ.copy();env.update(CUDA_VISIBLE_DEVICES=str(gpu),PF_MODE='0',SGS_MODE='0',OMP_NUM_THREADS='2');env.pop('PF_FIELD',None)
     run_command([old/'code/bin/pipefilter_export',old/'configs/baseline.yaml',DATA,ROOT/'baseline/checkpoint.ply',root/'legacy_request.json',dest],root/'legacy.log',env)
-    new_request=read(source/'00_baseline/request.json');new_request.update(output=str(root/'new_render'),views=[cameras('test')[0]]);native(new_request,root/'new_render_job')
+    new_request=read(source/'00_baseline/request.json');new_request.update(output=str(root/'new_render'),views=[cameras('test')[0]],gpu=gpu);native(new_request,root/'new_render_job')
     a=np.fromfile(dest/'rgb'/(name+'.f32'),dtype='f4');b=np.fromfile(root/'new_render'/(name+'_rgb.f32'),dtype='f4');error=float(np.max(np.abs(a-b)));assert error<1e-6,error
-    request=with_cached_s(read(source/'02_sgi_gaussians/request.json'),root/'explicit_S');request.update(iterations=40,save_every=20,densify_until=40,ogr_every=40,output=str(root/'continuous'))
+    request=with_cached_s(read(source/'02_sgi_gaussians/request.json'),root/'explicit_S');request.update(iterations=40,save_every=20,densify_until=40,ogr_every=40,output=str(root/'continuous'),gpu=gpu)
     request['signature']=signature({k:v for k,v in request.items() if k not in ['output','signature']})
     native(request,root/'continuous_job')
     request.update(archive=str(root/'continuous/checkpoint_20/model.pt'),resume=True,output=str(root/'resume'))

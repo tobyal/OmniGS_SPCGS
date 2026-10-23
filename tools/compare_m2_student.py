@@ -48,8 +48,11 @@ def compare(stage,cache,cfg,views):
             x=i%3*500+12;y=1660+i//3*42;draw.rectangle((x,y,x+20,y+20),fill=tuple(PALETTE[i]));draw.text((x+28,y+4),c,fill='black')
         canvas.save(out/(name+'_comparison.jpg'),quality=94);rows.append(row)
     losses=[__import__('json').loads(x) for x in (stage/'losses.jsonl').read_text().splitlines()]
-    fig,ax=plt.subplots(1,3,figsize=(15,4))
-    for a,key in zip(ax,['semantic_cosine','semantic_ce','rgb']):
+    # Keep the original supervision panels and expose existing regularizers,
+    # generated-view loss and model growth so a falling CE cannot hide them.
+    keys=['semantic_cosine','semantic_ce','rgb','local3d','generated_semantic','total','gaussians','semantic_grad_norm','decoder_grad_norm']
+    fig,ax=plt.subplots(3,3,figsize=(15,10))
+    for a,key in zip(ax.flat,keys):
         a.plot([x['step'] for x in losses],[x[key] for x in losses],alpha=.6,lw=.7);a.set_title(key);a.set_xlabel('iteration');a.grid(alpha=.2)
     fig.tight_layout();fig.savefig(out/'losses.png',dpi=150);plt.close(fig)
     summary={'views':rows,'note':'Teacher agreement/KL are supervision-fitting diagnostics, not mIoU or semantic accuracy. Labels can be unstable because S softmax is nearly uniform.',

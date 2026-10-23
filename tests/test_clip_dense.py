@@ -36,11 +36,12 @@ class DenseContracts(unittest.TestCase):
         # Float direction channels traverse the actual RGB crop implementation,
         # including periodic horizontal padding and vertical clamping.
         original=erp_rays(512,1024).astype('f4')
-        faces=np.array([perspective(original,R,256,100).transpose(2,0,1) for _,R in FACES])
-        grids,weights=inverse_maps(64,128,100)
-        mapped=f.grid_sample(torch.from_numpy(faces),torch.from_numpy(grids),align_corners=False,padding_mode='border').numpy()
-        actual=unit((mapped*weights[:,None]).sum(0)/weights.sum(0),0).transpose(1,2,0)
-        np.testing.assert_allclose(actual,erp_rays(64,128),atol=6e-4)
+        for fov in [100,150]:
+            faces=np.array([perspective(original,R,256,fov).transpose(2,0,1) for _,R in FACES])
+            grids,weights=inverse_maps(64,128,fov)
+            mapped=f.grid_sample(torch.from_numpy(faces),torch.from_numpy(grids),align_corners=False,padding_mode='border').numpy()
+            actual=unit((mapped*weights[:,None]).sum(0)/weights.sum(0),0).transpose(1,2,0)
+            np.testing.assert_allclose(actual,erp_rays(64,128),atol=6e-4)
     def test_patch_schedule_deterministic(self):
         a=patch_boxes(128,128,25,random.Random(2));b=patch_boxes(128,128,25,random.Random(2))
         np.testing.assert_array_equal(a,b);self.assertEqual(len(a),361)

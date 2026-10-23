@@ -95,7 +95,7 @@ def visual_cache(view,cache_root,cfg,weights,encoder):
     import torch.nn.functional as fn
     source=ref(view['image']);h,w=cfg['cache_height'],cfg['cache_width']
     recipe={'version':VERSION,'image_sha256':source['sha256'],'model_sha256':weights['sha256'],
-            'face_size':cfg.get('clip_face_size',1024),'down_sample':8,'fov':100,'divisors':[5,7,10],
+            'face_size':cfg.get('clip_face_size',1024),'down_sample':8,'fov':cfg.get('clip_fov',100),'divisors':[5,7,10],
             'seed':cfg.get('seed',0),'erp_shape':[h,w],'fp16_encoding':cfg.get('clip_fp16',True),
             'preprocess':'HF CLIPProcessor local ViT-B/16; bicubic shortest edge resize and center crop',
             'projection':'pixel centers; +Y down; periodic horizontal ERP padding; inverse bilinear face sampling; z^4 overlap weighting'}
@@ -203,6 +203,6 @@ def extract(views,folder,cfg):
         shutil.copy2(t['text'],folder/'text.f32')
         result={'signature':signature({'views':rows,'T':t['key'],'version':VERSION}),'views':rows,'text':str(folder/'text.f32'),'T_manifest':str(Path(t['text']).parent/'manifest.json'),
                 'decoder':str(folder/'decoder.f32'),'classes':classes,'feature_backend':'ovs_multiscale','class_config':ref(ROOT/cfg.get('class_config','configs/industrial_classes.json')),'model':weights,'cache_root':str(cache_root),
-                'adaptation':'six overlapping 100-degree views; 3D-OVS patch accumulation; uniform scale fusion (not its learned scale selector); cached continuous S used by soft CE'}
+                'adaptation':f"six overlapping {cfg.get('clip_fov',100)}-degree views; 3D-OVS patch accumulation; uniform scale fusion (not its learned scale selector); cached continuous S used by soft CE"}
         write(folder/'manifest.json',result);stage.done({'manifest':str(folder/'manifest.json'),'views':len(rows)})
     return result

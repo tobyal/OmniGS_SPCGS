@@ -29,12 +29,17 @@
 
 # 数值及实际 C++ S 数据流检查
 .venv/bin/python -m unittest tests.test_clip_dense
+.venv/bin/python tools/check_m2_cache.py \
+  runs/industrial_semantics_20261023/01_clip/features_all/manifest.json \
+  --output runs/industrial_semantics_20261023/01_clip/full_cache_validation.json
 .venv/bin/python tests/check_m2_s_contract.py \
   --cache runs/industrial_semantics_20261023/01_clip/features_pilot/manifest.json \
   --output runs/industrial_semantics_20261023/02_gaussians/S_contract_new
 ```
 
 可用 `--output` 设置独立清单目录；相同输入会复用 `01_clip/cache/{F,T,S}` 中按内容签名的缓存。换词表需设置新 `class_config` 和输出目录；视觉 F 独立复用。缓存目录不放入 Git，服务器保存完整数组、覆盖次数、映射网格、prompt 向量和响应图。运行状态由各清单目录的 `outputs.json` 记录，不能用存在目录代替完成状态。
+
+诊断配置可独立修改 `clip_face_size`（默认 1024）和 `clip_fov`（默认 100°），并用 `--config path/to/diagnostic.json --output path/to/new_manifest` 运行。二者均影响 F 的缓存签名。已保存的 2048 像素面、150° 视野及基础模板文本诊断均未替换正式配置；这些诊断不需要重新执行 M1。
 
 教师对比中，上右图使用**旧 12 类**；其单独图例在最下方。其余语义图使用新 20 类。旧 F+新 T 的面板用于分离词表与视觉特征变化；raw cosine 与空间 min-max 的面板用于显示 relevancy 构造影响。
 
