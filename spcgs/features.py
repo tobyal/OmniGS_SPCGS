@@ -9,6 +9,9 @@ import numpy as np
 from .common import ROOT,read,write,ref,signature,project,Stage
 
 def extract(views,folder,cfg):
+    if cfg.get('feature_backend')=='ovs_multiscale':
+        from .clip_dense import extract as dense_extract
+        return dense_extract(views,folder,cfg)
     os.environ['CUDA_VISIBLE_DEVICES']=str(cfg['gpu'])
     import torch
     from torch.nn import functional as F
@@ -17,7 +20,7 @@ def extract(views,folder,cfg):
     folder=Path(folder);folder.mkdir(parents=True,exist_ok=True)
     modeldir=ROOT/'weights/clip-vit-base-patch16'
     cachekey=signature({'views':[{**v,'image_sha256':ref(v['image'])['sha256']} for v in views],
-        'classes':cfg['classes'],'height':cfg['cache_height'],'width':cfg['cache_width'],'weights':ref(modeldir/'pytorch_model.bin'),'extractor':cfg.get('feature_backend','patch_tokens')+'_v2'})
+        'classes':cfg['classes'],'height':cfg['cache_height'],'width':cfg['cache_width'],'weights':ref(modeldir/'pytorch_model.bin'),'extractor':cfg.get('feature_backend','patch_tokens')+'_v3_explicit_S'})
     if (folder/'manifest.json').exists() and read(folder/'manifest.json')['signature']==cachekey:return read(folder/'manifest.json')
     with Stage(folder,{'views':views,'model':str(modeldir)},cfg) as stage:
         model=CLIPModel.from_pretrained(modeldir,local_files_only=True).eval().cuda()
@@ -74,7 +77,9 @@ def extract(views,folder,cfg):
                 logits=torch.einsum('kc,chw->khw',text,feat);np.savez_compressed(folder/(v['name']+'_relevancy.npz'),cosine=logits.cpu().numpy().astype('f2'),labels=logits.argmax(0).cpu().numpy().astype('u1'))
                 from .visuals import semantic_preview
                 semantic_preview(v['image'],logits.argmax(0).cpu().numpy(),cfg['classes'],folder/'preview'/(v['name']+'.png'))
-                rows.append({**v,'feature':str(dest),'feature_height':H,'feature_width':W})
+                sdest=folder/(v['name']+'_S.f16');logits.cpu().numpy().astype('f2').tofile(sdest)
+                rows.append({**v,'feature':str(dest),'feature_height':H,'feature_width':W,
+                    'relevancy':str(sdest),'relevancy_height':H,'relevancy_width':W,'relevancy_classes':len(cfg['classes']),'semantic_target':'hard_argmax'})
                 samples.append(feat.flatten(1)[:,::4]);print('CLIP',v['name'],flush=True)
             # Uncentered low-rank basis: preserves arbitrary text query ability via 32 -> 512 head.
             mat=torch.cat(samples,1).float();u,_,_=torch.linalg.svd(mat,full_matrices=False);basis=u[:,:32]

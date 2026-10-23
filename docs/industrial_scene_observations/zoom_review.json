@@ -1,0 +1,8 @@
+{"observer":"Codex direct native view_image inspection","records":[
+{"index":16,"face":"front","fov_degrees":60,"image":"16_front.png","observation":"放大可见矩形背板上的圆形敲落孔、周边筋条、线缆入口及侧面红黄急停按钮；是电气接线/插座箱背部，不支持原先疑似板式换热器的判断。","correction":{"remove":"equipment_housing","add":{"electrical_box":"front近：塑料/金属矩形接线箱背板，圆形敲落孔、筋条、线缆入口和侧面急停按钮"}}},
+{"index":29,"face":"front","fov_degrees":60,"image":"29_front.png","observation":"白色立管上的橙色件有轴连接和电缆，为阀执行组件；黑手轮与蓝阀箱相连。银色后部设备仍被遮挡，不能确定具体机械种类。"},
+{"index":38,"face":"left","fov_degrees":60,"image":"38_left.png","observation":"打开的白色机壳内有铜弯管、圆形机械端盖和黑机体；只能确认柜式机械设备，不强行细分压缩机型号。"},
+{"index":47,"face":"right","fov_degrees":60,"image":"47_right.png","observation":"黄色细长件有纵向刻度，支持温度计等管路仪表候选；绿色流向贴纸属于管道表面标记。"},
+{"index":52,"face":"front","fov_degrees":60,"image":"52_front.png","observation":"白色成排门板、把手和薄金属外壳清楚，但纯电气用途不能由外表确定；采用设备柜及外壳上层类别。"},
+{"index":56,"face":"left","fov_degrees":60,"image":"56_left.png","observation":"银色直立圆筒有封闭平顶、小黄铜接口和侧向保温管连接；上方银色风管只是遮挡，不能视作与圆筒连通。将圆筒修正为管路容器候选，具体分离/储存功能不确定。","correction":{"add":{"tank":"left近：银色封闭圆筒，平顶小接口、侧向保温管相连；具体用途不确定"}}}
+]}

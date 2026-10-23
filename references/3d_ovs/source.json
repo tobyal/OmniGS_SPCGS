@@ -1,0 +1,13 @@
+{
+  "repository": "https://github.com/Kunhao-Liu/3D-OVS",
+  "commit": "f77e2fc3fc475fe9299ceb5c3c9c87228a2b19b3",
+  "retrieved": "2026-10-23",
+  "license": "MIT; retained in LICENSE",
+  "files": {
+    "extract_clip_feature.py": "e568882d203e3008d52bd9fcd8f6ddf7e610d1ac",
+    "dataLoader/llff.py": "29a194f32618d7cae34ce97e0afcd95252cdeb1c",
+    "train_seg.py": "95d4272536d598cd45ea2f7d8531d5906d8835c5",
+    "LICENSE": "4415677f3f096f019bd37ab7c18d6ada369d039c"
+  },
+  "use": "Reference snapshots, not imported at runtime. See docs/M2_REFERENCE.md for adopted code steps and adaptations."
+}

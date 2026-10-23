@@ -68,10 +68,24 @@ struct Heads {
     T features(T x){return decoder.matmul(x.flatten(1))+bias.unsqueeze(1);}
     T logits(T x){return classifier.matmul(text.matmul(norm(features(x),0))*10.f)+cbias.unsqueeze(1);}
 };
-T semantic_loss(Heads& h,T features,const Json::Value& v,int H,int W) {
+T semantic_loss(Heads& h,T features,const Json::Value& v,int H,int W,T* cosine_out=nullptr,T* ce_out=nullptr) {
     int ch=v["feature_height"].asInt(),cw=v["feature_width"].asInt();auto gt=resize(raw(v["feature"].asString(),{512,ch,cw},torch::kFloat16).to(torch::kFloat32),H,W).flatten(1);
-    auto pred=h.features(features);auto labels=h.text.matmul(norm(gt,0)).argmax(0);
-    return (1-(norm(pred,0)*norm(gt,0)).sum(0)).mean()+torch::nn::functional::cross_entropy(h.logits(features).transpose(0,1),labels);
+    TORCH_CHECK(v.isMember("relevancy"),"Missing cached S relevancy input; regenerate the feature manifest");
+    TORCH_CHECK(v["relevancy_classes"].asInt()==h.text.size(0),"S/T class row count mismatch");
+    int sh=v["relevancy_height"].asInt(),sw=v["relevancy_width"].asInt();
+    auto scores=resize(raw(v["relevancy"].asString(),{h.text.size(0),sh,sw},torch::kFloat16).to(torch::kFloat32),H,W).flatten(1);
+    auto pred=h.features(features);auto cosine=(1-(norm(pred,0)*norm(gt,0)).sum(0)).mean();T ce;
+    if(v.get("semantic_target","softmax_relevancy").asString()=="hard_argmax") {
+        // Compatibility for the explicitly selected legacy extractor: still read
+        // S from disk, never silently reconstruct labels from F and T here.
+        ce=torch::nn::functional::cross_entropy(h.logits(features).transpose(0,1),scores.argmax(0));
+    } else {
+        // SPC-GS does not publish the target conversion. Retain continuous S
+        // using the class softmax used by 3D-OVS, with SPC-GS cross entropy.
+        auto target=torch::softmax(scores,0);
+        ce=-(target*torch::log_softmax(h.logits(features),0)).sum(0).mean();
+    }
+    if(cosine_out)*cosine_out=cosine;if(ce_out)*ce_out=ce;return cosine+ce;
 }
 T erode(T m) {
     // Circular horizontal padding keeps ERP seam continuous; vertical outside is invalid.
@@ -184,7 +198,7 @@ int main(int argc,char** argv) try {
         auto v=views[static_cast<int>(rng()%views.size())];m->updateLearningRate(step);if(step%1000==0)m->oneUpShDegree();
         auto r=render(m,v,H,W,HS,WS);auto gt=image(v["image"].asString(),H,W);
         auto lc=.8*torch::abs(r.rgb-gt).mean()+.2*(1-loss_utils::ssim(r.rgb,gt,torch::kCUDA));
-        auto ls=semantic_loss(heads,r.sem,v,HS,WS),lg=zero_loss(ls),ll=local3d(m,c.get("local_samples",64).asInt());
+        T lcos,lce;auto ls=semantic_loss(heads,r.sem,v,HS,WS,&lcos,&lce),lg=zero_loss(ls),ll=local3d(m,c.get("local_samples",64).asInt());
         if(c["generated_views"].size()){auto gv=c["generated_views"][step%c["generated_views"].size()];auto gr=render(m,gv,H,W,HS,WS);lg=semantic_loss(heads,gr.sem,gv,HS,WS);}
         auto li=zero_loss(ls),ln=zero_loss(ls),lk=zero_loss(ls);Json::Value row;row["isp_valid_pairs"]=0;
         bool use2=c.get("spc2d",false).asBool(),use3=c.get("spc3d",false).asBool();
@@ -208,6 +222,7 @@ int main(int argc,char** argv) try {
         TORCH_CHECK(torch::isfinite(loss).item<bool>(),"Nonfinite loss at ",step);loss.backward();
         for(auto& kv:model_tensors(*m))if(kv.second->grad().defined())TORCH_CHECK(torch::isfinite(kv.second->grad()).all().item<bool>(),"Nonfinite gradient ",kv.first);
         row["semantic_grad_norm"]=m->semantic_.grad().norm().item<double>();row["xyz_grad_norm"]=m->xyz_.grad().norm().item<double>();
+        row["semantic_cosine"]=lcos.item<double>();row["semantic_ce"]=lce.item<double>();row["decoder_grad_norm"]=heads.decoder.grad().norm().item<double>();
         m->optimizer_->step();heads.optim->step();
         {torch::NoGradGuard g;auto visible=r.visible;auto screen=r.screen;m->addDensificationStats(screen,visible);m->max_radii2D_.index_put_({visible},torch::maximum(m->max_radii2D_.index({visible}),r.radii.index({visible}).to(torch::kFloat32)));
             int from=c.get("densify_from",500).asInt(),until=c.get("densify_until",15000).asInt(),interval=c.get("densify_every",100).asInt();

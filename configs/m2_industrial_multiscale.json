@@ -1,0 +1,23 @@
+{
+  "feature_backend":"ovs_multiscale",
+  "class_config":"configs/industrial_classes.json",
+  "clip_cache_root":"/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_semantics_20261023/01_clip/cache",
+  "clip_face_size":1024,
+  "clip_batch_size":64,
+  "clip_fp16":true,
+  "clip_cpu_threads":4,
+  "gpu":1,
+  "seed":0,
+  "cache_height":128,
+  "cache_width":256,
+  "semantic_height":128,
+  "semantic_width":256,
+  "width":2048,
+  "height":1024,
+  "train_views":56,
+  "eval_views":16,
+  "sgi_iterations":10000,
+  "semantic_iterations":10000,
+  "save_every":1000,
+  "m1_source":"runs/industrial_spcgs/m1_wan360_early_no_direction_gate_20261023/01_sgi_sfm/outputs.json"
+}

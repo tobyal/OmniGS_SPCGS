@@ -143,6 +143,7 @@ def main():
     p=argparse.ArgumentParser();p.add_argument('--run',default='quick_20261023');p.add_argument('--mode',choices=['quick','full'],default='quick');p.add_argument('--config');p.add_argument('--stage',choices=['all','baseline','m1','features','s0','sgi','c0','c1','c2','compare'],default='all');p.add_argument('--resume');a=p.parse_args()
     cfg=default_config(a.mode)
     if a.config:cfg.update(read(a.config))
+    if cfg.get('class_config'):cfg['classes']=[c['name_en'] for c in read(ROOT/cfg['class_config'])['classes']]
     run=ROOT/'runs/industrial_spcgs'/a.run;train,test=prepare(run,cfg)
     stages=['baseline','m1','features','s0','sgi','c0','c1','c2','compare'] if a.stage=='all' else [a.stage]
     for name in stages:

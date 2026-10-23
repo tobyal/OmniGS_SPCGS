@@ -26,6 +26,8 @@ bash tools/setup_models.sh
 
 ## 运行
 
+本次工业语义 M2 重做的入口见 [M2 运行说明](docs/M2_RUNBOOK.md)、[代码参考及适配差异](docs/M2_REFERENCE.md) 和 [56 张训练图的类别分析](docs/IRIS_CLASS_ANALYSIS.md)。新词表为 20 类，采用三尺度重叠 patch CLIP，并显式读取 F/S/T。下方旧模块编号和旧 run 保留作为历史流程；新实验不会覆盖旧结果。
+
 ```bash
 cd /mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023
 bash tools/build.sh

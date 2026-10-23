@@ -1,0 +1,5125 @@
+{
+  "schema_version": 1,
+  "basis": "Codex directly viewed all 56 training contact sheets (ERP plus six overlapping perspectives), then six 60-degree zooms; no external VLM or CLIP predictions used to author this vocabulary.",
+  "classes": [
+    {
+      "key": "pipe",
+      "name_en": "pipe",
+      "name_zh": "管道及普通管件",
+      "definition": "输送管路的直管、弯头、三通、保温包覆及无独立可见执行器的管件；排除阀执行器、仪表、风道和独立封闭容器。",
+      "prompts": [
+        "industrial pipes and pipe fittings",
+        "white insulated pipes with large curved elbows",
+        "parallel cylindrical pipes running overhead",
+        "a smooth pale pipe with wrapped joints and a flow direction label",
+        "thick insulated plumbing connected around industrial equipment",
+        "small metal fluid pipes beside larger insulated pipes"
+      ],
+      "traits": [
+        "连续圆管与弯头",
+        "灰白保温壳和接缝",
+        "与相邻管段连通"
+      ],
+      "confusions": [
+        "duct",
+        "tank",
+        "column",
+        "valve"
+      ],
+      "official_ids": [
+        27
+      ],
+      "confidence": "high",
+      "id": 0,
+      "row": 0,
+      "official_mapping": [
+        {
+          "id": 27,
+          "name": "PIPING",
+          "relation": "category-level reference; not a pixel assignment"
+        }
+      ],
+      "observed_training_images": [
+        "2023-05-11_10.18.46",
+        "2023-05-11_10.19.36",
+        "2023-05-11_10.21.23",
+        "2023-05-11_10.21.59",
+        "2023-05-11_10.23.17",
+        "2023-05-11_10.24.12",
+        "2023-05-11_10.24.58",
+        "2023-05-11_10.25.43",
+        "2023-05-11_10.26.29",
+        "2023-05-11_10.27.16",
+        "2023-05-11_10.28.04",
+        "2023-05-11_10.29.30",
+        "2023-05-11_10.30.18",
+        "2023-05-11_10.31.04",
+        "2023-05-11_10.31.46",
+        "2023-05-11_10.32.30",
+        "2023-05-11_10.34.42",
+        "2023-05-11_10.35.28",
+        "2023-05-11_10.36.15",
+        "2023-05-11_10.37.00",
+        "2023-05-11_10.38.31",
+        "2023-05-11_10.39.59",
+        "2023-05-11_10.40.42",
+        "2023-05-11_10.41.41",
+        "2023-05-11_10.43.09",
+        "2023-05-11_10.43.53",
+        "2023-05-11_10.44.56",
+        "2023-05-11_10.46.27",
+        "2023-05-11_10.47.16",
+        "2023-05-11_10.47.59",
+        "2023-05-11_10.48.42",
+        "2023-05-11_10.49.28",
+        "2023-05-11_10.50.14",
+        "2023-05-11_10.50.58",
+        "2023-05-11_10.51.42",
+        "2023-05-11_10.53.53",
+        "2023-05-11_11.00.55",
+        "2023-05-11_11.04.22",
+        "2023-05-11_11.05.01",
+        "2023-05-11_11.05.51",
+        "2023-05-11_11.06.26",
+        "2023-05-11_11.07.13",
+        "2023-05-11_11.08.41",
+        "2023-05-11_11.18.15",
+        "2023-05-11_11.19.30",
+        "2023-05-11_11.21.03",
+        "2023-05-11_11.22.19",
+        "2023-05-11_11.23.11",
+        "2023-05-11_11.23.47",
+        "2023-05-11_11.24.32",
+        "2023-05-11_11.25.58",
+        "2023-05-11_11.26.42",
+        "2023-05-11_11.27.29",
+        "2023-05-11_11.40.51",
+        "2023-05-11_11.41.29",
+        "2023-05-11_11.42.41"
+      ],
+      "observed_image_count": 56,
+      "evidence": [
+        {
+          "image": "2023-05-11_10.18.46",
+          "observation": "front/up：多根灰白保温圆管、弯头与银色连接段，沿顶及机组周围走向"
+        },
+        {
+          "image": "2023-05-11_10.19.36",
+          "observation": "front/up：白灰圆管成组弯折，黑色保温段从上方横穿"
+        },
+        {
+          "image": "2023-05-11_10.21.23",
+          "observation": "left/front远处、up：灰白保温管和弯头"
+        },
+        {
+          "image": "2023-05-11_10.21.59",
+          "observation": "left/up：成组灰白圆管、弯头、黑色保温段"
+        },
+        {
+          "image": "2023-05-11_10.23.17",
+          "observation": "left远处：灰白圆管和弯头"
+        },
+        {
+          "image": "2023-05-11_10.24.12",
+          "observation": "left远处：白色竖向圆管与弯头"
+        },
+        {
+          "image": "2023-05-11_10.24.58",
+          "observation": "left远端：白色保温圆管与设备连接弯头"
+        },
+        {
+          "image": "2023-05-11_10.25.43",
+          "observation": "left/front远处：白色大弯管、分支与保温包覆"
+        },
+        {
+          "image": "2023-05-11_10.26.29",
+          "observation": "left：白色粗圆管和多处弯头"
+        },
+        {
+          "image": "2023-05-11_10.27.16",
+          "observation": "front/left：带接缝和标签的灰白保温粗管、U形弯头"
+        },
+        {
+          "image": "2023-05-11_10.28.04",
+          "observation": "front/left/up：灰白粗圆管、弯头和黑保温支管"
+        },
+        {
+          "image": "2023-05-11_10.29.30",
+          "observation": "front/left/up：灰白粗管、弯头及黑色小支路"
+        },
+        {
+          "image": "2023-05-11_10.30.18",
+          "observation": "left近处：白色粗管、大弯头和Y形包覆管件，接缝处露银箔；up：多根并行管"
+        },
+        {
+          "image": "2023-05-11_10.31.04",
+          "observation": "left：白色粗弯管及Y形包覆，带蓝色方向标签；up：并行圆管"
+        },
+        {
+          "image": "2023-05-11_10.31.46",
+          "observation": "left/front右：成组灰白弯管及水平连接管"
+        },
+        {
+          "image": "2023-05-11_10.32.30",
+          "observation": "front/left/up：保温立管、灰色支管及大弯头"
+        },
+        {
+          "image": "2023-05-11_10.34.42",
+          "observation": "front/right：灰白弯管、立管；left：大型白色保温回路"
+        },
+        {
+          "image": "2023-05-11_10.35.28",
+          "observation": "front：灰白U形回路；left：白色大管"
+        },
+        {
+          "image": "2023-05-11_10.36.15",
+          "observation": "left/front：白色保温环管和灰白水平管"
+        },
+        {
+          "image": "2023-05-11_10.37.00",
+          "observation": "left：白色U形和Y形保温管，局部银箔接缝；up：密集并行管"
+        },
+        {
+          "image": "2023-05-11_10.38.31",
+          "observation": "up/left/front：大直径保温弯管，带彩色流向标签"
+        },
+        {
+          "image": "2023-05-11_10.39.59",
+          "observation": "left近：粗白色Y形管及大弯头，顶部并行管"
+        },
+        {
+          "image": "2023-05-11_10.40.42",
+          "observation": "front/up/left：大口径白色保温管和黑色细立管"
+        },
+        {
+          "image": "2023-05-11_10.41.41",
+          "observation": "front近：白色立管和大弯管；红色细旁通管"
+        },
+        {
+          "image": "2023-05-11_10.43.09",
+          "observation": "left：白色大弯管及红色细旁通管；right：U形回路"
+        },
+        {
+          "image": "2023-05-11_10.43.53",
+          "observation": "left：白色U弯管及红色细管；right：白管组"
+        },
+        {
+          "image": "2023-05-11_10.44.56",
+          "observation": "front：白色U形立管回路和灰色水平管"
+        },
+        {
+          "image": "2023-05-11_10.46.27",
+          "observation": "front：白色弯管和红色细支管"
+        },
+        {
+          "image": "2023-05-11_10.47.16",
+          "observation": "front：白色高U管和低位弯管"
+        },
+        {
+          "image": "2023-05-11_10.47.59",
+          "observation": "front：多层U形白管和细红旁通管"
+        },
+        {
+          "image": "2023-05-11_10.48.42",
+          "observation": "front/right：白色粗弯管与管接法兰"
+        },
+        {
+          "image": "2023-05-11_10.49.28",
+          "observation": "right：多根白色立管及弯头；left上粗管"
+        },
+        {
+          "image": "2023-05-11_10.50.14",
+          "observation": "right：白色立管回路；left：带标签的大弯管"
+        },
+        {
+          "image": "2023-05-11_10.50.58",
+          "observation": "left近：白色Y形保温管；up多排白管"
+        },
+        {
+          "image": "2023-05-11_10.51.42",
+          "observation": "left近：大白色Y管、黑圆端盖和银箔边；up多根白管"
+        },
+        {
+          "image": "2023-05-11_10.53.53",
+          "observation": "left/up：白色粗管和大弯头、红细支管"
+        },
+        {
+          "image": "2023-05-11_11.00.55",
+          "observation": "up/left：白色大弯管和带标签的水平管"
+        },
+        {
+          "image": "2023-05-11_11.04.22",
+          "observation": "front近：大型白色U管，左机体连接多根白包覆管"
+        },
+        {
+          "image": "2023-05-11_11.05.01",
+          "observation": "front/up：白色大直径弯管、环形接缝和局部凹痕"
+        },
+        {
+          "image": "2023-05-11_11.05.51",
+          "observation": "up：多排白色保温管、地面旁黑管线"
+        },
+        {
+          "image": "2023-05-11_11.06.26",
+          "observation": "front/up：白色水平保温管和黑色细管"
+        },
+        {
+          "image": "2023-05-11_11.07.13",
+          "observation": "front/up：多排有流向贴纸的白管、黑色细管"
+        },
+        {
+          "image": "2023-05-11_11.08.41",
+          "observation": "front/up：跨过泵的白色大管、右侧多根白立管"
+        },
+        {
+          "image": "2023-05-11_11.18.15",
+          "observation": "front/up：密集白保温管、大弯头和黑细管"
+        },
+        {
+          "image": "2023-05-11_11.19.30",
+          "observation": "front/up：大白弯管和右侧粗立管"
+        },
+        {
+          "image": "2023-05-11_11.21.03",
+          "observation": "right近：三根粗白立管及连接U管；up并行白管"
+        },
+        {
+          "image": "2023-05-11_11.22.19",
+          "observation": "front/up：有流向标签的大白弯管；right：粗立管"
+        },
+        {
+          "image": "2023-05-11_11.23.11",
+          "observation": "front/right：白色粗立管、底部U连接；left：Y形保温管"
+        },
+        {
+          "image": "2023-05-11_11.23.47",
+          "observation": "front右：Y形白管端盖带银箔；up白管密集"
+        },
+        {
+          "image": "2023-05-11_11.24.32",
+          "observation": "front/up：大型白色管环、Y形连接与银箔端面"
+        },
+        {
+          "image": "2023-05-11_11.25.58",
+          "observation": "front/up：白色水平管、多排细粗管"
+        },
+        {
+          "image": "2023-05-11_11.26.42",
+          "observation": "front/up：白管从高机柜背后接出，多排顶部弯管"
+        },
+        {
+          "image": "2023-05-11_11.27.29",
+          "observation": "up近：密集粗白管，前方机体侧面横管"
+        },
+        {
+          "image": "2023-05-11_11.40.51",
+          "observation": "front/right：白色大弯管和成排横管，up多排管"
+        },
+        {
+          "image": "2023-05-11_11.41.29",
+          "observation": "front/right：粗白弯管和环接缝；left侧：成排白管"
+        },
+        {
+          "image": "2023-05-11_11.42.41",
+          "observation": "up/front：大白弯管与左侧保温立管；right：通往泵的白弯管"
+        }
+      ]
+    },
+    {
+      "key": "valve",
+      "name_en": "valve",
+      "name_zh": "阀门与执行组件",
+      "definition": "安装于管路的手轮、阀杆、短扳柄和有明确轴连接的执行器；普通法兰和包覆管件仍归管道。",
+      "prompts": [
+        "an industrial pipe valve",
+        "a circular handwheel controlling a valve on a pipe",
+        "a black valve wheel attached to a blue gearbox",
+        "a red metal valve wheel with a short stem",
+        "an orange valve actuator mounted on an insulated pipe",
+        "a small lever operated valve on a thin metal pipe"
+      ],
+      "traits": [
+        "轮辐或短扳柄",
+        "阀杆接入管路",
+        "蓝色阀箱及橙执行器"
+      ],
+      "confusions": [
+        "pipe",
+        "gauge",
+        "pump_motor"
+      ],
+      "official_ids": [
+        29
+      ],
+      "confidence": "high",
+      "id": 1,
+      "row": 1,
+      "official_mapping": [
+        {
+          "id": 29,
+          "name": "VALVES",
+          "relation": "category-level reference; not a pixel assignment"
+        }
+      ],
+      "observed_training_images": [
+        "2023-05-11_10.29.30",
+        "2023-05-11_10.30.18",
+        "2023-05-11_10.31.04",
+        "2023-05-11_10.31.46",
+        "2023-05-11_10.32.30",
+        "2023-05-11_10.34.42",
+        "2023-05-11_10.35.28",
+        "2023-05-11_10.36.15",
+        "2023-05-11_10.37.00",
+        "2023-05-11_10.38.31",
+        "2023-05-11_10.39.59",
+        "2023-05-11_10.41.41",
+        "2023-05-11_10.43.09",
+        "2023-05-11_10.43.53",
+        "2023-05-11_10.44.56",
+        "2023-05-11_10.46.27",
+        "2023-05-11_10.47.16",
+        "2023-05-11_10.47.59",
+        "2023-05-11_10.48.42",
+        "2023-05-11_10.49.28",
+        "2023-05-11_10.50.14",
+        "2023-05-11_10.50.58",
+        "2023-05-11_10.51.42",
+        "2023-05-11_10.53.53",
+        "2023-05-11_11.00.55",
+        "2023-05-11_11.04.22",
+        "2023-05-11_11.05.01",
+        "2023-05-11_11.05.51",
+        "2023-05-11_11.06.26",
+        "2023-05-11_11.07.13",
+        "2023-05-11_11.08.41",
+        "2023-05-11_11.18.15",
+        "2023-05-11_11.19.30",
+        "2023-05-11_11.21.03",
+        "2023-05-11_11.22.19",
+        "2023-05-11_11.23.11",
+        "2023-05-11_11.23.47",
+        "2023-05-11_11.24.32",
+        "2023-05-11_11.25.58",
+        "2023-05-11_11.26.42",
+        "2023-05-11_11.27.29",
+        "2023-05-11_11.40.51",
+        "2023-05-11_11.41.29",
+        "2023-05-11_11.42.41"
+      ],
+      "observed_image_count": 44,
+      "evidence": [
+        {
+          "image": "2023-05-11_10.29.30",
+          "observation": "left上方：支管附近黄色小手柄；front右管线上橙色手轮，细节有遮挡"
+        },
+        {
+          "image": "2023-05-11_10.30.18",
+          "observation": "front右：橙色手轮、下方黑色小手轮；left下：蓝色短手柄"
+        },
+        {
+          "image": "2023-05-11_10.31.04",
+          "observation": "left上：黄色扳柄；front右：橙色手轮与小阀件"
+        },
+        {
+          "image": "2023-05-11_10.31.46",
+          "observation": "front右上：橙色手轮，红色小阀件位于细管"
+        },
+        {
+          "image": "2023-05-11_10.32.30",
+          "observation": "front右：两只红色圆手轮，阀杆连接灰白立管；下方红色小阀体"
+        },
+        {
+          "image": "2023-05-11_10.34.42",
+          "observation": "front右：两只红手轮、左上橙手轮及下方黑手轮"
+        },
+        {
+          "image": "2023-05-11_10.35.28",
+          "observation": "front：橙、红和黑色手轮"
+        },
+        {
+          "image": "2023-05-11_10.36.15",
+          "observation": "front上：两只橙手轮；right：红轮；下部黑轮"
+        },
+        {
+          "image": "2023-05-11_10.37.00",
+          "observation": "left：黄色短手柄；right远：橙红手轮"
+        },
+        {
+          "image": "2023-05-11_10.38.31",
+          "observation": "front：细红管上小红扳柄；right远红手轮"
+        },
+        {
+          "image": "2023-05-11_10.39.59",
+          "observation": "up：小红手柄；右后红手轮"
+        },
+        {
+          "image": "2023-05-11_10.41.41",
+          "observation": "front近：红色短扳柄安装在细管顶"
+        },
+        {
+          "image": "2023-05-11_10.43.09",
+          "observation": "left下：红短柄；right上：橙轮，管上红轮"
+        },
+        {
+          "image": "2023-05-11_10.43.53",
+          "observation": "right：红橙手轮"
+        },
+        {
+          "image": "2023-05-11_10.44.56",
+          "observation": "front上：橙色手轮；中下：黑轮、红轮"
+        },
+        {
+          "image": "2023-05-11_10.46.27",
+          "observation": "front：红手轮及小红扳柄；up：橙手轮"
+        },
+        {
+          "image": "2023-05-11_10.47.16",
+          "observation": "front：红、黑手轮及橙色阀执行部件"
+        },
+        {
+          "image": "2023-05-11_10.47.59",
+          "observation": "front：橙色顶部执行部件、黑手轮与红手轮"
+        },
+        {
+          "image": "2023-05-11_10.48.42",
+          "observation": "front：黑轮；right上红轮；上方橙执行器"
+        },
+        {
+          "image": "2023-05-11_10.49.28",
+          "observation": "right：橙执行器、黑红手轮"
+        },
+        {
+          "image": "2023-05-11_10.50.14",
+          "observation": "right：黑红轮和橙执行器"
+        },
+        {
+          "image": "2023-05-11_10.50.58",
+          "observation": "right远：红轮"
+        },
+        {
+          "image": "2023-05-11_10.51.42",
+          "observation": "left下：红扳柄；right远红手轮"
+        },
+        {
+          "image": "2023-05-11_10.53.53",
+          "observation": "up左：黑色管端附红短柄；下方小红扳柄"
+        },
+        {
+          "image": "2023-05-11_11.00.55",
+          "observation": "up：红短柄；left管上黄柄"
+        },
+        {
+          "image": "2023-05-11_11.04.22",
+          "observation": "right上：红色小手柄"
+        },
+        {
+          "image": "2023-05-11_11.05.01",
+          "observation": "right：红色小扳柄"
+        },
+        {
+          "image": "2023-05-11_11.05.51",
+          "observation": "front远：蓝黑手轮"
+        },
+        {
+          "image": "2023-05-11_11.06.26",
+          "observation": "front右：蓝黑手轮"
+        },
+        {
+          "image": "2023-05-11_11.07.13",
+          "observation": "up：黑端小红蓝扳柄；right：蓝黑手轮"
+        },
+        {
+          "image": "2023-05-11_11.08.41",
+          "observation": "right：蓝黑手轮与橙执行器；up：黑端红蓝短柄"
+        },
+        {
+          "image": "2023-05-11_11.18.15",
+          "observation": "up：黑端红蓝手柄；right：蓝黑轮与橙执行器"
+        },
+        {
+          "image": "2023-05-11_11.19.30",
+          "observation": "right：蓝色阀箱连接黑手轮、后方红轮"
+        },
+        {
+          "image": "2023-05-11_11.21.03",
+          "observation": "front/right：黑圆手轮连蓝色执行箱；up橙色执行器；右后红轮"
+        },
+        {
+          "image": "2023-05-11_11.22.19",
+          "observation": "right：蓝色方阀箱、黑手轮；up橙色执行器；left管端黑附件"
+        },
+        {
+          "image": "2023-05-11_11.23.11",
+          "observation": "right：蓝色带位置指示的阀箱、黑手轮；up：橙执行器"
+        },
+        {
+          "image": "2023-05-11_11.23.47",
+          "observation": "right：蓝阀箱、黑轮和橙执行器；front下管端蓝柄"
+        },
+        {
+          "image": "2023-05-11_11.24.32",
+          "observation": "front下：蓝短柄；right：蓝阀箱、黑轮、橙执行器"
+        },
+        {
+          "image": "2023-05-11_11.25.58",
+          "observation": "right：蓝阀箱、黑轮、上方橙执行器"
+        },
+        {
+          "image": "2023-05-11_11.26.42",
+          "observation": "right远：蓝黑阀件"
+        },
+        {
+          "image": "2023-05-11_11.27.29",
+          "observation": "right：蓝阀箱、黑轮；设备侧下小红柄"
+        },
+        {
+          "image": "2023-05-11_11.40.51",
+          "observation": "right远：红轮"
+        },
+        {
+          "image": "2023-05-11_11.41.29",
+          "observation": "left下：小红扳柄；up：黑端蓝柄"
+        },
+        {
+          "image": "2023-05-11_11.42.41",
+          "observation": "left：黑手轮连蓝色小阀箱"
+        }
+      ]
+    },
+    {
+      "key": "pump_motor",
+      "name_en": "pump motor assembly",
+      "name_zh": "泵电机组",
+      "definition": "可辨电机肋片、驱动外壳及泵体组成的机组；合并紧密连接且难以可靠分界的泵和电机，不包含混凝土基础和整段外接管道。",
+      "prompts": [
+        "an industrial pump and electric motor assembly",
+        "a black vertical electric motor with cooling fins",
+        "a motor driven pump connected to insulated pipes",
+        "a black ribbed motor standing above a round pump casing",
+        "a compact red and black circulation pump",
+        "a vertical pump motor with an attached rectangular drive housing"
+      ],
+      "traits": [
+        "黑色竖向散热肋",
+        "圆机体和金属轴颈",
+        "与管路连接但不是仅凭连接判定"
+      ],
+      "confusions": [
+        "valve",
+        "cabinet",
+        "pipe"
+      ],
+      "official_ids": [
+        16,
+        32
+      ],
+      "confidence": "high",
+      "id": 2,
+      "row": 2,
+      "official_mapping": [
+        {
+          "id": 16,
+          "name": "MECHANICAL",
+          "relation": "category-level reference; not a pixel assignment"
+        },
+        {
+          "id": 32,
+          "name": "ELEC-EQUIPS",
+          "relation": "category-level reference; not a pixel assignment"
+        }
+      ],
+      "observed_training_images": [
+        "2023-05-11_10.18.46",
+        "2023-05-11_10.19.36",
+        "2023-05-11_10.25.43",
+        "2023-05-11_10.26.29",
+        "2023-05-11_10.27.16",
+        "2023-05-11_10.28.04",
+        "2023-05-11_10.29.30",
+        "2023-05-11_10.30.18",
+        "2023-05-11_10.31.04",
+        "2023-05-11_10.31.46",
+        "2023-05-11_10.32.30",
+        "2023-05-11_10.34.42",
+        "2023-05-11_10.35.28",
+        "2023-05-11_10.36.15",
+        "2023-05-11_10.37.00",
+        "2023-05-11_10.38.31",
+        "2023-05-11_10.39.59",
+        "2023-05-11_10.40.42",
+        "2023-05-11_10.41.41",
+        "2023-05-11_10.43.09",
+        "2023-05-11_10.43.53",
+        "2023-05-11_10.44.56",
+        "2023-05-11_10.46.27",
+        "2023-05-11_10.47.16",
+        "2023-05-11_10.47.59",
+        "2023-05-11_10.48.42",
+        "2023-05-11_10.49.28",
+        "2023-05-11_10.50.14",
+        "2023-05-11_10.50.58",
+        "2023-05-11_10.51.42",
+        "2023-05-11_10.53.53",
+        "2023-05-11_11.00.55",
+        "2023-05-11_11.04.22",
+        "2023-05-11_11.05.01",
+        "2023-05-11_11.05.51",
+        "2023-05-11_11.06.26",
+        "2023-05-11_11.07.13",
+        "2023-05-11_11.08.41",
+        "2023-05-11_11.18.15",
+        "2023-05-11_11.19.30",
+        "2023-05-11_11.21.03",
+        "2023-05-11_11.22.19",
+        "2023-05-11_11.23.11",
+        "2023-05-11_11.23.47",
+        "2023-05-11_11.24.32",
+        "2023-05-11_11.25.58",
+        "2023-05-11_11.26.42",
+        "2023-05-11_11.27.29",
+        "2023-05-11_11.40.51",
+        "2023-05-11_11.41.29",
+        "2023-05-11_11.42.41"
+      ],
+      "observed_image_count": 51,
+      "evidence": [
+        {
+          "image": "2023-05-11_10.18.46",
+          "observation": "front左下：黑色竖向机组安装在白色保温底座上，轮廓和连接管可见，具体泵型不明"
+        },
+        {
+          "image": "2023-05-11_10.19.36",
+          "observation": "front左：黑色竖直机组、圆形连接面及白色保温底座"
+        },
+        {
+          "image": "2023-05-11_10.25.43",
+          "observation": "left远处：黑色立式机组位于白色保温底座上"
+        },
+        {
+          "image": "2023-05-11_10.26.29",
+          "observation": "left远端：黑色立式机组位于白色包覆底座"
+        },
+        {
+          "image": "2023-05-11_10.27.16",
+          "observation": "front/left：黑色竖直电机与圆形泵体、白色保温底座"
+        },
+        {
+          "image": "2023-05-11_10.28.04",
+          "observation": "left/front：黑色立式带散热肋电机与下方机体"
+        },
+        {
+          "image": "2023-05-11_10.29.30",
+          "observation": "left近处：黑色竖直肋片电机，下方圆体与管相接；front右：成组黑色机组置于红褐底座"
+        },
+        {
+          "image": "2023-05-11_10.30.18",
+          "observation": "front/left：黑色带散热肋竖直电机、圆形机体与白色厚包覆基部"
+        },
+        {
+          "image": "2023-05-11_10.31.04",
+          "observation": "front左：黑色竖向肋片机组，前后重复布置"
+        },
+        {
+          "image": "2023-05-11_10.31.46",
+          "observation": "front右：红褐底座上两台黑色小机组；left：较大的黑色竖向机组"
+        },
+        {
+          "image": "2023-05-11_10.32.30",
+          "observation": "left远处：黑色机组与白色底座"
+        },
+        {
+          "image": "2023-05-11_10.34.42",
+          "observation": "front右：红褐底座上黑色小泵组；left：黑色立式肋片机组"
+        },
+        {
+          "image": "2023-05-11_10.35.28",
+          "observation": "front下：红底座黑机组；left：保温回路上的立式黑电机"
+        },
+        {
+          "image": "2023-05-11_10.36.15",
+          "observation": "left近：成对黑色肋片立式机组；front右：红褐座上小黑泵"
+        },
+        {
+          "image": "2023-05-11_10.37.00",
+          "observation": "left/front：黑色竖向散热肋机体、圆形连接体与白色厚基部"
+        },
+        {
+          "image": "2023-05-11_10.38.31",
+          "observation": "left/front：黑色竖肋电机和圆机座，连接白色包覆底部"
+        },
+        {
+          "image": "2023-05-11_10.39.59",
+          "observation": "front/back：大黑色肋片电机，底部金属轴颈连接白色基部"
+        },
+        {
+          "image": "2023-05-11_10.40.42",
+          "observation": "front/right：黑色立式肋片电机"
+        },
+        {
+          "image": "2023-05-11_10.41.41",
+          "observation": "front左：两台黑肋片机组；back另两台"
+        },
+        {
+          "image": "2023-05-11_10.43.09",
+          "observation": "left：黑色大机组；right：红钢座上的小机组"
+        },
+        {
+          "image": "2023-05-11_10.43.53",
+          "observation": "left近：黑色大机体；right：红底座小泵"
+        },
+        {
+          "image": "2023-05-11_10.44.56",
+          "observation": "front右下：红褐钢座上两台黑红小机组；left远：大黑机组"
+        },
+        {
+          "image": "2023-05-11_10.46.27",
+          "observation": "front：黑色带显示器电机外壳及金属泵体，在红钢座上"
+        },
+        {
+          "image": "2023-05-11_10.47.16",
+          "observation": "front下：两台黑红电机泵，可见顶端风扇罩"
+        },
+        {
+          "image": "2023-05-11_10.47.59",
+          "observation": "right下：黑红双机组"
+        },
+        {
+          "image": "2023-05-11_10.48.42",
+          "observation": "right近：黑色肋片、红色控制外壳和金属泵体，固定于红钢座"
+        },
+        {
+          "image": "2023-05-11_10.49.28",
+          "observation": "right：红钢座黑机组；left远大机组"
+        },
+        {
+          "image": "2023-05-11_10.50.14",
+          "observation": "right下：红底座黑小泵；left后黑大泵"
+        },
+        {
+          "image": "2023-05-11_10.50.58",
+          "observation": "left：黑色立式电机；front远：另一组机组"
+        },
+        {
+          "image": "2023-05-11_10.51.42",
+          "observation": "left：黑色立式电机在白底座上；右后小泵"
+        },
+        {
+          "image": "2023-05-11_10.53.53",
+          "observation": "back/left：黑色机组驱动外壳及机体，连接白底座"
+        },
+        {
+          "image": "2023-05-11_11.00.55",
+          "observation": "right：黑色驱动壳体、下方电机和白底座"
+        },
+        {
+          "image": "2023-05-11_11.04.22",
+          "observation": "right后：黑色立式机组"
+        },
+        {
+          "image": "2023-05-11_11.05.01",
+          "observation": "right后：黑机体与白底座"
+        },
+        {
+          "image": "2023-05-11_11.05.51",
+          "observation": "back右：黑立式机组"
+        },
+        {
+          "image": "2023-05-11_11.06.26",
+          "observation": "front/back：白底座上黑色机组"
+        },
+        {
+          "image": "2023-05-11_11.07.13",
+          "observation": "front/right/back：黑色立式肋片泵电机与白底座"
+        },
+        {
+          "image": "2023-05-11_11.08.41",
+          "observation": "front：两台黑色肋片机组在白色粗糙基部上；right：小红黑泵"
+        },
+        {
+          "image": "2023-05-11_11.18.15",
+          "observation": "front：黑色双机组与白色机座；right：红钢座小泵"
+        },
+        {
+          "image": "2023-05-11_11.19.30",
+          "observation": "front：黑色双泵电机和白色底座；right远小泵"
+        },
+        {
+          "image": "2023-05-11_11.21.03",
+          "observation": "front左：黑色泵电机、白座；right后小机组"
+        },
+        {
+          "image": "2023-05-11_11.22.19",
+          "observation": "front左：黑立式电机与白座"
+        },
+        {
+          "image": "2023-05-11_11.23.11",
+          "observation": "front左：黑色肋片电机和白基座"
+        },
+        {
+          "image": "2023-05-11_11.23.47",
+          "observation": "front：黑色竖肋电机、金属轴颈和白色机座"
+        },
+        {
+          "image": "2023-05-11_11.24.32",
+          "observation": "front左：成排黑色肋片立式电机"
+        },
+        {
+          "image": "2023-05-11_11.25.58",
+          "observation": "front右：黑色机组带线缆与黑连接管，白色厚底部"
+        },
+        {
+          "image": "2023-05-11_11.26.42",
+          "observation": "right：黑色立式机组和白色基部"
+        },
+        {
+          "image": "2023-05-11_11.27.29",
+          "observation": "right：黑色立式机组白底座，电缆接入"
+        },
+        {
+          "image": "2023-05-11_11.40.51",
+          "observation": "right近：黑色驱动器电机及白基座"
+        },
+        {
+          "image": "2023-05-11_11.41.29",
+          "observation": "right后：黑色机组和黑连接管"
+        },
+        {
+          "image": "2023-05-11_11.42.41",
+          "observation": "right：成对黑色驱动壳体、电机和白底座"
+        }
+      ]
+    },
+    {
+      "key": "gauge",
+      "name_en": "pipe gauge and thermometer",
+      "name_zh": "管路仪表",
+      "definition": "圆形指针表和有纵向刻度的细长温度计类仪表；不推断测量值，排除阀位箱、管道标签和控制屏幕。",
+      "prompts": [
+        "an analog industrial gauge mounted on a pipe",
+        "a round pressure gauge with a white dial and a pointer",
+        "a circular metal instrument at the end of a narrow pipe",
+        "a slim yellow industrial thermometer with a vertical scale",
+        "a small measuring instrument attached to insulated plumbing"
+      ],
+      "traits": [
+        "圆盘、指针或刻度",
+        "细长黄色刻度壳",
+        "接细支管或管壁"
+      ],
+      "confusions": [
+        "valve",
+        "pipe",
+        "cabinet"
+      ],
+      "official_ids": [
+        16,
+        9
+      ],
+      "confidence": "medium",
+      "uncertainty": "官方大类映射非精确仪表标签；小像素物体易混淆。",
+      "id": 3,
+      "row": 3,
+      "official_mapping": [
+        {
+          "id": 16,
+          "name": "MECHANICAL",
+          "relation": "category-level reference; not a pixel assignment"
+        },
+        {
+          "id": 9,
+          "name": "MISCELLANEOUS",
+          "relation": "category-level reference; not a pixel assignment"
+        }
+      ],
+      "observed_training_images": [
+        "2023-05-11_10.30.18",
+        "2023-05-11_10.31.04",
+        "2023-05-11_10.34.42",
+        "2023-05-11_10.36.15",
+        "2023-05-11_10.38.31",
+        "2023-05-11_10.39.59",
+        "2023-05-11_10.40.42",
+        "2023-05-11_10.41.41",
+        "2023-05-11_10.43.09",
+        "2023-05-11_10.43.53",
+        "2023-05-11_10.46.27",
+        "2023-05-11_10.47.16",
+        "2023-05-11_10.47.59",
+        "2023-05-11_10.50.14",
+        "2023-05-11_11.04.22",
+        "2023-05-11_11.05.01",
+        "2023-05-11_11.19.30",
+        "2023-05-11_11.21.03",
+        "2023-05-11_11.22.19",
+        "2023-05-11_11.23.11",
+        "2023-05-11_11.23.47",
+        "2023-05-11_11.24.32",
+        "2023-05-11_11.25.58"
+      ],
+      "observed_image_count": 23,
+      "evidence": [
+        {
+          "image": "2023-05-11_10.30.18",
+          "observation": "left上：黑边圆形白表盘安装于细支管"
+        },
+        {
+          "image": "2023-05-11_10.31.04",
+          "observation": "left：圆白色表盘连接黑色细管"
+        },
+        {
+          "image": "2023-05-11_10.34.42",
+          "observation": "front下：细管上两个白色圆表盘"
+        },
+        {
+          "image": "2023-05-11_10.36.15",
+          "observation": "right管上：白色圆表盘"
+        },
+        {
+          "image": "2023-05-11_10.38.31",
+          "observation": "front/right：红色细支管末端圆金属仪表"
+        },
+        {
+          "image": "2023-05-11_10.39.59",
+          "observation": "left/front远：白色圆盘仪表"
+        },
+        {
+          "image": "2023-05-11_10.40.42",
+          "observation": "left：黑细管顶端白色圆表盘"
+        },
+        {
+          "image": "2023-05-11_10.41.41",
+          "observation": "front右近：圆金属仪表背面接红色细管"
+        },
+        {
+          "image": "2023-05-11_10.43.09",
+          "observation": "left上：红细管端圆仪表"
+        },
+        {
+          "image": "2023-05-11_10.43.53",
+          "observation": "left近：白圆表盘刻度可见"
+        },
+        {
+          "image": "2023-05-11_10.46.27",
+          "observation": "front上：两只白色圆仪表有指针"
+        },
+        {
+          "image": "2023-05-11_10.47.16",
+          "observation": "front下：白圆盘在红细管上"
+        },
+        {
+          "image": "2023-05-11_10.47.59",
+          "observation": "right下：两只白色圆仪表"
+        },
+        {
+          "image": "2023-05-11_10.50.14",
+          "observation": "right：白圆表盘"
+        },
+        {
+          "image": "2023-05-11_11.04.22",
+          "observation": "right：圆仪表在红细管端"
+        },
+        {
+          "image": "2023-05-11_11.05.01",
+          "observation": "right后：红支管上的圆仪表背面"
+        },
+        {
+          "image": "2023-05-11_11.19.30",
+          "observation": "right白管：细长黄色刻度仪表"
+        },
+        {
+          "image": "2023-05-11_11.21.03",
+          "observation": "right管上：黄色细长仪表"
+        },
+        {
+          "image": "2023-05-11_11.22.19",
+          "observation": "right近：两根细长黄色刻度表外壳"
+        },
+        {
+          "image": "2023-05-11_11.23.11",
+          "observation": "right上：黄色细长刻度表"
+        },
+        {
+          "image": "2023-05-11_11.23.47",
+          "observation": "front/right管上：黄色细长刻度仪表"
+        },
+        {
+          "image": "2023-05-11_11.24.32",
+          "observation": "front：黄色窄刻度表；right管上同类仪表"
+        },
+        {
+          "image": "2023-05-11_11.25.58",
+          "observation": "right管上：黄窄仪表"
+        }
+      ]
+    },
+    {
+      "key": "tank",
+      "name_en": "closed cylindrical vessel",
+      "name_zh": "封闭圆柱容器",
+      "definition": "独立封闭圆筒，包括有圆顶和支脚的蓝罐、带小接口和侧管的银色筒体；具体储存、缓冲或分离用途未确认，不包括贯通弯管和结构柱。",
+      "prompts": [
+        "a closed cylindrical industrial vessel",
+        "a tall blue metal tank with a rounded closed top",
+        "a freestanding cylindrical tank on short support legs",
+        "a sealed metal vessel with small fittings and a pipe connection",
+        "a silver vertical cylindrical vessel with a flat closed lid"
+      ],
+      "traits": [
+        "封闭顶盖",
+        "支脚或独立筒体",
+        "蓝漆或银色金属表面"
+      ],
+      "confusions": [
+        "column",
+        "pipe",
+        "duct"
+      ],
+      "official_ids": [
+        16
+      ],
+      "confidence": "high",
+      "uncertainty": "容器形状可靠，具体工艺用途不确定。",
+      "id": 4,
+      "row": 4,
+      "official_mapping": [
+        {
+          "id": 16,
+          "name": "MECHANICAL",
+          "relation": "category-level reference; not a pixel assignment"
+        }
+      ],
+      "observed_training_images": [
+        "2023-05-11_10.40.42",
+        "2023-05-11_10.41.41",
+        "2023-05-11_10.43.09",
+        "2023-05-11_10.43.53",
+        "2023-05-11_10.46.27",
+        "2023-05-11_10.47.16",
+        "2023-05-11_10.49.28",
+        "2023-05-11_10.50.14",
+        "2023-05-11_10.50.58",
+        "2023-05-11_10.51.42",
+        "2023-05-11_10.53.53",
+        "2023-05-11_11.00.55",
+        "2023-05-11_11.04.22",
+        "2023-05-11_11.05.01",
+        "2023-05-11_11.05.51",
+        "2023-05-11_11.06.26",
+        "2023-05-11_11.07.13",
+        "2023-05-11_11.08.41",
+        "2023-05-11_11.18.15",
+        "2023-05-11_11.19.30",
+        "2023-05-11_11.21.03",
+        "2023-05-11_11.22.19",
+        "2023-05-11_11.23.11",
+        "2023-05-11_11.23.47",
+        "2023-05-11_11.24.32",
+        "2023-05-11_11.25.58",
+        "2023-05-11_11.26.42",
+        "2023-05-11_11.27.29",
+        "2023-05-11_11.40.51",
+        "2023-05-11_11.41.29",
+        "2023-05-11_11.42.41"
+      ],
+      "observed_image_count": 31,
+      "evidence": [
+        {
+          "image": "2023-05-11_10.40.42",
+          "observation": "left中后：蓝色直立圆罐、圆顶和顶部小接头"
+        },
+        {
+          "image": "2023-05-11_10.41.41",
+          "observation": "left后：蓝色圆罐局部圆顶"
+        },
+        {
+          "image": "2023-05-11_10.43.09",
+          "observation": "left中后：蓝色圆罐"
+        },
+        {
+          "image": "2023-05-11_10.43.53",
+          "observation": "left后：蓝色竖罐局部"
+        },
+        {
+          "image": "2023-05-11_10.46.27",
+          "observation": "left后：蓝色圆顶罐"
+        },
+        {
+          "image": "2023-05-11_10.47.16",
+          "observation": "left后：蓝色封闭圆顶罐"
+        },
+        {
+          "image": "2023-05-11_10.49.28",
+          "observation": "left：蓝色圆罐，封闭圆顶、细接头和底脚"
+        },
+        {
+          "image": "2023-05-11_10.50.14",
+          "observation": "left后：蓝色圆顶罐"
+        },
+        {
+          "image": "2023-05-11_10.50.58",
+          "observation": "left中：独立蓝色封闭罐体、圆顶和底脚"
+        },
+        {
+          "image": "2023-05-11_10.51.42",
+          "observation": "left中：蓝色圆罐"
+        },
+        {
+          "image": "2023-05-11_10.53.53",
+          "observation": "front近：蓝色光滑圆顶罐，顶部小接头、下方支脚"
+        },
+        {
+          "image": "2023-05-11_11.00.55",
+          "observation": "right近：蓝色高圆罐；left后：另一只蓝色圆罐带支脚"
+        },
+        {
+          "image": "2023-05-11_11.04.22",
+          "observation": "front左后与右后：多只蓝色封闭圆罐"
+        },
+        {
+          "image": "2023-05-11_11.05.01",
+          "observation": "left后：蓝罐局部"
+        },
+        {
+          "image": "2023-05-11_11.05.51",
+          "observation": "left近：蓝色光滑封闭罐"
+        },
+        {
+          "image": "2023-05-11_11.06.26",
+          "observation": "left：蓝色圆顶罐"
+        },
+        {
+          "image": "2023-05-11_11.07.13",
+          "observation": "left：蓝罐带顶部吊环"
+        },
+        {
+          "image": "2023-05-11_11.08.41",
+          "observation": "left：蓝色圆顶罐"
+        },
+        {
+          "image": "2023-05-11_11.18.15",
+          "observation": "left：蓝色封闭圆罐"
+        },
+        {
+          "image": "2023-05-11_11.19.30",
+          "observation": "left：蓝圆罐"
+        },
+        {
+          "image": "2023-05-11_11.21.03",
+          "observation": "left远：蓝罐"
+        },
+        {
+          "image": "2023-05-11_11.22.19",
+          "observation": "left远：蓝圆罐"
+        },
+        {
+          "image": "2023-05-11_11.23.11",
+          "observation": "left远：蓝罐"
+        },
+        {
+          "image": "2023-05-11_11.23.47",
+          "observation": "left后：蓝罐"
+        },
+        {
+          "image": "2023-05-11_11.24.32",
+          "observation": "left后：蓝色圆罐"
+        },
+        {
+          "image": "2023-05-11_11.25.58",
+          "observation": "left后：蓝罐"
+        },
+        {
+          "image": "2023-05-11_11.26.42",
+          "observation": "left：银色封闭立筒连接白色保温管；由56局部复核关联确认，具体用途不明"
+        },
+        {
+          "image": "2023-05-11_11.27.29",
+          "observation": "left：银色封闭立筒连接白色保温管；由56局部复核关联确认，具体用途不明"
+        },
+        {
+          "image": "2023-05-11_11.40.51",
+          "observation": "left：银色封闭立筒连接白色保温管；由56局部复核关联确认，具体用途不明"
+        },
+        {
+          "image": "2023-05-11_11.41.29",
+          "observation": "left：银色封闭立筒连接白色保温管；由56局部复核关联确认，具体用途不明"
+        },
+        {
+          "image": "2023-05-11_11.42.41",
+          "observation": "left近：银色封闭圆筒，平顶小接口、侧向保温管相连；具体用途不确定"
+        }
+      ]
+    },
+    {
+      "key": "cabinet",
+      "name_en": "equipment cabinet and enclosure",
+      "name_zh": "设备柜与箱式外壳",
+      "candidate_keys": [
+        "cabinet",
+        "electrical_box",
+        "equipment_housing"
+      ],
+      "definition": "柜式或箱式设备外壳、独立控制台、插座接线箱及开壳柜式机械单元；不假定所有白门板都是电气柜。排除已明确为泵机组的附属驱动盒、建筑门和管道。",
+      "prompts": [
+        "an industrial equipment cabinet",
+        "a white metal enclosure with doors and black handles",
+        "an electrical control cabinet with switches and a display",
+        "a small industrial socket box with blue and red connectors",
+        "a large cabinet shaped equipment housing with removable panels",
+        "an open machinery enclosure with metal panels",
+        "a compact control console in an industrial plant room"
+      ],
+      "traits": [
+        "薄板矩形外壳",
+        "黑门把手或面板开关",
+        "小插座箱有蓝红接头"
+      ],
+      "confusions": [
+        "door",
+        "wall",
+        "pump_motor"
+      ],
+      "official_ids": [
+        7,
+        16,
+        32
+      ],
+      "confidence": "medium",
+      "uncertainty": "统一可见外壳形态，避免无证据地将柜式机械设备叫电气柜；不是覆盖所有机器的machine类。",
+      "id": 5,
+      "row": 5,
+      "official_mapping": [
+        {
+          "id": 7,
+          "name": "ELEC-BOXES",
+          "relation": "category-level reference; not a pixel assignment"
+        },
+        {
+          "id": 16,
+          "name": "MECHANICAL",
+          "relation": "category-level reference; not a pixel assignment"
+        },
+        {
+          "id": 32,
+          "name": "ELEC-EQUIPS",
+          "relation": "category-level reference; not a pixel assignment"
+        }
+      ],
+      "observed_training_images": [
+        "2023-05-11_10.18.46",
+        "2023-05-11_10.19.36",
+        "2023-05-11_10.21.23",
+        "2023-05-11_10.21.59",
+        "2023-05-11_10.23.17",
+        "2023-05-11_10.24.12",
+        "2023-05-11_10.24.58",
+        "2023-05-11_10.25.43",
+        "2023-05-11_10.26.29",
+        "2023-05-11_10.27.16",
+        "2023-05-11_10.28.04",
+        "2023-05-11_10.29.30",
+        "2023-05-11_10.30.18",
+        "2023-05-11_10.31.04",
+        "2023-05-11_10.31.46",
+        "2023-05-11_10.32.30",
+        "2023-05-11_10.34.42",
+        "2023-05-11_10.35.28",
+        "2023-05-11_10.36.15",
+        "2023-05-11_10.37.00",
+        "2023-05-11_10.38.31",
+        "2023-05-11_10.39.59",
+        "2023-05-11_10.40.42",
+        "2023-05-11_10.41.41",
+        "2023-05-11_10.43.09",
+        "2023-05-11_10.43.53",
+        "2023-05-11_10.44.56",
+        "2023-05-11_10.46.27",
+        "2023-05-11_10.47.16",
+        "2023-05-11_10.47.59",
+        "2023-05-11_10.48.42",
+        "2023-05-11_10.49.28",
+        "2023-05-11_10.50.14",
+        "2023-05-11_10.50.58",
+        "2023-05-11_10.51.42",
+        "2023-05-11_10.53.53",
+        "2023-05-11_11.00.55",
+        "2023-05-11_11.04.22",
+        "2023-05-11_11.05.01",
+        "2023-05-11_11.05.51",
+        "2023-05-11_11.06.26",
+        "2023-05-11_11.07.13",
+        "2023-05-11_11.08.41",
+        "2023-05-11_11.18.15",
+        "2023-05-11_11.19.30",
+        "2023-05-11_11.21.03",
+        "2023-05-11_11.22.19",
+        "2023-05-11_11.23.11",
+        "2023-05-11_11.23.47",
+        "2023-05-11_11.24.32",
+        "2023-05-11_11.25.58",
+        "2023-05-11_11.26.42",
+        "2023-05-11_11.27.29",
+        "2023-05-11_11.40.51",
+        "2023-05-11_11.41.29",
+        "2023-05-11_11.42.41"
+      ],
+      "observed_image_count": 56,
+      "evidence": [
+        {
+          "image": "2023-05-11_10.18.46",
+          "observation": "back左/front右：白色长方体双门，有黑把手、按钮和显示屏"
+        },
+        {
+          "image": "2023-05-11_10.19.36",
+          "observation": "right：两座白色控制柜，门上红绿按钮及黑色把手"
+        },
+        {
+          "image": "2023-05-11_10.21.23",
+          "observation": "front中心：白色双门电控柜，明显红色指示灯、成排按钮和黑把手"
+        },
+        {
+          "image": "2023-05-11_10.21.59",
+          "observation": "front：白色双门柜、黑色把手与红绿按钮，右侧门板存在开缝"
+        },
+        {
+          "image": "2023-05-11_10.23.17",
+          "observation": "front左：白色双门、按钮与长黑把手"
+        },
+        {
+          "image": "2023-05-11_10.23.17",
+          "observation": "front右后：带竖向褶皱的金属大型外壳，具体设备不确定"
+        },
+        {
+          "image": "2023-05-11_10.24.12",
+          "observation": "front：浅灰门板、黑把手、红灯及两排彩色按钮"
+        },
+        {
+          "image": "2023-05-11_10.24.12",
+          "observation": "right后：竖纹银色设备包覆"
+        },
+        {
+          "image": "2023-05-11_10.24.58",
+          "observation": "front中心：浅灰双门柜，红灯、显示器、多色按钮和黑把手"
+        },
+        {
+          "image": "2023-05-11_10.24.58",
+          "observation": "right后：银色竖向褶皱外壳"
+        },
+        {
+          "image": "2023-05-11_10.25.43",
+          "observation": "front右：白色柜侧通风孔、门面按钮及红灯"
+        },
+        {
+          "image": "2023-05-11_10.26.29",
+          "observation": "front右：白色柜侧与按钮门板，顶底通风孔"
+        },
+        {
+          "image": "2023-05-11_10.27.16",
+          "observation": "right：白色柜体侧面及小通风格栅"
+        },
+        {
+          "image": "2023-05-11_10.28.04",
+          "observation": "right：白色窄侧柜"
+        },
+        {
+          "image": "2023-05-11_10.29.30",
+          "observation": "right：白色柜体侧背面"
+        },
+        {
+          "image": "2023-05-11_10.30.18",
+          "observation": "right：白色柜体侧背面"
+        },
+        {
+          "image": "2023-05-11_10.31.04",
+          "observation": "right：白色柜背侧"
+        },
+        {
+          "image": "2023-05-11_10.31.46",
+          "observation": "right近处：白色平柜背及窄柜侧通风孔"
+        },
+        {
+          "image": "2023-05-11_10.32.30",
+          "observation": "right：白色大柜背与旁边窄高柜"
+        },
+        {
+          "image": "2023-05-11_10.32.30",
+          "observation": "front近：塑料/金属矩形接线箱背板，圆形敲落孔、筋条、线缆入口和侧面急停按钮"
+        },
+        {
+          "image": "2023-05-11_10.34.42",
+          "observation": "right后：白色柜体"
+        },
+        {
+          "image": "2023-05-11_10.34.42",
+          "observation": "back近处：白色面板上蓝色圆工业插座、红色接头、透明断路器盖和红黄急停按钮"
+        },
+        {
+          "image": "2023-05-11_10.35.28",
+          "observation": "right后：白柜"
+        },
+        {
+          "image": "2023-05-11_10.35.28",
+          "observation": "right：白箱蓝插座、红接头和下垂黑线"
+        },
+        {
+          "image": "2023-05-11_10.36.15",
+          "observation": "right：白柜"
+        },
+        {
+          "image": "2023-05-11_10.36.15",
+          "observation": "right上：带蓝红插座的白面板"
+        },
+        {
+          "image": "2023-05-11_10.37.00",
+          "observation": "right远：白柜"
+        },
+        {
+          "image": "2023-05-11_10.37.00",
+          "observation": "right远：蓝红插座面板"
+        },
+        {
+          "image": "2023-05-11_10.37.00",
+          "observation": "front远：灰色矩形机械面板带两个黑圆孔和绿色标记"
+        },
+        {
+          "image": "2023-05-11_10.38.31",
+          "observation": "right后：白色柜"
+        },
+        {
+          "image": "2023-05-11_10.38.31",
+          "observation": "left后：灰色高矩形机体、两只黑色圆风扇"
+        },
+        {
+          "image": "2023-05-11_10.39.59",
+          "observation": "right后：白色柜"
+        },
+        {
+          "image": "2023-05-11_10.39.59",
+          "observation": "left后：露出部分黑圆风扇的灰机体"
+        },
+        {
+          "image": "2023-05-11_10.40.42",
+          "observation": "front远：白柜"
+        },
+        {
+          "image": "2023-05-11_10.40.42",
+          "observation": "left：高灰色矩形机体，上部两只黑色风扇"
+        },
+        {
+          "image": "2023-05-11_10.41.41",
+          "observation": "right后：白柜及门面"
+        },
+        {
+          "image": "2023-05-11_10.41.41",
+          "observation": "right后：带多色插座的小面板"
+        },
+        {
+          "image": "2023-05-11_10.41.41",
+          "observation": "left后：灰色双风扇机体"
+        },
+        {
+          "image": "2023-05-11_10.43.09",
+          "observation": "right：白色柜背"
+        },
+        {
+          "image": "2023-05-11_10.43.09",
+          "observation": "right上：蓝红插座与黑垂线面板"
+        },
+        {
+          "image": "2023-05-11_10.43.09",
+          "observation": "left后：双风扇机体"
+        },
+        {
+          "image": "2023-05-11_10.43.53",
+          "observation": "right：白柜"
+        },
+        {
+          "image": "2023-05-11_10.43.53",
+          "observation": "right上：蓝红插座白面板"
+        },
+        {
+          "image": "2023-05-11_10.44.56",
+          "observation": "right：白柜背"
+        },
+        {
+          "image": "2023-05-11_10.44.56",
+          "observation": "right：蓝红插座箱"
+        },
+        {
+          "image": "2023-05-11_10.44.56",
+          "observation": "left后：灰双风扇机体"
+        },
+        {
+          "image": "2023-05-11_10.46.27",
+          "observation": "right：白色柜背带通风缝"
+        },
+        {
+          "image": "2023-05-11_10.46.27",
+          "observation": "back上：蓝红插座面板"
+        },
+        {
+          "image": "2023-05-11_10.46.27",
+          "observation": "left远：双风扇机体"
+        },
+        {
+          "image": "2023-05-11_10.47.16",
+          "observation": "right：白柜背"
+        },
+        {
+          "image": "2023-05-11_10.47.16",
+          "observation": "back：带蓝红插口的白箱"
+        },
+        {
+          "image": "2023-05-11_10.47.16",
+          "observation": "front后：银色竖纹大型设备外壳"
+        },
+        {
+          "image": "2023-05-11_10.47.59",
+          "observation": "right：白柜背；left远：一排柜门"
+        },
+        {
+          "image": "2023-05-11_10.47.59",
+          "observation": "right后：小插座面板"
+        },
+        {
+          "image": "2023-05-11_10.47.59",
+          "observation": "front后：高银色竖纹外壳"
+        },
+        {
+          "image": "2023-05-11_10.48.42",
+          "observation": "right后：白色柜背"
+        },
+        {
+          "image": "2023-05-11_10.48.42",
+          "observation": "right远：蓝红插座箱"
+        },
+        {
+          "image": "2023-05-11_10.48.42",
+          "observation": "front后：银色竖纹大机壳"
+        },
+        {
+          "image": "2023-05-11_10.49.28",
+          "observation": "right：白柜"
+        },
+        {
+          "image": "2023-05-11_10.49.28",
+          "observation": "right上：蓝红插座面板"
+        },
+        {
+          "image": "2023-05-11_10.49.28",
+          "observation": "right后：银色竖纹壳体"
+        },
+        {
+          "image": "2023-05-11_10.50.14",
+          "observation": "right：白柜"
+        },
+        {
+          "image": "2023-05-11_10.50.14",
+          "observation": "right后：插座面板"
+        },
+        {
+          "image": "2023-05-11_10.50.58",
+          "observation": "front远：成排白柜门；左中：小白色斜面控制箱"
+        },
+        {
+          "image": "2023-05-11_10.51.42",
+          "observation": "front左：白色小控制箱和后方高柜"
+        },
+        {
+          "image": "2023-05-11_10.53.53",
+          "observation": "right：小白色斜面控制台及远处高柜"
+        },
+        {
+          "image": "2023-05-11_11.00.55",
+          "observation": "left远：闭合白色高柜门"
+        },
+        {
+          "image": "2023-05-11_11.00.55",
+          "observation": "left：白壳打开，内部暗色圆机体、细铜管和多根粗保温管；front下：拆下的白面板"
+        },
+        {
+          "image": "2023-05-11_11.04.22",
+          "observation": "left/back：白金属框、大黑网格和暗色机械体，铜管与保温管连接；front下拆卸白板"
+        },
+        {
+          "image": "2023-05-11_11.05.01",
+          "observation": "left/back：带网格的白机壳、深色圆机械体、细铜管及顶部风扇；front下拆下的白板"
+        },
+        {
+          "image": "2023-05-11_11.05.51",
+          "observation": "front：白小箱和斜置灰控制盒、下方线缆与打开面板；远处成排高柜"
+        },
+        {
+          "image": "2023-05-11_11.06.26",
+          "observation": "front下：小白控制箱、斜面显示器与纸张；front后：高白柜门"
+        },
+        {
+          "image": "2023-05-11_11.07.13",
+          "observation": "front后：白色高柜；down：小控制台"
+        },
+        {
+          "image": "2023-05-11_11.08.41",
+          "observation": "left近：带显示器白控制台；front左后：高白柜门"
+        },
+        {
+          "image": "2023-05-11_11.18.15",
+          "observation": "left下：带文件的小控制台；前方后部：白色高柜门"
+        },
+        {
+          "image": "2023-05-11_11.19.30",
+          "observation": "front左后：高白柜；left：白控制台"
+        },
+        {
+          "image": "2023-05-11_11.21.03",
+          "observation": "front远：白高柜；left远小白台"
+        },
+        {
+          "image": "2023-05-11_11.22.19",
+          "observation": "left远：白小台和后方高柜"
+        },
+        {
+          "image": "2023-05-11_11.23.11",
+          "observation": "left后：白台和高柜"
+        },
+        {
+          "image": "2023-05-11_11.23.47",
+          "observation": "left：白控制台；front后：高白门板"
+        },
+        {
+          "image": "2023-05-11_11.24.32",
+          "observation": "left：控制台；front后：白高柜门"
+        },
+        {
+          "image": "2023-05-11_11.25.58",
+          "observation": "left近：白控制台与显示器；front后：带黑把手的白门状壳体"
+        },
+        {
+          "image": "2023-05-11_11.26.42",
+          "observation": "front：成排白色门板、黑把手；left近：小白控制台"
+        },
+        {
+          "image": "2023-05-11_11.26.42",
+          "observation": "front右：白门板机组背后露出成排粗管及机体，机械用途候选"
+        },
+        {
+          "image": "2023-05-11_11.27.29",
+          "observation": "front：多扇黑把手白门外壳；left下：文件覆盖的小控制台"
+        },
+        {
+          "image": "2023-05-11_11.27.29",
+          "observation": "front右：门状外壳背后多根横管和机械单元，功能不确定"
+        },
+        {
+          "image": "2023-05-11_11.40.51",
+          "observation": "front：白色设备门板与成排黑把手；left后小控制箱"
+        },
+        {
+          "image": "2023-05-11_11.40.51",
+          "observation": "front侧后：白机壳与多根保温管连接的机械单元"
+        },
+        {
+          "image": "2023-05-11_11.41.29",
+          "observation": "left近：白色平门黑把手及外壳侧板"
+        },
+        {
+          "image": "2023-05-11_11.41.29",
+          "observation": "left侧后：柜式机壳与多根横向保温管，机械单元候选"
+        },
+        {
+          "image": "2023-05-11_11.42.41",
+          "observation": "front：白色成排门板、成对黑把手，柜式设备外壳"
+        }
+      ]
+    },
+    {
+      "key": "cable_tray",
+      "name_en": "cable tray",
+      "name_zh": "电缆桥架",
+      "definition": "承载电线电缆的开放网篮或线槽，包含其内线束；不包含人行格栅和细钢支架。",
+      "prompts": [
+        "an overhead industrial cable tray",
+        "a wire mesh basket carrying parallel electrical cables",
+        "an open metal cable rack under the ceiling",
+        "bundles of dark and pale wires inside a galvanized wire tray",
+        "a narrow wire cable basket crossing above machinery"
+      ],
+      "traits": [
+        "开放网篮",
+        "内部平行线缆",
+        "沿顶及设备上方布置"
+      ],
+      "confusions": [
+        "grating",
+        "support",
+        "pipe"
+      ],
+      "official_ids": [
+        5
+      ],
+      "confidence": "high",
+      "id": 6,
+      "row": 6,
+      "official_mapping": [
+        {
+          "id": 5,
+          "name": "CABLETRAYS",
+          "relation": "category-level reference; not a pixel assignment"
+        }
+      ],
+      "observed_training_images": [
+        "2023-05-11_10.18.46",
+        "2023-05-11_10.19.36",
+        "2023-05-11_10.21.23",
+        "2023-05-11_10.21.59",
+        "2023-05-11_10.23.17",
+        "2023-05-11_10.24.12",
+        "2023-05-11_10.24.58",
+        "2023-05-11_10.25.43",
+        "2023-05-11_10.26.29",
+        "2023-05-11_10.27.16",
+        "2023-05-11_10.28.04",
+        "2023-05-11_10.29.30",
+        "2023-05-11_10.30.18",
+        "2023-05-11_10.31.04",
+        "2023-05-11_10.31.46",
+        "2023-05-11_10.32.30",
+        "2023-05-11_10.34.42",
+        "2023-05-11_10.35.28",
+        "2023-05-11_10.36.15",
+        "2023-05-11_10.37.00",
+        "2023-05-11_10.38.31",
+        "2023-05-11_10.39.59",
+        "2023-05-11_10.40.42",
+        "2023-05-11_10.41.41",
+        "2023-05-11_10.43.09",
+        "2023-05-11_10.43.53",
+        "2023-05-11_10.44.56",
+        "2023-05-11_10.46.27",
+        "2023-05-11_10.47.16",
+        "2023-05-11_10.47.59",
+        "2023-05-11_10.48.42",
+        "2023-05-11_10.49.28",
+        "2023-05-11_10.50.14",
+        "2023-05-11_10.50.58",
+        "2023-05-11_10.51.42",
+        "2023-05-11_10.53.53",
+        "2023-05-11_11.00.55",
+        "2023-05-11_11.04.22",
+        "2023-05-11_11.05.01",
+        "2023-05-11_11.05.51",
+        "2023-05-11_11.06.26",
+        "2023-05-11_11.07.13",
+        "2023-05-11_11.08.41",
+        "2023-05-11_11.18.15",
+        "2023-05-11_11.19.30",
+        "2023-05-11_11.21.03",
+        "2023-05-11_11.22.19",
+        "2023-05-11_11.23.11",
+        "2023-05-11_11.23.47",
+        "2023-05-11_11.24.32",
+        "2023-05-11_11.25.58",
+        "2023-05-11_11.26.42",
+        "2023-05-11_11.27.29",
+        "2023-05-11_11.40.51",
+        "2023-05-11_11.41.29",
+        "2023-05-11_11.42.41"
+      ],
+      "observed_image_count": 56,
+      "evidence": [
+        {
+          "image": "2023-05-11_10.18.46",
+          "observation": "up：开放金属网篮中排列线缆，区别于圆管"
+        },
+        {
+          "image": "2023-05-11_10.19.36",
+          "observation": "up：网篮装载并行电缆，跨越柱旁"
+        },
+        {
+          "image": "2023-05-11_10.21.23",
+          "observation": "up：密集金属网篮和并排线缆"
+        },
+        {
+          "image": "2023-05-11_10.21.59",
+          "observation": "up：密集线缆和开放网篮弯道"
+        },
+        {
+          "image": "2023-05-11_10.23.17",
+          "observation": "up：金属网篮弯道内铺设电缆"
+        },
+        {
+          "image": "2023-05-11_10.24.12",
+          "observation": "left/up：网篮桥架和黑电缆"
+        },
+        {
+          "image": "2023-05-11_10.24.58",
+          "observation": "up/front上沿：黑色电缆由网篮引入柜顶"
+        },
+        {
+          "image": "2023-05-11_10.25.43",
+          "observation": "up：开放网篮中黑色线缆与黄绿接地线"
+        },
+        {
+          "image": "2023-05-11_10.26.29",
+          "observation": "up：银灰网篮内的黑色电缆"
+        },
+        {
+          "image": "2023-05-11_10.27.16",
+          "observation": "up：网篮与黑色并行电缆"
+        },
+        {
+          "image": "2023-05-11_10.28.04",
+          "observation": "up：网篮、黑电缆与黄绿线"
+        },
+        {
+          "image": "2023-05-11_10.29.30",
+          "observation": "up：网篮和并排电缆"
+        },
+        {
+          "image": "2023-05-11_10.30.18",
+          "observation": "up：网篮桥架"
+        },
+        {
+          "image": "2023-05-11_10.31.04",
+          "observation": "up：线缆网篮"
+        },
+        {
+          "image": "2023-05-11_10.31.46",
+          "observation": "up：开放金属网篮与电缆束"
+        },
+        {
+          "image": "2023-05-11_10.32.30",
+          "observation": "up：网篮、浅色并行电缆及近处黑线"
+        },
+        {
+          "image": "2023-05-11_10.34.42",
+          "observation": "up：开放网篮和线缆"
+        },
+        {
+          "image": "2023-05-11_10.35.28",
+          "observation": "up：大面积网篮电缆桥架"
+        },
+        {
+          "image": "2023-05-11_10.36.15",
+          "observation": "up：网篮与线缆"
+        },
+        {
+          "image": "2023-05-11_10.37.00",
+          "observation": "up：网篮线缆桥架"
+        },
+        {
+          "image": "2023-05-11_10.38.31",
+          "observation": "up/right：网篮托盘与线缆"
+        },
+        {
+          "image": "2023-05-11_10.39.59",
+          "observation": "front/up：开放网篮线槽"
+        },
+        {
+          "image": "2023-05-11_10.40.42",
+          "observation": "front近：网篮电缆托盘跨过机组"
+        },
+        {
+          "image": "2023-05-11_10.41.41",
+          "observation": "up/right：网篮及电缆"
+        },
+        {
+          "image": "2023-05-11_10.43.09",
+          "observation": "up：密集开放网篮"
+        },
+        {
+          "image": "2023-05-11_10.43.53",
+          "observation": "up：宽网篮承托多排电缆"
+        },
+        {
+          "image": "2023-05-11_10.44.56",
+          "observation": "up：宽网格线缆托架"
+        },
+        {
+          "image": "2023-05-11_10.46.27",
+          "observation": "left/up：网篮线槽"
+        },
+        {
+          "image": "2023-05-11_10.47.16",
+          "observation": "left/up：宽网篮"
+        },
+        {
+          "image": "2023-05-11_10.47.59",
+          "observation": "up/left：网篮线槽"
+        },
+        {
+          "image": "2023-05-11_10.48.42",
+          "observation": "up：网篮线槽"
+        },
+        {
+          "image": "2023-05-11_10.49.28",
+          "observation": "up：宽网篮"
+        },
+        {
+          "image": "2023-05-11_10.50.14",
+          "observation": "up：密集网篮与多色电缆"
+        },
+        {
+          "image": "2023-05-11_10.50.58",
+          "observation": "up：线缆网篮"
+        },
+        {
+          "image": "2023-05-11_10.51.42",
+          "observation": "up：网篮电缆"
+        },
+        {
+          "image": "2023-05-11_10.53.53",
+          "observation": "left/up：细网篮与蓝白线缆"
+        },
+        {
+          "image": "2023-05-11_11.00.55",
+          "observation": "up：细网篮和电缆"
+        },
+        {
+          "image": "2023-05-11_11.04.22",
+          "observation": "up远：网篮线槽"
+        },
+        {
+          "image": "2023-05-11_11.05.01",
+          "observation": "前方远处上：细线槽"
+        },
+        {
+          "image": "2023-05-11_11.05.51",
+          "observation": "up：窄网篮及电缆"
+        },
+        {
+          "image": "2023-05-11_11.06.26",
+          "observation": "up：窄线缆网篮"
+        },
+        {
+          "image": "2023-05-11_11.07.13",
+          "observation": "up：网篮电缆"
+        },
+        {
+          "image": "2023-05-11_11.08.41",
+          "observation": "up：窄网篮与宽网格托盘"
+        },
+        {
+          "image": "2023-05-11_11.18.15",
+          "observation": "up：网篮电缆与宽托盘"
+        },
+        {
+          "image": "2023-05-11_11.19.30",
+          "observation": "up：开放网篮线缆"
+        },
+        {
+          "image": "2023-05-11_11.21.03",
+          "observation": "up：宽网篮线缆"
+        },
+        {
+          "image": "2023-05-11_11.22.19",
+          "observation": "up：密集网篮"
+        },
+        {
+          "image": "2023-05-11_11.23.11",
+          "observation": "up：网篮线槽"
+        },
+        {
+          "image": "2023-05-11_11.23.47",
+          "observation": "up：网篮和线缆"
+        },
+        {
+          "image": "2023-05-11_11.24.32",
+          "observation": "up：线缆网篮"
+        },
+        {
+          "image": "2023-05-11_11.25.58",
+          "observation": "front/up：网篮与电缆"
+        },
+        {
+          "image": "2023-05-11_11.26.42",
+          "observation": "up：线槽"
+        },
+        {
+          "image": "2023-05-11_11.27.29",
+          "observation": "up/右前：网篮托盘和电缆"
+        },
+        {
+          "image": "2023-05-11_11.40.51",
+          "observation": "right近：细网篮跨过泵上方"
+        },
+        {
+          "image": "2023-05-11_11.41.29",
+          "observation": "front/up：开放细网篮托线"
+        },
+        {
+          "image": "2023-05-11_11.42.41",
+          "observation": "right：跨泵细网篮与线缆"
+        }
+      ]
+    },
+    {
+      "key": "duct",
+      "name_en": "ventilation duct",
+      "name_zh": "通风风道",
+      "definition": "可见银色波纹或分节圆风管、矩形送风通道；不将旁边独立银筒容器纳入风道。",
+      "prompts": [
+        "an industrial ventilation duct",
+        "a silver corrugated round air duct",
+        "a metallic ventilation duct with segmented elbows",
+        "a large rectangular galvanized air duct below the ceiling",
+        "a shiny sheet metal air channel running across a plant room"
+      ],
+      "traits": [
+        "银色分节薄板",
+        "波纹圆段或矩形段",
+        "通风口与风道连续"
+      ],
+      "confusions": [
+        "pipe",
+        "tank",
+        "cabinet"
+      ],
+      "official_ids": [
+        30
+      ],
+      "confidence": "high",
+      "id": 7,
+      "row": 7,
+      "official_mapping": [
+        {
+          "id": 30,
+          "name": "HVAC",
+          "relation": "category-level reference; not a pixel assignment"
+        }
+      ],
+      "observed_training_images": [
+        "2023-05-11_10.18.46",
+        "2023-05-11_10.19.36",
+        "2023-05-11_10.21.23",
+        "2023-05-11_10.21.59",
+        "2023-05-11_10.23.17",
+        "2023-05-11_10.24.12",
+        "2023-05-11_10.24.58",
+        "2023-05-11_10.25.43",
+        "2023-05-11_10.26.29",
+        "2023-05-11_10.27.16",
+        "2023-05-11_10.28.04",
+        "2023-05-11_10.29.30",
+        "2023-05-11_10.30.18",
+        "2023-05-11_10.31.04",
+        "2023-05-11_10.31.46",
+        "2023-05-11_10.32.30",
+        "2023-05-11_10.34.42",
+        "2023-05-11_10.35.28",
+        "2023-05-11_10.36.15",
+        "2023-05-11_10.37.00",
+        "2023-05-11_10.38.31",
+        "2023-05-11_10.40.42",
+        "2023-05-11_10.41.41",
+        "2023-05-11_10.43.09",
+        "2023-05-11_10.43.53",
+        "2023-05-11_10.44.56",
+        "2023-05-11_10.46.27",
+        "2023-05-11_10.47.16",
+        "2023-05-11_10.47.59",
+        "2023-05-11_10.48.42",
+        "2023-05-11_10.49.28",
+        "2023-05-11_10.50.14",
+        "2023-05-11_10.50.58",
+        "2023-05-11_10.51.42",
+        "2023-05-11_10.53.53",
+        "2023-05-11_11.00.55",
+        "2023-05-11_11.05.01",
+        "2023-05-11_11.05.51",
+        "2023-05-11_11.06.26",
+        "2023-05-11_11.07.13",
+        "2023-05-11_11.08.41",
+        "2023-05-11_11.18.15",
+        "2023-05-11_11.19.30",
+        "2023-05-11_11.21.03",
+        "2023-05-11_11.22.19",
+        "2023-05-11_11.23.11",
+        "2023-05-11_11.23.47",
+        "2023-05-11_11.24.32",
+        "2023-05-11_11.25.58",
+        "2023-05-11_11.26.42",
+        "2023-05-11_11.27.29",
+        "2023-05-11_11.40.51",
+        "2023-05-11_11.41.29",
+        "2023-05-11_11.42.41"
+      ],
+      "observed_image_count": 54,
+      "evidence": [
+        {
+          "image": "2023-05-11_10.18.46",
+          "observation": "back/ERP右边：大截面银色矩形风道，下部网格风口；上方另有银色柔性风管"
+        },
+        {
+          "image": "2023-05-11_10.19.36",
+          "observation": "back：大型光滑矩形金属风道及底部格栅；up：波纹银色圆风管"
+        },
+        {
+          "image": "2023-05-11_10.21.23",
+          "observation": "back：大型矩形银色风道，底部带网格开口"
+        },
+        {
+          "image": "2023-05-11_10.21.59",
+          "observation": "back：银色矩形通风设备，底部格栅；up：波纹圆风管"
+        },
+        {
+          "image": "2023-05-11_10.23.17",
+          "observation": "back：银色矩形通风段及底部网格；up：圆形银色风管"
+        },
+        {
+          "image": "2023-05-11_10.24.12",
+          "observation": "back：矩形金属风道及下部网口"
+        },
+        {
+          "image": "2023-05-11_10.24.58",
+          "observation": "back：银色矩形风道"
+        },
+        {
+          "image": "2023-05-11_10.25.43",
+          "observation": "back/up：矩形银色风道与银色圆通风管"
+        },
+        {
+          "image": "2023-05-11_10.26.29",
+          "observation": "back/up：矩形金属通风段和柔性银管"
+        },
+        {
+          "image": "2023-05-11_10.27.16",
+          "observation": "back/up：银色大截面风道"
+        },
+        {
+          "image": "2023-05-11_10.28.04",
+          "observation": "up/back：银色矩形和圆形通风管"
+        },
+        {
+          "image": "2023-05-11_10.29.30",
+          "observation": "back/up：大银色通风段"
+        },
+        {
+          "image": "2023-05-11_10.30.18",
+          "observation": "up/back：银色风管及大矩形段"
+        },
+        {
+          "image": "2023-05-11_10.31.04",
+          "observation": "up/back：银色通风管及矩形风道"
+        },
+        {
+          "image": "2023-05-11_10.31.46",
+          "observation": "up/back：银色圆风管与矩形段"
+        },
+        {
+          "image": "2023-05-11_10.32.30",
+          "observation": "up/back：银色波纹圆风管和大矩形风道"
+        },
+        {
+          "image": "2023-05-11_10.34.42",
+          "observation": "up：银色波纹圆风管"
+        },
+        {
+          "image": "2023-05-11_10.35.28",
+          "observation": "up/back：银色圆风管"
+        },
+        {
+          "image": "2023-05-11_10.36.15",
+          "observation": "back上：银色风道"
+        },
+        {
+          "image": "2023-05-11_10.37.00",
+          "observation": "up：银色圆风管"
+        },
+        {
+          "image": "2023-05-11_10.38.31",
+          "observation": "up/right：银色波纹圆风管"
+        },
+        {
+          "image": "2023-05-11_10.40.42",
+          "observation": "front上远：银色风道"
+        },
+        {
+          "image": "2023-05-11_10.41.41",
+          "observation": "up/right：银色圆风管"
+        },
+        {
+          "image": "2023-05-11_10.43.09",
+          "observation": "left上：银色圆风道"
+        },
+        {
+          "image": "2023-05-11_10.43.53",
+          "observation": "front上：银色圆风管"
+        },
+        {
+          "image": "2023-05-11_10.44.56",
+          "observation": "left上：银色风管"
+        },
+        {
+          "image": "2023-05-11_10.46.27",
+          "observation": "up：银色圆风道"
+        },
+        {
+          "image": "2023-05-11_10.47.16",
+          "observation": "left上：银色圆风管"
+        },
+        {
+          "image": "2023-05-11_10.47.59",
+          "observation": "left上：银风管"
+        },
+        {
+          "image": "2023-05-11_10.48.42",
+          "observation": "up后：银色圆风管"
+        },
+        {
+          "image": "2023-05-11_10.49.28",
+          "observation": "left上：银色圆风道贴红柱边"
+        },
+        {
+          "image": "2023-05-11_10.50.14",
+          "observation": "left/up：反光银色分节弯头接波纹圆风管"
+        },
+        {
+          "image": "2023-05-11_10.50.58",
+          "observation": "up/front：银色大圆风管及分节弯头"
+        },
+        {
+          "image": "2023-05-11_10.51.42",
+          "observation": "up：银色波纹圆风管"
+        },
+        {
+          "image": "2023-05-11_10.53.53",
+          "observation": "right/up：银色横向风管"
+        },
+        {
+          "image": "2023-05-11_11.00.55",
+          "observation": "right后：银色圆风管"
+        },
+        {
+          "image": "2023-05-11_11.05.01",
+          "observation": "front后：银色横风管"
+        },
+        {
+          "image": "2023-05-11_11.05.51",
+          "observation": "up：银色长圆风道"
+        },
+        {
+          "image": "2023-05-11_11.06.26",
+          "observation": "up/front：大直径银色波纹圆风道与分节弯头"
+        },
+        {
+          "image": "2023-05-11_11.07.13",
+          "observation": "left/up：银色波纹圆风管"
+        },
+        {
+          "image": "2023-05-11_11.08.41",
+          "observation": "left/up：银色风管"
+        },
+        {
+          "image": "2023-05-11_11.18.15",
+          "observation": "left/up：银色圆风道"
+        },
+        {
+          "image": "2023-05-11_11.19.30",
+          "observation": "left：银色横风管"
+        },
+        {
+          "image": "2023-05-11_11.21.03",
+          "observation": "left后：银风道"
+        },
+        {
+          "image": "2023-05-11_11.22.19",
+          "observation": "left后：银圆风管"
+        },
+        {
+          "image": "2023-05-11_11.23.11",
+          "observation": "left后：银色圆风道"
+        },
+        {
+          "image": "2023-05-11_11.23.47",
+          "observation": "left上：银色横风道"
+        },
+        {
+          "image": "2023-05-11_11.24.32",
+          "observation": "left：银风道"
+        },
+        {
+          "image": "2023-05-11_11.25.58",
+          "observation": "left/up：银色横风管"
+        },
+        {
+          "image": "2023-05-11_11.26.42",
+          "observation": "left/up：银色横向波纹风管；不包含旁边银色立筒"
+        },
+        {
+          "image": "2023-05-11_11.27.29",
+          "observation": "left/up：银色横向波纹风管；不包含旁边银色立筒"
+        },
+        {
+          "image": "2023-05-11_11.40.51",
+          "observation": "left/up：银色横向波纹风管；不包含旁边银色立筒"
+        },
+        {
+          "image": "2023-05-11_11.41.29",
+          "observation": "left/up：银色横向波纹风管；不包含旁边银色立筒"
+        },
+        {
+          "image": "2023-05-11_11.42.41",
+          "observation": "left/up：银色横向波纹风管，不包含下方封闭立筒"
+        }
+      ]
+    },
+    {
+      "key": "column",
+      "name_en": "structural column",
+      "name_zh": "建筑立柱",
+      "definition": "从地面延伸至顶部的粗结构支柱；场景常见红漆圆柱、黑色上端；不依据红色单独判定，也不含薄钢支架。",
+      "prompts": [
+        "a structural support column inside a building",
+        "a thick cylindrical building pillar extending from floor to ceiling",
+        "a red painted round column in an industrial room",
+        "a solid architectural pillar beside industrial pipes",
+        "a large smooth concrete support column"
+      ],
+      "traits": [
+        "粗实心感圆柱",
+        "贯通地顶",
+        "无设备接头"
+      ],
+      "confusions": [
+        "tank",
+        "pipe",
+        "wall",
+        "support"
+      ],
+      "official_ids": [
+        12
+      ],
+      "confidence": "high",
+      "uncertainty": "CIVILS为建筑结构上层映射，不是官方逐像素柱标签。",
+      "id": 8,
+      "row": 8,
+      "official_mapping": [
+        {
+          "id": 12,
+          "name": "CIVILS",
+          "relation": "category-level reference; not a pixel assignment"
+        }
+      ],
+      "observed_training_images": [
+        "2023-05-11_10.18.46",
+        "2023-05-11_10.19.36",
+        "2023-05-11_10.21.23",
+        "2023-05-11_10.21.59",
+        "2023-05-11_10.23.17",
+        "2023-05-11_10.24.12",
+        "2023-05-11_10.24.58",
+        "2023-05-11_10.25.43",
+        "2023-05-11_10.26.29",
+        "2023-05-11_10.27.16",
+        "2023-05-11_10.28.04",
+        "2023-05-11_10.29.30",
+        "2023-05-11_10.30.18",
+        "2023-05-11_10.31.04",
+        "2023-05-11_10.31.46",
+        "2023-05-11_10.32.30",
+        "2023-05-11_10.34.42",
+        "2023-05-11_10.35.28",
+        "2023-05-11_10.36.15",
+        "2023-05-11_10.37.00",
+        "2023-05-11_10.38.31",
+        "2023-05-11_10.39.59",
+        "2023-05-11_10.40.42",
+        "2023-05-11_10.41.41",
+        "2023-05-11_10.43.09",
+        "2023-05-11_10.43.53",
+        "2023-05-11_10.44.56",
+        "2023-05-11_10.46.27",
+        "2023-05-11_10.47.16",
+        "2023-05-11_10.47.59",
+        "2023-05-11_10.48.42",
+        "2023-05-11_10.49.28",
+        "2023-05-11_10.50.14",
+        "2023-05-11_10.50.58",
+        "2023-05-11_10.51.42",
+        "2023-05-11_10.53.53",
+        "2023-05-11_11.05.51",
+        "2023-05-11_11.06.26",
+        "2023-05-11_11.07.13",
+        "2023-05-11_11.08.41",
+        "2023-05-11_11.18.15",
+        "2023-05-11_11.19.30",
+        "2023-05-11_11.21.03",
+        "2023-05-11_11.22.19",
+        "2023-05-11_11.23.11",
+        "2023-05-11_11.23.47",
+        "2023-05-11_11.24.32",
+        "2023-05-11_11.25.58",
+        "2023-05-11_11.26.42",
+        "2023-05-11_11.27.29",
+        "2023-05-11_11.40.51",
+        "2023-05-11_11.41.29",
+        "2023-05-11_11.42.41"
+      ],
+      "observed_image_count": 53,
+      "evidence": [
+        {
+          "image": "2023-05-11_10.18.46",
+          "observation": "ERP左中、left：粗大红色圆柱，上端黑色并延伸至顶面；不是凭红色判定机械设备"
+        },
+        {
+          "image": "2023-05-11_10.19.36",
+          "observation": "left：红黑两段粗圆柱，底端直接落地"
+        },
+        {
+          "image": "2023-05-11_10.21.23",
+          "observation": "left：红色粗圆柱，黑色上段"
+        },
+        {
+          "image": "2023-05-11_10.21.59",
+          "observation": "left：较远的红色圆柱及黑色顶部"
+        },
+        {
+          "image": "2023-05-11_10.23.17",
+          "observation": "left：红黑圆柱，后方机组遮挡局部"
+        },
+        {
+          "image": "2023-05-11_10.24.12",
+          "observation": "left远处：红色粗圆柱"
+        },
+        {
+          "image": "2023-05-11_10.24.58",
+          "observation": "left远端：红黑圆柱"
+        },
+        {
+          "image": "2023-05-11_10.25.43",
+          "observation": "left：红色大圆柱"
+        },
+        {
+          "image": "2023-05-11_10.26.29",
+          "observation": "left：红黑圆柱"
+        },
+        {
+          "image": "2023-05-11_10.27.16",
+          "observation": "left/front远端：红色圆柱延伸至黑色顶部"
+        },
+        {
+          "image": "2023-05-11_10.28.04",
+          "observation": "left/front：红黑粗圆柱"
+        },
+        {
+          "image": "2023-05-11_10.29.30",
+          "observation": "back/left：红色粗圆柱"
+        },
+        {
+          "image": "2023-05-11_10.30.18",
+          "observation": "front/back：红黑粗圆柱"
+        },
+        {
+          "image": "2023-05-11_10.31.04",
+          "observation": "front/back：红色圆柱"
+        },
+        {
+          "image": "2023-05-11_10.31.46",
+          "observation": "front左/back：红色圆柱"
+        },
+        {
+          "image": "2023-05-11_10.32.30",
+          "observation": "left：红黑圆柱"
+        },
+        {
+          "image": "2023-05-11_10.34.42",
+          "observation": "front中：红黑粗圆柱"
+        },
+        {
+          "image": "2023-05-11_10.35.28",
+          "observation": "front：红圆柱"
+        },
+        {
+          "image": "2023-05-11_10.36.15",
+          "observation": "front中：红柱"
+        },
+        {
+          "image": "2023-05-11_10.37.00",
+          "observation": "right：红色粗圆柱"
+        },
+        {
+          "image": "2023-05-11_10.38.31",
+          "observation": "front：红色圆柱"
+        },
+        {
+          "image": "2023-05-11_10.39.59",
+          "observation": "远处红柱"
+        },
+        {
+          "image": "2023-05-11_10.40.42",
+          "observation": "left后：红柱"
+        },
+        {
+          "image": "2023-05-11_10.41.41",
+          "observation": "front右：红色粗柱"
+        },
+        {
+          "image": "2023-05-11_10.43.09",
+          "observation": "front：红色结构圆柱"
+        },
+        {
+          "image": "2023-05-11_10.43.53",
+          "observation": "front：红色圆柱"
+        },
+        {
+          "image": "2023-05-11_10.44.56",
+          "observation": "front左：红色粗圆柱"
+        },
+        {
+          "image": "2023-05-11_10.46.27",
+          "observation": "left：红柱"
+        },
+        {
+          "image": "2023-05-11_10.47.16",
+          "observation": "left：红圆柱"
+        },
+        {
+          "image": "2023-05-11_10.47.59",
+          "observation": "left近：红柱"
+        },
+        {
+          "image": "2023-05-11_10.48.42",
+          "observation": "left：红色粗柱"
+        },
+        {
+          "image": "2023-05-11_10.49.28",
+          "observation": "front近：红色粗圆柱"
+        },
+        {
+          "image": "2023-05-11_10.50.14",
+          "observation": "front：红色粗柱黑顶"
+        },
+        {
+          "image": "2023-05-11_10.50.58",
+          "observation": "front：红色粗柱"
+        },
+        {
+          "image": "2023-05-11_10.51.42",
+          "observation": "front：红柱"
+        },
+        {
+          "image": "2023-05-11_10.53.53",
+          "observation": "right：红色圆柱"
+        },
+        {
+          "image": "2023-05-11_11.05.51",
+          "observation": "right：红圆柱"
+        },
+        {
+          "image": "2023-05-11_11.06.26",
+          "observation": "right：红圆柱"
+        },
+        {
+          "image": "2023-05-11_11.07.13",
+          "observation": "right：红圆柱"
+        },
+        {
+          "image": "2023-05-11_11.08.41",
+          "observation": "right：红圆柱"
+        },
+        {
+          "image": "2023-05-11_11.18.15",
+          "observation": "right：红柱"
+        },
+        {
+          "image": "2023-05-11_11.19.30",
+          "observation": "left：红色圆柱"
+        },
+        {
+          "image": "2023-05-11_11.21.03",
+          "observation": "left：红圆柱"
+        },
+        {
+          "image": "2023-05-11_11.22.19",
+          "observation": "left远：红圆柱"
+        },
+        {
+          "image": "2023-05-11_11.23.11",
+          "observation": "left远：红柱"
+        },
+        {
+          "image": "2023-05-11_11.23.47",
+          "observation": "left：红柱"
+        },
+        {
+          "image": "2023-05-11_11.24.32",
+          "observation": "left：红柱"
+        },
+        {
+          "image": "2023-05-11_11.25.58",
+          "observation": "left/back：红柱"
+        },
+        {
+          "image": "2023-05-11_11.26.42",
+          "observation": "left远：红柱"
+        },
+        {
+          "image": "2023-05-11_11.27.29",
+          "observation": "right远：红柱"
+        },
+        {
+          "image": "2023-05-11_11.40.51",
+          "observation": "right后：红柱"
+        },
+        {
+          "image": "2023-05-11_11.41.29",
+          "observation": "right远：红柱"
+        },
+        {
+          "image": "2023-05-11_11.42.41",
+          "observation": "right远：红圆柱"
+        }
+      ]
+    },
+    {
+      "key": "support",
+      "name_en": "metal support frame",
+      "name_zh": "金属支架",
+      "definition": "支承管线设备的细金属柱、打孔槽钢、角钢、横梁及钢底座；不含建筑粗柱、护栏、梯子和承缆网篮。",
+      "prompts": [
+        "a metal support frame for industrial equipment",
+        "a slender galvanized steel post with rows of holes",
+        "perforated steel channels supporting overhead pipes",
+        "a bolted metal upright with a flat foot plate",
+        "steel brackets and support beams around industrial machinery"
+      ],
+      "traits": [
+        "细长打孔钢材",
+        "底板螺栓",
+        "支撑连接"
+      ],
+      "confusions": [
+        "column",
+        "guardrail",
+        "ladder",
+        "cable_tray"
+      ],
+      "official_ids": [
+        24,
+        6
+      ],
+      "confidence": "high",
+      "id": 9,
+      "row": 9,
+      "official_mapping": [
+        {
+          "id": 24,
+          "name": "SUPPORTS",
+          "relation": "category-level reference; not a pixel assignment"
+        },
+        {
+          "id": 6,
+          "name": "BEAMS",
+          "relation": "category-level reference; not a pixel assignment"
+        }
+      ],
+      "observed_training_images": [
+        "2023-05-11_10.18.46",
+        "2023-05-11_10.19.36",
+        "2023-05-11_10.21.23",
+        "2023-05-11_10.21.59",
+        "2023-05-11_10.23.17",
+        "2023-05-11_10.24.12",
+        "2023-05-11_10.24.58",
+        "2023-05-11_10.25.43",
+        "2023-05-11_10.26.29",
+        "2023-05-11_10.27.16",
+        "2023-05-11_10.28.04",
+        "2023-05-11_10.29.30",
+        "2023-05-11_10.30.18",
+        "2023-05-11_10.31.04",
+        "2023-05-11_10.31.46",
+        "2023-05-11_10.32.30",
+        "2023-05-11_10.34.42",
+        "2023-05-11_10.35.28",
+        "2023-05-11_10.36.15",
+        "2023-05-11_10.37.00",
+        "2023-05-11_10.38.31",
+        "2023-05-11_10.39.59",
+        "2023-05-11_10.40.42",
+        "2023-05-11_10.41.41",
+        "2023-05-11_10.43.09",
+        "2023-05-11_10.43.53",
+        "2023-05-11_10.44.56",
+        "2023-05-11_10.46.27",
+        "2023-05-11_10.47.16",
+        "2023-05-11_10.47.59",
+        "2023-05-11_10.48.42",
+        "2023-05-11_10.49.28",
+        "2023-05-11_10.50.14",
+        "2023-05-11_10.50.58",
+        "2023-05-11_10.51.42",
+        "2023-05-11_10.53.53",
+        "2023-05-11_11.00.55",
+        "2023-05-11_11.04.22",
+        "2023-05-11_11.05.01",
+        "2023-05-11_11.05.51",
+        "2023-05-11_11.06.26",
+        "2023-05-11_11.07.13",
+        "2023-05-11_11.08.41",
+        "2023-05-11_11.18.15",
+        "2023-05-11_11.19.30",
+        "2023-05-11_11.21.03",
+        "2023-05-11_11.22.19",
+        "2023-05-11_11.23.11",
+        "2023-05-11_11.23.47",
+        "2023-05-11_11.24.32",
+        "2023-05-11_11.25.58",
+        "2023-05-11_11.26.42",
+        "2023-05-11_11.27.29",
+        "2023-05-11_11.40.51",
+        "2023-05-11_11.41.29",
+        "2023-05-11_11.42.41"
+      ],
+      "observed_image_count": 56,
+      "evidence": [
+        {
+          "image": "2023-05-11_10.18.46",
+          "observation": "front/left：细长打孔镀锌立杆、横梁和地脚板"
+        },
+        {
+          "image": "2023-05-11_10.19.36",
+          "observation": "front/right：打孔金属立柱及横梁，截面较小且有地脚螺栓"
+        },
+        {
+          "image": "2023-05-11_10.21.23",
+          "observation": "front/right近处：镀锌打孔立杆，地脚板固定在地面"
+        },
+        {
+          "image": "2023-05-11_10.21.59",
+          "observation": "front右：带矩形孔的金属竖杆与直角连接横梁"
+        },
+        {
+          "image": "2023-05-11_10.23.17",
+          "observation": "ERP左近处/up：打孔立杆和平台横梁"
+        },
+        {
+          "image": "2023-05-11_10.24.12",
+          "observation": "left/down：细长打孔金属杆及脚板"
+        },
+        {
+          "image": "2023-05-11_10.24.58",
+          "observation": "left/up：打孔竖杆和金属梁"
+        },
+        {
+          "image": "2023-05-11_10.25.43",
+          "observation": "front/left：镀锌打孔杆、直角横梁和脚座"
+        },
+        {
+          "image": "2023-05-11_10.26.29",
+          "observation": "front/left：打孔竖杆和地脚板"
+        },
+        {
+          "image": "2023-05-11_10.27.16",
+          "observation": "front/ERP两侧：打孔金属架、脚板与横梁"
+        },
+        {
+          "image": "2023-05-11_10.28.04",
+          "observation": "front/left：细打孔钢架"
+        },
+        {
+          "image": "2023-05-11_10.29.30",
+          "observation": "front近处：打孔钢柱带平脚板"
+        },
+        {
+          "image": "2023-05-11_10.30.18",
+          "observation": "front/left：细打孔钢架和薄圆支撑杆"
+        },
+        {
+          "image": "2023-05-11_10.31.04",
+          "observation": "front/left：打孔细钢杆及横梁"
+        },
+        {
+          "image": "2023-05-11_10.31.46",
+          "observation": "front/right：打孔钢立杆及横梁"
+        },
+        {
+          "image": "2023-05-11_10.32.30",
+          "observation": "front近处：打孔钢立杆"
+        },
+        {
+          "image": "2023-05-11_10.34.42",
+          "observation": "right：打孔钢立杆及设备底座"
+        },
+        {
+          "image": "2023-05-11_10.35.28",
+          "observation": "right：细钢支架"
+        },
+        {
+          "image": "2023-05-11_10.36.15",
+          "observation": "前方：细钢立柱和横梁"
+        },
+        {
+          "image": "2023-05-11_10.37.00",
+          "observation": "right：打孔钢杆"
+        },
+        {
+          "image": "2023-05-11_10.38.31",
+          "observation": "right：细打孔钢架"
+        },
+        {
+          "image": "2023-05-11_10.39.59",
+          "observation": "left/up：镀锌角钢和打孔梁"
+        },
+        {
+          "image": "2023-05-11_10.40.42",
+          "observation": "left/front：细钢架"
+        },
+        {
+          "image": "2023-05-11_10.41.41",
+          "observation": "right：打孔立杆与梁"
+        },
+        {
+          "image": "2023-05-11_10.43.09",
+          "observation": "front近：打孔钢立杆及底板"
+        },
+        {
+          "image": "2023-05-11_10.43.53",
+          "observation": "front：带孔钢立柱"
+        },
+        {
+          "image": "2023-05-11_10.44.56",
+          "observation": "left/up：打孔钢立杆与梁"
+        },
+        {
+          "image": "2023-05-11_10.46.27",
+          "observation": "left：带孔钢立柱"
+        },
+        {
+          "image": "2023-05-11_10.47.16",
+          "observation": "left：细钢架"
+        },
+        {
+          "image": "2023-05-11_10.47.59",
+          "observation": "left/front：打孔细钢柱"
+        },
+        {
+          "image": "2023-05-11_10.48.42",
+          "observation": "front左：打孔钢柱和底板"
+        },
+        {
+          "image": "2023-05-11_10.49.28",
+          "observation": "left近：打孔镀锌钢柱"
+        },
+        {
+          "image": "2023-05-11_10.50.14",
+          "observation": "left/front：打孔钢柱"
+        },
+        {
+          "image": "2023-05-11_10.50.58",
+          "observation": "right近：打孔钢柱"
+        },
+        {
+          "image": "2023-05-11_10.51.42",
+          "observation": "right近：带孔钢柱"
+        },
+        {
+          "image": "2023-05-11_10.53.53",
+          "observation": "left：打孔钢柱"
+        },
+        {
+          "image": "2023-05-11_11.00.55",
+          "observation": "right近：打孔钢柱"
+        },
+        {
+          "image": "2023-05-11_11.04.22",
+          "observation": "front：打孔钢支承杆"
+        },
+        {
+          "image": "2023-05-11_11.05.01",
+          "observation": "left：带孔竖杆和横梁"
+        },
+        {
+          "image": "2023-05-11_11.05.51",
+          "observation": "front：细打孔钢柱"
+        },
+        {
+          "image": "2023-05-11_11.06.26",
+          "observation": "front：打孔支架"
+        },
+        {
+          "image": "2023-05-11_11.07.13",
+          "observation": "front：细打孔钢柱"
+        },
+        {
+          "image": "2023-05-11_11.08.41",
+          "observation": "front：打孔钢架"
+        },
+        {
+          "image": "2023-05-11_11.18.15",
+          "observation": "front：带孔钢柱"
+        },
+        {
+          "image": "2023-05-11_11.19.30",
+          "observation": "right近：打孔钢柱和横梁"
+        },
+        {
+          "image": "2023-05-11_11.21.03",
+          "observation": "left近：打孔钢柱底板"
+        },
+        {
+          "image": "2023-05-11_11.22.19",
+          "observation": "front/left：镀锌打孔杆"
+        },
+        {
+          "image": "2023-05-11_11.23.11",
+          "observation": "front：打孔钢架"
+        },
+        {
+          "image": "2023-05-11_11.23.47",
+          "observation": "right近：带孔钢杆"
+        },
+        {
+          "image": "2023-05-11_11.24.32",
+          "observation": "right近：打孔钢柱"
+        },
+        {
+          "image": "2023-05-11_11.25.58",
+          "observation": "front左：打孔柱与泵侧钢支撑"
+        },
+        {
+          "image": "2023-05-11_11.26.42",
+          "observation": "front左近：打孔钢柱"
+        },
+        {
+          "image": "2023-05-11_11.27.29",
+          "observation": "front近：打孔钢架"
+        },
+        {
+          "image": "2023-05-11_11.40.51",
+          "observation": "front/right：带孔钢架和细钢撑"
+        },
+        {
+          "image": "2023-05-11_11.41.29",
+          "observation": "front近：打孔钢柱与横梁底板"
+        },
+        {
+          "image": "2023-05-11_11.42.41",
+          "observation": "front左：打孔细钢柱；right泵侧钢架"
+        }
+      ]
+    },
+    {
+      "key": "ladder",
+      "name_en": "access ladder",
+      "name_zh": "检修爬梯",
+      "definition": "竖直梯级、梯侧梁及其安全笼；排除有宽踏面的楼梯和水平走台。",
+      "prompts": [
+        "a vertical industrial access ladder",
+        "a metal ladder with horizontal rungs",
+        "a galvanized safety cage ladder leading to a maintenance platform",
+        "a vertical ladder surrounded by circular protective hoops"
+      ],
+      "traits": [
+        "规则横梯级",
+        "竖侧梁",
+        "环形安全笼"
+      ],
+      "confusions": [
+        "guardrail",
+        "support",
+        "stairs"
+      ],
+      "official_ids": [
+        31
+      ],
+      "confidence": "high",
+      "id": 10,
+      "row": 10,
+      "official_mapping": [
+        {
+          "id": 31,
+          "name": "LADDERS",
+          "relation": "category-level reference; not a pixel assignment"
+        }
+      ],
+      "observed_training_images": [
+        "2023-05-11_10.34.42",
+        "2023-05-11_10.35.28",
+        "2023-05-11_10.36.15",
+        "2023-05-11_10.37.00",
+        "2023-05-11_10.43.09",
+        "2023-05-11_10.43.53",
+        "2023-05-11_10.44.56",
+        "2023-05-11_10.46.27",
+        "2023-05-11_10.47.16",
+        "2023-05-11_10.47.59",
+        "2023-05-11_10.48.42",
+        "2023-05-11_10.49.28",
+        "2023-05-11_10.50.14",
+        "2023-05-11_10.50.58",
+        "2023-05-11_10.51.42",
+        "2023-05-11_11.21.03",
+        "2023-05-11_11.23.11"
+      ],
+      "observed_image_count": 17,
+      "evidence": [
+        {
+          "image": "2023-05-11_10.34.42",
+          "observation": "right：竖直梯级和圆弧安全笼"
+        },
+        {
+          "image": "2023-05-11_10.35.28",
+          "observation": "right后：安全笼梯"
+        },
+        {
+          "image": "2023-05-11_10.36.15",
+          "observation": "right上：笼梯"
+        },
+        {
+          "image": "2023-05-11_10.37.00",
+          "observation": "right远：安全笼梯"
+        },
+        {
+          "image": "2023-05-11_10.43.09",
+          "observation": "right上：笼梯"
+        },
+        {
+          "image": "2023-05-11_10.43.53",
+          "observation": "right上：笼梯"
+        },
+        {
+          "image": "2023-05-11_10.44.56",
+          "observation": "right：完整安全笼梯"
+        },
+        {
+          "image": "2023-05-11_10.46.27",
+          "observation": "right近：银色梯级、安全笼及顶平台"
+        },
+        {
+          "image": "2023-05-11_10.47.16",
+          "observation": "right：竖梯和圆安全笼"
+        },
+        {
+          "image": "2023-05-11_10.47.59",
+          "observation": "right：笼梯"
+        },
+        {
+          "image": "2023-05-11_10.48.42",
+          "observation": "right后：安全笼梯"
+        },
+        {
+          "image": "2023-05-11_10.49.28",
+          "observation": "right：安全笼梯"
+        },
+        {
+          "image": "2023-05-11_10.50.14",
+          "observation": "right：笼梯"
+        },
+        {
+          "image": "2023-05-11_10.50.58",
+          "observation": "right后：安全笼梯"
+        },
+        {
+          "image": "2023-05-11_10.51.42",
+          "observation": "right远：安全笼梯"
+        },
+        {
+          "image": "2023-05-11_11.21.03",
+          "observation": "right后：安全笼梯"
+        },
+        {
+          "image": "2023-05-11_11.23.11",
+          "observation": "right远：安全笼梯"
+        }
+      ]
+    },
+    {
+      "key": "stairs",
+      "name_en": "stairway",
+      "name_zh": "楼梯台阶",
+      "definition": "有连续宽踏步的阶梯；不包含单一设备基座和仅有横杆的竖梯。",
+      "prompts": [
+        "an indoor stairway",
+        "a short flight of gray concrete steps",
+        "wide stair treads leading up to a doorway",
+        "industrial access stairs beside a metal handrail"
+      ],
+      "traits": [
+        "连续宽踏面",
+        "通往入口",
+        "灰色台阶"
+      ],
+      "confusions": [
+        "floor",
+        "ladder",
+        "grating"
+      ],
+      "official_ids": [
+        12
+      ],
+      "confidence": "high",
+      "id": 11,
+      "row": 11,
+      "official_mapping": [
+        {
+          "id": 12,
+          "name": "CIVILS",
+          "relation": "category-level reference; not a pixel assignment"
+        }
+      ],
+      "observed_training_images": [
+        "2023-05-11_10.18.46",
+        "2023-05-11_10.19.36",
+        "2023-05-11_10.21.23",
+        "2023-05-11_10.21.59",
+        "2023-05-11_10.23.17",
+        "2023-05-11_10.24.12",
+        "2023-05-11_10.24.58",
+        "2023-05-11_10.25.43",
+        "2023-05-11_10.26.29",
+        "2023-05-11_10.27.16",
+        "2023-05-11_10.28.04",
+        "2023-05-11_10.29.30",
+        "2023-05-11_10.30.18",
+        "2023-05-11_10.31.04",
+        "2023-05-11_10.31.46",
+        "2023-05-11_10.38.31",
+        "2023-05-11_10.39.59",
+        "2023-05-11_10.40.42",
+        "2023-05-11_10.41.41",
+        "2023-05-11_10.43.09",
+        "2023-05-11_10.43.53"
+      ],
+      "observed_image_count": 21,
+      "evidence": [
+        {
+          "image": "2023-05-11_10.18.46",
+          "observation": "right：灰色宽台阶"
+        },
+        {
+          "image": "2023-05-11_10.19.36",
+          "observation": "right：门前宽台阶"
+        },
+        {
+          "image": "2023-05-11_10.21.23",
+          "observation": "right：台阶抬升至入口"
+        },
+        {
+          "image": "2023-05-11_10.21.59",
+          "observation": "right：灰色宽台阶"
+        },
+        {
+          "image": "2023-05-11_10.23.17",
+          "observation": "right：宽灰色台阶和平台"
+        },
+        {
+          "image": "2023-05-11_10.24.12",
+          "observation": "right：灰色台阶"
+        },
+        {
+          "image": "2023-05-11_10.24.58",
+          "observation": "right：混凝土台阶"
+        },
+        {
+          "image": "2023-05-11_10.25.43",
+          "observation": "right：灰色台阶"
+        },
+        {
+          "image": "2023-05-11_10.26.29",
+          "observation": "right：灰台阶"
+        },
+        {
+          "image": "2023-05-11_10.27.16",
+          "observation": "right后：灰台阶"
+        },
+        {
+          "image": "2023-05-11_10.28.04",
+          "observation": "right后：灰色台阶"
+        },
+        {
+          "image": "2023-05-11_10.29.30",
+          "observation": "right后：入口台阶"
+        },
+        {
+          "image": "2023-05-11_10.30.18",
+          "observation": "right后：入口阶梯"
+        },
+        {
+          "image": "2023-05-11_10.31.04",
+          "observation": "right后：灰色台阶"
+        },
+        {
+          "image": "2023-05-11_10.31.46",
+          "observation": "right后：灰台阶"
+        },
+        {
+          "image": "2023-05-11_10.38.31",
+          "observation": "right后：灰色台阶"
+        },
+        {
+          "image": "2023-05-11_10.39.59",
+          "observation": "right远：台阶"
+        },
+        {
+          "image": "2023-05-11_10.40.42",
+          "observation": "front远：灰台阶"
+        },
+        {
+          "image": "2023-05-11_10.41.41",
+          "observation": "right后：台阶"
+        },
+        {
+          "image": "2023-05-11_10.43.09",
+          "observation": "front后：短灰色阶梯"
+        },
+        {
+          "image": "2023-05-11_10.43.53",
+          "observation": "front后：灰短台阶"
+        }
+      ]
+    },
+    {
+      "key": "guardrail",
+      "name_en": "guardrail",
+      "name_zh": "护栏扶手",
+      "definition": "围住设备、通道或楼梯的水平/斜扶手及立柱；不含管路、承重支架和安全笼梯。",
+      "prompts": [
+        "a metal safety guardrail",
+        "a silver handrail along industrial access steps",
+        "horizontal metal rails around a recessed equipment area",
+        "a protective railing with upright posts and tubular bars"
+      ],
+      "traits": [
+        "横栏或斜扶手",
+        "规则立柱",
+        "沿人行/设备边缘"
+      ],
+      "confusions": [
+        "pipe",
+        "support",
+        "ladder"
+      ],
+      "official_ids": [
+        21
+      ],
+      "confidence": "high",
+      "id": 12,
+      "row": 12,
+      "official_mapping": [
+        {
+          "id": 21,
+          "name": "GUARDRAILS",
+          "relation": "category-level reference; not a pixel assignment"
+        }
+      ],
+      "observed_training_images": [
+        "2023-05-11_10.18.46",
+        "2023-05-11_10.19.36",
+        "2023-05-11_10.21.23",
+        "2023-05-11_10.21.59",
+        "2023-05-11_10.23.17",
+        "2023-05-11_10.24.12",
+        "2023-05-11_10.24.58",
+        "2023-05-11_10.25.43",
+        "2023-05-11_10.26.29",
+        "2023-05-11_10.27.16",
+        "2023-05-11_10.28.04",
+        "2023-05-11_10.29.30",
+        "2023-05-11_10.30.18",
+        "2023-05-11_10.31.04",
+        "2023-05-11_10.31.46",
+        "2023-05-11_10.38.31",
+        "2023-05-11_10.39.59",
+        "2023-05-11_10.40.42",
+        "2023-05-11_10.41.41",
+        "2023-05-11_10.43.09",
+        "2023-05-11_10.43.53",
+        "2023-05-11_10.44.56",
+        "2023-05-11_10.46.27",
+        "2023-05-11_10.47.16",
+        "2023-05-11_10.47.59",
+        "2023-05-11_10.48.42",
+        "2023-05-11_10.49.28",
+        "2023-05-11_10.50.14",
+        "2023-05-11_11.05.51",
+        "2023-05-11_11.06.26",
+        "2023-05-11_11.07.13",
+        "2023-05-11_11.08.41",
+        "2023-05-11_11.18.15",
+        "2023-05-11_11.19.30",
+        "2023-05-11_11.21.03",
+        "2023-05-11_11.22.19",
+        "2023-05-11_11.23.11",
+        "2023-05-11_11.23.47",
+        "2023-05-11_11.24.32",
+        "2023-05-11_11.25.58",
+        "2023-05-11_11.26.42",
+        "2023-05-11_11.27.29",
+        "2023-05-11_11.40.51"
+      ],
+      "observed_image_count": 43,
+      "evidence": [
+        {
+          "image": "2023-05-11_10.18.46",
+          "observation": "right：台阶旁细金属扶手"
+        },
+        {
+          "image": "2023-05-11_10.19.36",
+          "observation": "right：金属扶手及平台栏杆"
+        },
+        {
+          "image": "2023-05-11_10.21.23",
+          "observation": "right：斜扶手和水平栏杆"
+        },
+        {
+          "image": "2023-05-11_10.21.59",
+          "observation": "right：台阶扶手，连续斜杆与竖杆"
+        },
+        {
+          "image": "2023-05-11_10.23.17",
+          "observation": "right：斜向双横杆扶手，柜后通道也有栏杆"
+        },
+        {
+          "image": "2023-05-11_10.24.12",
+          "observation": "right：台阶扶手与检修通道围栏"
+        },
+        {
+          "image": "2023-05-11_10.24.58",
+          "observation": "right：细金属扶手及通道栏杆"
+        },
+        {
+          "image": "2023-05-11_10.25.43",
+          "observation": "right：入口和走道金属围栏"
+        },
+        {
+          "image": "2023-05-11_10.26.29",
+          "observation": "right：细灰金属扶手"
+        },
+        {
+          "image": "2023-05-11_10.27.16",
+          "observation": "right后：台阶围栏"
+        },
+        {
+          "image": "2023-05-11_10.28.04",
+          "observation": "right后：金属围栏"
+        },
+        {
+          "image": "2023-05-11_10.29.30",
+          "observation": "right后：平台与阶梯围栏"
+        },
+        {
+          "image": "2023-05-11_10.30.18",
+          "observation": "right后：金属扶手"
+        },
+        {
+          "image": "2023-05-11_10.31.04",
+          "observation": "right后：围栏"
+        },
+        {
+          "image": "2023-05-11_10.31.46",
+          "observation": "right后：楼梯扶手"
+        },
+        {
+          "image": "2023-05-11_10.38.31",
+          "observation": "right后：斜扶手"
+        },
+        {
+          "image": "2023-05-11_10.39.59",
+          "observation": "right远：扶手"
+        },
+        {
+          "image": "2023-05-11_10.40.42",
+          "observation": "front远：斜扶手"
+        },
+        {
+          "image": "2023-05-11_10.41.41",
+          "observation": "right后：扶手"
+        },
+        {
+          "image": "2023-05-11_10.43.09",
+          "observation": "right泵后：细金属围栏"
+        },
+        {
+          "image": "2023-05-11_10.43.53",
+          "observation": "右泵后细栏杆"
+        },
+        {
+          "image": "2023-05-11_10.44.56",
+          "observation": "front泵后：横向金属护栏"
+        },
+        {
+          "image": "2023-05-11_10.46.27",
+          "observation": "front后：细钢护栏"
+        },
+        {
+          "image": "2023-05-11_10.47.16",
+          "observation": "front：围绕设备的横栏"
+        },
+        {
+          "image": "2023-05-11_10.47.59",
+          "observation": "front：细银色横栏"
+        },
+        {
+          "image": "2023-05-11_10.48.42",
+          "observation": "front：水平银色栏杆"
+        },
+        {
+          "image": "2023-05-11_10.49.28",
+          "observation": "right泵区：银色栏杆"
+        },
+        {
+          "image": "2023-05-11_10.50.14",
+          "observation": "right：低位横栏"
+        },
+        {
+          "image": "2023-05-11_11.05.51",
+          "observation": "front远：银色低栏杆"
+        },
+        {
+          "image": "2023-05-11_11.06.26",
+          "observation": "front右：设备低护栏"
+        },
+        {
+          "image": "2023-05-11_11.07.13",
+          "observation": "right：银色低护栏"
+        },
+        {
+          "image": "2023-05-11_11.08.41",
+          "observation": "front右：金属低栏杆"
+        },
+        {
+          "image": "2023-05-11_11.18.15",
+          "observation": "right：设备低护栏"
+        },
+        {
+          "image": "2023-05-11_11.19.30",
+          "observation": "right：设备外围银栏"
+        },
+        {
+          "image": "2023-05-11_11.21.03",
+          "observation": "front/right：银色横管护栏和方立柱"
+        },
+        {
+          "image": "2023-05-11_11.22.19",
+          "observation": "right下：银色横栏"
+        },
+        {
+          "image": "2023-05-11_11.23.11",
+          "observation": "right近：银色双横栏与方立杆"
+        },
+        {
+          "image": "2023-05-11_11.23.47",
+          "observation": "right：银色低栏杆"
+        },
+        {
+          "image": "2023-05-11_11.24.32",
+          "observation": "right：金属双横栏"
+        },
+        {
+          "image": "2023-05-11_11.25.58",
+          "observation": "right：立管区护栏"
+        },
+        {
+          "image": "2023-05-11_11.26.42",
+          "observation": "right：立管组低栏杆"
+        },
+        {
+          "image": "2023-05-11_11.27.29",
+          "observation": "right：立管区银色横栏"
+        },
+        {
+          "image": "2023-05-11_11.40.51",
+          "observation": "right后：阀组低栏杆"
+        }
+      ]
+    },
+    {
+      "key": "grating",
+      "name_en": "maintenance platform grating",
+      "name_zh": "检修平台格栅",
+      "definition": "可供站立的检修走台网格踏面；区别于内部承载电缆的窄网篮。",
+      "prompts": [
+        "an industrial maintenance platform grating",
+        "a metal mesh walkway above equipment",
+        "a steel grating floor on an elevated access platform",
+        "a rigid grid of metal bars forming a service platform"
+      ],
+      "traits": [
+        "平坦承人平台",
+        "粗网格踏面",
+        "关联检修梯"
+      ],
+      "confusions": [
+        "cable_tray",
+        "stairs",
+        "support"
+      ],
+      "official_ids": [
+        2
+      ],
+      "confidence": "medium",
+      "uncertainty": "多从底面观察，面积小，与电缆桥架密集重叠。",
+      "id": 13,
+      "row": 13,
+      "official_mapping": [
+        {
+          "id": 2,
+          "name": "GRATINGS",
+          "relation": "category-level reference; not a pixel assignment"
+        }
+      ],
+      "observed_training_images": [
+        "2023-05-11_10.18.46",
+        "2023-05-11_10.21.23",
+        "2023-05-11_10.21.59",
+        "2023-05-11_10.23.17",
+        "2023-05-11_10.24.12",
+        "2023-05-11_10.24.58",
+        "2023-05-11_10.25.43",
+        "2023-05-11_10.31.46",
+        "2023-05-11_10.32.30",
+        "2023-05-11_10.46.27",
+        "2023-05-11_10.47.16",
+        "2023-05-11_10.47.59"
+      ],
+      "observed_image_count": 12,
+      "evidence": [
+        {
+          "image": "2023-05-11_10.18.46",
+          "observation": "right上方：钢框中网格检修平台"
+        },
+        {
+          "image": "2023-05-11_10.21.23",
+          "observation": "right上方：灰色网格平台底面"
+        },
+        {
+          "image": "2023-05-11_10.21.59",
+          "observation": "right上部：钢框中的网格平台"
+        },
+        {
+          "image": "2023-05-11_10.23.17",
+          "observation": "front右地面：深灰规则网格检修走道"
+        },
+        {
+          "image": "2023-05-11_10.24.12",
+          "observation": "front右后地面：网格走道"
+        },
+        {
+          "image": "2023-05-11_10.24.58",
+          "observation": "right下方：深色网格走道"
+        },
+        {
+          "image": "2023-05-11_10.25.43",
+          "observation": "柜后右下：网格走道"
+        },
+        {
+          "image": "2023-05-11_10.31.46",
+          "observation": "front上：格栅走台底面"
+        },
+        {
+          "image": "2023-05-11_10.32.30",
+          "observation": "up/right：网格检修平台"
+        },
+        {
+          "image": "2023-05-11_10.46.27",
+          "observation": "up：梯顶平台网格"
+        },
+        {
+          "image": "2023-05-11_10.47.16",
+          "observation": "right上：检修平台"
+        },
+        {
+          "image": "2023-05-11_10.47.59",
+          "observation": "right上：检修平台"
+        }
+      ]
+    },
+    {
+      "key": "floor",
+      "name_en": "floor",
+      "name_zh": "地面及土建基座",
+      "definition": "灰色地坪、混凝土凸台和粗糙土建基础；不含连续楼梯、钢制底架和泵体。",
+      "prompts": [
+        "a concrete industrial floor",
+        "a gray painted floor with scuffs and stains",
+        "a raised concrete equipment foundation beside a walkway",
+        "a plant room floor with yellow and black edge markings",
+        "the horizontal ground surface underneath machinery"
+      ],
+      "traits": [
+        "水平灰面",
+        "磨损或污渍",
+        "混凝土设备基础"
+      ],
+      "confusions": [
+        "stairs",
+        "wall",
+        "pump_motor"
+      ],
+      "official_ids": [
+        12
+      ],
+      "confidence": "high",
+      "id": 14,
+      "row": 14,
+      "official_mapping": [
+        {
+          "id": 12,
+          "name": "CIVILS",
+          "relation": "category-level reference; not a pixel assignment"
+        }
+      ],
+      "observed_training_images": [
+        "2023-05-11_10.18.46",
+        "2023-05-11_10.19.36",
+        "2023-05-11_10.21.23",
+        "2023-05-11_10.21.59",
+        "2023-05-11_10.23.17",
+        "2023-05-11_10.24.12",
+        "2023-05-11_10.24.58",
+        "2023-05-11_10.25.43",
+        "2023-05-11_10.26.29",
+        "2023-05-11_10.27.16",
+        "2023-05-11_10.28.04",
+        "2023-05-11_10.29.30",
+        "2023-05-11_10.30.18",
+        "2023-05-11_10.31.04",
+        "2023-05-11_10.31.46",
+        "2023-05-11_10.32.30",
+        "2023-05-11_10.34.42",
+        "2023-05-11_10.35.28",
+        "2023-05-11_10.36.15",
+        "2023-05-11_10.37.00",
+        "2023-05-11_10.38.31",
+        "2023-05-11_10.39.59",
+        "2023-05-11_10.40.42",
+        "2023-05-11_10.41.41",
+        "2023-05-11_10.43.09",
+        "2023-05-11_10.43.53",
+        "2023-05-11_10.44.56",
+        "2023-05-11_10.46.27",
+        "2023-05-11_10.47.16",
+        "2023-05-11_10.47.59",
+        "2023-05-11_10.48.42",
+        "2023-05-11_10.49.28",
+        "2023-05-11_10.50.14",
+        "2023-05-11_10.50.58",
+        "2023-05-11_10.51.42",
+        "2023-05-11_10.53.53",
+        "2023-05-11_11.00.55",
+        "2023-05-11_11.04.22",
+        "2023-05-11_11.05.01",
+        "2023-05-11_11.05.51",
+        "2023-05-11_11.06.26",
+        "2023-05-11_11.07.13",
+        "2023-05-11_11.08.41",
+        "2023-05-11_11.18.15",
+        "2023-05-11_11.19.30",
+        "2023-05-11_11.21.03",
+        "2023-05-11_11.22.19",
+        "2023-05-11_11.23.11",
+        "2023-05-11_11.23.47",
+        "2023-05-11_11.24.32",
+        "2023-05-11_11.25.58",
+        "2023-05-11_11.26.42",
+        "2023-05-11_11.27.29",
+        "2023-05-11_11.40.51",
+        "2023-05-11_11.41.29",
+        "2023-05-11_11.42.41"
+      ],
+      "observed_image_count": 56,
+      "evidence": [
+        {
+          "image": "2023-05-11_10.18.46",
+          "observation": "down：灰色连续地坪及设备台座"
+        },
+        {
+          "image": "2023-05-11_10.19.36",
+          "observation": "down：灰色平地和设备平台边缘"
+        },
+        {
+          "image": "2023-05-11_10.21.23",
+          "observation": "down：灰色地面，支架锚栓周围略有污迹"
+        },
+        {
+          "image": "2023-05-11_10.21.59",
+          "observation": "down：灰色地面与支架脚座"
+        },
+        {
+          "image": "2023-05-11_10.23.17",
+          "observation": "down：灰色地坪和磨损黄线"
+        },
+        {
+          "image": "2023-05-11_10.24.12",
+          "observation": "down：灰色平面与台阶前区域"
+        },
+        {
+          "image": "2023-05-11_10.24.58",
+          "observation": "down：灰地面与黄色局部标线"
+        },
+        {
+          "image": "2023-05-11_10.25.43",
+          "observation": "down：灰地坪及支架脚板"
+        },
+        {
+          "image": "2023-05-11_10.26.29",
+          "observation": "down：灰色地坪"
+        },
+        {
+          "image": "2023-05-11_10.27.16",
+          "observation": "down：灰地坪及设备凸台"
+        },
+        {
+          "image": "2023-05-11_10.28.04",
+          "observation": "down：灰地坪、设备台座"
+        },
+        {
+          "image": "2023-05-11_10.29.30",
+          "observation": "down：灰地坪与 raised 设备台座"
+        },
+        {
+          "image": "2023-05-11_10.30.18",
+          "observation": "down：灰地坪与设备凸台，远处黄黑边线"
+        },
+        {
+          "image": "2023-05-11_10.31.04",
+          "observation": "down/front：灰地面及黄黑边界线"
+        },
+        {
+          "image": "2023-05-11_10.31.46",
+          "observation": "down：灰色通道"
+        },
+        {
+          "image": "2023-05-11_10.32.30",
+          "observation": "down：灰地面"
+        },
+        {
+          "image": "2023-05-11_10.34.42",
+          "observation": "down：灰地面、磨损和黄黑台阶边线"
+        },
+        {
+          "image": "2023-05-11_10.35.28",
+          "observation": "down：灰地坪和黄黑边线"
+        },
+        {
+          "image": "2023-05-11_10.36.15",
+          "observation": "down：灰地坪和黄黑设备区边线"
+        },
+        {
+          "image": "2023-05-11_10.37.00",
+          "observation": "down：灰色凸台与通道、黄黑边线"
+        },
+        {
+          "image": "2023-05-11_10.38.31",
+          "observation": "down：灰地面与抬高机座"
+        },
+        {
+          "image": "2023-05-11_10.39.59",
+          "observation": "down：灰地坪、白色粗糙机座旁有浅色碎布"
+        },
+        {
+          "image": "2023-05-11_10.40.42",
+          "observation": "down：灰色地面及机座"
+        },
+        {
+          "image": "2023-05-11_10.41.41",
+          "observation": "down：灰地面"
+        },
+        {
+          "image": "2023-05-11_10.43.09",
+          "observation": "down：灰地坪、黄黑通道边线"
+        },
+        {
+          "image": "2023-05-11_10.43.53",
+          "observation": "down：灰地坪和黄黑边沿"
+        },
+        {
+          "image": "2023-05-11_10.44.56",
+          "observation": "down：灰地坪和黄黑凹槽边界"
+        },
+        {
+          "image": "2023-05-11_10.46.27",
+          "observation": "down：灰地面、黄黑边线"
+        },
+        {
+          "image": "2023-05-11_10.47.16",
+          "observation": "down：灰地面及黄黑边沿"
+        },
+        {
+          "image": "2023-05-11_10.47.59",
+          "observation": "down：灰地面及宽黄黑条纹"
+        },
+        {
+          "image": "2023-05-11_10.48.42",
+          "observation": "down：灰色地坪和黄黑凹槽边"
+        },
+        {
+          "image": "2023-05-11_10.49.28",
+          "observation": "down：灰地坪、黄黑边线"
+        },
+        {
+          "image": "2023-05-11_10.50.14",
+          "observation": "down：灰地坪、黄黑边线"
+        },
+        {
+          "image": "2023-05-11_10.50.58",
+          "observation": "down：灰地坪及抬高区域、黄黑边线"
+        },
+        {
+          "image": "2023-05-11_10.51.42",
+          "observation": "down：灰地面、凸台和黄黑边线"
+        },
+        {
+          "image": "2023-05-11_10.53.53",
+          "observation": "down：灰地面与管线沟槽"
+        },
+        {
+          "image": "2023-05-11_11.00.55",
+          "observation": "down：灰地面与贴地黑管线"
+        },
+        {
+          "image": "2023-05-11_11.04.22",
+          "observation": "down：灰色地面和凸台"
+        },
+        {
+          "image": "2023-05-11_11.05.01",
+          "observation": "down：灰地面"
+        },
+        {
+          "image": "2023-05-11_11.05.51",
+          "observation": "down：灰地面及设备凸台，黄黑边线"
+        },
+        {
+          "image": "2023-05-11_11.06.26",
+          "observation": "down：灰地坪与黄黑边线"
+        },
+        {
+          "image": "2023-05-11_11.07.13",
+          "observation": "down：灰色地坪和黄黑边线"
+        },
+        {
+          "image": "2023-05-11_11.08.41",
+          "observation": "down：灰地坪、机座凸台和黄黑边界"
+        },
+        {
+          "image": "2023-05-11_11.18.15",
+          "observation": "down：灰地面和黄黑边沿"
+        },
+        {
+          "image": "2023-05-11_11.19.30",
+          "observation": "down：灰地坪、黄黑凹槽边"
+        },
+        {
+          "image": "2023-05-11_11.21.03",
+          "observation": "down：灰地坪与黄黑条纹"
+        },
+        {
+          "image": "2023-05-11_11.22.19",
+          "observation": "down：灰地坪和黄黑边界"
+        },
+        {
+          "image": "2023-05-11_11.23.11",
+          "observation": "down：灰地坪，设备下有黑色凹槽"
+        },
+        {
+          "image": "2023-05-11_11.23.47",
+          "observation": "down：灰地面和机座凸台"
+        },
+        {
+          "image": "2023-05-11_11.24.32",
+          "observation": "down：灰地面与白座周边凸台"
+        },
+        {
+          "image": "2023-05-11_11.25.58",
+          "observation": "down：灰地面、机座凸台"
+        },
+        {
+          "image": "2023-05-11_11.26.42",
+          "observation": "down：灰地坪和凸台"
+        },
+        {
+          "image": "2023-05-11_11.27.29",
+          "observation": "down：灰地坪和凸台"
+        },
+        {
+          "image": "2023-05-11_11.40.51",
+          "observation": "down：灰地坪，有磨损线"
+        },
+        {
+          "image": "2023-05-11_11.41.29",
+          "observation": "down：灰地面和机座台"
+        },
+        {
+          "image": "2023-05-11_11.42.41",
+          "observation": "down：灰色地坪"
+        }
+      ]
+    },
+    {
+      "key": "wall",
+      "name_en": "wall",
+      "name_zh": "墙面",
+      "definition": "建筑竖直平墙及其饰面；场景常见下红上黑的墙；不含圆柱、白机柜板和门。",
+      "prompts": [
+        "an interior building wall",
+        "a flat painted wall in an industrial plant room",
+        "a red wall with a dark upper section",
+        "a solid vertical architectural wall behind machinery",
+        "a painted concrete wall surface"
+      ],
+      "traits": [
+        "连续平面",
+        "下红上黑常见",
+        "建筑围护"
+      ],
+      "confusions": [
+        "column",
+        "cabinet",
+        "door"
+      ],
+      "official_ids": [
+        12
+      ],
+      "confidence": "high",
+      "id": 15,
+      "row": 15,
+      "official_mapping": [
+        {
+          "id": 12,
+          "name": "CIVILS",
+          "relation": "category-level reference; not a pixel assignment"
+        }
+      ],
+      "observed_training_images": [
+        "2023-05-11_10.18.46",
+        "2023-05-11_10.19.36",
+        "2023-05-11_10.21.23",
+        "2023-05-11_10.21.59",
+        "2023-05-11_10.23.17",
+        "2023-05-11_10.24.12",
+        "2023-05-11_10.24.58",
+        "2023-05-11_10.25.43",
+        "2023-05-11_10.26.29",
+        "2023-05-11_10.27.16",
+        "2023-05-11_10.28.04",
+        "2023-05-11_10.29.30",
+        "2023-05-11_10.30.18",
+        "2023-05-11_10.31.04",
+        "2023-05-11_10.31.46",
+        "2023-05-11_10.32.30",
+        "2023-05-11_10.34.42",
+        "2023-05-11_10.35.28",
+        "2023-05-11_10.36.15",
+        "2023-05-11_10.38.31",
+        "2023-05-11_10.39.59",
+        "2023-05-11_10.40.42",
+        "2023-05-11_10.41.41",
+        "2023-05-11_10.43.09",
+        "2023-05-11_10.43.53",
+        "2023-05-11_10.44.56",
+        "2023-05-11_10.46.27",
+        "2023-05-11_10.47.16",
+        "2023-05-11_10.47.59",
+        "2023-05-11_10.48.42",
+        "2023-05-11_10.49.28",
+        "2023-05-11_10.50.14",
+        "2023-05-11_10.50.58",
+        "2023-05-11_10.51.42",
+        "2023-05-11_10.53.53",
+        "2023-05-11_11.00.55",
+        "2023-05-11_11.04.22",
+        "2023-05-11_11.05.01",
+        "2023-05-11_11.05.51",
+        "2023-05-11_11.06.26",
+        "2023-05-11_11.07.13",
+        "2023-05-11_11.08.41",
+        "2023-05-11_11.18.15",
+        "2023-05-11_11.19.30",
+        "2023-05-11_11.21.03",
+        "2023-05-11_11.22.19",
+        "2023-05-11_11.23.11",
+        "2023-05-11_11.23.47",
+        "2023-05-11_11.24.32",
+        "2023-05-11_11.25.58",
+        "2023-05-11_11.26.42",
+        "2023-05-11_11.27.29",
+        "2023-05-11_11.40.51",
+        "2023-05-11_11.41.29",
+        "2023-05-11_11.42.41"
+      ],
+      "observed_image_count": 55,
+      "evidence": [
+        {
+          "image": "2023-05-11_10.18.46",
+          "observation": "right/back：红色下墙与深色上墙"
+        },
+        {
+          "image": "2023-05-11_10.19.36",
+          "observation": "right：红黑墙面"
+        },
+        {
+          "image": "2023-05-11_10.21.23",
+          "observation": "right/back：红色下墙、黑色上墙"
+        },
+        {
+          "image": "2023-05-11_10.21.59",
+          "observation": "back/right：红黑墙面"
+        },
+        {
+          "image": "2023-05-11_10.23.17",
+          "observation": "right：红色下墙和黑色上墙"
+        },
+        {
+          "image": "2023-05-11_10.24.12",
+          "observation": "right：红黑墙体"
+        },
+        {
+          "image": "2023-05-11_10.24.58",
+          "observation": "right：红黑墙面"
+        },
+        {
+          "image": "2023-05-11_10.25.43",
+          "observation": "right：红黑墙体"
+        },
+        {
+          "image": "2023-05-11_10.26.29",
+          "observation": "right/back：红黑墙面"
+        },
+        {
+          "image": "2023-05-11_10.27.16",
+          "observation": "back：红黑墙"
+        },
+        {
+          "image": "2023-05-11_10.28.04",
+          "observation": "back：红色墙"
+        },
+        {
+          "image": "2023-05-11_10.29.30",
+          "observation": "back：红黑墙"
+        },
+        {
+          "image": "2023-05-11_10.30.18",
+          "observation": "back远处：红色墙面"
+        },
+        {
+          "image": "2023-05-11_10.31.04",
+          "observation": "back：红黑墙"
+        },
+        {
+          "image": "2023-05-11_10.31.46",
+          "observation": "back：红黑墙"
+        },
+        {
+          "image": "2023-05-11_10.32.30",
+          "observation": "back远处：红墙"
+        },
+        {
+          "image": "2023-05-11_10.34.42",
+          "observation": "远处红墙"
+        },
+        {
+          "image": "2023-05-11_10.35.28",
+          "observation": "back：红墙"
+        },
+        {
+          "image": "2023-05-11_10.36.15",
+          "observation": "back：红墙"
+        },
+        {
+          "image": "2023-05-11_10.38.31",
+          "observation": "远处红墙"
+        },
+        {
+          "image": "2023-05-11_10.39.59",
+          "observation": "远处红墙"
+        },
+        {
+          "image": "2023-05-11_10.40.42",
+          "observation": "左后红墙"
+        },
+        {
+          "image": "2023-05-11_10.41.41",
+          "observation": "远处红墙"
+        },
+        {
+          "image": "2023-05-11_10.43.09",
+          "observation": "远处红墙"
+        },
+        {
+          "image": "2023-05-11_10.43.53",
+          "observation": "后方红墙"
+        },
+        {
+          "image": "2023-05-11_10.44.56",
+          "observation": "远处红墙"
+        },
+        {
+          "image": "2023-05-11_10.46.27",
+          "observation": "left后：红墙"
+        },
+        {
+          "image": "2023-05-11_10.47.16",
+          "observation": "left远：红墙"
+        },
+        {
+          "image": "2023-05-11_10.47.59",
+          "observation": "远处红墙"
+        },
+        {
+          "image": "2023-05-11_10.48.42",
+          "observation": "远处红墙"
+        },
+        {
+          "image": "2023-05-11_10.49.28",
+          "observation": "left后：红墙"
+        },
+        {
+          "image": "2023-05-11_10.50.14",
+          "observation": "left后：红墙"
+        },
+        {
+          "image": "2023-05-11_10.50.58",
+          "observation": "left后：红墙"
+        },
+        {
+          "image": "2023-05-11_10.51.42",
+          "observation": "left后：红墙"
+        },
+        {
+          "image": "2023-05-11_10.53.53",
+          "observation": "front后：红色平墙、上部黑色"
+        },
+        {
+          "image": "2023-05-11_11.00.55",
+          "observation": "front：红色平面建筑墙，上部黑色"
+        },
+        {
+          "image": "2023-05-11_11.04.22",
+          "observation": "front中：红色平墙"
+        },
+        {
+          "image": "2023-05-11_11.05.01",
+          "observation": "front后：红色平墙"
+        },
+        {
+          "image": "2023-05-11_11.05.51",
+          "observation": "left/front：红色平墙和黑色上部"
+        },
+        {
+          "image": "2023-05-11_11.06.26",
+          "observation": "left：红平墙与黑色上沿"
+        },
+        {
+          "image": "2023-05-11_11.07.13",
+          "observation": "left：红色平墙"
+        },
+        {
+          "image": "2023-05-11_11.08.41",
+          "observation": "left：红墙黑顶边"
+        },
+        {
+          "image": "2023-05-11_11.18.15",
+          "observation": "left：红色平墙"
+        },
+        {
+          "image": "2023-05-11_11.19.30",
+          "observation": "left后：红墙"
+        },
+        {
+          "image": "2023-05-11_11.21.03",
+          "observation": "left远：红墙"
+        },
+        {
+          "image": "2023-05-11_11.22.19",
+          "observation": "left远：红墙"
+        },
+        {
+          "image": "2023-05-11_11.23.11",
+          "observation": "left远：红墙"
+        },
+        {
+          "image": "2023-05-11_11.23.47",
+          "observation": "left后：红墙"
+        },
+        {
+          "image": "2023-05-11_11.24.32",
+          "observation": "left后：红墙"
+        },
+        {
+          "image": "2023-05-11_11.25.58",
+          "observation": "left：红墙"
+        },
+        {
+          "image": "2023-05-11_11.26.42",
+          "observation": "left：红墙"
+        },
+        {
+          "image": "2023-05-11_11.27.29",
+          "observation": "left：红墙"
+        },
+        {
+          "image": "2023-05-11_11.40.51",
+          "observation": "left后：红平墙"
+        },
+        {
+          "image": "2023-05-11_11.41.29",
+          "observation": "left后：红墙"
+        },
+        {
+          "image": "2023-05-11_11.42.41",
+          "observation": "left后：红平墙"
+        }
+      ]
+    },
+    {
+      "key": "ceiling",
+      "name_en": "ceiling",
+      "name_zh": "天花板",
+      "definition": "管线后方可见的建筑顶部表面；不含顶部密集管道、桥架和风道。",
+      "prompts": [
+        "the ceiling of an industrial room",
+        "a dark ceiling surface above pipes",
+        "a black painted overhead building surface",
+        "the flat roof interior behind industrial installations"
+      ],
+      "traits": [
+        "黑色顶部背景",
+        "位于设施后方",
+        "大面积连续表面"
+      ],
+      "confusions": [
+        "wall",
+        "pipe",
+        "cable_tray"
+      ],
+      "official_ids": [
+        12
+      ],
+      "confidence": "high",
+      "id": 16,
+      "row": 16,
+      "official_mapping": [
+        {
+          "id": 12,
+          "name": "CIVILS",
+          "relation": "category-level reference; not a pixel assignment"
+        }
+      ],
+      "observed_training_images": [
+        "2023-05-11_10.18.46",
+        "2023-05-11_10.19.36",
+        "2023-05-11_10.21.23",
+        "2023-05-11_10.21.59",
+        "2023-05-11_10.23.17",
+        "2023-05-11_10.24.12",
+        "2023-05-11_10.25.43",
+        "2023-05-11_10.26.29",
+        "2023-05-11_10.27.16",
+        "2023-05-11_10.28.04",
+        "2023-05-11_10.29.30",
+        "2023-05-11_10.30.18",
+        "2023-05-11_10.31.04",
+        "2023-05-11_10.31.46",
+        "2023-05-11_10.32.30",
+        "2023-05-11_10.34.42",
+        "2023-05-11_10.35.28",
+        "2023-05-11_10.36.15",
+        "2023-05-11_10.37.00",
+        "2023-05-11_10.38.31",
+        "2023-05-11_10.39.59",
+        "2023-05-11_10.40.42",
+        "2023-05-11_10.41.41",
+        "2023-05-11_10.43.09",
+        "2023-05-11_10.43.53",
+        "2023-05-11_10.44.56",
+        "2023-05-11_10.46.27",
+        "2023-05-11_10.47.16",
+        "2023-05-11_10.47.59",
+        "2023-05-11_10.48.42",
+        "2023-05-11_10.49.28",
+        "2023-05-11_10.50.14",
+        "2023-05-11_10.50.58",
+        "2023-05-11_10.51.42",
+        "2023-05-11_10.53.53",
+        "2023-05-11_11.00.55",
+        "2023-05-11_11.04.22",
+        "2023-05-11_11.05.01",
+        "2023-05-11_11.05.51",
+        "2023-05-11_11.06.26",
+        "2023-05-11_11.07.13",
+        "2023-05-11_11.08.41",
+        "2023-05-11_11.18.15",
+        "2023-05-11_11.19.30",
+        "2023-05-11_11.21.03",
+        "2023-05-11_11.22.19",
+        "2023-05-11_11.23.11",
+        "2023-05-11_11.23.47",
+        "2023-05-11_11.24.32",
+        "2023-05-11_11.25.58",
+        "2023-05-11_11.26.42",
+        "2023-05-11_11.27.29",
+        "2023-05-11_11.40.51",
+        "2023-05-11_11.41.29",
+        "2023-05-11_11.42.41"
+      ],
+      "observed_image_count": 55,
+      "evidence": [
+        {
+          "image": "2023-05-11_10.18.46",
+          "observation": "up：黑色顶面位于管线背后"
+        },
+        {
+          "image": "2023-05-11_10.19.36",
+          "observation": "up：黑色背景顶面"
+        },
+        {
+          "image": "2023-05-11_10.21.23",
+          "observation": "up：黑色顶面"
+        },
+        {
+          "image": "2023-05-11_10.21.59",
+          "observation": "up：深黑顶面"
+        },
+        {
+          "image": "2023-05-11_10.23.17",
+          "observation": "up边缘：黑色顶面"
+        },
+        {
+          "image": "2023-05-11_10.24.12",
+          "observation": "up远端：暗色顶面"
+        },
+        {
+          "image": "2023-05-11_10.25.43",
+          "observation": "up边缘：黑色顶面"
+        },
+        {
+          "image": "2023-05-11_10.26.29",
+          "observation": "up：暗顶"
+        },
+        {
+          "image": "2023-05-11_10.27.16",
+          "observation": "up：黑顶"
+        },
+        {
+          "image": "2023-05-11_10.28.04",
+          "observation": "up：暗色顶面"
+        },
+        {
+          "image": "2023-05-11_10.29.30",
+          "observation": "up：黑色顶面"
+        },
+        {
+          "image": "2023-05-11_10.30.18",
+          "observation": "up：黑顶"
+        },
+        {
+          "image": "2023-05-11_10.31.04",
+          "observation": "up：暗顶"
+        },
+        {
+          "image": "2023-05-11_10.31.46",
+          "observation": "up：黑色顶面"
+        },
+        {
+          "image": "2023-05-11_10.32.30",
+          "observation": "up：黑顶"
+        },
+        {
+          "image": "2023-05-11_10.34.42",
+          "observation": "up：黑顶"
+        },
+        {
+          "image": "2023-05-11_10.35.28",
+          "observation": "up：黑色顶"
+        },
+        {
+          "image": "2023-05-11_10.36.15",
+          "observation": "up：暗顶"
+        },
+        {
+          "image": "2023-05-11_10.37.00",
+          "observation": "up：黑顶"
+        },
+        {
+          "image": "2023-05-11_10.38.31",
+          "observation": "up：黑顶"
+        },
+        {
+          "image": "2023-05-11_10.39.59",
+          "observation": "up：黑顶"
+        },
+        {
+          "image": "2023-05-11_10.40.42",
+          "observation": "up：黑顶"
+        },
+        {
+          "image": "2023-05-11_10.41.41",
+          "observation": "up：黑顶"
+        },
+        {
+          "image": "2023-05-11_10.43.09",
+          "observation": "up：黑顶"
+        },
+        {
+          "image": "2023-05-11_10.43.53",
+          "observation": "up：黑顶"
+        },
+        {
+          "image": "2023-05-11_10.44.56",
+          "observation": "up：黑色顶面"
+        },
+        {
+          "image": "2023-05-11_10.46.27",
+          "observation": "up：黑顶"
+        },
+        {
+          "image": "2023-05-11_10.47.16",
+          "observation": "up：黑顶"
+        },
+        {
+          "image": "2023-05-11_10.47.59",
+          "observation": "up：黑顶"
+        },
+        {
+          "image": "2023-05-11_10.48.42",
+          "observation": "up：黑顶"
+        },
+        {
+          "image": "2023-05-11_10.49.28",
+          "observation": "up：黑顶"
+        },
+        {
+          "image": "2023-05-11_10.50.14",
+          "observation": "up：黑顶"
+        },
+        {
+          "image": "2023-05-11_10.50.58",
+          "observation": "up：黑顶"
+        },
+        {
+          "image": "2023-05-11_10.51.42",
+          "observation": "up：黑顶"
+        },
+        {
+          "image": "2023-05-11_10.53.53",
+          "observation": "up：黑顶"
+        },
+        {
+          "image": "2023-05-11_11.00.55",
+          "observation": "up：黑顶"
+        },
+        {
+          "image": "2023-05-11_11.04.22",
+          "observation": "远处黑色顶部"
+        },
+        {
+          "image": "2023-05-11_11.05.01",
+          "observation": "up缝隙：黑顶"
+        },
+        {
+          "image": "2023-05-11_11.05.51",
+          "observation": "up缝隙：黑顶"
+        },
+        {
+          "image": "2023-05-11_11.06.26",
+          "observation": "up左：黑顶"
+        },
+        {
+          "image": "2023-05-11_11.07.13",
+          "observation": "up缝隙：黑色顶"
+        },
+        {
+          "image": "2023-05-11_11.08.41",
+          "observation": "up：黑顶"
+        },
+        {
+          "image": "2023-05-11_11.18.15",
+          "observation": "up：黑顶"
+        },
+        {
+          "image": "2023-05-11_11.19.30",
+          "observation": "up：黑顶"
+        },
+        {
+          "image": "2023-05-11_11.21.03",
+          "observation": "up：黑顶"
+        },
+        {
+          "image": "2023-05-11_11.22.19",
+          "observation": "up：黑顶"
+        },
+        {
+          "image": "2023-05-11_11.23.11",
+          "observation": "up：黑顶"
+        },
+        {
+          "image": "2023-05-11_11.23.47",
+          "observation": "up：黑顶"
+        },
+        {
+          "image": "2023-05-11_11.24.32",
+          "observation": "up：黑顶"
+        },
+        {
+          "image": "2023-05-11_11.25.58",
+          "observation": "up：黑顶"
+        },
+        {
+          "image": "2023-05-11_11.26.42",
+          "observation": "up：黑顶"
+        },
+        {
+          "image": "2023-05-11_11.27.29",
+          "observation": "up缝隙：黑顶"
+        },
+        {
+          "image": "2023-05-11_11.40.51",
+          "observation": "up：黑顶"
+        },
+        {
+          "image": "2023-05-11_11.41.29",
+          "observation": "up：黑顶"
+        },
+        {
+          "image": "2023-05-11_11.42.41",
+          "observation": "up：大片黑色顶面"
+        }
+      ]
+    },
+    {
+      "key": "door",
+      "name_en": "building door",
+      "name_zh": "建筑门",
+      "definition": "供人员通行的建筑门及门框；不含设备柜门板。",
+      "prompts": [
+        "an entrance door in an industrial building",
+        "a doorway with a dark metal frame",
+        "a building access door at the top of a short stairway",
+        "a rectangular door opening leading to another room"
+      ],
+      "traits": [
+        "人行尺度开口",
+        "门框",
+        "关联楼梯入口"
+      ],
+      "confusions": [
+        "cabinet",
+        "wall"
+      ],
+      "official_ids": [
+        19
+      ],
+      "confidence": "high",
+      "id": 17,
+      "row": 17,
+      "official_mapping": [
+        {
+          "id": 19,
+          "name": "DOORS",
+          "relation": "category-level reference; not a pixel assignment"
+        }
+      ],
+      "observed_training_images": [
+        "2023-05-11_10.18.46",
+        "2023-05-11_10.19.36",
+        "2023-05-11_10.21.23",
+        "2023-05-11_10.21.59",
+        "2023-05-11_10.23.17",
+        "2023-05-11_10.24.12",
+        "2023-05-11_10.24.58",
+        "2023-05-11_10.25.43",
+        "2023-05-11_10.26.29",
+        "2023-05-11_10.27.16",
+        "2023-05-11_10.28.04",
+        "2023-05-11_10.29.30"
+      ],
+      "observed_image_count": 12,
+      "evidence": [
+        {
+          "image": "2023-05-11_10.18.46",
+          "observation": "right：台阶尽头深框开口和门扇"
+        },
+        {
+          "image": "2023-05-11_10.19.36",
+          "observation": "right：亮起内部空间的门洞"
+        },
+        {
+          "image": "2023-05-11_10.21.23",
+          "observation": "right：深色门框、浅色内部空间"
+        },
+        {
+          "image": "2023-05-11_10.21.59",
+          "observation": "right：门框与开口"
+        },
+        {
+          "image": "2023-05-11_10.23.17",
+          "observation": "right：黑色门框与浅色内部"
+        },
+        {
+          "image": "2023-05-11_10.24.12",
+          "observation": "right：深色门框、开启门洞"
+        },
+        {
+          "image": "2023-05-11_10.24.58",
+          "observation": "right：深框门洞"
+        },
+        {
+          "image": "2023-05-11_10.25.43",
+          "observation": "right：深色门框"
+        },
+        {
+          "image": "2023-05-11_10.26.29",
+          "observation": "right：深框门洞"
+        },
+        {
+          "image": "2023-05-11_10.27.16",
+          "observation": "right后：入口门"
+        },
+        {
+          "image": "2023-05-11_10.28.04",
+          "observation": "right后：深色入口"
+        },
+        {
+          "image": "2023-05-11_10.29.30",
+          "observation": "right后：入口门洞"
+        }
+      ]
+    },
+    {
+      "key": "light",
+      "name_en": "strip light",
+      "name_zh": "条形灯具",
+      "definition": "白色发光长条及灯具壳体；不含风管或管道的反光。",
+      "prompts": [
+        "an industrial strip light fixture",
+        "a bright elongated white ceiling light",
+        "a vertical fluorescent tube light beside equipment",
+        "a narrow luminous lamp beneath a cable tray"
+      ],
+      "traits": [
+        "细长自发光",
+        "白色灯壳",
+        "有横向及竖向安装"
+      ],
+      "confusions": [
+        "pipe",
+        "duct"
+      ],
+      "official_ids": [
+        32
+      ],
+      "confidence": "high",
+      "id": 18,
+      "row": 18,
+      "official_mapping": [
+        {
+          "id": 32,
+          "name": "ELEC-EQUIPS",
+          "relation": "category-level reference; not a pixel assignment"
+        }
+      ],
+      "observed_training_images": [
+        "2023-05-11_10.18.46",
+        "2023-05-11_10.19.36",
+        "2023-05-11_10.21.23",
+        "2023-05-11_10.21.59",
+        "2023-05-11_10.23.17",
+        "2023-05-11_10.24.12",
+        "2023-05-11_10.24.58",
+        "2023-05-11_10.25.43",
+        "2023-05-11_10.26.29",
+        "2023-05-11_10.27.16",
+        "2023-05-11_10.28.04",
+        "2023-05-11_10.29.30",
+        "2023-05-11_10.30.18",
+        "2023-05-11_10.31.04",
+        "2023-05-11_10.31.46",
+        "2023-05-11_10.32.30",
+        "2023-05-11_10.34.42",
+        "2023-05-11_10.35.28",
+        "2023-05-11_10.36.15",
+        "2023-05-11_10.37.00",
+        "2023-05-11_10.38.31",
+        "2023-05-11_10.39.59",
+        "2023-05-11_10.40.42",
+        "2023-05-11_10.41.41",
+        "2023-05-11_10.43.09",
+        "2023-05-11_10.43.53",
+        "2023-05-11_10.44.56",
+        "2023-05-11_10.46.27",
+        "2023-05-11_10.47.16",
+        "2023-05-11_10.47.59",
+        "2023-05-11_10.48.42",
+        "2023-05-11_10.49.28",
+        "2023-05-11_10.50.14",
+        "2023-05-11_10.50.58",
+        "2023-05-11_10.51.42",
+        "2023-05-11_10.53.53",
+        "2023-05-11_11.00.55",
+        "2023-05-11_11.04.22",
+        "2023-05-11_11.05.51",
+        "2023-05-11_11.06.26",
+        "2023-05-11_11.07.13",
+        "2023-05-11_11.08.41",
+        "2023-05-11_11.18.15",
+        "2023-05-11_11.19.30",
+        "2023-05-11_11.21.03",
+        "2023-05-11_11.22.19",
+        "2023-05-11_11.23.11",
+        "2023-05-11_11.23.47",
+        "2023-05-11_11.24.32",
+        "2023-05-11_11.25.58",
+        "2023-05-11_11.26.42",
+        "2023-05-11_11.27.29",
+        "2023-05-11_11.40.51",
+        "2023-05-11_11.41.29",
+        "2023-05-11_11.42.41"
+      ],
+      "observed_image_count": 55,
+      "evidence": [
+        {
+          "image": "2023-05-11_10.18.46",
+          "observation": "up：明亮细长灯具"
+        },
+        {
+          "image": "2023-05-11_10.19.36",
+          "observation": "up/back：长条白灯"
+        },
+        {
+          "image": "2023-05-11_10.21.23",
+          "observation": "up/left：长条灯具"
+        },
+        {
+          "image": "2023-05-11_10.21.59",
+          "observation": "up/back：线形白色灯具"
+        },
+        {
+          "image": "2023-05-11_10.23.17",
+          "observation": "up：长条灯具"
+        },
+        {
+          "image": "2023-05-11_10.24.12",
+          "observation": "up/back：条形灯"
+        },
+        {
+          "image": "2023-05-11_10.24.58",
+          "observation": "left/up：白色条灯"
+        },
+        {
+          "image": "2023-05-11_10.25.43",
+          "observation": "left/up：条形灯"
+        },
+        {
+          "image": "2023-05-11_10.26.29",
+          "observation": "up/left：线形灯具"
+        },
+        {
+          "image": "2023-05-11_10.27.16",
+          "observation": "up：近处长条灯"
+        },
+        {
+          "image": "2023-05-11_10.28.04",
+          "observation": "up/front：亮白线灯"
+        },
+        {
+          "image": "2023-05-11_10.29.30",
+          "observation": "up：线形灯"
+        },
+        {
+          "image": "2023-05-11_10.30.18",
+          "observation": "up：长条白灯"
+        },
+        {
+          "image": "2023-05-11_10.31.04",
+          "observation": "up：近处长灯有过曝"
+        },
+        {
+          "image": "2023-05-11_10.31.46",
+          "observation": "up/left：白色条灯"
+        },
+        {
+          "image": "2023-05-11_10.32.30",
+          "observation": "left/up：细长灯"
+        },
+        {
+          "image": "2023-05-11_10.34.42",
+          "observation": "up：长条白灯"
+        },
+        {
+          "image": "2023-05-11_10.35.28",
+          "observation": "up：条灯"
+        },
+        {
+          "image": "2023-05-11_10.36.15",
+          "observation": "up：长灯"
+        },
+        {
+          "image": "2023-05-11_10.37.00",
+          "observation": "up：长条灯"
+        },
+        {
+          "image": "2023-05-11_10.38.31",
+          "observation": "right/up：条灯"
+        },
+        {
+          "image": "2023-05-11_10.39.59",
+          "observation": "front/right：亮条灯"
+        },
+        {
+          "image": "2023-05-11_10.40.42",
+          "observation": "left/front：竖向和横向条灯"
+        },
+        {
+          "image": "2023-05-11_10.41.41",
+          "observation": "up：长灯"
+        },
+        {
+          "image": "2023-05-11_10.43.09",
+          "observation": "up：长灯"
+        },
+        {
+          "image": "2023-05-11_10.43.53",
+          "observation": "up：长条灯"
+        },
+        {
+          "image": "2023-05-11_10.44.56",
+          "observation": "up：条灯"
+        },
+        {
+          "image": "2023-05-11_10.46.27",
+          "observation": "left/up：条灯"
+        },
+        {
+          "image": "2023-05-11_10.47.16",
+          "observation": "left/up：白长灯"
+        },
+        {
+          "image": "2023-05-11_10.47.59",
+          "observation": "up：亮长灯"
+        },
+        {
+          "image": "2023-05-11_10.48.42",
+          "observation": "up：白灯"
+        },
+        {
+          "image": "2023-05-11_10.49.28",
+          "observation": "up：长灯"
+        },
+        {
+          "image": "2023-05-11_10.50.14",
+          "observation": "up：白条灯"
+        },
+        {
+          "image": "2023-05-11_10.50.58",
+          "observation": "up后：条灯"
+        },
+        {
+          "image": "2023-05-11_10.51.42",
+          "observation": "right上：白长灯"
+        },
+        {
+          "image": "2023-05-11_10.53.53",
+          "observation": "left近：竖向强亮条灯"
+        },
+        {
+          "image": "2023-05-11_11.00.55",
+          "observation": "right远：白长灯"
+        },
+        {
+          "image": "2023-05-11_11.04.22",
+          "observation": "right后：亮灯"
+        },
+        {
+          "image": "2023-05-11_11.05.51",
+          "observation": "front远：条灯"
+        },
+        {
+          "image": "2023-05-11_11.06.26",
+          "observation": "left/front：竖条灯"
+        },
+        {
+          "image": "2023-05-11_11.07.13",
+          "observation": "left/front：竖向长灯"
+        },
+        {
+          "image": "2023-05-11_11.08.41",
+          "observation": "left/front：白条灯"
+        },
+        {
+          "image": "2023-05-11_11.18.15",
+          "observation": "front左：长灯"
+        },
+        {
+          "image": "2023-05-11_11.19.30",
+          "observation": "right上：亮条灯"
+        },
+        {
+          "image": "2023-05-11_11.21.03",
+          "observation": "up近：强亮长灯"
+        },
+        {
+          "image": "2023-05-11_11.22.19",
+          "observation": "up：过曝长灯"
+        },
+        {
+          "image": "2023-05-11_11.23.11",
+          "observation": "up：强亮长灯"
+        },
+        {
+          "image": "2023-05-11_11.23.47",
+          "observation": "left/front：条灯"
+        },
+        {
+          "image": "2023-05-11_11.24.32",
+          "observation": "up/right：长条灯"
+        },
+        {
+          "image": "2023-05-11_11.25.58",
+          "observation": "front左近：竖灯"
+        },
+        {
+          "image": "2023-05-11_11.26.42",
+          "observation": "left近：强亮竖灯"
+        },
+        {
+          "image": "2023-05-11_11.27.29",
+          "observation": "left近：亮竖灯"
+        },
+        {
+          "image": "2023-05-11_11.40.51",
+          "observation": "left近：长竖灯"
+        },
+        {
+          "image": "2023-05-11_11.41.29",
+          "observation": "right后：白长灯"
+        },
+        {
+          "image": "2023-05-11_11.42.41",
+          "observation": "left：竖向白灯"
+        }
+      ]
+    },
+    {
+      "key": "bags",
+      "name_en": "stacked material sacks",
+      "name_zh": "袋装物料",
+      "definition": "可辨蓝白软包装袋堆；内容不明，不推断为具体化学品或材料。",
+      "prompts": [
+        "a stack of material sacks",
+        "blue and white bags stacked in an industrial room",
+        "soft rectangular storage sacks with folded edges",
+        "piled bagged supplies beside industrial machinery"
+      ],
+      "traits": [
+        "蓝白袋面",
+        "柔软折边",
+        "重复叠放"
+      ],
+      "confusions": [
+        "cabinet",
+        "floor"
+      ],
+      "official_ids": [
+        9
+      ],
+      "confidence": "high",
+      "uncertainty": "包装可辨，内容未知。",
+      "id": 19,
+      "row": 19,
+      "official_mapping": [
+        {
+          "id": 9,
+          "name": "MISCELLANEOUS",
+          "relation": "category-level reference; not a pixel assignment"
+        }
+      ],
+      "observed_training_images": [
+        "2023-05-11_10.26.29",
+        "2023-05-11_10.27.16",
+        "2023-05-11_10.28.04",
+        "2023-05-11_10.29.30",
+        "2023-05-11_10.30.18",
+        "2023-05-11_10.31.04",
+        "2023-05-11_10.31.46",
+        "2023-05-11_10.32.30",
+        "2023-05-11_10.34.42",
+        "2023-05-11_10.35.28",
+        "2023-05-11_10.36.15",
+        "2023-05-11_10.38.31",
+        "2023-05-11_10.40.42",
+        "2023-05-11_10.41.41",
+        "2023-05-11_10.47.16",
+        "2023-05-11_10.53.53"
+      ],
+      "observed_image_count": 16,
+      "evidence": [
+        {
+          "image": "2023-05-11_10.26.29",
+          "observation": "left远处：白蓝袋整齐堆叠"
+        },
+        {
+          "image": "2023-05-11_10.27.16",
+          "observation": "left：蓝白塑料袋分层堆放，前有黑桶"
+        },
+        {
+          "image": "2023-05-11_10.28.04",
+          "observation": "left：蓝白软袋堆垛"
+        },
+        {
+          "image": "2023-05-11_10.29.30",
+          "observation": "left：蓝白袋堆，旁边黑桶"
+        },
+        {
+          "image": "2023-05-11_10.30.18",
+          "observation": "left远处：白蓝袋堆"
+        },
+        {
+          "image": "2023-05-11_10.31.04",
+          "observation": "left后：蓝白袋堆"
+        },
+        {
+          "image": "2023-05-11_10.31.46",
+          "observation": "left后：白蓝袋垛"
+        },
+        {
+          "image": "2023-05-11_10.32.30",
+          "observation": "left远处：袋装物料堆"
+        },
+        {
+          "image": "2023-05-11_10.34.42",
+          "observation": "left远：蓝白袋堆"
+        },
+        {
+          "image": "2023-05-11_10.35.28",
+          "observation": "left远：袋堆"
+        },
+        {
+          "image": "2023-05-11_10.36.15",
+          "observation": "left远：少量蓝白袋"
+        },
+        {
+          "image": "2023-05-11_10.38.31",
+          "observation": "left远：蓝白袋堆"
+        },
+        {
+          "image": "2023-05-11_10.40.42",
+          "observation": "right远：蓝白袋垛"
+        },
+        {
+          "image": "2023-05-11_10.41.41",
+          "observation": "back右远：蓝白袋堆"
+        },
+        {
+          "image": "2023-05-11_10.47.16",
+          "observation": "left远：蓝白袋垛"
+        },
+        {
+          "image": "2023-05-11_10.53.53",
+          "observation": "left远：白蓝袋垛"
+        }
+      ]
+    }
+  ],
+  "excluded_candidates": {
+    "sign": "退出标志和管道标签可见，但像素小且用途异质；本版不作为独立训练类。",
+    "misc_object": "入口清洁小车、零散纸张、碎布及摄影三脚架仅保留观察记录，不将摄影伪影或稀少杂物强行设类。"
+  },
+  "mapping_note": "Official IDs are category-level semantic references, not per-pixel GT assignments. A many-to-many or approximate mapping is explicitly allowed; no official masks enter training.",
+  "training_count": 56,
+  "official_reference": {
+    "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_semantics_20261023/00_scene_review/official_categories.json",
+    "bytes": 41459,
+    "sha256": "592bdf0d0253e9eb88544b0fd4c91e5baab907e36eee37a8780b6531677b0657"
+  }
+}
