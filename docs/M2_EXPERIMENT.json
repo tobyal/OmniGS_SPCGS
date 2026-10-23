@@ -1,0 +1,231 @@
+{
+  "status": "completed",
+  "quality_conclusion": "No consistent overall industrial semantic improvement established; full SGI only partially fits the teacher.",
+  "server_root": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023",
+  "artifact_root": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_semantics_20261023",
+  "scene_review": {
+    "count": 56,
+    "observations": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_semantics_20261023/00_scene_review/observations",
+    "input_audit": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_semantics_20261023/01_clip/reviewed_input_audit.json",
+      "bytes": 8017,
+      "sha256": "7be4fb7ebdb14c397d6dc788956121e71a4ea3fa3a48b96b7f744a499c351449"
+    }
+  },
+  "vocabulary": {
+    "class_count": 20,
+    "prompt_count": 97,
+    "config": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/configs/industrial_classes.json",
+      "bytes": 157989,
+      "sha256": "7ff38c711748ab7fa6e3c569fa44fdbad88695c8f6bad1cfcd610dee5392047a"
+    }
+  },
+  "cache": {
+    "real_views": 56,
+    "generated_views": 4,
+    "generated_names": [
+      "2023-05-11_10.18.46_forward_f0001",
+      "2023-05-11_10.18.46_backward_f0002",
+      "2023-05-11_10.18.46_left_f0001",
+      "2023-05-11_10.18.46_right_f0002"
+    ],
+    "real_manifest": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_semantics_20261023/01_clip/features_all/manifest.json",
+      "bytes": 91834,
+      "sha256": "f8b28923b2b8e174e88239ff0bc858b6c212cbac92b50ae50408e8a850503fa3"
+    },
+    "generated_manifest": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_semantics_20261023/01_clip/features_generated/manifest.json",
+      "bytes": 10114,
+      "sha256": "e04cdf7e7cf548a438f28073142d537c40e07e4ca86a5bfb11fdd9ecce2160e0"
+    },
+    "real_check": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_semantics_20261023/01_clip/full_cache_validation.json",
+      "bytes": 21273,
+      "sha256": "99fd4ded40b45593f6da40aa0937aeb94beb757abe30f3677e7092aedc093034"
+    },
+    "generated_check": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_semantics_20261023/01_clip/generated_cache_validation.json",
+      "bytes": 1852,
+      "sha256": "0ffb24b450b972900b606f3b7bbe8d9142ce36564b3944361e27f011274695a6"
+    },
+    "T_manifest": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_semantics_20261023/01_clip/cache/T/e75d86795e613b6813fa262d15dda8675a6d980020b83af28b9753d98121f1db/manifest.json",
+      "bytes": 10810,
+      "sha256": "5ebd633f301f15f52a5ce52e7d9c664de724792aa329bdb524cfc6f088fc8f7d"
+    }
+  },
+  "short_s0": {
+    "metrics": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_semantics_20261023/02_gaussians/short_s0_400/03_semantic/s0/validation/metrics.json",
+      "bytes": 5877,
+      "sha256": "0069afe0a35d9747f94b9535113eb6d14f36a3aaec08eed41c90e9d9ceadc8e3"
+    },
+    "initial": {
+      "feature_cosine": 0.9957818537950516,
+      "soft_ce": 2.996185600757599,
+      "target_entropy": 2.990972101688385,
+      "target_KL": 0.005213457974605262,
+      "S_argmax_agreement": 0.3573455810546875,
+      "valid_fraction": 1.0,
+      "relevancy_probability_MAE": 0.004212626488879323
+    },
+    "final": {
+      "feature_cosine": 0.9973893910646439,
+      "soft_ce": 2.991460680961609,
+      "target_entropy": 2.990972101688385,
+      "target_KL": 0.0004885804373770952,
+      "S_argmax_agreement": 0.7262344360351562,
+      "valid_fraction": 1.0,
+      "relevancy_probability_MAE": 0.001233957998920232
+    },
+    "model": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_semantics_20261023/02_gaussians/short_s0_400/03_semantic/s0/final/model.pt",
+      "bytes": 718212413,
+      "sha256": "6eb6d4bf14d7c104f75e64e301c12ec087e7b7f74a1e71d79848936abc835011"
+    }
+  },
+  "full_sgi": {
+    "config": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_semantics_20261023/02_gaussians/sgi_full_10000/02_sgi_gaussians/config.json",
+      "bytes": 1817,
+      "sha256": "04c72a9842b172d9f0e444404fe3e8c1bd04755ef03d6938359f1cabb9d35d54"
+    },
+    "request": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_semantics_20261023/02_gaussians/sgi_full_10000/02_sgi_gaussians/request.json",
+      "bytes": 101529,
+      "sha256": "e69d1083e40c7d53f25d9a245ddfa724b73c4cce3f7af4df3cce4508202f4e27"
+    },
+    "execution": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_semantics_20261023/02_gaussians/sgi_full_10000/02_sgi_gaussians/execution.json",
+      "bytes": 301,
+      "sha256": "a3d24832a10a612aad0b85d083057918f5ebaf1feba81d29d7cc9d909c396293"
+    },
+    "outputs": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_semantics_20261023/02_gaussians/sgi_full_10000/02_sgi_gaussians/outputs.json",
+      "bytes": 723,
+      "sha256": "ac5ce76f190799cfb490d0e37a939d2bf84d401a86977449f200948b0a73d861"
+    },
+    "metrics": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_semantics_20261023/02_gaussians/sgi_full_10000/02_sgi_gaussians/metrics.json",
+      "bytes": 7584,
+      "sha256": "a07a50935e330caa65cdaef401fbe04a35d9d42b88a2e48a0a006b9082144499"
+    },
+    "fit_metrics": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_semantics_20261023/02_gaussians/sgi_full_10000/02_sgi_gaussians/validation/metrics.json",
+      "bytes": 5911,
+      "sha256": "387db5f7b59405f035ba2cca6e8107cdf420ac5d5c3b991086a747711a62a56b"
+    },
+    "losses": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_semantics_20261023/02_gaussians/sgi_full_10000/02_sgi_gaussians/losses.jsonl",
+      "bytes": 4988200,
+      "sha256": "37b32de59b2d22c6312f1c7f763f043e8637694d81c4ddef8e659031b64922da"
+    },
+    "steps": 10000,
+    "step_sequence_and_finite_logs": "passed",
+    "initial_points": 4267,
+    "final_gaussians": 81353,
+    "ogr_events": [
+      {
+        "step": 3000,
+        "removed": 1889
+      },
+      {
+        "step": 6000,
+        "removed": 1277
+      },
+      {
+        "step": 9000,
+        "removed": 577
+      }
+    ],
+    "ogr_removed": 3743,
+    "test_view_count": 16,
+    "test_psnr": 17.816042198528727,
+    "test_ssim": 0.6471903628851381,
+    "first_training_reference_psnr": 21.172489296738025,
+    "initial": {
+      "feature_cosine": 0.9852724075317383,
+      "soft_ce": 2.9979101419448853,
+      "target_entropy": 2.990972101688385,
+      "target_KL": 0.00693801895249635,
+      "S_argmax_agreement": 0.27176666259765625,
+      "valid_fraction": 1.0,
+      "relevancy_probability_MAE": 0.00477368850260973
+    },
+    "final": {
+      "feature_cosine": 0.9919944256544113,
+      "soft_ce": 2.99251127243042,
+      "target_entropy": 2.990972101688385,
+      "target_KL": 0.0015390623593702912,
+      "S_argmax_agreement": 0.5296249389648438,
+      "valid_fraction": 1.0,
+      "relevancy_probability_MAE": 0.002113759343046695
+    },
+    "last_100_mean": {
+      "rgb": 0.10589995227754116,
+      "semantic_cosine": 0.00901423797942698,
+      "semantic_ce": 2.9930647253990172,
+      "generated_semantic": 2.9949505877494813,
+      "local3d": 0.1292634804546833,
+      "total": 6.232192974090577
+    },
+    "model": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_semantics_20261023/02_gaussians/sgi_full_10000/02_sgi_gaussians/final/model.pt",
+      "bytes": 90446205,
+      "sha256": "1f52ba9c6410cce3c8f960def5f08d67fe710576a06a134663bb323a8f189641"
+    }
+  },
+  "checks": {
+    "numerical_and_M1_tests": "7 passed",
+    "new_S_contract": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_semantics_20261023/02_gaussians/S_contract/results.json",
+      "bytes": 1412,
+      "sha256": "200a118ae92d3e8bb789feff1c4d05fed41fff8a8ff7e862050f0e488d4db0ba"
+    },
+    "legacy_S_contract": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_semantics_20261023/02_gaussians/S_contract_legacy/results.json",
+      "bytes": 1404,
+      "sha256": "7941053043b378c89f18ba45476822b23952e9996f1d35d91132e6a9a7e5bfce"
+    },
+    "strict_resume_regression": {
+      "status": "failed",
+      "baseline_renderer_max_abs_error": 0.0,
+      "baseline_original_sha256": "e3b44ce1f1e499cc39cad83a5d679e824804102e03367c2399ae9a9992e9334d",
+      "baseline_copy_sha256": "e3b44ce1f1e499cc39cad83a5d679e824804102e03367c2399ae9a9992e9334d",
+      "resume_max_abs_errors": {
+        "xyz": 4.76837158203125e-06,
+        "scale": 8.893013000488281e-05,
+        "opacity": 0.0,
+        "rotation": 9.42389015108347e-05,
+        "dc": 2.5033950805664062e-06,
+        "rest": 0.0,
+        "semantic": 0.017856493592262268,
+        "decoder": 1.4156103134155273e-07
+      },
+      "resume_tolerance": 0.0002,
+      "resume_expected_step": 40,
+      "resume_actual_step": 40,
+      "densification_counters_match": true
+    },
+    "resume_render_comparison": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_semantics_20261023/02_gaussians/regression_first/render_comparison.json",
+      "bytes": 1170,
+      "sha256": "abfbe4f42acde0876c61f74d49d03658c1085ad7712953a868be0930b1ecac82"
+    }
+  },
+  "teacher_comparison": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_semantics_20261023/01_clip/teacher_comparison",
+  "diagnostics": {
+    "features_2048_diagnostic": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_semantics_20261023/01_clip/features_2048_diagnostic",
+    "features_fov150_diagnostic": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_semantics_20261023/01_clip/features_fov150_diagnostic",
+    "features_canonical_diagnostic": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_semantics_20261023/01_clip/features_canonical_diagnostic"
+  },
+  "historical_comparison": {
+    "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_semantics_20261023/02_gaussians/history_full_10000/outputs.json",
+    "bytes": 809,
+    "sha256": "bc3d0745a41d375b8a08e7a8328ad5afa6970171b123799a1971332c4290e2b8"
+  },
+  "scope": "M2 preprocessing, native S supervision, short S0 and complete SGI; completed M1 reused; no downstream SPC training.",
+  "semantic_evaluation_note": "Independent semantic evaluation aligned to the current vocabulary is not configured; CLIP pseudolabels are not ground truth."
+}

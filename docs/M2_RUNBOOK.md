@@ -66,6 +66,17 @@ bash tools/build.sh
 
 KL/标签一致率仅衡量学生拟合教师，不能当成真实语义准确率；S 做 temperature=1 softmax 后接近均匀，argmax 对很小的分数变化也敏感。二维教师存在的设备混淆必须在结果报告中保留。
 
+已有旧版 SGI 模型的四视角重渲染保存在 `02_gaussians/archived_sgi_1000_reference/`。完整新训练结束后，可生成带独立类别图例的历史对照图：
+
+```bash
+.venv/bin/python tools/compare_m2_history.py \
+  runs/industrial_semantics_20261023/02_gaussians/archived_sgi_1000_reference \
+  runs/industrial_semantics_20261023/02_gaussians/sgi_full_new/02_sgi_gaussians \
+  runs/industrial_semantics_20261023/02_gaussians/history_comparison_new
+```
+
+旧模型训练为 1,000 步、512×256、12 类；新模型为 10,000 步、2048×1024、20 类，初始化点云和部分训练设置也不同。它们虽用相同相机与显示分辨率重渲染，仍不构成控制变量实验。脚本保留两个训练配置，不计算不可比较的类别一致率。
+
 文本查询继续使用原入口，例如：
 
 ```bash
@@ -74,3 +85,12 @@ KL/标签一致率仅衡量学生拟合教师，不能当成真实语义准确�
   --view 2023-05-11_10.18.46 --classes 'pipe,structural column,equipment cabinet,floor' \
   --output runs/industrial_semantics_20261023/query_new
 ```
+
+严格断点恢复回归可在独立测试目录重跑：
+
+```bash
+SPCGS_TEST_GPU=1 SPCGS_TEST_OUTPUT=tests/regression_m2_new \
+  .venv/bin/python tests/check_regression.py
+```
+
+本次该检查的原版 RGB 对照通过，但语义参数恢复等价断言未通过；详情见 [结果报告](M2_RESULTS.md)。不要将其作为已通过的检查。已保存的首次失败产物位于 `runs/industrial_semantics_20261023/02_gaussians/regression_first/`，使用新的输出目录可保留既有测试文件。完整 SGI 采用连续训练，没有依赖该恢复检查。

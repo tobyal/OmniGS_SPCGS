@@ -3,7 +3,7 @@ import argparse,sys
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 import numpy as np
-from PIL import Image,ImageDraw
+from PIL import Image,ImageDraw,ImageFont
 from spcgs.common import ROOT,read,write,ref
 from spcgs.clip_dense import unit,save_responses,spatial_relevancy
 from spcgs.visuals import PALETTE
@@ -17,6 +17,8 @@ def compare(stage,cache,cfg,views):
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
     stage=Path(stage);out=stage/'validation';out.mkdir(exist_ok=True);h,w=cfg['semantic_height'],cfg['semantic_width'];k=len(cache['classes']);rows=[]
+    try:font=ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',18)
+    except OSError:font=ImageFont.load_default()
     for v in views:
         name=v['name'];fh,fw=v['feature_height'],v['feature_width']
         def resized(x):return np.stack([cv2.resize(z,(w,h),interpolation=cv2.INTER_LINEAR) for z in x])
@@ -43,9 +45,9 @@ def compare(stage,cache,cfg,views):
             save_responses(v['image'],spatial_relevancy(probs),[c+' (spatial minmax)' for c in cache['classes']],folder/(name+'_relative_responses.jpg'))
         panels.extend([('Initial rendered RGB',Image.open(out/'initial'/(name+'_rgb.png')).resize(rgb.size)),('Final rendered RGB',Image.open(out/'final'/(name+'_rgb.png')).resize(rgb.size))])
         for i,(title,im) in enumerate(panels):
-            x=i%2*768;y=i//2*410;draw.text((x+5,y+5),title,fill='black');canvas.paste(im,(x,y+24))
+            x=i%2*768;y=i//2*410;draw.text((x+5,y+2),title,fill='black',font=font);canvas.paste(im,(x,y+24))
         for i,c in enumerate(cache['classes']):
-            x=i%3*500+12;y=1660+i//3*42;draw.rectangle((x,y,x+20,y+20),fill=tuple(PALETTE[i]));draw.text((x+28,y+4),c,fill='black')
+            x=i%3*500+12;y=1660+i//3*42;draw.rectangle((x,y,x+20,y+20),fill=tuple(PALETTE[i]));draw.text((x+28,y),c,fill='black',font=font)
         canvas.save(out/(name+'_comparison.jpg'),quality=94);rows.append(row)
     losses=[__import__('json').loads(x) for x in (stage/'losses.jsonl').read_text().splitlines()]
     # Keep the original supervision panels and expose existing regularizers,

@@ -42,7 +42,7 @@ def evaluate(folder,views,cfg,model=None):
       'test_psnr':float(np.mean([r['psnr'] for r in testing])) if testing else None,'test_ssim':float(np.mean([r['ssim'] for r in testing])) if testing else None,
       'train_psnr':float(np.mean([r['psnr'] for r in training])) if training else None,'aggregation':'Arithmetic mean over held-out test views only; train reference reported separately',
       'lpips':None,'lpips_reason':'Not computed by the lightweight evaluation entry; PSNR and SSIM use the saved float RGB.',
-      'miou':None,'macc':None,'semantic_gt_reason':'No independent industrial class ground truth supplied; CLIP pseudolabels are not ground truth.',
+      'miou':None,'macc':None,'semantic_gt_reason':'Independent semantic evaluation aligned to the current vocabulary is not configured; CLIP pseudolabels are not ground truth.',
       'resolution':[cfg['width'],cfg['height']],'model':model}
     write(folder/'metrics.json',metrics);return metrics
 
