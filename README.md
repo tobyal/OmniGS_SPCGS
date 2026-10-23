@@ -22,7 +22,7 @@ bash tools/build.sh
 bash tools/setup_models.sh
 ```
 
-其他机器需自行准备相同数据协议和基线，并按环境调整 `tools/build.sh`、`tools/setup_models.sh` 中的 CUDA、LibTorch、OpenCV 和基础 Python 路径；M1 的 OpenMVG 路径由 `spcgs/sfm.py` 定义。下面的运行命令以本次服务器工作目录为例，在新副本中执行时使用新副本路径。上游许可证保留在 `code/LICENSE`、`code/LICENSE.md` 及各第三方目录中。
+其他机器需自行准备相同数据协议和基线，并按环境调整 `tools/build.sh`、`tools/setup_models.sh` 中的 CUDA、LibTorch、OpenCV 和基础 Python 路径；Wan360 模式的 OpenMVG 路径通过 `m1_geometry.openmvg_bin` 配置，旧 M1 模式的路径由 `spcgs/sfm.py` 定义。下面的运行命令以本次服务器工作目录为例，在新副本中执行时使用新副本路径。上游许可证保留在 `code/LICENSE`、`code/LICENSE.md` 及各第三方目录中。
 
 ## 运行
 
@@ -76,7 +76,7 @@ CUDA_VISIBLE_DEVICES=0 .venv/bin/python -m spcgs.pipeline --run full_new --mode 
 | 模块 | 实现 | 原有核心复用 |
 |---|---|---|
 | 基线 | `spcgs/pipeline.py`、原生 render action | `GaussianModel::loadPly`、`GaussianRenderer::renderLonlat` |
-| M1 | `spcgs/sfm.py` | OpenMVG SIFT_ANATOMY / RootSIFT、固定位姿 guided matching / triangulation |
+| M1 | `spcgs/wan360.py`、`m1_wan360.py`、`m1_geometry.py`；旧模式 `sfm.py` | 官方 Wan360、原始 OpenMVG SIFT/RootSIFT 观测、球面注册与多视图三角化 |
 | M2 | `spcgs_native.cpp` SGI stage、`geometry_worker.py` | `createFromPcd`、最近 3 邻点球形尺度、原生增密裁剪；增加 OGR |
 | M3 | `spcgs/features.py`、`spcgs_native.cpp` | 原有透明度累积和完整几何反传，32 维语义分 11 批渲染 |
 | M4 | `sam2_worker.py`、`spcgs/isp.py` | 当前模型渲染邻近相机；真实 SAM2 传播与自动掩码 |
@@ -106,6 +106,18 @@ CUDA_VISIBLE_DEVICES=0 .venv/bin/python -m spcgs.pipeline --run full_new --mode 
 SGI → 正式阶段只传递位置、DC 颜色和语义及其映射头。尺度按原来的最近邻公式重新计算，旋转为单位四元数、透明度为 0.1、高阶 SH 清零，优化器重新创建。不要把这个阶段初始化与同阶段 `--resume` 混用。
 
 ## M1 接入协议与限制
+
+新增 **`m1_mode=wan360`**：直接执行官方 Wan360 推理、早期选帧、基于原始训练集 2D–3D 观测的球面位姿注册、真实—生成多视图三角化及点云增强。无需预先提供 `registered=true`。完整环境、坐标约定、配置和输出说明见 [M1_WAN360.md](docs/M1_WAN360.md)。
+
+2026-10-23 实测：一张真实训练全景生成四方向视频，早期帧配置选中三个注册视角，新增 **233 点（3979 → 4212）**；100 步 SGI 的初始化数量与位置逐点核对通过。推荐 `configs/m1_wan360_early.json`；晚帧形变、left 拒绝原因、完整计数和可视化路径见 [M1 实测报告](docs/M1_RESULTS_20261023.md)。8/56 张批量实验尚未执行。
+
+```bash
+bash tools/setup_wan360.sh
+.venv/bin/python -m spcgs.pipeline --run m1_wan360_test \
+  --config configs/m1_wan360_test.json --stage m1
+```
+
+配置分别控制生成源视角数和真实几何支持集，初始只对 1 张训练图生成四方向视频。`configs/m1_wan360_8.json`、`configs/m1_wan360_56.json` 提供后续扩展设置，复用相同参数的已有视频和特征缓存。Wan360 使用独立 `.venv_wan360`；原 M2—M5 核心算法不变。以下为仍保留的旧 `skip/import/online` 模式。
 
 默认 `m1_mode=skip`，明确输出 `status=skipped`、`enhanced_ply=null`，SGI 读取原始 SfM。未声称运行 MotionCtrl。
 

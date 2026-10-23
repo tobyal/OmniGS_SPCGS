@@ -1,0 +1,52 @@
+{
+  "mode": "m1_wan360_early",
+  "seed": 42,
+  "gpu": 0,
+  "m1_mode": "wan360",
+  "train_views": 56,
+  "eval_views": 3,
+  "feature_backend": "local_crops",
+  "sgi_iterations": 100,
+  "save_every": 50,
+  "wan360": {
+    "views": 1,
+    "view_names": [
+      "2023-05-11_10.18.46"
+    ],
+    "directions": [
+      "forward",
+      "backward",
+      "left",
+      "right"
+    ],
+    "distance": 0.8,
+    "width": 1024,
+    "height": 512,
+    "num_frames": 49,
+    "steps": 30,
+    "candidate_frames": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "reuse": true
+  },
+  "m1_geometry": {
+    "neighbors": 6,
+    "ratio": 0.8,
+    "registration_error_px": 6.0,
+    "min_correspondences": 24,
+    "min_inliers": 16,
+    "min_validation_inliers": 4,
+    "min_translation": 0.02,
+    "max_translation": 2.0,
+    "triangulation_error_px": 5.0,
+    "min_parallax_deg": 0.6,
+    "min_real_views": 2,
+    "duplicate_radius": 0.015,
+    "max_distance_to_original": 2.0,
+    "outlier_radius": 0.3,
+    "outlier_min_neighbors": 2
+  }
+}

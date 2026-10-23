@@ -1,0 +1,20 @@
+{
+  "mode": "m1_wan360_8",
+  "seed": 42,
+  "gpu": 0,
+  "m1_mode": "wan360",
+  "train_views": 56,
+  "feature_backend": "local_crops",
+  "wan360": {
+    "views": 8,
+    "view_names": [],
+    "directions": ["forward", "backward", "left", "right"],
+    "distance": 0.8,
+    "width": 1024,
+    "height": 512,
+    "num_frames": 49,
+    "steps": 30,
+    "candidate_frames": [1, 2, 3, 4],
+    "reuse": true
+  }
+}

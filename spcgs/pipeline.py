@@ -57,15 +57,40 @@ def baseline(run,cfg,train,test):
 def m1(run,cfg,train):
     from .visuals import projection_preview
     folder=run/STAGES['m1'];src=DATA/'openMVG/scene.ply'
+    failure=None
     with Stage(folder,{'point_cloud':ref(src),'all_training_views':cameras('train'),'used_training_views':train},cfg) as stage:
         xyz,rgb,v=ply(src);np.concatenate([xyz,rgb],1).astype('f4').tofile(folder/'original_points.f32');shutil.copy2(src,folder/'original.ply')
+        write(folder/'metrics.json',{'original_count':len(xyz),'enhanced_count':None,'m1_mode':cfg['m1_mode']})
         for cam in train[:2]:projection_preview(xyz,rgb,cam,folder/'preview'/(cam['name']+'_original.png'))
         if cfg['m1_mode']=='skip':
             result={'points':str(folder/'original_points.f32'),'point_count':len(xyz),'source':'original SfM','enhanced_ply':None,'enhanced_points':None}
-            stage.done(result,{'original_count':len(xyz),'enhanced_count':None},status='skipped',reason='No usable MotionCtrl installation/checkpoint was found in the inspected project/environment locations; no generated observations were supplied. Original training-only SfM is explicitly passed to SGI.')
+            stage.done(result,{'original_count':len(xyz),'enhanced_count':None},status='skipped',reason='m1_mode=skip: view generation is explicitly disabled. Original training-only SfM is passed to SGI.')
         else:
-            from .sfm import augment
-            result,metrics=augment(folder,cfg,train,xyz,rgb);stage.done(result,metrics)
+            try:
+                if cfg['m1_mode']=='wan360':
+                    from .m1_wan360 import augment
+                elif cfg['m1_mode'] in ['import','online']:
+                    from .sfm import augment
+                else:
+                    raise ValueError('Unknown m1_mode: '+cfg['m1_mode'])
+                result,metrics=augment(folder,cfg,train,xyz,rgb);stage.done(result,metrics)
+            except Exception as error:
+                # Preserve partial statistics and artifacts instead of letting the
+                # generic Stage error handler replace them with an empty dict.
+                import traceback
+                failure=error
+                (folder/'error.log').write_text(traceback.format_exc())
+                metrics=read(folder/'metrics.json') if (folder/'metrics.json').exists() else {'original_count':len(xyz)}
+                if cfg['m1_mode']=='wan360':
+                    metrics['completed_video_artifacts']=sum(read(p).get('status')=='completed' for p in (folder/'generation').glob('*/generation.json'))
+                stage.done({'points':None,'point_count':0,'enhanced_ply':None,
+                            'original_ply':str(folder/'original.ply'),'partial_directory':str(folder)},
+                           metrics,status='failed',reason=str(error))
+                if cfg['m1_mode']=='wan360':
+                    from .m1_wan360 import report as m1_report
+                    m1_report(folder,metrics,str(error))
+    if failure is not None:
+        raise failure
     return read(folder/'outputs.json')
 
 def train_stage(run,cfg,kind,train,test,cache,resume=None):
@@ -81,6 +106,7 @@ def train_stage(run,cfg,kind,train,test,cache,resume=None):
             request['ply']=str(ROOT/'baseline/checkpoint.ply');xyz,_,_=ply(request['ply']);request['densify_until']=0
             request['initial_semantic']=init_semantics(xyz,cache,stage_dir/'initial_semantic.f32')
         elif kind=='sgi':
+            assert pointinfo.get('status') in ['completed','skipped'] and pointinfo.get('points'),'M1 must provide a valid completed/enabled input before SGI'
             request.update(points=pointinfo['points'],point_count=pointinfo['point_count']);xyz=np.fromfile(request['points'],dtype='f4').reshape(-1,6)[:,:3]
             request['initial_semantic']=init_semantics(xyz,cache,stage_dir/'initial_semantic.f32')
         else:

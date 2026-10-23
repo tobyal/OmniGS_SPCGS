@@ -18,6 +18,7 @@
 /code/bin/
 /code/lib/
 /.venv/
+/.venv_wan360/
 __pycache__/
 *.py[cod]
 *.egg-info/

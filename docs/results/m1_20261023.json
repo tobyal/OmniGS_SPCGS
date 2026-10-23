@@ -1,0 +1,702 @@
+{
+  "date": "2026-10-23",
+  "source_training_image": "2023-05-11_10.18.46",
+  "original_count": 3979,
+  "unique_generated_videos": 4,
+  "videos_reused_by_early_experiment": 4,
+  "code_revision": "628784299fd5c01394be9beeae052e63bc533ee5",
+  "weights": {
+    "repository": "AlayaLab/Wan360",
+    "revision": "914e60491baca94bf7c3346551bdb168b2445559",
+    "files": {
+      ".gitattributes": {
+        "bytes": 1586,
+        "sha256": "7ba09d1af48923ff7e6e61292b3ea7373d1dea5017cbed097c2fd5d3ab16e466"
+      },
+      "LICENSE": {
+        "bytes": 11357,
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      "README.md": {
+        "bytes": 669,
+        "sha256": "e288c5de950cc085f735cd360866ead55e7d84caec402b7dc4b68920c07722d3"
+      },
+      "THIRD_PARTY_NOTICES.md": {
+        "bytes": 891,
+        "sha256": "1f02def36385f28b22f712bdb1958b786b2f9d9c12c44a1b91439b8f5ea8fffe"
+      },
+      "Wan2.2_VAE.pth": {
+        "bytes": 2818839170,
+        "sha256": "20eb789667fa5e60e7516bf509512f6cb61f01b0aa0695eadaea930c13892b36"
+      },
+      "Wan360.safetensors": {
+        "bytes": 10491690400,
+        "sha256": "89cbdfbc0d0ccadcfa6a619bada33913da2ce156041f63c3854571e029a113e0"
+      },
+      "google/umt5-xxl/special_tokens_map.json": {
+        "bytes": 6623,
+        "sha256": "7b8a9f5040adb67b5805abdfd42c1f8d0f3d0e711f10726580eb3789cd0ad61d"
+      },
+      "google/umt5-xxl/spiece.model": {
+        "bytes": 4548313,
+        "sha256": "e3909a67b780650b35cf529ac782ad2b6b26e6d1f849d3fbb6a872905f452458"
+      },
+      "google/umt5-xxl/tokenizer.json": {
+        "bytes": 16837417,
+        "sha256": "6e197b4d3dbd71da14b4eb255f4fa91c9c1f2068b20a2de2472967ca3d22602b"
+      },
+      "google/umt5-xxl/tokenizer_config.json": {
+        "bytes": 61728,
+        "sha256": "ed9a3a8b0faa71a70a32847e0435fe036e6e112d4df4edb7bb48a921e344dc05"
+      },
+      "models_t5_umt5-xxl-enc-bf16.pth": {
+        "bytes": 11361920418,
+        "sha256": "7cace0da2b446bbbbc57d031ab6cf163a3d59b366da94e5afe36745b746fd81d"
+      }
+    },
+    "transport": {
+      "http_workers": 32,
+      "direct_cdn": true,
+      "modelscope_base": true,
+      "integrity": "Every LFS file must match the pinned official Wan360 SHA256"
+    }
+  },
+  "videos": [
+    {
+      "name": "2023-05-11_10.18.46_forward",
+      "actual_frames": 49,
+      "seconds": 98.30087637901306,
+      "torch": "2.6.0+cu124",
+      "cuda": "12.4",
+      "gpu": "NVIDIA RTX A6000",
+      "peak_allocated_vram_bytes": 28494581248
+    },
+    {
+      "name": "2023-05-11_10.18.46_backward",
+      "actual_frames": 49,
+      "seconds": 92.86160326004028,
+      "torch": "2.6.0+cu124",
+      "cuda": "12.4",
+      "gpu": "NVIDIA RTX A6000",
+      "peak_allocated_vram_bytes": 28494044672
+    },
+    {
+      "name": "2023-05-11_10.18.46_left",
+      "actual_frames": 49,
+      "seconds": 92.31528759002686,
+      "torch": "2.6.0+cu124",
+      "cuda": "12.4",
+      "gpu": "NVIDIA RTX A6000",
+      "peak_allocated_vram_bytes": 28494044672
+    },
+    {
+      "name": "2023-05-11_10.18.46_right",
+      "actual_frames": 49,
+      "seconds": 92.61647748947144,
+      "torch": "2.6.0+cu124",
+      "cuda": "12.4",
+      "gpu": "NVIDIA RTX A6000",
+      "peak_allocated_vram_bytes": 28494044672
+    }
+  ],
+  "anchor_audit": {
+    "source": {
+      "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_xphase1_work_2k/mvg/structure_filtered.json",
+      "bytes": 3371747,
+      "sha256": "b0af97184a277156ce7736f2f6f7dadd05e542005691e0d6b092b8feb0611541"
+    },
+    "feature_folder": "/mnt/sda/ubuntu/lkx/od/datasets/iris_xphase1_work_2k/mvg",
+    "world_conversion": [
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "anchors": 3979,
+    "original_points": 3979,
+    "reprojection_spherical_px_2k": {
+      "min": 0.00011021588403695267,
+      "p10": 0.1404815893134749,
+      "median": 0.6042968845824812,
+      "p90": 1.4132121267645674,
+      "max": 1.9910141429973305
+    },
+    "observation_policy": "all observations train-only; landmarks must coincide with original native cloud",
+    "projection": "OpenMVG spherical integer-pixel coordinates; +X right, +Y down, +Z panorama center"
+  },
+  "real_image_localization": {
+    "scope": "real held-out training-camera localization, not Wan360 validation",
+    "query": "2023-05-11_10.19.36",
+    "matching_views": [
+      "2023-05-11_10.18.46",
+      "2023-05-11_10.28.04",
+      "2023-05-11_10.29.30",
+      "2023-05-11_10.21.59",
+      "2023-05-11_10.27.16",
+      "2023-05-11_10.25.43"
+    ],
+    "registered": true,
+    "center_error_world_units": 0.008429825895426405,
+    "rotation_error_deg": 0.20583760836474443,
+    "matches_2d3d": 89,
+    "inliers": 58,
+    "validation_inliers": 18,
+    "original_copy_rejected": true,
+    "copy_translation": 0.0022536098986116007,
+    "passed": true
+  },
+  "runs": {
+    "m1_wan360_test": {
+      "m1_metrics": {
+        "original_count": 3979,
+        "videos": 4,
+        "generated_sources": 1,
+        "registered_views": 1,
+        "selected_views": 1,
+        "added": 52,
+        "enhanced_count": 4031,
+        "backend": "OpenMVG RootSIFT observations/descriptors; spherical 2D-3D localization and multiview ray triangulation",
+        "candidate_frames": 20,
+        "processed_candidates": 20,
+        "registered_candidates": 1,
+        "descriptor_matches": 18418,
+        "geometric_matches": 583,
+        "triangulated_candidates": 76,
+        "rejected": {
+          "insufficient real views": 312,
+          "already observed original landmark": 18,
+          "duplicate new point": 5,
+          "reprojection": 4
+        },
+        "before_density_filter": 67,
+        "density_removed": 15,
+        "reprojection_px": {
+          "min": 0.3023967874343979,
+          "p10": 0.8428809227688893,
+          "median": 1.8454931406330504,
+          "p90": 2.84651250257006,
+          "max": 3.255959727827566
+        },
+        "parallax_deg": {
+          "min": 4.165004050133763,
+          "p10": 7.555519231881489,
+          "median": 13.629239733151469,
+          "p90": 22.60273113811336,
+          "max": 32.787506899077776
+        },
+        "new_point_distance_to_original": {
+          "min": 0.03048492527129637,
+          "p10": 0.04955712976780528,
+          "median": 0.10719325306451406,
+          "p90": 0.19877935735548813,
+          "max": 0.2629823490754701
+        }
+      },
+      "sgi_integration": {
+        "passed": true,
+        "scope": "Short integration check; not a full geometry-quality or reconstruction-quality evaluation",
+        "m1_point_input": {
+          "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_spcgs/m1_wan360_test/01_sgi_sfm/enhanced_points.f32",
+          "bytes": 96744,
+          "sha256": "f8b9ed438f2688f3ac31dd4fd212232be2260785afa44deaac4bf2f4b267e04f"
+        },
+        "original_count": 3979,
+        "added": 52,
+        "initial_count": 4031,
+        "initial_xyz_exactly_matches_m1": true,
+        "final_count": 13991,
+        "loss_rows": 100,
+        "finite_losses_and_model": true,
+        "initial_scene_diagonal": 31.919382095336914,
+        "final_to_initial_distance_over_scene_diagonal_p50_p90_p99_max": [
+          0.003040446828550316,
+          0.014009640480759089,
+          0.02635864591262228,
+          0.045875038829413045
+        ],
+        "first_loss": {
+          "added_cumulative": 0,
+          "clip": 2.387193441390991,
+          "gaussians": 4031,
+          "generated_semantic": 2.434805393218994,
+          "inter": 0.0,
+          "intra": 0.0,
+          "isp_valid_pairs": 0,
+          "lambda": 0.012500000186264515,
+          "local3d": 0.09192409366369247,
+          "pruned_cumulative": 0,
+          "rgb": 0.2633110284805298,
+          "semantic_grad_norm": 0.25558704137802124,
+          "spc3d": 0.0,
+          "step": 1,
+          "total": 5.177234172821045,
+          "xyz_grad_norm": 0.13426168262958527
+        },
+        "last_loss": {
+          "added_cumulative": 13228,
+          "clip": 1.9537501335144043,
+          "gaussians": 13991,
+          "generated_semantic": 0.8432714343070984,
+          "inter": 0.0,
+          "intra": 0.0,
+          "isp_valid_pairs": 0,
+          "lambda": 1.0,
+          "local3d": 0.20265185832977295,
+          "ogr_removed": 52,
+          "pruned_cumulative": 3268,
+          "rgb": 0.2494840919971466,
+          "semantic_grad_norm": 0.19692553579807281,
+          "spc3d": 0.0,
+          "step": 100,
+          "total": 3.249157428741455,
+          "xyz_grad_norm": 0.19834962487220764
+        }
+      },
+      "selected_views": [
+        {
+          "name": "2023-05-11_10.18.46_right_f0004",
+          "frame_index": 4,
+          "direction": "right",
+          "matches_2d3d": 56,
+          "inliers": 22,
+          "validation_inliers": 5,
+          "validation_total": 14,
+          "translation": 0.15240514356902304,
+          "rotation_delta_deg": 1.4522116042978581,
+          "motion_direction_cosine": 0.9659990991657414,
+          "heldout_improvement_px": 7.595955148743073,
+          "error_px": {
+            "min": 0.06718405235030504,
+            "p10": 0.6624180623666137,
+            "median": 2.3136991148058845,
+            "p90": 3.5599237896180793,
+            "max": 5.879254796437321
+          },
+          "validation_error_px": {
+            "min": 1.3099511069246272,
+            "p10": 1.789979196416311,
+            "median": 3.521080160722598,
+            "p90": 3.9952316834316846,
+            "max": 4.282559640129978
+          }
+        }
+      ],
+      "m1_config": {
+        "mode": "m1_wan360_test",
+        "seed": 42,
+        "gpu": 0,
+        "width": 512,
+        "height": 256,
+        "semantic_width": 128,
+        "semantic_height": 64,
+        "cache_width": 64,
+        "cache_height": 32,
+        "train_views": 56,
+        "eval_views": 3,
+        "sgi_iterations": 100,
+        "semantic_iterations": 100,
+        "spc_iterations": 100,
+        "densify_from": 20,
+        "densify_every": 20,
+        "densify_until": 80,
+        "densify_threshold": 0.0002,
+        "max_gaussians": 60000,
+        "ogr_every": 50,
+        "ogr_radius": 1.0,
+        "ogr_min_neighbors": 5,
+        "isp_every": 25,
+        "spc_ramp": 80,
+        "local_samples": 32,
+        "local_weight": 1.0,
+        "contrast_samples": 256,
+        "save_every": 50,
+        "opacity_reset_every": 0,
+        "pose_noise_fraction": 0.02,
+        "classes": [
+          "wall",
+          "floor",
+          "pipe",
+          "valve",
+          "pump",
+          "motor",
+          "cabinet",
+          "machine",
+          "ceiling",
+          "door",
+          "window",
+          "metal frame"
+        ],
+        "m1_mode": "wan360",
+        "generated_manifest": null,
+        "generation_command": null,
+        "sam_config": "configs/sam2.1/sam2.1_hiera_t.yaml",
+        "sam_checkpoint": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/weights/sam2.1_hiera_tiny.pt",
+        "feature_backend": "local_crops",
+        "wan360": {
+          "views": 1,
+          "view_names": [
+            "2023-05-11_10.18.46"
+          ],
+          "directions": [
+            "forward",
+            "backward",
+            "left",
+            "right"
+          ],
+          "distance": 0.8,
+          "width": 1024,
+          "height": 512,
+          "num_frames": 49,
+          "steps": 30,
+          "candidate_frames": [
+            4,
+            8,
+            12,
+            16,
+            20
+          ],
+          "reuse": true
+        },
+        "m1_geometry": {
+          "neighbors": 6,
+          "ratio": 0.8,
+          "registration_error_px": 6.0,
+          "min_correspondences": 24,
+          "min_inliers": 16,
+          "min_validation_inliers": 4,
+          "min_translation": 0.02,
+          "max_translation": 2.0,
+          "triangulation_error_px": 5.0,
+          "min_parallax_deg": 0.6,
+          "min_real_views": 2,
+          "duplicate_radius": 0.015,
+          "max_distance_to_original": 2.0,
+          "outlier_radius": 0.3,
+          "outlier_min_neighbors": 2
+        }
+      },
+      "enhanced_ply": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_spcgs/m1_wan360_test/01_sgi_sfm/enhanced.ply",
+        "bytes": 60643,
+        "sha256": "2f3524885d3900f12129821f9d550d8183e6436d96fa7ade03380f6c77ae0e26"
+      }
+    },
+    "m1_wan360_early": {
+      "m1_metrics": {
+        "original_count": 3979,
+        "videos": 4,
+        "generated_sources": 1,
+        "videos_generated_this_invocation": 0,
+        "videos_reused": 4,
+        "registered_views": 3,
+        "selected_views": 3,
+        "added": 233,
+        "enhanced_count": 4212,
+        "backend": "OpenMVG RootSIFT observations/descriptors; spherical 2D-3D localization and multiview ray triangulation",
+        "candidate_frames": 16,
+        "processed_candidates": 16,
+        "registered_candidates": 7,
+        "descriptor_matches": 29675,
+        "geometric_matches": 4492,
+        "triangulated_candidates": 372,
+        "rejected": {
+          "insufficient real views": 2815,
+          "already observed original landmark": 104,
+          "duplicate new point": 35,
+          "invalid point or negative ray depth": 3,
+          "reprojection": 10,
+          "duplicate original point": 5,
+          "far from original scene support": 1,
+          "duplicate real feature track": 181
+        },
+        "before_density_filter": 318,
+        "density_removed": 85,
+        "reprojection_px": {
+          "min": 0.2392003840368121,
+          "p10": 0.6399886147962329,
+          "median": 1.6394167793083343,
+          "p90": 3.3281970829208714,
+          "max": 4.644224445774074
+        },
+        "parallax_deg": {
+          "min": 1.4021782025980183,
+          "p10": 5.932232494071256,
+          "median": 13.365544267173577,
+          "p90": 21.596278144339223,
+          "max": 41.87398495614911
+        },
+        "new_point_distance_to_original": {
+          "min": 0.01547676898310845,
+          "p10": 0.04808312608390118,
+          "median": 0.11156804266157265,
+          "p90": 0.24685486346987634,
+          "max": 0.7570233427357943
+        }
+      },
+      "sgi_integration": {
+        "passed": true,
+        "scope": "Short integration check; not a full geometry-quality or reconstruction-quality evaluation",
+        "m1_point_input": {
+          "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_spcgs/m1_wan360_early/01_sgi_sfm/enhanced_points.f32",
+          "bytes": 101088,
+          "sha256": "77400a3de099bc5e3db0848249924ccb2f572850cc0e6bfb524fcfb013527939"
+        },
+        "original_count": 3979,
+        "added": 233,
+        "initial_count": 4212,
+        "initial_xyz_exactly_matches_m1": true,
+        "final_count": 14183,
+        "loss_rows": 100,
+        "finite_losses_and_model": true,
+        "initial_scene_diagonal": 31.919382095336914,
+        "final_to_initial_distance_over_scene_diagonal_p50_p90_p99_max": [
+          0.0030980293817296275,
+          0.013787668648102125,
+          0.026253930909107933,
+          0.04502680884626057
+        ],
+        "first_loss": {
+          "added_cumulative": 0,
+          "clip": 2.387451410293579,
+          "gaussians": 4212,
+          "generated_semantic": 2.407064199447632,
+          "inter": 0.0,
+          "intra": 0.0,
+          "isp_valid_pairs": 0,
+          "lambda": 0.012500000186264515,
+          "local3d": 0.09583314508199692,
+          "pruned_cumulative": 0,
+          "rgb": 0.263486385345459,
+          "semantic_grad_norm": 0.2823341190814972,
+          "spc3d": 0.0,
+          "step": 1,
+          "total": 5.153835296630859,
+          "xyz_grad_norm": 0.13593217730522156
+        },
+        "last_loss": {
+          "added_cumulative": 13148,
+          "clip": 1.9404433965682983,
+          "gaussians": 14183,
+          "generated_semantic": 1.0925095081329346,
+          "inter": 0.0,
+          "intra": 0.0,
+          "isp_valid_pairs": 0,
+          "lambda": 1.0,
+          "local3d": 0.17182686924934387,
+          "ogr_removed": 61,
+          "pruned_cumulative": 3177,
+          "rgb": 0.2465907335281372,
+          "semantic_grad_norm": 0.2038402259349823,
+          "spc3d": 0.0,
+          "step": 100,
+          "total": 3.4513704776763916,
+          "xyz_grad_norm": 0.21208004653453827
+        }
+      },
+      "selected_views": [
+        {
+          "name": "2023-05-11_10.18.46_forward_f0001",
+          "frame_index": 1,
+          "direction": "forward",
+          "matches_2d3d": 75,
+          "inliers": 53,
+          "validation_inliers": 16,
+          "validation_total": 18,
+          "translation": 0.04085708755561923,
+          "rotation_delta_deg": 0.8203341045218828,
+          "motion_direction_cosine": 0.7586737804480368,
+          "heldout_improvement_px": 2.0868888791041935,
+          "error_px": {
+            "min": 0.5309061852200362,
+            "p10": 0.7836425649760714,
+            "median": 1.9678364079909225,
+            "p90": 4.675882625063872,
+            "max": 5.706701724653502
+          },
+          "validation_error_px": {
+            "min": 0.5309061852200362,
+            "p10": 0.7668672270597945,
+            "median": 2.356737169288322,
+            "p90": 5.374846271037452,
+            "max": 5.706701724653502
+          }
+        },
+        {
+          "name": "2023-05-11_10.18.46_backward_f0002",
+          "frame_index": 2,
+          "direction": "backward",
+          "matches_2d3d": 74,
+          "inliers": 42,
+          "validation_inliers": 11,
+          "validation_total": 18,
+          "translation": 0.04210821234640381,
+          "rotation_delta_deg": 0.4489514028658232,
+          "motion_direction_cosine": 0.6635428745536861,
+          "heldout_improvement_px": 1.4080832383495787,
+          "error_px": {
+            "min": 0.0830521263789636,
+            "p10": 0.8473120946688357,
+            "median": 2.450975219529459,
+            "p90": 4.699674082296675,
+            "max": 5.904868489158552
+          },
+          "validation_error_px": {
+            "min": 0.6716765905285343,
+            "p10": 0.8436752836935189,
+            "median": 2.6415427946501144,
+            "p90": 4.7393952229677865,
+            "max": 4.981893757447624
+          }
+        },
+        {
+          "name": "2023-05-11_10.18.46_right_f0002",
+          "frame_index": 2,
+          "direction": "right",
+          "matches_2d3d": 73,
+          "inliers": 46,
+          "validation_inliers": 10,
+          "validation_total": 18,
+          "translation": 0.04399068922113669,
+          "rotation_delta_deg": 0.8890367754815405,
+          "motion_direction_cosine": 0.8352822039648513,
+          "heldout_improvement_px": 1.6161423498398766,
+          "error_px": {
+            "min": 0.16687291247972816,
+            "p10": 0.6370127019618648,
+            "median": 1.8595977608991838,
+            "p90": 3.8414395139500837,
+            "max": 5.449299962722127
+          },
+          "validation_error_px": {
+            "min": 0.5852559715860602,
+            "p10": 0.6038169636622113,
+            "median": 1.7221213451101334,
+            "p90": 2.9608596668985614,
+            "max": 3.023337677971345
+          }
+        }
+      ],
+      "m1_config": {
+        "mode": "m1_wan360_early",
+        "seed": 42,
+        "gpu": 0,
+        "width": 512,
+        "height": 256,
+        "semantic_width": 128,
+        "semantic_height": 64,
+        "cache_width": 64,
+        "cache_height": 32,
+        "train_views": 56,
+        "eval_views": 3,
+        "sgi_iterations": 100,
+        "semantic_iterations": 100,
+        "spc_iterations": 100,
+        "densify_from": 20,
+        "densify_every": 20,
+        "densify_until": 80,
+        "densify_threshold": 0.0002,
+        "max_gaussians": 60000,
+        "ogr_every": 50,
+        "ogr_radius": 1.0,
+        "ogr_min_neighbors": 5,
+        "isp_every": 25,
+        "spc_ramp": 80,
+        "local_samples": 32,
+        "local_weight": 1.0,
+        "contrast_samples": 256,
+        "save_every": 50,
+        "opacity_reset_every": 0,
+        "pose_noise_fraction": 0.02,
+        "classes": [
+          "wall",
+          "floor",
+          "pipe",
+          "valve",
+          "pump",
+          "motor",
+          "cabinet",
+          "machine",
+          "ceiling",
+          "door",
+          "window",
+          "metal frame"
+        ],
+        "m1_mode": "wan360",
+        "generated_manifest": null,
+        "generation_command": null,
+        "sam_config": "configs/sam2.1/sam2.1_hiera_t.yaml",
+        "sam_checkpoint": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/weights/sam2.1_hiera_tiny.pt",
+        "feature_backend": "local_crops",
+        "wan360": {
+          "views": 1,
+          "view_names": [
+            "2023-05-11_10.18.46"
+          ],
+          "directions": [
+            "forward",
+            "backward",
+            "left",
+            "right"
+          ],
+          "distance": 0.8,
+          "width": 1024,
+          "height": 512,
+          "num_frames": 49,
+          "steps": 30,
+          "candidate_frames": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "reuse": true
+        },
+        "m1_geometry": {
+          "neighbors": 6,
+          "ratio": 0.8,
+          "registration_error_px": 6.0,
+          "min_correspondences": 24,
+          "min_inliers": 16,
+          "min_validation_inliers": 4,
+          "min_translation": 0.02,
+          "max_translation": 2.0,
+          "triangulation_error_px": 5.0,
+          "min_parallax_deg": 0.6,
+          "min_real_views": 2,
+          "duplicate_radius": 0.015,
+          "max_distance_to_original": 2.0,
+          "outlier_radius": 0.3,
+          "outlier_min_neighbors": 2
+        }
+      },
+      "enhanced_ply": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_spcgs/m1_wan360_early/01_sgi_sfm/enhanced.ply",
+        "bytes": 63358,
+        "sha256": "7ae30585de2507ff7ee126c074d3695732c3badc2095e7c3689e1b4f1fb0b5ac"
+      }
+    }
+  },
+  "checks": {
+    "geometry_unit_tests": 2,
+    "missing_weights_failure_preserved": true,
+    "sgi_rejects_failed_m1": true,
+    "repeat_early_m1_keeps_point_sha256": true,
+    "original_baseline_sha256": "e3b44ce1f1e499cc39cad83a5d679e824804102e03367c2399ae9a9992e9334d"
+  },
+  "not_executed": [
+    "8-source batch",
+    "56-source batch",
+    "full-budget M2-M5 comparison"
+  ]
+}
