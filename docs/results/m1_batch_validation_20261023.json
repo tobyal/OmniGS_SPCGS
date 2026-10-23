@@ -1,0 +1,7 @@
+{
+  "cached_smoke_completed": true,
+  "per_source_and_global_f32_match_existing_result": "df5faac38ec71f653f30175d3d9f7cfe3f9a64f4340adac07930a6d3b38b5bdd",
+  "incomplete_generation_blocks_all_sfm": true,
+  "incomplete_videos_in_barrier_test": 220,
+  "geometry_tests_passed": 2
+}

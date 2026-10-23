@@ -29,7 +29,8 @@ def settings(cfg):
         defaults[key]=str(path if path.is_absolute() else ROOT/path)
     return defaults
 
-def generate(folder, cfg, train):
+def plan_generation(folder, cfg, train):
+    """Prepare identical signed jobs and cache links without launching inference."""
     w = settings(cfg)
     if w['width'] != 2 * w['height'] or w['height'] % 32:
         raise ValueError('Wan360 needs 2:1 ERP, height divisible by 32')
@@ -98,6 +99,11 @@ def generate(folder, cfg, train):
             if not complete:
                 pending.append(job)
     write(folder / 'generation_jobs.json', {'jobs': jobs, 'config': w, 'sources': sources})
+    return w, jobs, pending
+
+
+def generate(folder, cfg, train):
+    w, jobs, pending = plan_generation(folder, cfg, train)
     if pending:
         request = folder / 'wan360_request.json'
         write(request, {'config': w, 'jobs': pending})
