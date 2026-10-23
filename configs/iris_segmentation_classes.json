@@ -1,0 +1,185 @@
+{
+  "version": "iris7_v1",
+  "ignore_id": 255,
+  "classes": [
+    {
+      "id": 0,
+      "name": "piping",
+      "zh": "管道与阀件",
+      "color": [
+        31,
+        200,
+        226
+      ],
+      "official_ids": [
+        27,
+        29
+      ],
+      "definition": "输送管线及其可见阀件、接头和保温外层",
+      "include": "直管、弯管、法兰、阀门",
+      "exclude": "风道、泵电机、储罐、细电缆",
+      "observation_keys": [
+        "pipe",
+        "valve"
+      ],
+      "rationale": "主要工业对象；合并小阀件避免细粒度不稳定边界。"
+    },
+    {
+      "id": 1,
+      "name": "equipment",
+      "zh": "工业设备与柜箱",
+      "color": [
+        245,
+        167,
+        57
+      ],
+      "official_ids": [
+        7,
+        16,
+        32
+      ],
+      "definition": "独立机械、电气设备、柜箱外壳与固定照明设备",
+      "include": "泵电机组、容器、控制柜、接线箱、设备机壳、固定灯具",
+      "exclude": "建筑柱、通风管道、管线、设备下方土建基座",
+      "observation_keys": [
+        "pump_motor",
+        "cabinet",
+        "vessel",
+        "junction_box",
+        "tank",
+        "equipment_housing",
+        "light"
+      ],
+      "rationale": "机械与电气细型难以从外观稳定识别，保留统一设备语义。"
+    },
+    {
+      "id": 2,
+      "name": "building",
+      "zh": "建筑主体",
+      "color": [
+        134,
+        146,
+        168
+      ],
+      "official_ids": [
+        12,
+        19
+      ],
+      "definition": "建筑围护、土建结构与门",
+      "include": "地面、墙面、顶面、红色承重柱、土建台阶、门、混凝土基座",
+      "exclude": "钢支架、工业容器、独立灯具、相机三脚架",
+      "observation_keys": [
+        "floor",
+        "wall",
+        "ceiling",
+        "column",
+        "door",
+        "stairs"
+      ],
+      "rationale": "CIVILS 官方上层类别不支持可靠细拆；红柱按已有标签语义纳入建筑。"
+    },
+    {
+      "id": 3,
+      "name": "structural_frame",
+      "zh": "金属梁架与支撑",
+      "color": [
+        173,
+        116,
+        236
+      ],
+      "official_ids": [
+        6,
+        24
+      ],
+      "definition": "可辨认的金属承重梁架和设备管线支撑",
+      "include": "钢梁、打孔立柱、角钢、支撑横杆",
+      "exclude": "建筑圆柱、桥架、扶手栏杆",
+      "observation_keys": [
+        "support"
+      ],
+      "rationale": "BEAMS 与 SUPPORTS 外观和用途相近，可从土建主体分离。"
+    },
+    {
+      "id": 4,
+      "name": "access_structure",
+      "zh": "检修通行设施",
+      "color": [
+        235,
+        102,
+        141
+      ],
+      "official_ids": [
+        2,
+        21,
+        31
+      ],
+      "definition": "检修通行用格栅、护栏和梯具",
+      "include": "格栅平台、栏杆、扶手、金属梯",
+      "exclude": "土建台阶、一般设备支架、线缆桥架",
+      "observation_keys": [
+        "grating",
+        "guardrail",
+        "ladder"
+      ],
+      "rationale": "多为细杆或网格，合并相关通行设施但不与一般结构混为一类。"
+    },
+    {
+      "id": 5,
+      "name": "cable_tray",
+      "zh": "线缆桥架",
+      "color": [
+        223,
+        206,
+        55
+      ],
+      "official_ids": [
+        5
+      ],
+      "definition": "承载电缆的槽式或网篮桥架",
+      "include": "桥架可见外壳与网篮整体",
+      "exclude": "独立游离电缆、管道、格栅平台",
+      "observation_keys": [
+        "cable_tray"
+      ],
+      "rationale": "官方定义明确，顶面常见，可保留独立类别。"
+    },
+    {
+      "id": 6,
+      "name": "hvac",
+      "zh": "通风风道与风口",
+      "color": [
+        70,
+        190,
+        115
+      ],
+      "official_ids": [
+        30
+      ],
+      "definition": "通风系统的风道、风口和相关明确外壳",
+      "include": "矩形金属风道、波纹圆风管、风口",
+      "exclude": "封闭储罐、普通保温输送管、无法判断用途的金属壳体",
+      "observation_keys": [
+        "duct"
+      ],
+      "rationale": "风道与流体管线用途不同，有官方 HVAC 支持，不按颜色合并。"
+    }
+  ],
+  "unmapped_official_ids": {
+    "9": "MISCELLANEOUS 定义过宽，保留 ignore",
+    "13": "FIRE-FIGHTING 包含不同对象，暂不强制映射"
+  },
+  "source_codes": {
+    "0": "unknown / unmapped / conflict",
+    "1": "official mapped",
+    "2": "SAM2 candidate",
+    "3": "human edit",
+    "4": "Codex inspected SAM2 correction"
+  },
+  "review_states": [
+    "unprocessed",
+    "candidate",
+    "issues",
+    "approved"
+  ],
+  "approval_rule": "Only an explicit human action in the review UI may approve a saved revision. Codex visual inspection is not human approval."
+}

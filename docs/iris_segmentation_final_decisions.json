@@ -1,0 +1,16 @@
+{
+  "observer": "Codex native visual review of all 56 RGB/candidate overlays and both down-face tripod mosaics; not human approval",
+  "additional_rejected_prompt_ids": {"28":[5],"31":[6],"53":[2],"54":[7],"55":[3,7]},
+  "rejected_extra_prompt_ids": {"16":[0],"23":[2],"28":[2]},
+  "reasons": {
+    "16":"补充分割再次选中柜体下部而非地面，撤回 extra_00。",
+    "23":"extra_02 选中泵上方线篮和缆线，不能归为设备。",
+    "28":"原始梯提示选中后方容器侧板；extra_02 选中底座而非管。",
+    "31":"桥架提示选中红色建筑柱顶，撤回。",
+    "53":"设备点仅选中控制台上的纸张，撤回。",
+    "54":"风道提示选中细支撑，撤回。",
+    "55":"设备点选中白色管面；左侧封闭银色容器不能判为风道，撤回。"
+  },
+  "tripod_box_accepted_indices": [1,2,3,4,5,6,8,9,10,11,12,13,17,18,19,20,23,25,27,28,31,32,37,43,44,45,46,49,50,51,53,54,55,56],
+  "tripod_policy": "Only the prompt-connected component of the visually inspected SAM2 down-face mask is applied as ignore. Disconnected false positives are removed. Other box candidates remain unapplied and flagged for human review. No rectangular mask is used."
+}
