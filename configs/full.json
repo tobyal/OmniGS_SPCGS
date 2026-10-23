@@ -1,0 +1,12 @@
+{
+  "feature_backend": "local_crops",
+  "m1_mode": "skip",
+  "sam_config": "configs/sam2.1/sam2.1_hiera_t.yaml",
+  "local_samples": 800,
+  "contrast_samples": 512,
+  "isp_every": 100,
+  "spc_ramp": 4000,
+  "ogr_every": 3000,
+  "ogr_radius": 1.0,
+  "ogr_min_neighbors": 5
+}

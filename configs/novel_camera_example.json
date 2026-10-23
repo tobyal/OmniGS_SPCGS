@@ -1,0 +1,33 @@
+[
+  {
+    "center": [
+      0.3130395962254608,
+      0.08476527592565994,
+      0.36716275127114095
+    ],
+    "feature": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_spcgs/pilot_20261023/03_semantic/cache/2023-05-11_10.43.53.f16",
+    "feature_height": 64,
+    "feature_width": 128,
+    "image": "/mnt/sda/ubuntu/lkx/od/datasets/iris_xphase1_A_official_2k/images/2023-05-11_10.43.53.png",
+    "name": "novel_isp900",
+    "rotation": [
+      [
+        -0.9837566584974267,
+        0.1776768379540523,
+        -0.025569085173828627
+      ],
+      [
+        0.025987802016890157,
+        2.9400640756096358e-05,
+        -0.9996622596066798
+      ],
+      [
+        -0.17761607756143016,
+        -0.984088888459905,
+        -0.004646353563844886
+      ]
+    ],
+    "split": "train",
+    "view_id": 34
+  }
+]

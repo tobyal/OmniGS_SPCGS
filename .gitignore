@@ -1,0 +1,46 @@
+# Local datasets, baseline checkpoints, model downloads and experiment outputs
+/data/
+/baseline/
+/weights/
+/vendor/
+/runs/
+/logs/
+/delivery/
+/final_model/
+/review/
+/SOURCE_MANIFEST.json
+/docs/task_spec.txt
+*.tar.gz
+*.zip
+
+# Native builds and Python environments/caches
+/code/build/
+/code/bin/
+/code/lib/
+/.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+*.o
+*.so
+*.a
+*.dll
+*.exe
+
+# Generated integration-test artifacts
+/tests/results/
+/tests/regression/
+/tests/real_spc/
+/tests/isp_baseline/
+
+# Local credentials and editor state
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
