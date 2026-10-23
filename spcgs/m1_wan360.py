@@ -22,7 +22,7 @@ def geometry_settings(cfg):
         'min_correspondences':24, 'min_inliers':16, 'min_inlier_ratio':.3,
         'registration_error_px':6., 'min_validation_inliers':4, 'min_validation_ratio':.3,
         'min_coverage_bins':4, 'min_translation':.02, 'max_translation':2.,
-        'max_rotation_deg':15., 'min_direction_cosine':-.2, 'min_validation_improvement_px':.3,
+        'max_rotation_deg':15., 'min_validation_improvement_px':.3,
         'epipolar_error_px':6., 'triangulation_error_px':5., 'min_parallax_deg':.6,
         'min_real_views':2, 'duplicate_radius':.015, 'max_distance_to_original':2.,
         'outlier_radius':.3, 'outlier_min_neighbors':2,

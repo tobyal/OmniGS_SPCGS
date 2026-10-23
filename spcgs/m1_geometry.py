@@ -194,7 +194,6 @@ def register(generated, source, anchor_map, matches, cfg, output):
     if coverage < cfg['min_coverage_bins']: reasons.append('inliers concentrated in too few ERP regions')
     if not cfg['min_translation'] <= distance <= cfg['max_translation']: reasons.append('translation outside configured world-coordinate range')
     if rot_delta > cfg['max_rotation_deg']: reasons.append('large orientation departure')
-    if direction_cos < cfg['min_direction_cosine']: reasons.append('translation contradicts Wan360 motion prior')
     if improvement < cfg['min_validation_improvement_px']: reasons.append('estimated pose does not improve held-out projection over source pose')
     for row,e,inside in zip(rows,error,inliers):
         row.update(error_spherical_px_2k=float(e),inlier=bool(inside))
@@ -205,7 +204,7 @@ def register(generated, source, anchor_map, matches, cfg, output):
                   validation_error_px=quantiles(error[validation][valid]),error_px=quantiles(error[inliers]),
                   coverage_bins=coverage,translation=distance,rotation_delta_deg=float(rot_delta),
                   motion_direction_cosine=direction_cos,heldout_improvement_px=improvement,
-                  conditioning_role='direction prior only; absolute pose fitted from training-only 2D-3D correspondences')
+                  conditioning_role='generation only; direction cosine is diagnostic, not an acceptance criterion; absolute pose fitted from training-only 2D-3D correspondences')
     write(output,result)
     return result
 

@@ -1,0 +1,524 @@
+{
+  "baseline_code_commit": "cd58821fb6c32d9fd6779b82b4d8b2ba2853882d",
+  "change": "Remove the motion-direction acceptance gate and threshold; retain cosine as a diagnostic only.",
+  "command": ".venv/bin/python -m spcgs.pipeline --run m1_wan360_early_no_direction_gate_20261023 --config configs/m1_wan360_early.json --stage m1",
+  "reprojection_definition": "Per retained new point: maximum spherical angular reprojection error over its real and generated observations, expressed in width-2048 pixel units; quantiles across points.",
+  "checks": {
+    "baseline_artifacts_unchanged": true,
+    "same_video_and_trajectory_files": true,
+    "same_config_except_removed_direction_threshold": true,
+    "identical_descriptor_matches": 96,
+    "identical_candidate_pose_and_numeric_diagnostics": 16,
+    "all_16_feature_caches_reused": true,
+    "original_3979_xyzrgb_unchanged": true,
+    "only_m1_executed": true,
+    "existing_geometry_unit_tests_passed": 2
+  },
+  "before": {
+    "run_id": "m1_wan360_early",
+    "metrics": {
+      "original_count": 3979,
+      "videos": 4,
+      "generated_sources": 1,
+      "videos_generated_this_invocation": 0,
+      "videos_reused": 4,
+      "registered_views": 3,
+      "selected_views": 3,
+      "added": 233,
+      "enhanced_count": 4212,
+      "backend": "OpenMVG RootSIFT observations/descriptors; spherical 2D-3D localization and multiview ray triangulation",
+      "candidate_frames": 16,
+      "processed_candidates": 16,
+      "registered_candidates": 7,
+      "descriptor_matches": 29675,
+      "geometric_matches": 4492,
+      "triangulated_candidates": 372,
+      "rejected": {
+        "insufficient real views": 2815,
+        "already observed original landmark": 104,
+        "duplicate new point": 35,
+        "invalid point or negative ray depth": 3,
+        "reprojection": 10,
+        "duplicate original point": 5,
+        "far from original scene support": 1,
+        "duplicate real feature track": 181
+      },
+      "before_density_filter": 318,
+      "density_removed": 85,
+      "reprojection_px": {
+        "min": 0.2392003840368121,
+        "p10": 0.6399886147962329,
+        "median": 1.6394167793083343,
+        "p90": 3.3281970829208714,
+        "max": 4.644224445774074
+      },
+      "parallax_deg": {
+        "min": 1.4021782025980183,
+        "p10": 5.932232494071256,
+        "median": 13.365544267173577,
+        "p90": 21.596278144339223,
+        "max": 41.87398495614911
+      },
+      "new_point_distance_to_original": {
+        "min": 0.01547676898310845,
+        "p10": 0.04808312608390118,
+        "median": 0.11156804266157265,
+        "p90": 0.24685486346987634,
+        "max": 0.7570233427357943
+      }
+    },
+    "selected": [
+      {
+        "name": "2023-05-11_10.18.46_forward_f0001",
+        "direction": "forward",
+        "frame_index": 1,
+        "inliers": 53,
+        "matches_2d3d": 75,
+        "validation_inliers": 16,
+        "validation_total": 18,
+        "motion_direction_cosine": 0.7586737804480368,
+        "score": 48.76432718401816,
+        "translation": 0.04085708755561923,
+        "error_px": {
+          "min": 0.5309061852200362,
+          "p10": 0.7836425649760714,
+          "median": 1.9678364079909225,
+          "p90": 4.675882625063872,
+          "max": 5.706701724653502
+        },
+        "validation_error_px": {
+          "min": 0.5309061852200362,
+          "p10": 0.7668672270597945,
+          "median": 2.356737169288322,
+          "p90": 5.374846271037452,
+          "max": 5.706701724653502
+        }
+      },
+      {
+        "name": "2023-05-11_10.18.46_backward_f0002",
+        "direction": "backward",
+        "frame_index": 2,
+        "inliers": 42,
+        "matches_2d3d": 74,
+        "validation_inliers": 11,
+        "validation_total": 18,
+        "motion_direction_cosine": 0.6635428745536861,
+        "score": 36.49804956094108,
+        "translation": 0.04210821234640381,
+        "error_px": {
+          "min": 0.0830521263789636,
+          "p10": 0.8473120946688357,
+          "median": 2.450975219529459,
+          "p90": 4.699674082296675,
+          "max": 5.904868489158552
+        },
+        "validation_error_px": {
+          "min": 0.6716765905285343,
+          "p10": 0.8436752836935189,
+          "median": 2.6415427946501144,
+          "p90": 4.7393952229677865,
+          "max": 4.981893757447624
+        }
+      },
+      {
+        "name": "2023-05-11_10.18.46_right_f0002",
+        "direction": "right",
+        "frame_index": 2,
+        "inliers": 46,
+        "matches_2d3d": 73,
+        "validation_inliers": 10,
+        "validation_total": 18,
+        "motion_direction_cosine": 0.8352822039648513,
+        "score": 41.68080447820163,
+        "translation": 0.04399068922113669,
+        "error_px": {
+          "min": 0.16687291247972816,
+          "p10": 0.6370127019618648,
+          "median": 1.8595977608991838,
+          "p90": 3.8414395139500837,
+          "max": 5.449299962722127
+        },
+        "validation_error_px": {
+          "min": 0.5852559715860602,
+          "p10": 0.6038169636622113,
+          "median": 1.7221213451101334,
+          "p90": 2.9608596668985614,
+          "max": 3.023337677971345
+        }
+      }
+    ],
+    "point_attribution": {
+      "forward": {
+        "retained_points": 166,
+        "triangulated_candidates": 245,
+        "reprojection_px": {
+          "min": 0.2392003840368121,
+          "p10": 0.7152686652025944,
+          "median": 1.6946972545107992,
+          "p90": 3.186015715795423,
+          "max": 4.644224445774074
+        }
+      },
+      "backward": {
+        "retained_points": 41,
+        "triangulated_candidates": 76,
+        "reprojection_px": {
+          "min": 0.3026308118941253,
+          "p10": 0.5830772916463214,
+          "median": 1.359341096048032,
+          "p90": 3.6792789180948557,
+          "max": 4.627089408589818
+        }
+      },
+      "left": {
+        "retained_points": 0,
+        "triangulated_candidates": 0,
+        "reprojection_px": {}
+      },
+      "right": {
+        "retained_points": 26,
+        "triangulated_candidates": 51,
+        "reprojection_px": {
+          "min": 0.3968900203363026,
+          "p10": 0.6867239516313212,
+          "median": 1.5427311669895347,
+          "p90": 3.0949196141143926,
+          "max": 3.9970928290674252
+        }
+      }
+    },
+    "enhanced_points": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_spcgs/m1_wan360_early/01_sgi_sfm/enhanced_points.f32",
+      "bytes": 101088,
+      "sha256": "77400a3de099bc5e3db0848249924ccb2f572850cc0e6bfb524fcfb013527939"
+    }
+  },
+  "after": {
+    "run_id": "m1_wan360_early_no_direction_gate_20261023",
+    "metrics": {
+      "original_count": 3979,
+      "videos": 4,
+      "generated_sources": 1,
+      "videos_generated_this_invocation": 0,
+      "videos_reused": 4,
+      "registered_views": 4,
+      "selected_views": 4,
+      "added": 288,
+      "enhanced_count": 4267,
+      "backend": "OpenMVG RootSIFT observations/descriptors; spherical 2D-3D localization and multiview ray triangulation",
+      "candidate_frames": 16,
+      "processed_candidates": 16,
+      "registered_candidates": 9,
+      "descriptor_matches": 29675,
+      "geometric_matches": 6575,
+      "triangulated_candidates": 453,
+      "rejected": {
+        "insufficient real views": 4135,
+        "already observed original landmark": 158,
+        "duplicate new point": 44,
+        "invalid point or negative ray depth": 5,
+        "reprojection": 13,
+        "duplicate original point": 6,
+        "far from original scene support": 1,
+        "duplicate real feature track": 352
+      },
+      "before_density_filter": 384,
+      "density_removed": 96,
+      "reprojection_px": {
+        "min": 0.2392003840368121,
+        "p10": 0.6046783208511951,
+        "median": 1.640381167007141,
+        "p90": 3.3559410282104887,
+        "max": 4.644224445774074
+      },
+      "parallax_deg": {
+        "min": 1.0376663814392533,
+        "p10": 5.76994718080632,
+        "median": 13.34383722859144,
+        "p90": 24.70217964764564,
+        "max": 44.91956292631721
+      },
+      "new_point_distance_to_original": {
+        "min": 0.01547676898310845,
+        "p10": 0.04694940629977464,
+        "median": 0.11407510827275325,
+        "p90": 0.24948713510945664,
+        "max": 0.7570233427357943
+      }
+    },
+    "selected": [
+      {
+        "name": "2023-05-11_10.18.46_forward_f0001",
+        "direction": "forward",
+        "frame_index": 1,
+        "inliers": 53,
+        "matches_2d3d": 75,
+        "validation_inliers": 16,
+        "validation_total": 18,
+        "motion_direction_cosine": 0.7586737804480368,
+        "score": 48.76432718401816,
+        "translation": 0.04085708755561923,
+        "error_px": {
+          "min": 0.5309061852200362,
+          "p10": 0.7836425649760714,
+          "median": 1.9678364079909225,
+          "p90": 4.675882625063872,
+          "max": 5.706701724653502
+        },
+        "validation_error_px": {
+          "min": 0.5309061852200362,
+          "p10": 0.7668672270597945,
+          "median": 2.356737169288322,
+          "p90": 5.374846271037452,
+          "max": 5.706701724653502
+        }
+      },
+      {
+        "name": "2023-05-11_10.18.46_backward_f0002",
+        "direction": "backward",
+        "frame_index": 2,
+        "inliers": 42,
+        "matches_2d3d": 74,
+        "validation_inliers": 11,
+        "validation_total": 18,
+        "motion_direction_cosine": 0.6635428745536861,
+        "score": 36.49804956094108,
+        "translation": 0.04210821234640381,
+        "error_px": {
+          "min": 0.0830521263789636,
+          "p10": 0.8473120946688357,
+          "median": 2.450975219529459,
+          "p90": 4.699674082296675,
+          "max": 5.904868489158552
+        },
+        "validation_error_px": {
+          "min": 0.6716765905285343,
+          "p10": 0.8436752836935189,
+          "median": 2.6415427946501144,
+          "p90": 4.7393952229677865,
+          "max": 4.981893757447624
+        }
+      },
+      {
+        "name": "2023-05-11_10.18.46_left_f0001",
+        "direction": "left",
+        "frame_index": 1,
+        "inliers": 64,
+        "matches_2d3d": 89,
+        "validation_inliers": 17,
+        "validation_total": 22,
+        "motion_direction_cosine": -0.4447455178021653,
+        "score": 59.09454540604189,
+        "translation": 0.02659052599433022,
+        "error_px": {
+          "min": 0.16532541220863545,
+          "p10": 0.5305033006856927,
+          "median": 2.302727296979058,
+          "p90": 4.616273107591287,
+          "max": 5.802876968051993
+        },
+        "validation_error_px": {
+          "min": 0.356517367562929,
+          "p10": 0.4875872822183277,
+          "median": 2.1495177000484533,
+          "p90": 3.191280874137438,
+          "max": 5.048809930392807
+        }
+      },
+      {
+        "name": "2023-05-11_10.18.46_right_f0002",
+        "direction": "right",
+        "frame_index": 2,
+        "inliers": 46,
+        "matches_2d3d": 73,
+        "validation_inliers": 10,
+        "validation_total": 18,
+        "motion_direction_cosine": 0.8352822039648513,
+        "score": 41.68080447820163,
+        "translation": 0.04399068922113669,
+        "error_px": {
+          "min": 0.16687291247972816,
+          "p10": 0.6370127019618648,
+          "median": 1.8595977608991838,
+          "p90": 3.8414395139500837,
+          "max": 5.449299962722127
+        },
+        "validation_error_px": {
+          "min": 0.5852559715860602,
+          "p10": 0.6038169636622113,
+          "median": 1.7221213451101334,
+          "p90": 2.9608596668985614,
+          "max": 3.023337677971345
+        }
+      }
+    ],
+    "point_attribution": {
+      "forward": {
+        "retained_points": 171,
+        "triangulated_candidates": 245,
+        "reprojection_px": {
+          "min": 0.2392003840368121,
+          "p10": 0.6883258648599536,
+          "median": 1.6955535753097113,
+          "p90": 3.2998646832040257,
+          "max": 4.644224445774074
+        }
+      },
+      "backward": {
+        "retained_points": 41,
+        "triangulated_candidates": 76,
+        "reprojection_px": {
+          "min": 0.3026308118941253,
+          "p10": 0.5830772916463214,
+          "median": 1.359341096048032,
+          "p90": 3.6792789180948557,
+          "max": 4.627089408589818
+        }
+      },
+      "left": {
+        "retained_points": 59,
+        "triangulated_candidates": 95,
+        "reprojection_px": {
+          "min": 0.25339428622838195,
+          "p10": 0.583302136461812,
+          "median": 1.5457556232000669,
+          "p90": 3.033577043059439,
+          "max": 4.617577433634632
+        }
+      },
+      "right": {
+        "retained_points": 17,
+        "triangulated_candidates": 37,
+        "reprojection_px": {
+          "min": 0.3968900203363026,
+          "p10": 0.6167536273482913,
+          "median": 1.1633009879128224,
+          "p90": 3.5077543898905614,
+          "max": 3.9970928290674252
+        }
+      }
+    },
+    "enhanced_points": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_spcgs/m1_wan360_early_no_direction_gate_20261023/01_sgi_sfm/enhanced_points.f32",
+      "bytes": 102408,
+      "sha256": "df5faac38ec71f653f30175d3d9f7cfe3f9a64f4340adac07930a6d3b38b5bdd"
+    }
+  },
+  "left_candidates_after": [
+    {
+      "name": "2023-05-11_10.18.46_left_f0001",
+      "frame_index": 1,
+      "registered": true,
+      "reason": null,
+      "inliers": 64,
+      "matches_2d3d": 89,
+      "validation_inliers": 17,
+      "validation_total": 22,
+      "motion_direction_cosine": -0.4447455178021653,
+      "error_px": {
+        "min": 0.16532541220863545,
+        "p10": 0.5305033006856927,
+        "median": 2.302727296979058,
+        "p90": 4.616273107591287,
+        "max": 5.802876968051993
+      },
+      "validation_error_px": {
+        "min": 0.356517367562929,
+        "p10": 0.4875872822183277,
+        "median": 2.1495177000484533,
+        "p90": 3.191280874137438,
+        "max": 5.048809930392807
+      }
+    },
+    {
+      "name": "2023-05-11_10.18.46_left_f0002",
+      "frame_index": 2,
+      "registered": true,
+      "reason": null,
+      "inliers": 37,
+      "matches_2d3d": 63,
+      "validation_inliers": 6,
+      "validation_total": 15,
+      "motion_direction_cosine": -0.5661350322066514,
+      "error_px": {
+        "min": 0.2676074545010173,
+        "p10": 0.8612268837720762,
+        "median": 2.683044750458081,
+        "p90": 5.419549168136325,
+        "max": 5.970421272359137
+      },
+      "validation_error_px": {
+        "min": 2.097973548193888,
+        "p10": 2.146366252952937,
+        "median": 4.062719129081146,
+        "p90": 5.932504939703912,
+        "max": 5.970421272359137
+      }
+    },
+    {
+      "name": "2023-05-11_10.18.46_left_f0003",
+      "frame_index": 3,
+      "registered": false,
+      "reason": "insufficient registration inliers",
+      "inliers": 16,
+      "matches_2d3d": 54,
+      "validation_inliers": 4,
+      "validation_total": 13,
+      "motion_direction_cosine": -0.7766737740894748,
+      "error_px": {
+        "min": 0.7531436745518547,
+        "p10": 1.2148849117918543,
+        "median": 3.048201387805256,
+        "p90": 5.406013814655887,
+        "max": 5.970820362824373
+      },
+      "validation_error_px": {
+        "min": 2.0440255883942955,
+        "p10": 2.444212916488807,
+        "median": 3.8614411447835346,
+        "p90": 5.0455050546413895,
+        "max": 5.345764817691526
+      }
+    },
+    {
+      "name": "2023-05-11_10.18.46_left_f0004",
+      "frame_index": 4,
+      "registered": false,
+      "reason": "insufficient registration inliers; held-out geometric validation failed",
+      "inliers": 9,
+      "matches_2d3d": 44,
+      "validation_inliers": 1,
+      "validation_total": 11,
+      "motion_direction_cosine": -0.8435578830487396,
+      "error_px": {
+        "min": 1.213865977195261,
+        "p10": 1.870524054764424,
+        "median": 3.317749875315249,
+        "p90": 4.698462961352093,
+        "max": 5.111286451373901
+      },
+      "validation_error_px": {
+        "min": 4.149377106770642,
+        "p10": 4.149377106770642,
+        "median": 4.149377106770642,
+        "p90": 4.149377106770642,
+        "max": 4.149377106770642
+      }
+    }
+  ],
+  "delta_added": 55,
+  "delta_added_percent": 23.605150214592285,
+  "cache_audit": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/logs/m1_wan360_early_no_direction_gate_20261023_cache_audit.json",
+  "changed_source_files": [
+    {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/m1_geometry.py",
+      "bytes": 14173,
+      "sha256": "c6b018bb110748a12e8d3ead4bc9b1f56b295e4ef52909cdb48d21b241910fe5"
+    },
+    {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/m1_wan360.py",
+      "bytes": 23736,
+      "sha256": "5c470e61ee217c0f75a203421a3611c21878389f7986c3bcacde67cc04fdf2bb"
+    }
+  ]
+}
