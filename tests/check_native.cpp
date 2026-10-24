@@ -11,7 +11,11 @@ int main(int argc,char**argv) try {
         torch::NoGradGuard g;m->scaling_=torch::log(torch::tensor({.3,.45,.6,.75},GPU)).unsqueeze(1).repeat({1,3}).requires_grad_();
         auto op=torch::tensor({.05,.8,.1,.1},GPU).unsqueeze(1);m->opacity_=torch::log(op/(1-op)).requires_grad_();
         m->semantic_=torch::arange(128,GPU).view({4,32}).div(128).requires_grad_();
-    } vectors(*m);GaussianOptimizationParams opt;m->trainingSetup(opt);
+    } vectors(*m);GaussianOptimizationParams opt;
+    TORCH_CHECK(std::abs(opt.opacity_lr_-.05f)<1e-7,"Default opacity learning rate was not initialized from its constructor argument");
+    GaussianOptimizationParams custom(30000,.00016f,.0000016f,.01f,30000,.0025f,.123f);
+    TORCH_CHECK(std::abs(custom.opacity_lr_-.123f)<1e-7,"Custom opacity learning rate was ignored");
+    m->trainingSetup(opt);
     Json::Value cam;for(int i=0;i<3;++i){cam["center"].append(0);for(int j=0;j<3;++j)cam["rotation"][i].append(i==j?1:0);}
     auto r=render(m,cam,32,64,32,64);auto objective=r.sem[0].sum();objective.backward();float analytical=m->semantic_.grad()[1][0].item<float>();
     float eps=1e-3,plus,minus;{torch::NoGradGuard g;m->semantic_.index_put_({1,0},m->semantic_[1][0]+eps);plus=render(m,cam,32,64,32,64).sem[0].sum().item<float>();m->semantic_.index_put_({1,0},m->semantic_[1][0]-2*eps);minus=render(m,cam,32,64,32,64).sem[0].sum().item<float>();m->semantic_.index_put_({1,0},m->semantic_[1][0]+eps);}
@@ -23,7 +27,10 @@ int main(int argc,char**argv) try {
     {torch::NoGradGuard g;auto direct=std::get<0>(GaussianRenderer::renderLonlat(f,32,64,m,pipe,bg,color,1.f,true));chunk_error=(direct-r.sem.slice(0,0,3)).abs().max().item<float>();TORCH_CHECK(chunk_error<1e-6,"Semantic compositor differs from RGB override");}
     float gg=m->xyz_.grad().abs().sum().item<float>();TORCH_CHECK(std::isfinite(gg)&&gg>0,"No geometry gradient from semantic rendering");
     // Exercise the native clone/split and prune operations with semantic optimizer state.
-    m->optimizer_->step();m->optimizer_->zero_grad(true);
+    auto opacity_before=m->opacity_.detach().clone();
+    TORCH_CHECK(m->opacity_.grad().defined() && m->opacity_.grad().abs().max().item<float>()>0,"No opacity gradient");
+    m->optimizer_->step();float opacity_update=(m->opacity_.detach()-opacity_before).abs().max().item<float>();
+    TORCH_CHECK(opacity_update>1e-5,"Opacity did not change after an optimizer step");m->optimizer_->zero_grad(true);
     {torch::NoGradGuard g;auto before=m->semantic_.clone();T grads=torch::ones({4,1},GPU);m->setPercentDense(10);m->densifyAndClone(grads,0,1);TORCH_CHECK(m->semantic_.size(0)==8 && (m->semantic_.slice(0,4,8)-before).abs().max().item<float>()==0,"Clone ancestry mismatch");
     T mask=torch::tensor({false,true,false,false,false,false,false,false},torch::TensorOptions().dtype(torch::kBool).device(torch::kCUDA));m->prunePoints(mask);TORCH_CHECK(m->semantic_.size(0)==7,"Prune semantic count mismatch");
     m->setPercentDense(.001);grads=torch::ones({7,1},GPU);m->densifyAndSplit(grads,0,1);TORCH_CHECK(m->semantic_.size(0)==14,"Split semantic count mismatch");

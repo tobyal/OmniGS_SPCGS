@@ -4,7 +4,9 @@
 
 ## 数据与训练协议
 
-服务器工程位于 `/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023`。本轮独立结果目录为 `runs/industrial_spcgs/sparse27_official_sgi_20261024`。
+服务器工程位于 `/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023`。本轮正式结果目录为 `runs/industrial_spcgs/sparse27_official_sgi_20261024/opacity_lr_fixed`，也是下面工具的默认 run。
+
+该目录复用父目录已完成且冻结的 P0、P1、27 张标签协议和七类教师缓存。父目录最初的训练保留为诊断参考：原有 `GaussianOptimizationParams` 构造函数错误使用 `opacity_lr_(opacity_lr_)`，导致不透明度未正常学习。代码已改为使用传入的 `opacity_lr`，恢复声明的默认值 0.05；原生检查覆盖默认值、自定义值以及一次优化确实改变不透明度。正式 SGI 与 RGB 参考均从相同 P1/P0 重新训练，不从错误学习率的优化器状态续训。
 
 `00_protocol/manifest.json` 根据语义审核数据中的六个官方面记录选出实际图像 ID，再核对原训练序号：
 
@@ -35,7 +37,7 @@
 .venv/bin/python tools/run_sparse27.py --stage rgb --gpu 2
 ```
 
-`check_official_teacher.py` 默认检查上述本轮目录。检查输出位于 `03_semantic/mask_validation`，覆盖无效像素不影响损失或梯度、全零 W、无 W 的旧接口兼容，以及原生实现与独立 PyTorch 公式的一致性。
+`check_official_teacher.py` 默认检查上述本轮目录；使用自定义实验时传入相同的 `--run`，也可通过 `--gpu` 选择空闲设备。检查输出位于 `03_semantic/mask_validation`，覆盖无效像素不影响损失或梯度、全零 W、无 W 的旧接口兼容，以及原生实现与独立 PyTorch 公式的一致性。
 
 训练后保存初始及最终渲染，再生成报告：
 
@@ -77,6 +79,8 @@ M1 复用 27 个源的 forward、backward、left、right 共 **108 个视频**�
 这是**类别原型监督**。保留 32 维可学习高斯语义、32→512 映射、类别分类头、局部三维正则、原有增密和 OGR。没有加载旧 20 类教师或分类头。原型张成空间包含于初始 32 维正交基，初始语义来自最近的有效标签投影；这只是属性初始化，不代表已解决遮挡。
 
 400 步短训验证梯度、类别和渲染后，从 P1 重新开始 10,000 步正式 SGI。RGB 分辨率 2048×1024，语义分辨率 256×128，seed 42；增密从 500 步到 9000 步、间隔 100 步、阈值 0.0002，OGR 间隔 3000 步、半径 1、最少邻居 5，局部三维项权重 1。
+
+原有透明度重置仍在 3000、6000 步发生，保存检查点时不透明度已被重置为 0.01。刚重置的检查点会暂时渲染变暗，不能直接用它判断 OGR 是否损害重建；最终 10000 步模型位于恢复训练之后。
 
 第一轮关闭生成视角语义项 L_GS。生成图像不提供 RGB 监督。P0 RGB 参考使用相同训练 ID、种子、分辨率、步数及增密预算，关闭语义损失和 OGR。它比较的是完整 SGI 流程与普通初始化，不能将差异单独归因于 Wan360。
 

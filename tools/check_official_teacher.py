@@ -1,5 +1,5 @@
 """Numerical integration checks for optional native semantic validity masks."""
-import sys,copy
+import sys,argparse
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 import numpy as np
@@ -7,12 +7,12 @@ import torch
 from spcgs.common import ROOT,read,write,native
 from spcgs.official_teacher import targets
 
-def check(run):
+def check(run,gpu=0):
     out=Path(run)/'03_semantic/mask_validation';out.mkdir(parents=True,exist_ok=True)
     cache=read(Path(run)/'03_semantic/cache/manifest.json');text=np.fromfile(cache['text'],dtype='f4').reshape(7,512)
     basis=np.fromfile(cache['decoder'],dtype='f4').reshape(512,32)
     labels=np.array([[0,1,255,2],[3,255,5,6]],dtype='u1');F,S,W=targets(labels,text);features=np.random.default_rng(8).normal(0,.2,(32,2,4)).astype('f4');features.tofile(out/'features.f32')
-    base={'gpu':0,'seed':42,'action':'semantic_probe','height':2,'width':4,'semantic_height':2,'semantic_width':4,'classes':cache['classes'],
+    base={'gpu':gpu,'seed':42,'action':'semantic_probe','height':2,'width':4,'semantic_height':2,'semantic_width':4,'classes':cache['classes'],
       'text':cache['text'],'decoder':cache['decoder'],'probe_features':str(out/'features.f32')}
     results={};gradients={}
     for case in ['masked','invalid_changed','valid_changed','zero_mask','legacy','ones_mask']:
@@ -45,4 +45,6 @@ def check(run):
     write(out/'results.json',{'status':'passed','cases':results,'python_cosine':cosine.item(),'python_ce':ce.item(),'checks':['invalid pixels have zero loss gradient','changing invalid F/S has no effect','changing valid S changes CE','all-zero W produces zero semantic loss and gradient','absent W matches all-ones W','native loss and gradient match independent PyTorch expression']})
     print('MASK CHECKS PASSED',flush=True)
 
-if __name__=='__main__':check(ROOT/'runs/industrial_spcgs/sparse27_official_sgi_20261024')
+if __name__=='__main__':
+    parser=argparse.ArgumentParser();parser.add_argument('--run',default='sparse27_official_sgi_20261024/opacity_lr_fixed');parser.add_argument('--gpu',type=int,default=0);args=parser.parse_args()
+    check(ROOT/'runs/industrial_spcgs'/args.run,args.gpu)

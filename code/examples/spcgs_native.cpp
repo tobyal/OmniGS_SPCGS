@@ -181,6 +181,11 @@ int main(int argc,char** argv) try {
     fs::path out=c["output"].asString();fs::create_directories(out);auto m=std::make_shared<GaussianModel>(3);Heads heads;GaussianOptimizationParams opt;
     int steps=c.get("iterations",0).asInt();opt.position_lr_max_steps_=std::max(steps,1);m->spatial_lr_scale_=c.get("extent",1.).asFloat();
     std::string action=c.get("action","train").asString(),signature=c.get("signature","").asString();int begin=0;
+    if(action=="train") {
+        Json::Value optimization;optimization["position_lr_init"]=opt.position_lr_init_;optimization["position_lr_final"]=opt.position_lr_final_;
+        optimization["feature_lr"]=opt.feature_lr_;optimization["opacity_lr"]=opt.opacity_lr_;optimization["scaling_lr"]=opt.scaling_lr_;optimization["rotation_lr"]=opt.rotation_lr_;
+        optimization["note"]="Constructor parameters used for a fresh fit; a strict resume restores archive optimizer state.";writej(out/"optimizer_parameters.json",optimization);
+    }
     if(action=="semantic_probe") {
         heads.init(c,K);auto f=raw(c["probe_features"].asString(),{32,HS,WS}).detach().requires_grad_();T cosine,ce;
         auto loss=semantic_loss(heads,f,c["views"][0],HS,WS,&cosine,&ce);loss.backward();

@@ -3,7 +3,7 @@ from pathlib import Path
 import json,html
 import numpy as np
 from PIL import Image,ImageDraw,ImageFont
-from .common import ROOT,read,write,native,ply,ref
+from .common import ROOT,read,write,native,ply,cameras
 from .pipeline import base_request
 
 def representatives(protocol):
@@ -33,7 +33,7 @@ def evaluate_renders(folder,views,cache,rgb_size=(2048,1024)):
             ids=np.fromfile(folder/(v['name']+'_ids.i32'),dtype='i4').reshape(128,256)
             Image.fromarray(prediction).save(folder/(v['name']+'_labels.png'));display=prediction.copy();display[ids<0]=255
             colored(display,palette).resize((1024,512),Image.Resampling.NEAREST).save(folder/(v['name']+'_semantic.png'))
-            probs=np.exp(logits-logits.max(0));probs/=probs.sum(0);row.update(predicted_fraction=np.bincount(prediction.ravel(),minlength=7).astype(float).tolist(),mean_confidence=float(probs.max(0).mean()),render_coverage=float((ids>=0).mean()))
+            probs=np.exp(logits-logits.max(0));probs/=probs.sum(0);row.update(predicted_fraction=(np.bincount(prediction.ravel(),minlength=7)/prediction.size).tolist(),mean_confidence=float(probs.max(0).mean()),render_coverage=float((ids>=0).mean()))
             if v['name'] in labels:
                 target=np.array(Image.open(labels[v['name']]['labels']));valid=target!=255
                 matrix=np.bincount((target[valid]*7+prediction[valid]).astype(int),minlength=49).reshape(7,7);total+=matrix
@@ -77,6 +77,18 @@ def panels(run):
         for i,c in enumerate(cache['class_config']['classes']):
             x=(i%4)*(canvas.width//4);y=top+(i//4)*32;draw.rectangle((x+8,y+5,x+26,y+23),fill=tuple(c['color']));draw.text((x+34,y),f"{i}: {c['name']}",font=font,fill='black')
         canvas.save(out/(name+'_comparison.jpg'),quality=92)
+    index={v['name']:i+1 for i,v in enumerate(cameras('train'))}
+    for cam in protocol['unseen_train29']:
+        name=cam['name'];number=index[name]
+        if number not in [3,22,39,55]:continue
+        items=[('Unseen real RGB / no semantic GT',Image.open(cam['image']).convert('RGB'))]
+        for title,folder,kind in [('P0 RGB reference / 10k','02_rgb_p0_reference/renders','rgb'),('SGI 10k RGB','02_sgi_gaussians/renders','rgb'),('SGI 10k semantic / inspection only','02_sgi_gaussians/renders','semantic')]:
+            path=run/folder/(name+'_'+kind+'.png')
+            if path.exists():items.append((title,Image.open(path).convert('RGB')))
+        canvas=Image.new('RGB',(1536,2*418),'white');draw=ImageDraw.Draw(canvas)
+        for i,(title,im) in enumerate(items):
+            x,y=(i%2)*768,(i//2)*418;draw.text((x+8,y+4),title,fill='black',font=font);canvas.paste(im.resize((768,384),Image.Resampling.NEAREST if 'semantic' in title else Image.Resampling.LANCZOS),(x,y+34))
+        canvas.save(out/(f'unseen_{number:02d}_'+name+'.jpg'),quality=92)
     return out
 
 def diagnostics(run):
@@ -95,6 +107,13 @@ def diagnostics(run):
         region_summary.append({'region':region,'training_indices':[r['index'] for r in cams],'height_layers':dict(Counter(r['height_layer'] for r in cams)),
           'selected_frames':len(selected),'points_by_source':sum(r['added_points'] for r in selected),'new_points_nearest_region':region_counts[region]})
     geometry={'p0':p0,'p1':m1,'regions':region_summary,'contributions':contributions,'historical_P2':read(ROOT/'runs/industrial_spcgs/m1_wan360_56_batch_20261023/01_sgi_sfm/metrics.json')}
+    occupancy=[]
+    for step in [.1,.2,.3]:
+        a=set(map(tuple,np.floor(points0/step).astype('i8')));b=set(map(tuple,np.floor(points1/step).astype('i8')))
+        occupancy.append({'voxel_size_world_units':step,'P0_occupied':len(a),'P1_occupied':len(b),'additional_occupied':len(b-a),'relative_increase':(len(b)-len(a))/len(a)})
+    geometry['voxel_occupancy']=occupancy
+    write(out/'coverage_analysis.json',{'purpose':'Post-hoc spatial sampling analysis, not a filter or ground-truth surface completeness measure. Axis-aligned grid at world origin.',
+      'voxel_occupancy':occupancy,'new_point_nearest_P0':m1['new_point_distance_to_original']})
     write(out/'geometry.json',geometry)
     write(out/'camera56_connectivity.json',{'camera':protocol['train'][-1],'shared_track_edges':[e for e in read(run/'01_p0/connectivity.json')['edges'] if protocol['train'][-1]['name'] in (e['a'],e['b'])]})
     # Descriptive labels only: these votes never affect geometry acceptance.
@@ -151,12 +170,15 @@ def diagnostics(run):
     write(out/'training.json',train_metrics);return geometry,train_metrics
 
 def report(run):
+    import shutil
     run=Path(run);out=panels(run);geometry,training=diagnostics(run);protocol=read(run/'00_protocol/manifest.json');cache=read(run/'03_semantic/cache/manifest.json')
+    previous_distribution=ROOT/'runs/iris_semantics_20261024/qa/camera_annotation_distribution.png'
+    if previous_distribution.exists():shutil.copy2(previous_distribution,out/'camera_all56_annotation.png')
     summary={'run':str(run),'training_indices':[v['original_train_index'] for v in protocol['train']],'training_ids':[v['name'] for v in protocol['train']],
       'p0_points':geometry['p0']['points'],'new_points':geometry['p1']['added'],'p1_points':geometry['p1']['enhanced_count'],'regions':geometry['regions'],
       'teacher':{k:cache[k] for k in ['classes','mean_valid_fraction','semantic_valid_counts','smoothing','adaptation']},'generated_semantic_loss':False,'training':training}
     write(out/'summary.json',summary)
-    fit=training.get('sgi',{}).get('evaluation',{}).get('official_training_fit')
+    fit=(training.get('sgi',{}).get('evaluation') or {}).get('official_training_fit')
     if fit:
         import matplotlib;matplotlib.use('Agg')
         import matplotlib.pyplot as plt
@@ -166,25 +188,31 @@ def report(run):
     body=['<!DOCTYPE html><html lang="zh"><meta charset="utf-8"><title>27 视角 M1 + SGI 实验报告</title><style>body{font:16px/1.65 system-ui;max-width:1320px;margin:32px auto;padding:0 24px;color:#182635}img{width:100%;height:auto;margin:14px 0}table{border-collapse:collapse;width:100%}td,th{padding:9px;border-bottom:1px solid #ddd;text-align:left}code,pre{background:#eef2f5;white-space:pre-wrap;word-break:break-all}h2{margin-top:40px}a{color:#146da8}</style>',
       '<h1>27 张官方标注视角：稀疏 M1 + M2 / SGI</h1>',
       '<p>本轮输出是后续 SPC 训练的 SGI 初始化模型；未运行 M4/M5。全部新产物保存在独立 run，历史 56 视角结果仅作参考。</p>',
+      ('<p>本报告使用 opacity_lr_fixed 修正版：修复原构造函数的不透明度学习率自初始化错误，恢复声明的默认值 0.05，SGI 与 RGB 参考均重新从 P1/P0 训练。几何、视频和七类教师缓存完全复用。父目录中不透明度未正常学习的首轮结果保留作诊断，不作为推荐初始化。</p>' if (run/'reused_inputs.json').exists() else ''),
       '<h2>训练协议</h2><p>实际官方六面记录选出 27 张训练图像，其余 29 张、6 张验证和 16 张测试图像均未进入训练或几何观测。沿用提供的 RMX 位姿，历史特征轨迹仅作为关联提案；P0 的全部坐标都由所选观测重新求解。</p>',
       '<p>原训练序号：'+', '.join(map(str,summary['training_indices']))+'</p><img src="../00_protocol/camera_distribution.png">',
+      ('<p>此前 56 张训练视角的官方标注覆盖分布，供对应本轮所选与未选视角。</p><img src="camera_all56_annotation.png">' if previous_distribution.exists() else ''),
       '<h2>M1：真实观测与缓存生成视角</h2>',
       f"<p>P0 {summary['p0_points']:,} 点 → 新增 {summary['new_points']:,} 点 → P1 {summary['p1_points']:,} 点。复用 108 个视频、432 个早期候选帧；没有重新生成视频。四个方向均只按实际几何质量处理。</p>",
       '<p>每个源、每个方向最多选一帧，优先选择能通过原几何检查的新轨迹较多的候选。源按三维区域与高度层轮换处理。空间组点数不强行均衡；没有有效几何支持的区域不会补造点。</p><img src="geometry.png">',
       '<pre>'+html.escape(json.dumps(geometry['regions'],ensure_ascii=False,indent=2))+'</pre>',
+      f"<p>以原世界坐标原点建立边长 0.2 的体素网格，占据格数由 {geometry['voxel_occupancy'][1]['P0_occupied']} 增至 {geometry['voxel_occupancy'][1]['P1_occupied']}；这只描述空间采样覆盖，不是有真值的表面完整率，也不参与点的筛选。</p>",
       '<p>P0 允许至少两张所选真实视角支持，并执行原重投影、视差、去重与密度检查。历史 3,979 个基础点采用不同的轨迹保留条件，因此点数不能单独解释为重建精度提高。新增点的误差是内部几何一致性指标，不等同于外部测量精度；点投影也不等同于可见性判断。</p>',
       '<h2>M2：七类官方原型监督</h2>',
       f"<p>冻结 CLIP ViT-B/16，每类三个英文提示取归一化均值构造 T（7×512）；F=T[label]，S=log(0.95·onehot+0.05/7)，W 由可靠标签有效性决定。语义有效率 {cache['mean_valid_fraction']:.2%}。这是类别原型监督，不是完整 CLIP 图像特征蒸馏。</p>",
       '<p>W 同时控制余弦损失和交叉熵，不影响 RGB。未确认的 SAM 补全不参与监督；生成帧只用于 M1，第一轮关闭 L_GS。保留 32 维语义、32→512 映射、局部三维正则、增密和 OGR。原生掩码检查验证了无效像素不产生语义梯度、全零掩码损失为零及与独立 PyTorch 公式一致。</p>',
-      '<h2>训练与评估</h2><p>RGB 指标为各图 PSNR / SSIM 的算术平均。语义指标只衡量 27 张训练图上的官方掩码拟合，不能作为未见视角语义准确率。普通参考从 P0 开始，仅使用同样 27 张 RGB、同分辨率和 10,000 步；SGI 从 P1 开始，加入语义与 OGR。因此这一对比衡量组合流程，不单独归因于 Wan360。</p>',
+      '<h2>训练与评估</h2><p>RGB 指标为各图 PSNR / SSIM 的算术平均。语义指标只衡量 27 张训练图上的官方掩码拟合，不能作为未见视角语义准确率。普通参考从 P0 开始，仅使用同样 27 张 RGB、同分辨率和 10,000 步；SGI 从 P1 开始，加入语义与 OGR。因此这一对比衡量组合流程，不单独归因于 Wan360。</p><p>原有透明度重置在 3000、6000 步执行，刚保存的对应检查点会暂时变暗；损失随后恢复。OGR 的移除数量与分布单独记录，最终比较使用恢复训练后的 10000 步模型。</p>',
       '<table><tr><th>模型</th><th>步数</th><th>高斯数</th><th>训练 / 未见 29 / 验证 / 测试 PSNR</th><th>训练语义 mIoU</th></tr>']
     for name,data in training.items():
         evaluation=data['evaluation'];groups=evaluation['groups'] if evaluation else {};fit=evaluation['official_training_fit'] if evaluation else None
         vals=' / '.join(f"{groups[s]['psnr']:.3f}" if s in groups else '-' for s in ['train','unseen_train29','val','test'])
         miou=f"{fit['miou']:.2%}" if fit else '-'
-        body.append(f"<tr><td>{name}</td><td>{data['iterations']}</td><td>{data['model']['gaussians'] if data['model'] else '-'}</td><td>{vals}</td><td>{miou}</td></tr>")
+        label=name+' (5 representative training views)' if name=='short' else name
+        body.append(f"<tr><td>{label}</td><td>{data['iterations']}</td><td>{data['model']['gaussians'] if data['model'] else '-'}</td><td>{vals}</td><td>{miou}</td></tr>")
     body+=['</table><img src="semantic_fit.png"><img src="losses.png"><img src="ogr.png"><img src="gaussian_distribution.png"><h2>固定视角对比</h2><p>所有语义图使用同一七类配色。黑色教师像素为 ignore；预测图黑色表示无高斯贡献。图像从原 RGB 分辨率缩放展示；语义训练/渲染分辨率为 256×128。</p>']
     for cam in representatives(protocol):body.append(f"<h3>{cam['original_train_index']}: {cam['name']}</h3><img src=\"{cam['name']}_comparison.jpg\">")
+    body+=['<h2>未见训练视角检查</h2><p>下列图像没有参与几何观测、RGB 或语义训练。22、39 号位于主要标注相机覆盖之外；没有官方语义真值，不计算语义准确率。</p>']
+    for path in sorted(out.glob('unseen_*.jpg')):body.append(f'<h3>{path.stem}</h3><img src="{path.name}">')
     body+=['<h2>逐项数据与模型</h2><ul>']
     for title,path in [('完整统计','summary.json'),('几何统计与逐源贡献','geometry.json'),('训练、RGB 和逐类语义统计','training.json'),('训练与标签快照','../00_protocol/manifest.json'),('P0 基础点云','../01_p0/points.ply'),('P1 增强点云','../01_sgi_sfm/enhanced.ply'),('SGI 完整模型','../02_sgi_gaussians/final/model.pt'),('SGI 高斯 PLY','../02_sgi_gaussians/final/point_cloud.ply'),('七类教师缓存','../03_semantic/cache/manifest.json'),('原生掩码检查','../03_semantic/mask_validation/results.json')]:body.append(f'<li><a href="{path}">{title}</a></li>')
     body+=['</ul><p>model.pt 保存高斯属性、32 维语义、映射/分类头、Adam 和随机状态。已用原生加载器重新加载并渲染；后续 SPC 应引用相同的七类 teacher 与本 run 的 27 视角 manifest，禁止默认切回全 56 视角或旧 20 类缓存。实际 SPC 优化尚未执行。</p></html>']

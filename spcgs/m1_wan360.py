@@ -160,7 +160,7 @@ def report(folder, metrics, reason=None):
              '- `observations.json`, `triangulation.json`: point tracks and all filtering decisions.',
              '- `original.ply`, `new_points.ply`, `enhanced.ply`, `enhanced_points.f32`: point-cloud outputs when successful.',
              '- `preview/`: real/generated frames, matches, point distributions and fixed-view projections.','',
-             'Only accepted generated views enter downstream CLIP supervision. Generated RGB never enters the RGB reconstruction loss.',
+             ('Generated views provide geometry only; generated semantic supervision is disabled for this run.' if metrics.get('generated_semantic_loss') is False else 'Only accepted generated views are eligible for downstream CLIP supervision. Generated RGB never enters the RGB reconstruction loss.'),
              'A successful small run does not establish correctness of all generated geometry; inspect correspondence and coverage previews before scaling.']
     (folder/'report.md').write_text('\n'.join(rows)+'\n')
 
@@ -211,6 +211,7 @@ def augment(folder,cfg,train,original_xyz,original_rgb,cached_videos=None,existi
             sheet.paste(Image.open(path).convert('RGB').resize((256,128)),(x,y+20))
     sheet.save(folder/'preview/generation_candidates.png')
     metrics={'original_count':len(original_xyz),'videos':len(videos),'generated_sources':len({v['source_training_view'] for v in videos}),
+             'generated_semantic_loss':cfg.get('generated_semantic_loss',True),
              'videos_generated_this_invocation':sum(not v['cache_reused'] for v in videos),
              'videos_reused':sum(v['cache_reused'] for v in videos),
              'registered_views':0,'selected_views':0,'added':0,'enhanced_count':None,

@@ -139,7 +139,7 @@ def build_m1(run,cfg):
       'source_order':ordered,'selection':'One registered frame per source/direction; maximize novel tracks passing unchanged geometry tests, then registration score',
       'generated_semantic_loss':False,'real_support_views':sorted(sources)})
     cfg=copy.deepcopy(cfg);cfg['m1_geometry']={**cfg.get('m1_geometry',{}),'structure':p0['structure']}
-    cfg['wan360']={**cfg.get('wan360',{}),'candidate_frames':[1,2,3,4]};cfg['selection_by_novel_points']=True
+    cfg['wan360']={**cfg.get('wan360',{}),'candidate_frames':[1,2,3,4]};cfg['selection_by_novel_points']=True;cfg['generated_semantic_loss']=False
     array=np.fromfile(p0['points'],dtype='f4').reshape(-1,6);shutil.copy2(p0['ply'],out/'original.ply')
     existing={(o['view'],o['feature_id']) for t in read(run/'01_p0/observations.json') for o in t['observations']}
     write(out/'config.json',cfg)

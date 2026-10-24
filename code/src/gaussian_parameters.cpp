@@ -76,7 +76,7 @@ GaussianOptimizationParams::GaussianOptimizationParams(
       position_lr_delay_mult_(position_lr_delay_mult),
       position_lr_max_steps_(position_lr_max_steps),
       feature_lr_(feature_lr),
-      opacity_lr_(opacity_lr_),
+      opacity_lr_(opacity_lr),
       scaling_lr_(scaling_lr),
       rotation_lr_(rotation_lr),
       percent_dense_(percent_dense),
