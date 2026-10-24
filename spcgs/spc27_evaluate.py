@@ -193,10 +193,14 @@ def region_groups(regions):
     # No pair is removed from the main evaluation because of this review.
     floor={'view01_seed16','view01_seed42','view14_seed42','view27_seed42','view48_seed42','view56_seed42'}
     common={tuple(x) for x in regions['common_pairs']};common3d={tuple(x) for x in regions['common_3d_pairs']};groups={}
-    for name,in_floor in [('floor_surface',True),('other_regions_including_uncertain_correspondences',False)]:
+    clear_parts={('view56_seed16',1),('view56_seed16',2),('view48_seed2',1),('view27_seed2',1),('view27_seed2',2)}
+    selections={'floor_surface':{p for p in common if p[0] in floor},
+        'other_regions_including_uncertain_correspondences':{p for p in common if p[0] not in floor},
+        'visually_clear_parts_descriptive_only':common & clear_parts}
+    for name,selection in selections.items():
         groups[name]={}
         for model in MODELS:
-            rows=[r for r in regions['measurements'] if r['model']==model and (r['event'],r['pair']) in common and (r['event'] in floor)==in_floor]
+            rows=[r for r in regions['measurements'] if r['model']==model and (r['event'],r['pair']) in selection]
             gauss=[r['gaussian_semantic_KL'] for r in rows if (r['event'],r['pair']) in common3d]
             groups[name][model]={'pairs':len(rows),'pairs_3d':len(gauss),'gaussian_semantic_KL':float(np.mean(gauss)) if gauss else None,
                 **{key:float(np.mean([r[key] for r in rows])) if rows else None for key in ['feature_cosine','region_class_distribution_KL','dominant_class_agrees']}}
@@ -221,11 +225,12 @@ def report(run):
     for model,d in regions['common_pair_summary'].items():
         values=[d['feature_cosine'],d['region_class_distribution_KL'],d['dominant_class_agrees'],d['gaussian_semantic_KL']]
         body.append(f'<tr><td>{model.upper()}</td><td>{d["common_pairs"]} / {d["common_3d_pairs"]}</td>'+''.join(f'<td>{v:.6f}</td>' if v is not None else '<td>无可用值</td>' for v in values)+'</tr>')
-    body+=['</table><h3>地面与其余区域分开观察</h3><p>按最终模型评估前的 RGB 图像检查划分描述组，未据此过滤主统计。其余区域包括有身份歧义或对象漂移的掩码，不能称为人工核准对象准确率。</p><table><tr><th>区域组</th><th>模型</th><th>2D / 3D 对数</th><th>余弦 ↑</th><th>类别 KL ↓</th><th>主导类别一致 ↑</th><th>高斯 KL ↓</th></tr>']
+    body+=['</table><h3>地面与其余区域分开观察</h3><p>按最终模型评估前的 RGB 图像检查划分描述组，未据此过滤主统计。其余区域包括有身份歧义或对象漂移的掩码。另列设备柜、爬梯、竖直管体的 5 对目视较清楚对应，作为其余区域中的重叠子集；这也不是人工标注真值或对象准确率。</p><table><tr><th>区域组</th><th>模型</th><th>2D / 3D 对数</th><th>余弦 ↑</th><th>类别 KL ↓</th><th>主导类别一致 ↑</th><th>高斯 KL ↓</th></tr>']
     for group,models in summary['descriptive_region_groups'].items():
         for model,d in models.items():
             values=[d['feature_cosine'],d['region_class_distribution_KL'],d['dominant_class_agrees'],d['gaussian_semantic_KL']]
-            body.append(f'<tr><td>{"地面" if group=="floor_surface" else "其余区域"}</td><td>{model.upper()}</td><td>{d["pairs"]} / {d["pairs_3d"]}</td>'+''.join(f'<td>{v:.6f}</td>' if v is not None else '<td>无可用值</td>' for v in values)+'</tr>')
+            label={'floor_surface':'地面','other_regions_including_uncertain_correspondences':'其余区域','visually_clear_parts_descriptive_only':'目视较清楚的设备/梯架'}[group]
+            body.append(f'<tr><td>{label}</td><td>{model.upper()}</td><td>{d["pairs"]} / {d["pairs_3d"]}</td>'+''.join(f'<td>{v:.6f}</td>' if v is not None else '<td>无可用值</td>' for v in values)+'</tr>')
     body+=['</table><h2>RGB 与训练标签拟合</h2><table><tr><th>模型</th><th>视角组 / 数量</th><th>PSNR ↑</th><th>SSIM ↑</th><th>LPIPS ↓</th></tr>']
     for model,d in summary['models'].items():
         for split in SPLITS:
@@ -241,10 +246,14 @@ def report(run):
     body.append('<h2>实际在线 M4：成功与失败样例</h2>')
     for path in sorted(out.glob('online_*.jpg')):body.append(f'<details><summary>{path.stem}</summary><a href="{path.name}"><img loading="lazy" src="{path.name}"></a></details>')
     body.append('<h2>全部真实视角浏览</h2><p>可切换全部 78 张真实视角。训练 27 张、未见 29 张、验证 6 张、测试 16 张分别标明；以下 RGB 为实际拍摄图像。</p>')
-    gallery_views=all_views(read(run/'00_protocol/manifest.json'));gallery=out/'captured_rgb';gallery.mkdir(exist_ok=True)
+    gallery_views=all_views(read(run/'00_protocol/manifest.json'))
+    gallery_views=[v for v in gallery_views if v['split']!='train']+[v for v in gallery_views if v['split']=='train']
+    gallery=out/'captured_rgb';gallery.mkdir(exist_ok=True)
     for cam in gallery_views:
         Image.open(cam['image']).convert('RGB').resize((1024,512),Image.Resampling.LANCZOS).save(gallery/(cam['name']+'.jpg'),quality=92)
     body.append('<select id="camera" style="font:inherit;padding:8px">'+''.join('<option value="'+html.escape(v['name'])+'">'+html.escape(v['split']+' / '+v['name'])+'</option>' for v in gallery_views)+'</select>')
+    classes=read(run/'03_semantic/cache/manifest.json')['class_config']['classes']
+    body.append('<p>'+''.join('<span style="display:inline-block;margin:4px 14px 4px 0"><i style="display:inline-block;width:16px;height:16px;vertical-align:middle;background:rgb('+','.join(map(str,c['color']))+')"></i> '+html.escape(c.get('zh',c['name']))+'</span>' for c in classes)+'</p>')
     body.append('<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px"><div>拍摄 RGB<img id="captured"></div>'+''.join(f'<div>{m.upper()} 语义<img id="{m}_semantic"></div>' for m in MODELS)+'</div>')
     body.append('<script>function showCamera(){const n=document.getElementById("camera").value;document.getElementById("captured").src="captured_rgb/"+n+".jpg";for(const m of ["c0","c1","c2"])document.getElementById(m+"_semantic").src="../05_spc/"+m+"/renders_all/"+n+"_semantic.png";}document.getElementById("camera").addEventListener("change",showCamera);showCamera();</script>')
     body.append('<h2>相同未见视角的语义和 RGB</h2><p>黑色语义像素表示无高斯贡献；三组配色一致。</p>')
