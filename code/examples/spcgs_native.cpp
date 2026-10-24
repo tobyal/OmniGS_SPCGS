@@ -10,6 +10,7 @@
 #include <random>
 #include <iostream>
 #include <cstdlib>
+#include <numeric>
 #include "include/gaussian_model.h"
 #include "include/gaussian_renderer.h"
 #include "include/loss_utils.h"
@@ -108,11 +109,18 @@ T inter(Heads& h,const Render& a,const Render& b,T ma,T mb) {
     auto logb=h.logits(b.sem).index({Slice(),mb.flatten()}).transpose(0,1);
     return torch::norm(fb.mean(1)-fa.mean(1).detach())+torch::nn::functional::cross_entropy(logb,torch::full({logb.size(0)},cls,logb.options().dtype(torch::kLong)));
 }
-T contrastive(Heads& h,const Render& r,T region,int sample_limit) {
+T contrastive(Heads& h,const Render& r,T region,int sample_limit,int seed=0) {
     auto labels=h.logits(r.sem).detach().argmax(0);auto reg=region.flatten();auto valid=reg>=0;
     for(int id=0;id<=reg.max().item<int>();++id){auto mask=reg==id;if(mask.any().item<bool>()){auto lab=labels.index({mask});labels.index_put_({mask},torch::bincount(lab,{},h.text.size(0)).argmax());}}
-    auto idx=torch::nonzero(valid).flatten();if(idx.numel()<3)return zero_loss(r.sem);
-    idx=idx.index_select(0,torch::randperm(idx.numel(),idx.options()).slice(0,0,std::min<int64_t>(sample_limit,idx.numel())));
+    // Paper patch sampling with a bounded subset for quadratic contrast costs.
+    // Separate RNG leaves the base training/densification random stream intact.
+    std::mt19937 sampling(seed);int H=r.sem.size(1),W=r.sem.size(2),ph=std::min(128,H),pw=std::min(128,W);
+    int top=std::uniform_int_distribution<int>(0,H-ph)(sampling),left=std::uniform_int_distribution<int>(0,W-1)(sampling);
+    auto patch=torch::zeros({H,W},region.options().dtype(torch::kBool));
+    for(int dx=0;dx<pw;++dx)patch.index_put_({Slice(top,top+ph),(left+dx)%W},true);
+    auto idx=torch::nonzero(valid & patch.flatten()).flatten();if(idx.numel()<3)return zero_loss(r.sem);
+    std::vector<int64_t> order(idx.numel());std::iota(order.begin(),order.end(),0);std::shuffle(order.begin(),order.end(),sampling);order.resize(std::min<int64_t>(sample_limit,order.size()));
+    auto selected=torch::from_blob(order.data(),{(int64_t)order.size()},torch::kLong).clone().to(idx.device());idx=idx.index_select(0,selected);
     auto lab=labels.index_select(0,idx);auto z=norm(h.projection.matmul(r.sem.flatten(1).index_select(1,idx)),0).transpose(0,1);
     auto scores=z.matmul(z.t())/.2;auto diag=torch::eye(idx.numel(),scores.options().dtype(torch::kBool));
     auto positive=(lab.unsqueeze(0)==lab.unsqueeze(1)) & ~diag;auto negative=(lab.unsqueeze(0)!=lab.unsqueeze(1));auto anchors=positive.any(1)&negative.any(1);
@@ -205,7 +213,13 @@ int main(int argc,char** argv) try {
         for(auto& v:c["views"]){auto r=render(m,v,H,W,HS,WS,c.get("render_semantics",true).asBool());export_view(out,v["name"].asString(),r,heads);}return 0;}
     TORCH_CHECK(m->semantic_.defined(),"Real CLIP supervision required for training");
     if(c.get("stage_reset",false).asBool()) {
-        torch::NoGradGuard g;auto xyz=m->xyz_.clone();auto d=distCUDA2(xyz).clamp_min(1e-7);m->scaling_=torch::log(torch::sqrt(d)).unsqueeze(1).repeat({1,3}).requires_grad_();m->rotation_=torch::zeros({xyz.size(0),4},GPU);m->rotation_.index_put_({Slice(),0},1);m->rotation_.requires_grad_();m->opacity_=torch::full({xyz.size(0),1},std::log(.1/.9),GPU.requires_grad(true));m->features_rest_=torch::zeros_like(m->features_rest_).requires_grad_();m->active_sh_degree_=0;vectors(*m);m->trainingSetup(opt);heads.setup();begin=0;
+        torch::NoGradGuard g;auto xyz=m->xyz_.clone(),dc=m->features_dc_.clone(),sem=m->semantic_.clone();
+        auto d=distCUDA2(xyz).clamp_min(1e-7);m->scaling_=torch::log(torch::sqrt(d)).unsqueeze(1).repeat({1,3}).requires_grad_();m->rotation_=torch::zeros({xyz.size(0),4},GPU);m->rotation_.index_put_({Slice(),0},1);m->rotation_.requires_grad_();m->opacity_=torch::full({xyz.size(0),1},std::log(.1/.9),GPU.requires_grad(true));m->features_rest_=torch::zeros_like(m->features_rest_).requires_grad_();m->active_sh_degree_=0;
+        m->max_radii2D_=torch::zeros({xyz.size(0)},GPU);m->exist_since_iter_=torch::zeros({xyz.size(0)},GPU.dtype(torch::kInt32));m->spc_added_=0;m->spc_pruned_=0;
+        vectors(*m);m->trainingSetup(opt);heads.setup();begin=0;
+        TORCH_CHECK(torch::equal(xyz,m->xyz_)&&torch::equal(dc,m->features_dc_)&&torch::equal(sem,m->semantic_),"SGI attribute inheritance changed");
+        Json::Value audit;audit["source_archive"]=c["archive"];audit["gaussians"]=Json::Int64(xyz.size(0));audit["xyz_max_error"]=0.;audit["dc_max_error"]=0.;audit["semantic_max_error"]=0.;audit["semantic_heads"]="loaded and retained";
+        audit["scale"]="nearest-neighbor PCD initialization";audit["rotation"]="identity";audit["opacity"]=.1;audit["high_order_sh"]="zero";audit["active_sh_degree"]=0;audit["optimizer_state_entries"]=Json::Int64(m->optimizer_->state().size());audit["head_optimizer_state_entries"]=Json::Int64(heads.optim->state().size());audit["densification_buffers"]="zero";audit["status"]="passed";writej(out/"stage_reset_audit.json",audit);
     } else if(!c.get("resume",false).asBool())begin=0;
     auto save_now=[&](fs::path p,int i){std::ostringstream ss;ss<<rng;save(p,m,heads,i,ss.str(),signature);};
     if(begin==0)save_now(out/"initial",0);
@@ -222,6 +236,7 @@ int main(int argc,char** argv) try {
         if((use2||use3) && step%isp_every==0) {
             std::mt19937 isp_rng(seed+step);
             fs::path snap=out/"isp"/std::to_string(step);fs::create_directories(snap);Json::Value request;request["height"]=HS;request["width"]=WS;request["seed"]=seed+step;request["output"]=snap.string();request["root"]=c["root"];request["sam_config"]=c["sam_config"];request["sam_checkpoint"]=c["sam_checkpoint"];
+            request["require_sam2_hiera_large"]=c.get("require_sam2_hiera_large",false);if(c.isMember("sam_server_socket"))request["sam_server_socket"]=c["sam_server_socket"];
             png(snap/"0.png",gt);request["images"].append((snap/"0.png").string());request["cameras"].append(v);
             std::vector<Render> pseudos;std::vector<std::pair<double,int>> near;
             for(int i=0;i<(int)views.size();++i){double d=0;for(int k=0;k<3;++k)d+=std::pow(views[i]["center"][k].asDouble()-v["center"][k].asDouble(),2);if(d>1e-10)near.emplace_back(d,i);}std::sort(near.begin(),near.end());TORCH_CHECK(!near.empty(),"Need >=2 distinct training centers for ISP");
@@ -232,7 +247,16 @@ int main(int argc,char** argv) try {
             TORCH_CHECK(std::system(cmd.c_str())==0,"SAM2 failed; see ",(snap/"sam.log").string());auto masks=raw(snap/"masks.u8",{3,HS,WS},torch::kUInt8).to(torch::kBool);auto regions=raw(snap/"regions.i32",{HS,WS},torch::kInt32);
             auto status=readj(snap/"outputs.json");
             for(int p=0;p<2;++p)if(status["valid"][p].asBool()){row["isp_valid_pairs"]=row["isp_valid_pairs"].asInt()+1;if(use2)li=li+inter(heads,r,pseudos[p],masks[0],masks[p+1]);if(use3)lk=lk+kl3d(m,r,pseudos[p],masks[0],masks[p+1]);}
-            if(use2)ln=contrastive(heads,r,regions,c.get("contrast_samples",256).asInt());export_view(snap,"real",r,heads);
+            if(use2)ln=contrastive(heads,r,regions,c.get("contrast_samples",256).asInt(),seed+step);export_view(snap,"real",r,heads);
+            auto gradient_norm=[&](T loss){auto gs=torch::autograd::grad({loss},{m->semantic_},{},true,false,true);return gs[0].defined()?gs[0].norm().item<double>():0.;};
+            row["inter_semantic_grad_norm"]=gradient_norm(li);row["intra_semantic_grad_norm"]=gradient_norm(ln);row["spc3d_semantic_grad_norm"]=gradient_norm(lk);
+            // Retained screen gradients from diagnostic autograd traversals must
+            // not enter the later densification statistics of the actual loss.
+            r.screen.mutable_grad()=T();for(auto& pr:pseudos)pr.screen.mutable_grad()=T();
+            row["sam_seconds"]=status["seconds"];row["sam_automatic_regions"]=status["automatic_masks"];row["isp_event"]=true;
+            Json::Value region_stats;region_stats["selection"]="maximum alpha*T contributor, with 5x5 ERP erosion";
+            auto record_region=[&](const Render& q,T mask){Json::Value j;auto valid=erode(mask)&(q.ids>=0);j["eroded_contributing_pixels"]=valid.sum().item<int>();if(valid.any().item<bool>()){auto ids=q.ids.index({valid}).to(torch::kLong);j["distinct_gaussians"]=torch::bincount(ids,{},m->xyz_.size(0)).gt(0).sum().item<int>();j["mean_max_weight"]=q.weights.index({valid}).mean().item<double>();}return j;};
+            region_stats["real"]=record_region(r,masks[0]);for(int p=0;p<2;++p)region_stats["pseudo"].append(record_region(pseudos[p],masks[p+1]));writej(snap/"gaussian_regions.json",region_stats);
         }
         float ramp=std::min(1.f,float(step)/std::max(1,c.get("spc_ramp",4000).asInt()));
         auto loss=lc+ls+lg+c.get("local_weight",1.).asFloat()*ll+ramp*(li+ln+lk);

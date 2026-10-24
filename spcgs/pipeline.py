@@ -108,6 +108,7 @@ def train_stage(run,cfg,kind,train,test,cache,resume=None):
     center=np.array([v['center'] for v in train]);request['extent']=float(np.linalg.norm(center-center.mean(0),axis=1).max()*1.1)
     request['iterations']=cfg[{'s0':'semantic_iterations','sgi':'sgi_iterations'}.get(kind,'spc_iterations')]
     inputs={'cache':ref(Path(cache['text']).parent/'manifest.json'),'initialization':kind,'upstream_m1':pointinfo}
+    if kind in ['c0','c1','c2']:inputs['sgi_archive']=ref(cfg.get('sgi_archive',run/STAGES['sgi']/'final/model.pt'))
     with Stage(stage_dir,inputs,cfg) as stage:
         if kind=='s0':
             request['ply']=str(ROOT/'baseline/checkpoint.ply');xyz,_,_=ply(request['ply']);request['densify_until']=0
@@ -117,7 +118,7 @@ def train_stage(run,cfg,kind,train,test,cache,resume=None):
             request.update(points=pointinfo['points'],point_count=pointinfo['point_count']);xyz=np.fromfile(request['points'],dtype='f4').reshape(-1,6)[:,:3]
             request['initial_semantic']=init_semantics(xyz,cache,stage_dir/'initial_semantic.f32')
         else:
-            request['archive']=str(run/STAGES['sgi']/'final/model.pt');assert Path(request['archive']).exists(),'Run SGI first'
+            request['archive']=cfg.get('sgi_archive',str(run/STAGES['sgi']/'final/model.pt'));assert Path(request['archive']).exists(),'SGI archive missing'
             request['stage_reset']=True
         request['signature']=signature({k:v for k,v in request.items() if k not in ['output','signature','archive']})
         if resume:request.update(archive=str(Path(resume).resolve()),resume=True,stage_reset=False)

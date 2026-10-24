@@ -1,5 +1,5 @@
 from pathlib import Path
-import hashlib, json, os, subprocess, time, traceback
+import hashlib, json, os, subprocess, time, traceback, uuid
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -24,11 +24,30 @@ def run_command(args,log,env=None):
         f.write('\nCOMMAND '+json.dumps([str(x) for x in args])+'\n');f.flush()
         subprocess.run([str(x) for x in args],stdout=f,stderr=subprocess.STDOUT,check=True,env=env,cwd=ROOT)
 def native(request, folder):
-    folder=Path(folder);folder.mkdir(parents=True,exist_ok=True);write(folder/'request.json',request)
+    folder=Path(folder);folder.mkdir(parents=True,exist_ok=True);request=dict(request)
     env=os.environ.copy();env.update(CUDA_VISIBLE_DEVICES=str(request.get('gpu',0)),PF_MODE='0',SGS_MODE='0',OMP_NUM_THREADS='2')
     env.pop('PF_FIELD',None)
     write(folder/'execution.json',{'binary':ref(ROOT/'code/bin/spcgs_native'),'started':time.time(),'cuda_visible_devices':env['CUDA_VISIBLE_DEVICES'],'PF_MODE':0,'SGS_MODE':0})
-    run_command([ROOT/'code/bin/spcgs_native',folder/'request.json'],folder/'native.log',env)
+    worker=None;worker_log=None;socket_path=None
+    try:
+        if request.get('sam_reuse_model') and request.get('action')=='train' and (request.get('spc2d') or request.get('spc3d')):
+            socket_path=Path('/tmp')/('spcgs_sam_'+uuid.uuid4().hex+'.sock');request['sam_server_socket']=str(socket_path)
+            write(folder/'sam_server.json',request);worker_log=(folder/'sam_server.log').open('w')
+            worker=subprocess.Popen([str(ROOT/'.venv/bin/python'),str(ROOT/'tools/sam2_worker.py'),'--serve',str(folder/'sam_server.json')],stdout=worker_log,stderr=subprocess.STDOUT,env=env,cwd=ROOT)
+            deadline=time.monotonic()+300
+            while not socket_path.exists():
+                if worker.poll() is not None:raise RuntimeError('SAM2 startup failed; see '+str(folder/'sam_server.log'))
+                if time.monotonic()>deadline:raise TimeoutError('SAM2 startup exceeded 300 seconds')
+                time.sleep(.2)
+        write(folder/'request.json',request)
+        run_command([ROOT/'code/bin/spcgs_native',folder/'request.json'],folder/'native.log',env)
+    finally:
+        if worker is not None:
+            worker.terminate()
+            try:worker.wait(timeout=15)
+            except subprocess.TimeoutExpired:worker.kill();worker.wait()
+        if worker_log is not None:worker_log.close()
+        if socket_path is not None:socket_path.unlink(missing_ok=True)
 class Stage:
     def __init__(self,folder,inputs,config):self.folder=Path(folder);self.inputs=inputs;self.config=config
     def __enter__(self):
@@ -82,5 +101,5 @@ def default_config(mode='quick'):
       'local_weight':1.,'contrast_samples':512 if full else 256,'save_every':1000 if full else 50,
       'opacity_reset_every':3000 if full else 0,'pose_noise_fraction':.02,
       'classes':['wall','floor','pipe','valve','pump','motor','cabinet','machine','ceiling','door','window','metal frame'],
-      'm1_mode':'skip','generated_manifest':None,'generation_command':None,'sam_config':'configs/sam2.1/sam2.1_hiera_t.yaml',
-      'sam_checkpoint':str(ROOT/'weights/sam2.1_hiera_tiny.pt')}
+      'm1_mode':'skip','generated_manifest':None,'generation_command':None,'sam_config':'configs/sam2/sam2_hiera_l.yaml',
+      'sam_checkpoint':str(ROOT/'weights/sam2_hiera_large.pt')}
