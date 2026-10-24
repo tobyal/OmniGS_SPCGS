@@ -164,11 +164,36 @@ def report(folder, metrics, reason=None):
              'A successful small run does not establish correctness of all generated geometry; inspect correspondence and coverage previews before scaling.']
     (folder/'report.md').write_text('\n'.join(rows)+'\n')
 
-def augment(folder,cfg,train,original_xyz,original_rgb):
+def novel_support(candidate, anchors, geo, tree, existing):
+    """Rank registered frames by tracks passing the existing geometry tests."""
+    tracks={};points=[]
+    for name,(pairs,_) in candidate['matches'].items():
+        uv=anchors['features'][name]['uv']
+        mask,_=epipolar_mask(anchors['cameras'][name],candidate,uv[pairs[:,0]],candidate['features']['uv'][pairs[:,1]],geo)
+        for ri,gi in pairs[mask]:tracks.setdefault(int(gi),[]).append((name,int(ri)))
+    for gi,links in tracks.items():
+        if len(links)<geo['min_real_views'] or any(link in existing for link in links):continue
+        cams=[anchors['cameras'][n] for n,_ in links]+[candidate]
+        pixels=[anchors['features'][n]['uv'][i] for n,i in links]+[candidate['features']['uv'][gi]]
+        point,info=triangulate_track(cams,pixels,[(2048,1024)]*len(links)+[(candidate['width'],candidate['height'])],geo)
+        if info['reason']:continue
+        distance=tree.query(point)[0]
+        if not geo['duplicate_radius']<=distance<=geo['max_distance_to_original']:continue
+        if points and np.min(np.linalg.norm(np.asarray(points)-point,axis=1))<geo['duplicate_radius']:continue
+        points.append(point)
+    return len(points)
+
+def augment(folder,cfg,train,original_xyz,original_rgb,cached_videos=None,existing_features=None):
     geo=geometry_settings(cfg)
     write(folder/'geometry_config.json',geo)
     anchors=load_anchors(geo['structure'],geo['features'],train,original_xyz,folder/'anchor_audit.json')
-    videos=generate(folder,cfg,train)
+    # An explicit cache list is a strict reuse path: it never calls generation.
+    videos=generate(folder,cfg,train) if cached_videos is None else cached_videos
+    existing=set(anchors['by_feature']) if existing_features is None else set(existing_features)
+    original_tree=cKDTree(original_xyz)
+    if cached_videos is not None:
+        assert all(v['source_training_view'] in anchors['cameras'] and v['cache_reused'] for v in videos)
+        write(folder/'generated_videos.json',videos)
     # This preview survives complete registration failure and makes generated
     # structure changes inspectable without confusing them with accepted views.
     preview_videos=videos[:8]
@@ -229,7 +254,11 @@ def augment(folder,cfg,train,original_xyz,original_rgb):
         row['score']=float(row.get('inliers',0)-2*row.get('error_px',{}).get('median',10)-.3*row['frame_index'])
         scores.append(row)
         if row['registered']:
-            candidate.update(row);candidate['matches']=matches;registered.append(candidate)
+            candidate.update(row);candidate['matches']=matches
+            if cfg.get('selection_by_novel_points',False):
+                row['novel_support_points']=novel_support(candidate,anchors,geo,original_tree,existing)
+                candidate['novel_support_points']=row['novel_support_points']
+            registered.append(candidate)
         write(folder/'candidate_scores.json',scores)
         write(folder/'matching_statistics.json',matching_stats)
         metrics.update(candidate_frames=len(candidates),processed_candidates=len(scores),
@@ -244,7 +273,7 @@ def augment(folder,cfg,train,original_xyz,original_rgb):
     for video in videos:
         valid=[v for v in registered if v['video_name']==video['name']]
         if valid:
-            chosen=max(valid,key=lambda row:row['score'])
+            chosen=max(valid,key=lambda row:(row.get('novel_support_points',0),row['score']))
             selected_dir=folder/'selected';selected_dir.mkdir(exist_ok=True)
             destination=selected_dir/(chosen['name']+'.png')
             shutil.copy2(chosen['image'],destination)
@@ -281,7 +310,7 @@ def augment(folder,cfg,train,original_xyz,original_rgb):
         for gi,links in tracks.items():
             if len(links)<geo['min_real_views']:
                 rejected['insufficient real views']+=1;continue
-            if any(link in anchors['by_feature'] for link in links):
+            if any(link in existing for link in links):
                 rejected['already observed original landmark']+=1;continue
             if any(link in used_features for link in links):
                 rejected['duplicate real feature track']+=1;continue

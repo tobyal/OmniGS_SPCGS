@@ -10,7 +10,12 @@ def prepare(run,cfg):
     if (run/'config.json').exists():
         assert read(run/'config.json')==cfg,'Existing run has different configuration. Use a new run ID.'
     else:write(run/'config.json',cfg)
-    train=choose(cameras('train'),cfg['train_views']);test=choose(cameras('test'),cfg['eval_views'])
+    if cfg.get('train_names'):
+        available={v['name']:v for v in cameras('train')};names=cfg['train_names']
+        assert len(names)==len(set(names)) and set(names)<=set(available),'Invalid explicit training view IDs'
+        train=[available[n] for n in names]
+    else:train=choose(cameras('train'),cfg['train_views'])
+    test=choose(cameras('test'),cfg['eval_views'])
     assert not set(v['name'] for v in train)&set(v['name'] for v in test)
     write(run/'data_manifest.json',{'train':train,'test':test,'validation':cameras('val'),'protocol':ref(ROOT/'data/protocol.json'),'quick_subset_uses_original_training_only_point_cloud':True})
     return train,test
@@ -95,10 +100,12 @@ def m1(run,cfg,train):
 
 def train_stage(run,cfg,kind,train,test,cache,resume=None):
     from .features import init_semantics
+    if cfg.get('train_names'):
+        assert {v['name'] for v in cache['views']}=={v['name'] for v in train},'Teacher and explicit training IDs differ'
     stage_dir={'s0':run/STAGES['semantic']/'s0','sgi':run/STAGES['sgi'],'c0':run/STAGES['spc']/'c0','c1':run/STAGES['spc']/'c1','c2':run/STAGES['spc']/'c2'}[kind]
     pointinfo=read(run/STAGES['m1']/'outputs.json');request={**base_request(cfg),'action':'train','output':str(stage_dir),'views':cache['views'],'text':cache['text'],'decoder':cache['decoder'],
         'ogr':kind=='sgi','spc2d':kind in ['c1','c2'],'spc3d':kind=='c2','generated_views':cache.get('generated_views',[])}
-    center=np.array([v['center'] for v in cameras('train')]);request['extent']=float(np.linalg.norm(center-center.mean(0),axis=1).max()*1.1)
+    center=np.array([v['center'] for v in train]);request['extent']=float(np.linalg.norm(center-center.mean(0),axis=1).max()*1.1)
     request['iterations']=cfg[{'s0':'semantic_iterations','sgi':'sgi_iterations'}.get(kind,'spc_iterations')]
     inputs={'cache':ref(Path(cache['text']).parent/'manifest.json'),'initialization':kind,'upstream_m1':pointinfo}
     with Stage(stage_dir,inputs,cfg) as stage:
@@ -155,7 +162,7 @@ def main():
                 from .features import extract
                 cache=extract(train,run/STAGES['semantic']/'cache',cfg)
                 m1p=run/STAGES['m1']/'outputs.json'
-                if m1p.exists() and read(m1p).get('registered_generated_views'):
+                if cfg.get('generated_semantic_loss',True) and m1p.exists() and read(m1p).get('registered_generated_views'):
                     generated=extract(read(m1p)['registered_generated_views'],run/STAGES['semantic']/'generated_cache',cfg)
                     cache['generated_views']=generated['views'];write(run/STAGES['semantic']/'cache/manifest.json',cache)
             elif name=='compare':report(run,cfg)

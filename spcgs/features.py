@@ -9,6 +9,12 @@ import numpy as np
 from .common import ROOT,read,write,ref,signature,project,Stage
 
 def extract(views,folder,cfg):
+    if cfg.get('feature_backend')=='official_prototypes':
+        from .official_teacher import extract as official_extract
+        run=Path(cfg['official_run']);assert Path(folder).resolve()==(run/'03_semantic/cache').resolve()
+        result=official_extract(run,cfg)
+        assert {v['name'] for v in result['views']}=={v['name'] for v in views},'Official teacher and training IDs differ'
+        return result
     if cfg.get('feature_backend')=='ovs_multiscale':
         from .clip_dense import extract as dense_extract
         return dense_extract(views,folder,cfg)
@@ -95,6 +101,9 @@ def init_semantics(xyz,cache,dest):
     Nearest camera is used only to initialize attributes, NOT for contributor IDs.
     Occlusion is subsequently resolved by the original alpha compositor.
     """
+    if cache.get('feature_backend')=='official_prototypes':
+        from .official_teacher import initialize
+        return initialize(xyz,cache,dest)
     from scipy.spatial import cKDTree
     views=cache['views'];basis=np.fromfile(cache['decoder'],dtype='f4').reshape(512,32)
     nearest=cKDTree([v['center'] for v in views]).query(xyz)[1]

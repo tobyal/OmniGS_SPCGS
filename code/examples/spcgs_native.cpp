@@ -74,16 +74,22 @@ T semantic_loss(Heads& h,T features,const Json::Value& v,int H,int W,T* cosine_o
     TORCH_CHECK(v["relevancy_classes"].asInt()==h.text.size(0),"S/T class row count mismatch");
     int sh=v["relevancy_height"].asInt(),sw=v["relevancy_width"].asInt();
     auto scores=resize(raw(v["relevancy"].asString(),{h.text.size(0),sh,sw},torch::kFloat16).to(torch::kFloat32),H,W).flatten(1);
-    auto pred=h.features(features);auto cosine=(1-(norm(pred,0)*norm(gt,0)).sum(0)).mean();T ce;
+    auto weight=torch::ones({H*W},GPU);
+    if(v.isMember("semantic_mask")) {
+        auto mask=raw(v["semantic_mask"].asString(),{1,v["mask_height"].asInt(),v["mask_width"].asInt()},torch::kUInt8).to(torch::kFloat32);
+        weight=torch::nn::functional::interpolate(mask.unsqueeze(0),torch::nn::functional::InterpolateFuncOptions().size(std::vector<int64_t>{H,W}).mode(torch::kNearest)).flatten().gt(0).to(torch::kFloat32);
+    }
+    auto denom=weight.sum().clamp_min(1);
+    auto pred=h.features(features);auto cosine=((1-(norm(pred,0)*norm(gt,0)).sum(0))*weight).sum()/denom;T ce;
     if(v.get("semantic_target","softmax_relevancy").asString()=="hard_argmax") {
         // Compatibility for the explicitly selected legacy extractor: still read
         // S from disk, never silently reconstruct labels from F and T here.
-        ce=torch::nn::functional::cross_entropy(h.logits(features).transpose(0,1),scores.argmax(0));
+        ce=(torch::nn::functional::cross_entropy(h.logits(features).transpose(0,1),scores.argmax(0),torch::nn::functional::CrossEntropyFuncOptions().reduction(torch::kNone))*weight).sum()/denom;
     } else {
         // SPC-GS does not publish the target conversion. Retain continuous S
         // using the class softmax used by 3D-OVS, with SPC-GS cross entropy.
         auto target=torch::softmax(scores,0);
-        ce=-(target*torch::log_softmax(h.logits(features),0)).sum(0).mean();
+        ce=-((target*torch::log_softmax(h.logits(features),0)).sum(0)*weight).sum()/denom;
     }
     if(cosine_out)*cosine_out=cosine;if(ce_out)*ce_out=ce;return cosine+ce;
 }
@@ -175,6 +181,12 @@ int main(int argc,char** argv) try {
     fs::path out=c["output"].asString();fs::create_directories(out);auto m=std::make_shared<GaussianModel>(3);Heads heads;GaussianOptimizationParams opt;
     int steps=c.get("iterations",0).asInt();opt.position_lr_max_steps_=std::max(steps,1);m->spatial_lr_scale_=c.get("extent",1.).asFloat();
     std::string action=c.get("action","train").asString(),signature=c.get("signature","").asString();int begin=0;
+    if(action=="semantic_probe") {
+        heads.init(c,K);auto f=raw(c["probe_features"].asString(),{32,HS,WS}).detach().requires_grad_();T cosine,ce;
+        auto loss=semantic_loss(heads,f,c["views"][0],HS,WS,&cosine,&ce);loss.backward();
+        Json::Value j;j["cosine"]=cosine.item<double>();j["ce"]=ce.item<double>();j["loss"]=loss.item<double>();j["gradient_norm"]=f.grad().norm().item<double>();
+        put(out/"gradient.f32",f.grad());writej(out/"probe.json",j);return 0;
+    }
     if(c.isMember("archive"))begin=load(c["archive"].asString(),m,heads,opt,rng,c.get("resume",false).asBool(),signature);
     else {
         if(c.isMember("ply")) {m->loadPly(c["ply"].asString());m->max_radii2D_=torch::zeros({m->xyz_.size(0)},GPU);m->exist_since_iter_=torch::zeros({m->xyz_.size(0)},GPU.dtype(torch::kInt32));}
@@ -185,7 +197,7 @@ int main(int argc,char** argv) try {
     }
     if(action=="render") {torch::NoGradGuard g;
         if(c.isMember("query_text")){heads.text=raw(c["query_text"].asString(),{K,512});heads.classifier=torch::eye(K,GPU);heads.cbias=torch::zeros({K},GPU);}
-        for(auto& v:c["views"]){auto r=render(m,v,H,W,HS,WS);export_view(out,v["name"].asString(),r,heads);}return 0;}
+        for(auto& v:c["views"]){auto r=render(m,v,H,W,HS,WS,c.get("render_semantics",true).asBool());export_view(out,v["name"].asString(),r,heads);}return 0;}
     TORCH_CHECK(m->semantic_.defined(),"Real CLIP supervision required for training");
     if(c.get("stage_reset",false).asBool()) {
         torch::NoGradGuard g;auto xyz=m->xyz_.clone();auto d=distCUDA2(xyz).clamp_min(1e-7);m->scaling_=torch::log(torch::sqrt(d)).unsqueeze(1).repeat({1,3}).requires_grad_();m->rotation_=torch::zeros({xyz.size(0),4},GPU);m->rotation_.index_put_({Slice(),0},1);m->rotation_.requires_grad_();m->opacity_=torch::full({xyz.size(0),1},std::log(.1/.9),GPU.requires_grad(true));m->features_rest_=torch::zeros_like(m->features_rest_).requires_grad_();m->active_sh_degree_=0;vectors(*m);m->trainingSetup(opt);heads.setup();begin=0;
@@ -193,13 +205,13 @@ int main(int argc,char** argv) try {
     auto save_now=[&](fs::path p,int i){std::ostringstream ss;ss<<rng;save(p,m,heads,i,ss.str(),signature);};
     if(begin==0)save_now(out/"initial",0);
     std::ofstream log(out/"losses.jsonl",begin?std::ios::app:std::ios::out);auto views=c["views"];TORCH_CHECK(!views.empty(),"No training views");
-    int isp_every=c.get("isp_every",100).asInt();
+    int isp_every=c.get("isp_every",100).asInt();bool semantics=c.get("semantic_supervision",true).asBool();
     for(int step=begin+1;step<=steps;++step) {
         auto v=views[static_cast<int>(rng()%views.size())];m->updateLearningRate(step);if(step%1000==0)m->oneUpShDegree();
-        auto r=render(m,v,H,W,HS,WS);auto gt=image(v["image"].asString(),H,W);
+        auto r=render(m,v,H,W,HS,WS,semantics);auto gt=image(v["image"].asString(),H,W);
         auto lc=.8*torch::abs(r.rgb-gt).mean()+.2*(1-loss_utils::ssim(r.rgb,gt,torch::kCUDA));
-        T lcos,lce;auto ls=semantic_loss(heads,r.sem,v,HS,WS,&lcos,&lce),lg=zero_loss(ls),ll=local3d(m,c.get("local_samples",64).asInt());
-        if(c["generated_views"].size()){auto gv=c["generated_views"][step%c["generated_views"].size()];auto gr=render(m,gv,H,W,HS,WS);lg=semantic_loss(heads,gr.sem,gv,HS,WS);}
+        T lcos=zero_loss(lc),lce=zero_loss(lc);auto ls=semantics?semantic_loss(heads,r.sem,v,HS,WS,&lcos,&lce):zero_loss(lc),lg=zero_loss(ls),ll=semantics?local3d(m,c.get("local_samples",64).asInt()):zero_loss(lc);
+        if(semantics&&c["generated_views"].size()){auto gv=c["generated_views"][step%c["generated_views"].size()];auto gr=render(m,gv,H,W,HS,WS);lg=semantic_loss(heads,gr.sem,gv,HS,WS);}
         auto li=zero_loss(ls),ln=zero_loss(ls),lk=zero_loss(ls);Json::Value row;row["isp_valid_pairs"]=0;
         bool use2=c.get("spc2d",false).asBool(),use3=c.get("spc3d",false).asBool();
         if((use2||use3) && step%isp_every==0) {
@@ -221,13 +233,14 @@ int main(int argc,char** argv) try {
         auto loss=lc+ls+lg+c.get("local_weight",1.).asFloat()*ll+ramp*(li+ln+lk);
         TORCH_CHECK(torch::isfinite(loss).item<bool>(),"Nonfinite loss at ",step);loss.backward();
         for(auto& kv:model_tensors(*m))if(kv.second->grad().defined())TORCH_CHECK(torch::isfinite(kv.second->grad()).all().item<bool>(),"Nonfinite gradient ",kv.first);
-        row["semantic_grad_norm"]=m->semantic_.grad().norm().item<double>();row["xyz_grad_norm"]=m->xyz_.grad().norm().item<double>();
-        row["semantic_cosine"]=lcos.item<double>();row["semantic_ce"]=lce.item<double>();row["decoder_grad_norm"]=heads.decoder.grad().norm().item<double>();
+        row["view"]=v["name"];row["semantic_valid_fraction"]=v.get("valid_fraction",1.);
+        row["semantic_grad_norm"]=m->semantic_.grad().defined()?m->semantic_.grad().norm().item<double>():0.;row["xyz_grad_norm"]=m->xyz_.grad().norm().item<double>();
+        row["semantic_cosine"]=lcos.item<double>();row["semantic_ce"]=lce.item<double>();row["decoder_grad_norm"]=heads.decoder.grad().defined()?heads.decoder.grad().norm().item<double>():0.;
         m->optimizer_->step();heads.optim->step();
         {torch::NoGradGuard g;auto visible=r.visible;auto screen=r.screen;m->addDensificationStats(screen,visible);m->max_radii2D_.index_put_({visible},torch::maximum(m->max_radii2D_.index({visible}),r.radii.index({visible}).to(torch::kFloat32)));
             int from=c.get("densify_from",500).asInt(),until=c.get("densify_until",15000).asInt(),interval=c.get("densify_every",100).asInt();
             if(step>=from&&step<=until&&step%interval==0&&m->xyz_.size(0)<c.get("max_gaussians",1000000).asInt())m->densifyAndPrune(c.get("densify_threshold",.0002).asFloat(),.005,m->spatial_lr_scale_,0,false);
-            int every=c.get("ogr_every",3000).asInt();if(c.get("ogr",false).asBool()&&step%every==0){put(out/"ogr_xyz.f32",m->xyz_);Json::Value oj;oj["xyz"]=(out/"ogr_xyz.f32").string();oj["output"]=(out/"ogr_mask.u8").string();oj["radius"]=c.get("ogr_radius",1.);oj["min_neighbors"]=c.get("ogr_min_neighbors",5);writej(out/"ogr_request.json",oj);std::string cmd=quote(c["python"].asString())+" "+quote(c["geometry_worker"].asString())+" ogr "+quote((out/"ogr_request.json").string());TORCH_CHECK(std::system(cmd.c_str())==0,"OGR worker failed");auto mask=raw(out/"ogr_mask.u8",{m->xyz_.size(0)},torch::kUInt8).to(torch::kBool);row["ogr_removed"]=mask.sum().item<int>();TORCH_CHECK((~mask).sum().item<int>()>=4,"OGR would remove entire cloud: adjust radius for coordinate scale");m->prunePoints(mask);}
+            int every=c.get("ogr_every",3000).asInt();if(c.get("ogr",false).asBool()&&step%every==0){put(out/"ogr_xyz.f32",m->xyz_);Json::Value oj;oj["xyz"]=(out/"ogr_xyz.f32").string();oj["output"]=(out/"ogr_mask.u8").string();oj["radius"]=c.get("ogr_radius",1.);oj["min_neighbors"]=c.get("ogr_min_neighbors",5);writej(out/"ogr_request.json",oj);std::string cmd=quote(c["python"].asString())+" "+quote(c["geometry_worker"].asString())+" ogr "+quote((out/"ogr_request.json").string());TORCH_CHECK(std::system(cmd.c_str())==0,"OGR worker failed");auto mask=raw(out/"ogr_mask.u8",{m->xyz_.size(0)},torch::kUInt8).to(torch::kBool);row["ogr_removed"]=mask.sum().item<int>();TORCH_CHECK((~mask).sum().item<int>()>=4,"OGR would remove entire cloud: adjust radius for coordinate scale");fs::path event=out/"ogr"/std::to_string(step);fs::create_directories(event);fs::copy_file(out/"ogr_xyz.f32",event/"before_xyz.f32",fs::copy_options::overwrite_existing);fs::copy_file(out/"ogr_mask.u8",event/"removed_mask.u8",fs::copy_options::overwrite_existing);m->prunePoints(mask);put(event/"after_xyz.f32",m->xyz_);}
             int reset=c.get("opacity_reset_every",3000).asInt();if(reset>0&&step%reset==0&&step<until)m->resetOpacity();
         }
         m->optimizer_->zero_grad(true);heads.optim->zero_grad(true);
