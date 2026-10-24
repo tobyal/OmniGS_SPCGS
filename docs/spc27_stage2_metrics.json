@@ -1,0 +1,360 @@
+{
+  "status": "completed",
+  "run": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_spcgs/spc27_hieral_20261024",
+  "same_training_camera_sequence": true,
+  "same_base_configuration": true,
+  "same_optimizer_parameters": true,
+  "source_sgi_unchanged": true,
+  "upstream_manifests_unchanged": true,
+  "semantic_gt_note": "Training-label fit only; no held-out mIoU exists.",
+  "reproducibility_note": "One scene and one seed. Initial RNG states and camera order match, but native CUDA optimization is not bitwise deterministic; observed differences do not establish statistical significance.",
+  "sampling_note": "Basic mask validity is not correspondence accuracy; all failed events retained.",
+  "region_consistency": {
+    "c0": {
+      "common_pairs": 24,
+      "common_3d_pairs": 22,
+      "feature_cosine": 0.9833717645845903,
+      "region_class_distribution_KL": 0.2372191840796063,
+      "dominant_class_agrees": 0.7916666666666666,
+      "real_coverage": 1.0,
+      "target_coverage": 1.0,
+      "real_entropy": 0.6140131503343582,
+      "target_entropy": 0.6647672007481257,
+      "gaussian_semantic_KL": 0.02201265915804966
+    },
+    "c1": {
+      "common_pairs": 24,
+      "common_3d_pairs": 22,
+      "feature_cosine": 0.9736002451152287,
+      "region_class_distribution_KL": 0.2771637676063203,
+      "dominant_class_agrees": 0.9166666666666666,
+      "real_coverage": 1.0,
+      "target_coverage": 1.0,
+      "real_entropy": 0.5391179459790388,
+      "target_entropy": 0.614277683198452,
+      "gaussian_semantic_KL": 0.023369481533088467
+    },
+    "c2": {
+      "common_pairs": 24,
+      "common_3d_pairs": 22,
+      "feature_cosine": 0.9700475882129919,
+      "region_class_distribution_KL": 0.27360362248070186,
+      "dominant_class_agrees": 0.9166666666666666,
+      "real_coverage": 1.0,
+      "target_coverage": 1.0,
+      "real_entropy": 0.5520854567488035,
+      "target_entropy": 0.6180307517449061,
+      "gaussian_semantic_KL": 0.03196129432498393
+    }
+  },
+  "descriptive_region_groups": {
+    "floor_surface": {
+      "c0": {
+        "pairs": 12,
+        "pairs_3d": 12,
+        "gaussian_semantic_KL": 0.008105822411986688,
+        "feature_cosine": 0.9976257571113821,
+        "region_class_distribution_KL": 0.0002647755810585295,
+        "dominant_class_agrees": 1.0
+      },
+      "c1": {
+        "pairs": 12,
+        "pairs_3d": 12,
+        "gaussian_semantic_KL": 0.003249434055760503,
+        "feature_cosine": 0.9964858063115866,
+        "region_class_distribution_KL": 0.0002560255258761875,
+        "dominant_class_agrees": 1.0
+      },
+      "c2": {
+        "pairs": 12,
+        "pairs_3d": 12,
+        "gaussian_semantic_KL": 0.0023641648585908115,
+        "feature_cosine": 0.9968091009808137,
+        "region_class_distribution_KL": 0.00015965790801904708,
+        "dominant_class_agrees": 1.0
+      }
+    },
+    "other_regions_including_uncertain_correspondences": {
+      "c0": {
+        "pairs": 12,
+        "pairs_3d": 10,
+        "gaussian_semantic_KL": 0.038700863253325224,
+        "feature_cosine": 0.9691177720577985,
+        "region_class_distribution_KL": 0.47417359257815406,
+        "dominant_class_agrees": 0.5833333333333334
+      },
+      "c1": {
+        "pairs": 12,
+        "pairs_3d": 10,
+        "gaussian_semantic_KL": 0.047513538505882025,
+        "feature_cosine": 0.9507146839188708,
+        "region_class_distribution_KL": 0.5540715096867643,
+        "dominant_class_agrees": 0.8333333333333334
+      },
+      "c2": {
+        "pairs": 12,
+        "pairs_3d": 10,
+        "gaussian_semantic_KL": 0.06747784968465567,
+        "feature_cosine": 0.9432860754451697,
+        "region_class_distribution_KL": 0.5470475870533846,
+        "dominant_class_agrees": 0.8333333333333334
+      }
+    },
+    "visually_clear_parts_descriptive_only": {
+      "c0": {
+        "pairs": 5,
+        "pairs_3d": 5,
+        "gaussian_semantic_KL": 0.0396879700012505,
+        "feature_cosine": 0.9745820396311166,
+        "region_class_distribution_KL": 0.18883641236461698,
+        "dominant_class_agrees": 0.6
+      },
+      "c1": {
+        "pairs": 5,
+        "pairs_3d": 5,
+        "gaussian_semantic_KL": 0.0636115975677967,
+        "feature_cosine": 0.9560389099875326,
+        "region_class_distribution_KL": 0.2336424792651087,
+        "dominant_class_agrees": 1.0
+      },
+      "c2": {
+        "pairs": 5,
+        "pairs_3d": 5,
+        "gaussian_semantic_KL": 0.09277274701744317,
+        "feature_cosine": 0.9528637299477433,
+        "region_class_distribution_KL": 0.2215891573112458,
+        "dominant_class_agrees": 1.0
+      }
+    }
+  },
+  "findings": {
+    "answers": [
+      {
+        "question": "SGI 能否正确初始化 SPC 第二阶段？",
+        "answer": "可以。独立初始化及 C0/C1/C2 均从修复学习率后的 287,787 个 SGI 高斯出发；位置、DC 颜色、32 维语义及映射参数的逐张量继承误差均为零。重置参数、新优化器、初始随机状态及实际训练相机序列核验通过，来源 SGI 与教师清单未改变。三组均完成 10,000 步并通过独立重载和七类文本查询。"
+      },
+      {
+        "question": "SAM2 Hiera-L 能否建立真实/在线伪视角区域对应？",
+        "answer": "可以在多种可见的大管段、设备外壳、风管和地面建立可辨认的对应，但仍有细小区域消失、遮挡传播失败和对象漂移。使用原始 Hiera-L，未回退 tiny。C1、C2 各执行 100 次 ISP，200 对候选中分别有 169、168 对通过原有基本检查；这个比例不是对象对应准确率。二维及三维 SPC 均已产生实际非零语义梯度。"
+      },
+      {
+        "question": "加入二维、三维 SPC 后，未知视角语义是否更稳定？",
+        "answer": "本轮仅显示主导类别的一致率提高，未证明正确的工业语义整体改善。24 对固定区域的一致率为 C0 19/24、C1 22/24、C2 22/24，但特征余弦从 0.98337 降至 0.97360、0.97005；22 对区域的高斯语义 KL 从 0.02201 升至 0.02337、0.03196。设备柜样例变为跨视角共同预测 building，不能视为正确识别；事后检查发现其源区域只有 0.56% 像素有官方监督。三维 SPC 改善了地面子集的 KL，但没有给其余区域带来整体收益。这里没有独立未知视角语义真值，结论限于单场景、单种子及当前每 100 步执行 SPC 的工程配置。"
+      }
+    ],
+    "source_supervision_diagnostic": "evaluation_source_supervision.json",
+    "evaluation_note": "All fixed masks and descriptive subsets were selected before final metrics. No post-evaluation changes to training, source labels, masks, filtering, or primary sample selection."
+  },
+  "training_code_commit": "dc391ee",
+  "classes": [
+    "piping",
+    "equipment",
+    "building",
+    "structural_frame",
+    "access_structure",
+    "cable_tray",
+    "hvac"
+  ],
+  "train_names": [
+    "2023-05-11_10.18.46",
+    "2023-05-11_10.19.36",
+    "2023-05-11_10.27.16",
+    "2023-05-11_10.29.30",
+    "2023-05-11_10.30.18",
+    "2023-05-11_10.31.04",
+    "2023-05-11_10.31.46",
+    "2023-05-11_10.35.28",
+    "2023-05-11_10.36.15",
+    "2023-05-11_10.37.00",
+    "2023-05-11_10.38.31",
+    "2023-05-11_10.43.09",
+    "2023-05-11_10.43.53",
+    "2023-05-11_10.44.56",
+    "2023-05-11_10.47.59",
+    "2023-05-11_10.50.58",
+    "2023-05-11_11.07.13",
+    "2023-05-11_11.08.41",
+    "2023-05-11_11.18.15",
+    "2023-05-11_11.19.30",
+    "2023-05-11_11.21.03",
+    "2023-05-11_11.22.19",
+    "2023-05-11_11.23.11",
+    "2023-05-11_11.23.47",
+    "2023-05-11_11.24.32",
+    "2023-05-11_11.25.58",
+    "2023-05-11_11.42.41"
+  ],
+  "models": {
+    "c0": {
+      "steps": 10000,
+      "gaussians": 398915,
+      "archive": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_spcgs/spc27_hieral_20261024/05_spc/c0/final/model.pt",
+        "bytes": 442274045,
+        "sha256": "181b8ed5eeef202b806bf625ddbc1b175d2a0ba340678c24b7e4ba9844113ee3"
+      },
+      "isp_events": 0,
+      "basic_valid_pairs": 0,
+      "attempted_pairs": 0,
+      "nonzero_steps_by_term": {
+        "inter": 0,
+        "intra": 0,
+        "spc3d": 0
+      },
+      "gradient_maxima": {
+        "inter": 0,
+        "intra": 0,
+        "spc3d": 0
+      },
+      "loss_maxima": {
+        "inter": 0.0,
+        "intra": 0.0,
+        "spc3d": 0.0,
+        "local3d": 0.6297677755355835
+      },
+      "total_formula_max_error": 8.940696716308594e-08,
+      "rgb_groups": {
+        "test": {
+          "views": 16,
+          "psnr": 18.29209979623556,
+          "ssim": 0.6326954029500484,
+          "lpips": 0.5015102326869965
+        },
+        "train": {
+          "views": 27,
+          "psnr": 28.308771981133354,
+          "ssim": 0.870578008669394,
+          "lpips": 0.2554228085058707
+        },
+        "unseen_train29": {
+          "views": 29,
+          "psnr": 17.467409495649665,
+          "ssim": 0.5946376184965002,
+          "lpips": 0.5340434631396984
+        },
+        "val": {
+          "views": 6,
+          "psnr": 20.85974633693695,
+          "ssim": 0.7034067908922831,
+          "lpips": 0.4017922927935918
+        }
+      },
+      "training_fit_miou": 0.9962926120096693,
+      "query_passed": true
+    },
+    "c1": {
+      "steps": 10000,
+      "gaussians": 412842,
+      "archive": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_spcgs/spc27_hieral_20261024/05_spc/c1/final/model.pt",
+        "bytes": 457714297,
+        "sha256": "950e8e8717ff346dc54836e5088664cc054fc3c7d774d62aa10d5122acb9ae9d"
+      },
+      "isp_events": 100,
+      "basic_valid_pairs": 169,
+      "attempted_pairs": 200,
+      "nonzero_steps_by_term": {
+        "inter": 87,
+        "intra": 100,
+        "spc3d": 0
+      },
+      "gradient_maxima": {
+        "inter": 5.610480308532715,
+        "intra": 0.1593681275844574,
+        "spc3d": 0
+      },
+      "loss_maxima": {
+        "inter": 6.036406993865967,
+        "intra": 6.240241050720215,
+        "spc3d": 0.0,
+        "local3d": 0.7066803574562073
+      },
+      "total_formula_max_error": 9.98377799987793e-07,
+      "rgb_groups": {
+        "test": {
+          "views": 16,
+          "psnr": 18.374173864722252,
+          "ssim": 0.6381627004593611,
+          "lpips": 0.5007557794451714
+        },
+        "train": {
+          "views": 27,
+          "psnr": 28.011315663655598,
+          "ssim": 0.8656874188670406,
+          "lpips": 0.2622327638996972
+        },
+        "unseen_train29": {
+          "views": 29,
+          "psnr": 17.45323690874823,
+          "ssim": 0.6036453971575046,
+          "lpips": 0.5341161068143516
+        },
+        "val": {
+          "views": 6,
+          "psnr": 20.86824099222819,
+          "ssim": 0.7002387245496114,
+          "lpips": 0.4087711920340856
+        }
+      },
+      "training_fit_miou": 0.9943476674184202,
+      "query_passed": true
+    },
+    "c2": {
+      "steps": 10000,
+      "gaussians": 410556,
+      "archive": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_spcgs/spc27_hieral_20261024/05_spc/c2/final/model.pt",
+        "bytes": 455181689,
+        "sha256": "939a2226464635ebee07c15ed62f139ac88d5f142db0978f4b498b4e619acf67"
+      },
+      "isp_events": 100,
+      "basic_valid_pairs": 168,
+      "attempted_pairs": 200,
+      "nonzero_steps_by_term": {
+        "inter": 86,
+        "intra": 100,
+        "spc3d": 73
+      },
+      "gradient_maxima": {
+        "inter": 5.230994701385498,
+        "intra": 0.16941088438034058,
+        "spc3d": 0.07211503386497498
+      },
+      "loss_maxima": {
+        "inter": 8.409210205078125,
+        "intra": 6.241827011108398,
+        "spc3d": 0.724608302116394,
+        "local3d": 0.7183095216751099
+      },
+      "total_formula_max_error": 1.4051329344511032e-06,
+      "rgb_groups": {
+        "test": {
+          "views": 16,
+          "psnr": 18.34214374423027,
+          "ssim": 0.6374480556696653,
+          "lpips": 0.5026821233332157
+        },
+        "train": {
+          "views": 27,
+          "psnr": 28.013878751684118,
+          "ssim": 0.8658280416771218,
+          "lpips": 0.2623391311477732
+        },
+        "unseen_train29": {
+          "views": 29,
+          "psnr": 17.451814556943958,
+          "ssim": 0.5951413801261063,
+          "lpips": 0.5364174647577877
+        },
+        "val": {
+          "views": 6,
+          "psnr": 20.926213264465332,
+          "ssim": 0.6995043953259786,
+          "lpips": 0.4077816257874171
+        }
+      },
+      "training_fit_miou": 0.9941612370205377,
+      "query_passed": true
+    }
+  }
+}

@@ -1,7 +1,17 @@
 # OmniGS-SPCGS 工业全景研究工程
 
 独立服务器工作目录：`/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/`。
-上游为 `../OmniGS_Structure/`；原版 `baseline_s0` 只读复制到 `baseline/checkpoint.ply`，不修改上游任何训练结果。数据引用固定 56/6/16 划分及 3,979 个训练集 SfM 点。
+上游为 `../OmniGS_Structure/`；原版 `baseline_s0` 只读复制到 `baseline/checkpoint.ply`，不修改上游任何训练结果。完整相机协议为 56/6/16；历史基线使用 3,979 个训练集 SfM 点。
+
+## 当前 27 视角、七类语义实验
+
+当前正式流程仅用其中有官方语义标注的 27 张训练图，其余 29 张作为未见视角。第一阶段使用 7,421 点增强 SfM 和修复 opacity 学习率后的 287,787 高斯 SGI；第二阶段复用这些高斯及冻结七类 F/S/T/W 教师，使用原始 SAM2 Hiera-L 执行在线 ISP 与二维/三维 SPC。
+
+- [稀疏 27 视角 SGI 说明](docs/SPARSE27_RUNBOOK.md)
+- [SGI → SPC 第二阶段运行说明](docs/SPC27_STAGE2_RUNBOOK.md)
+- [C0/C1/C2 正式训练结果与限制](docs/SPC27_STAGE2_RESULTS.md)
+
+第二阶段入口为 `tools/run_spc27.py`，输出在 `runs/industrial_spcgs/spc27_hieral_20261024`。复现当前实验应使用上述说明；以下 56 视角、20 类配置保留作历史记录。
 
 ## Git 仓库与数据接入
 
@@ -26,7 +36,7 @@ bash tools/setup_models.sh
 
 ## 运行
 
-本次工业语义 M2 重做的入口见 [M2 运行说明](docs/M2_RUNBOOK.md)、[代码参考及适配差异](docs/M2_REFERENCE.md) 和 [56 张训练图的类别分析](docs/IRIS_CLASS_ANALYSIS.md)。新词表为 20 类，采用三尺度重叠 patch CLIP，并显式读取 F/S/T。下方旧模块编号和旧 run 保留作为历史流程；新实验不会覆盖旧结果。
+历史 20 类工业语义 M2 的入口见 [M2 运行说明](docs/M2_RUNBOOK.md)、[代码参考及适配差异](docs/M2_REFERENCE.md) 和 [56 张训练图的类别分析](docs/IRIS_CLASS_ANALYSIS.md)。该版本采用三尺度重叠 patch CLIP，并显式读取 F/S/T。下方旧模块编号和旧 run 保留作为历史流程；当前七类实验不会覆盖旧结果。
 
 ```bash
 cd /mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023
