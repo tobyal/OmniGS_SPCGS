@@ -129,7 +129,9 @@ def diagnostics(run):
     write(out/'new_point_semantic_votes.json',{'note':'Post-hoc analysis only; at least two agreeing official observations and a strict majority. No new filtering or geometric truth claim.',
       'counts':{str(k):v for k,v in class_counts.items()},'points':class_points})
     from .m1_wan360 import point_previews
-    projection_dir=out/'point_projections';projection_dir.mkdir(exist_ok=True);point_previews(projection_dir,points0,added,representatives(protocol))
+    projection_dir=out/'point_projections';projection_dir.mkdir(exist_ok=True)
+    reps=representatives(protocol)
+    for start in range(0,len(reps),4):point_previews(projection_dir,points0,added,reps[start:start+4])
     fig,axes=plt.subplots(2,3,figsize=(16,9))
     for ax,(a,b,title) in zip(axes[0],[(0,1,'XY'),(0,2,'XZ'),(1,2,'YZ')]):
         ax.scatter(points0[:,a],points0[:,b],s=1,c='#4089bb',label=f'P0 {len(points0)}');ax.scatter(added[:,a],added[:,b],s=3,c='#e25146',label=f'new {len(added)}')
@@ -145,6 +147,11 @@ def diagnostics(run):
         train_metrics[kind]={'first':loss[0],'last':loss[-1],'iterations':len(loss),'model':model,'camera_counts':dict(Counter(r['view'] for r in loss)),
           'ogr_removed':sum(r.get('ogr_removed',0) for r in loss),'ogr_events':[{'step':r['step'],'removed':r['ogr_removed']} for r in loss if 'ogr_removed' in r],
           'evaluation':read(stage/'renders/metrics.json') if (stage/'renders/metrics.json').exists() else None}
+        if model:
+            _,_,attributes=ply(stage/'final/point_cloud.ply');opacity=1/(1+np.exp(-attributes['opacity']))
+            train_metrics[kind]['opacity_quantiles']=np.quantile(opacity,[0,.1,.5,.9,1]).tolist()
+            train_metrics[kind]['opacity_unique_values']=len(np.unique(attributes['opacity']))
+            train_metrics[kind]['optimizer_parameters']=read(stage/'optimizer_parameters.json') if (stage/'optimizer_parameters.json').exists() else None
         if kind=='sgi':
             fig,axes=plt.subplots(2,3,figsize=(16,8))
             for ax,key in zip(axes.flat,['rgb','semantic_cosine','semantic_ce','local3d','total','gaussians']):
@@ -178,6 +185,11 @@ def report(run):
       'p0_points':geometry['p0']['points'],'new_points':geometry['p1']['added'],'p1_points':geometry['p1']['enhanced_count'],'regions':geometry['regions'],
       'teacher':{k:cache[k] for k in ['classes','mean_valid_fraction','semantic_valid_counts','smoothing','adaptation']},'generated_semantic_loss':False,'training':training}
     write(out/'summary.json',summary)
+    vote_counts=read(out/'new_point_semantic_votes.json')['counts']
+    vote_table='<table><tr><th>官方观测标签投票</th><th>新增点</th></tr>'+''.join(f"<tr><td>{c['zh']}</td><td>{vote_counts.get(str(c['id']),0)}</td></tr>" for c in protocol['classes']['classes'])+f"<tr><td>未形成一致投票</td><td>{vote_counts.get('255',0)}</td></tr></table>"
+    spatial={r['id']:r for r in protocol['spatial']}
+    id_table='<details><summary>展开全部 27 张图像 ID、空间区域与高度层</summary><table><tr><th>原序号</th><th>图像 ID</th><th>区域</th><th>高度层</th><th>世界坐标 X / Y / Z</th></tr>'+''.join(f"<tr><td>{v['original_train_index']}</td><td>{v['name']}</td><td>{spatial[v['name']]['region']}</td><td>{spatial[v['name']]['height_layer']}</td><td>{' / '.join(f'{x:.3f}' for x in v['center'])}</td></tr>" for v in protocol['train'])+'</table></details>'
+    region_table='<table><tr><th>三维区域</th><th>训练序号</th><th>所选生成帧</th><th>按生成源归属的新增点</th><th>按三维位置归属的新增点</th></tr>'+''.join(f"<tr><td>{r['region']}</td><td>{', '.join(map(str,r['training_indices']))}</td><td>{r['selected_frames']}</td><td>{r['points_by_source']}</td><td>{r['new_points_nearest_region']}</td></tr>" for r in geometry['regions'])+'</table>'
     fit=(training.get('sgi',{}).get('evaluation') or {}).get('official_training_fit')
     if fit:
         import matplotlib;matplotlib.use('Agg')
@@ -190,30 +202,43 @@ def report(run):
       '<p>本轮输出是后续 SPC 训练的 SGI 初始化模型；未运行 M4/M5。全部新产物保存在独立 run，历史 56 视角结果仅作参考。</p>',
       ('<p>本报告使用 opacity_lr_fixed 修正版：修复原构造函数的不透明度学习率自初始化错误，恢复声明的默认值 0.05，SGI 与 RGB 参考均重新从 P1/P0 训练。几何、视频和七类教师缓存完全复用。父目录中不透明度未正常学习的首轮结果保留作诊断，不作为推荐初始化。</p>' if (run/'reused_inputs.json').exists() else ''),
       '<h2>训练协议</h2><p>实际官方六面记录选出 27 张训练图像，其余 29 张、6 张验证和 16 张测试图像均未进入训练或几何观测。沿用提供的 RMX 位姿，历史特征轨迹仅作为关联提案；P0 的全部坐标都由所选观测重新求解。</p>',
-      '<p>原训练序号：'+', '.join(map(str,summary['training_indices']))+'</p><img src="../00_protocol/camera_distribution.png">',
+      '<p>原训练序号：'+', '.join(map(str,summary['training_indices']))+'</p>'+id_table+'<img src="../00_protocol/camera_distribution.png">',
       ('<p>此前 56 张训练视角的官方标注覆盖分布，供对应本轮所选与未选视角。</p><img src="camera_all56_annotation.png">' if previous_distribution.exists() else ''),
       '<h2>M1：真实观测与缓存生成视角</h2>',
       f"<p>P0 {summary['p0_points']:,} 点 → 新增 {summary['new_points']:,} 点 → P1 {summary['p1_points']:,} 点。复用 108 个视频、432 个早期候选帧；没有重新生成视频。四个方向均只按实际几何质量处理。</p>",
+      f"<p>204 个候选通过注册，最终采用 26 个源的 94 帧，94 帧均贡献有效新点；left 方向采用 22 帧，新增 554 点。56 号末端源没有可靠生成帧通过注册，但其真实观测仍参与 P0 与训练，27 张真实相机的共享轨迹图连通。</p>",
+      f"<p>P0 点的最大观测重投影误差中位数为 {geometry['p0']['max_reprojection_px_2k']['median']:.3f} 像素；新增点对应中位数为 {geometry['p1']['reprojection_px']['median']:.3f} 像素，P90 为 {geometry['p1']['reprojection_px']['p90']:.3f} 像素，均以 2048×1024 全景衡量。新增点至少有两张所选真实图像支持。密度检查剔除 {geometry['p1']['density_removed']}/{geometry['p1']['before_density_filter']} 个候选点（{geometry['p1']['density_removed']/geometry['p1']['before_density_filter']:.2%}）；这是筛选比例，不是最终点云真实异常率。历史 P2 共 11,901 点，仅作参考。</p>",
       '<p>每个源、每个方向最多选一帧，优先选择能通过原几何检查的新轨迹较多的候选。源按三维区域与高度层轮换处理。空间组点数不强行均衡；没有有效几何支持的区域不会补造点。</p><img src="geometry.png">',
-      '<pre>'+html.escape(json.dumps(geometry['regions'],ensure_ascii=False,indent=2))+'</pre>',
+      region_table,
       f"<p>以原世界坐标原点建立边长 0.2 的体素网格，占据格数由 {geometry['voxel_occupancy'][1]['P0_occupied']} 增至 {geometry['voxel_occupancy'][1]['P1_occupied']}；这只描述空间采样覆盖，不是有真值的表面完整率，也不参与点的筛选。</p>",
+      '<p>新增点的真实观测中，至少两个有效官方标签一致且占有效票数的严格多数时记录类别。下表是后验结构分析，不作为点云筛选或三维语义真值。</p>'+vote_table,
       '<p>P0 允许至少两张所选真实视角支持，并执行原重投影、视差、去重与密度检查。历史 3,979 个基础点采用不同的轨迹保留条件，因此点数不能单独解释为重建精度提高。新增点的误差是内部几何一致性指标，不等同于外部测量精度；点投影也不等同于可见性判断。</p>',
       '<h2>M2：七类官方原型监督</h2>',
       f"<p>冻结 CLIP ViT-B/16，每类三个英文提示取归一化均值构造 T（7×512）；F=T[label]，S=log(0.95·onehot+0.05/7)，W 由可靠标签有效性决定。语义有效率 {cache['mean_valid_fraction']:.2%}。这是类别原型监督，不是完整 CLIP 图像特征蒸馏。</p>",
       '<p>W 同时控制余弦损失和交叉熵，不影响 RGB。未确认的 SAM 补全不参与监督；生成帧只用于 M1，第一轮关闭 L_GS。保留 32 维语义、32→512 映射、局部三维正则、增密和 OGR。原生掩码检查验证了无效像素不产生语义梯度、全零掩码损失为零及与独立 PyTorch 公式一致。</p>',
       '<h2>训练与评估</h2><p>RGB 指标为各图 PSNR / SSIM 的算术平均。语义指标只衡量 27 张训练图上的官方掩码拟合，不能作为未见视角语义准确率。普通参考从 P0 开始，仅使用同样 27 张 RGB、同分辨率和 10,000 步；SGI 从 P1 开始，加入语义与 OGR。因此这一对比衡量组合流程，不单独归因于 Wan360。</p><p>原有透明度重置在 3000、6000 步执行，刚保存的对应检查点会暂时变暗；损失随后恢复。OGR 的移除数量与分布单独记录，最终比较使用恢复训练后的 10000 步模型。</p>',
-      '<table><tr><th>模型</th><th>步数</th><th>高斯数</th><th>训练 / 未见 29 / 验证 / 测试 PSNR</th><th>训练语义 mIoU</th></tr>']
+      '<table><tr><th>模型</th><th>步数</th><th>高斯数</th><th>训练 / 未见 29 / 验证 / 测试 PSNR</th><th>训练 / 未见 29 / 验证 / 测试 SSIM</th><th>训练语义 mIoU</th></tr>']
     for name,data in training.items():
         evaluation=data['evaluation'];groups=evaluation['groups'] if evaluation else {};fit=evaluation['official_training_fit'] if evaluation else None
         vals=' / '.join(f"{groups[s]['psnr']:.3f}" if s in groups else '-' for s in ['train','unseen_train29','val','test'])
+        ssims=' / '.join(f"{groups[s]['ssim']:.3f}" if s in groups else '-' for s in ['train','unseen_train29','val','test'])
         miou=f"{fit['miou']:.2%}" if fit else '-'
         label=name+' (5 representative training views)' if name=='short' else name
-        body.append(f"<tr><td>{label}</td><td>{data['iterations']}</td><td>{data['model']['gaussians'] if data['model'] else '-'}</td><td>{vals}</td><td>{miou}</td></tr>")
-    body+=['</table><img src="semantic_fit.png"><img src="losses.png"><img src="ogr.png"><img src="gaussian_distribution.png"><h2>固定视角对比</h2><p>所有语义图使用同一七类配色。黑色教师像素为 ignore；预测图黑色表示无高斯贡献。图像从原 RGB 分辨率缩放展示；语义训练/渲染分辨率为 256×128。</p>']
+        body.append(f"<tr><td>{label}</td><td>{data['iterations']}</td><td>{data['model']['gaussians'] if data['model'] else '-'}</td><td>{vals}</td><td>{ssims}</td><td>{miou}</td></tr>")
+    body+=['</table>']
+    if training.get('sgi',{}).get('evaluation') and training.get('rgb',{}).get('evaluation'):
+        sg=training['sgi']['evaluation']['groups'];rg=training['rgb']['evaluation']['groups']
+        differences='、'.join(f"{label} {sg[key]['psnr']-rg[key]['psnr']:+.3f} dB" for key,label in [('train','训练'),('unseen_train29','未见 29 张'),('val','验证'),('test','测试')])
+        body.append(f'<p>SGI 相对同预算 RGB 参考的 PSNR 差值：{differences}。语义拟合与 RGB 质量分别评价；训练语义拟合良好不能证明未见区域语义正确，也不能替代 RGB 改善证据。</p>')
+    body+=['<p>可视检查：1 号视角中，红色建筑立柱、设备柜和管线的预测已跟随对应官方类别。细管线和栏杆仍受 256×128 语义网格限制。56 号视角中央大型设备在教师中大面积为 ignore，最终预测仍出现混杂类别；这些未监督区域不能由有效像素 mIoU 评价。22 号等远离训练覆盖的位置，RGB 参考与 SGI 均存在明显空缺和模糊。</p>',
+      '<img src="semantic_fit.png"><img src="losses.png"><img src="ogr.png"><img src="gaussian_distribution.png"><h2>固定视角对比</h2><p>所有语义图使用同一七类配色。黑色教师像素为 ignore；预测图黑色表示无高斯贡献。图像从原 RGB 分辨率缩放展示；语义训练/渲染分辨率为 256×128。</p>']
     for cam in representatives(protocol):body.append(f"<h3>{cam['original_train_index']}: {cam['name']}</h3><img src=\"{cam['name']}_comparison.jpg\">")
     body+=['<h2>未见训练视角检查</h2><p>下列图像没有参与几何观测、RGB 或语义训练。22、39 号位于主要标注相机覆盖之外；没有官方语义真值，不计算语义准确率。</p>']
     for path in sorted(out.glob('unseen_*.jpg')):body.append(f'<h3>{path.stem}</h3><img src="{path.name}">')
+    body+=['<h2>点云投影</h2><p>基础点与新增点投影到同一真实训练图像，颜色说明见图。投影没有遮挡判定，用于检查空间位置和增量覆盖。</p>']
+    for path in sorted((out/'point_projections').glob('*_new_points.png')):body.append(f'<h3>{path.stem}</h3><img src="point_projections/{path.name}">')
     body+=['<h2>逐项数据与模型</h2><ul>']
     for title,path in [('完整统计','summary.json'),('几何统计与逐源贡献','geometry.json'),('训练、RGB 和逐类语义统计','training.json'),('训练与标签快照','../00_protocol/manifest.json'),('P0 基础点云','../01_p0/points.ply'),('P1 增强点云','../01_sgi_sfm/enhanced.ply'),('SGI 完整模型','../02_sgi_gaussians/final/model.pt'),('SGI 高斯 PLY','../02_sgi_gaussians/final/point_cloud.ply'),('七类教师缓存','../03_semantic/cache/manifest.json'),('原生掩码检查','../03_semantic/mask_validation/results.json')]:body.append(f'<li><a href="{path}">{title}</a></li>')
+    for title,path in [('最终运行核验','../completion_audit.json'),('SGI 配置','../sgi_config.json'),('SGI 训练损失逐步记录','../02_sgi_gaussians/losses.jsonl'),('SGI 运行日志','../02_sgi_gaussians/native.log'),('SGI 优化器实际参数','../02_sgi_gaussians/optimizer_parameters.json'),('SGI 模型元数据','../02_sgi_gaussians/final/model.json'),('RGB 参考完整模型','../02_rgb_p0_reference/final/model.pt'),('RGB 参考逐视角指标','../02_rgb_p0_reference/renders/metrics.json'),('SGI 逐视角指标','../02_sgi_gaussians/renders/metrics.json')]:body.append(f'<li><a href="{path}">{title}</a></li>')
     body+=['</ul><p>model.pt 保存高斯属性、32 维语义、映射/分类头、Adam 和随机状态。已用原生加载器重新加载并渲染；后续 SPC 应引用相同的七类 teacher 与本 run 的 27 视角 manifest，禁止默认切回全 56 视角或旧 20 类缓存。实际 SPC 优化尚未执行。</p></html>']
     (out/'report.html').write_text('\n'.join(body));print('REPORT',out/'report.html',flush=True);return summary
