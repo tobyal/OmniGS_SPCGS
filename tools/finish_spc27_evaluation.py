@@ -24,11 +24,12 @@ def evaluate(model,gpu):
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--queue',choices=['c1','c2'],required=True);a=p.parse_args()
     if a.queue=='c1':
-        print('Waiting for C0 to release GPU 2',flush=True);wait_completed('c0')
-        execute('tools/run_spc27.py','--stage','c1','--gpu','2')
+        # GPU 0 has sufficient memory for two independent experiments. This
+        # overlaps CPU/SAM waiting without altering either optimizer or RNG.
+        execute('tools/run_spc27.py','--stage','c1','--gpu','0')
         execute('tools/check_stage2_initialization.py',str(RUN))
-        evaluate('c1',2)
+        evaluate('c1',0)
     else:
-        print('Waiting for C2 to release GPU 0',flush=True);wait_completed('c2')
-        evaluate('c2',0);wait_completed('c0');evaluate('c0',0)
+        print('Waiting for C0 to release GPU 2 for evaluation',flush=True);wait_completed('c0')
+        evaluate('c0',2);wait_completed('c2');evaluate('c2',2)
     print('QUEUE COMPLETED',a.queue,flush=True)

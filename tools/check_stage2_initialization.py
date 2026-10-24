@@ -22,12 +22,12 @@ def check(run):
         assert all(getattr(model,k).abs().max()==0 for k in ['radii','gradient','denom','exist','added','pruned'])
         assert torch.isfinite(model.scale).all() and torch.exp(model.scale).min()>0
         audit=read(folder/'stage_reset_audit.json');assert audit['optimizer_state_entries']==audit['head_optimizer_state_entries']==0
-        keys=inherited+['scale','rotation','opacity','rest']
+        keys=inherited+['scale','rotation','opacity','rest','cpu_rng','cuda_rng','camera_rng']
         if first is None:first={k:getattr(model,k).clone() for k in keys}
         else:assert all(torch.equal(getattr(model,k),first[k]) for k in keys),'Second-stage initial parameters differ'
         results.append({'model':str(path),'gaussians':len(model.xyz),'inherited_max_errors':errors,'reset_and_fresh_optimizers':'passed'})
     assert results
-    result={'status':'passed','source':ref(cfg['sgi_archive']),'same_initial_parameters':True,'models':results}
+    result={'status':'passed','source':ref(cfg['sgi_archive']),'same_initial_parameters':True,'same_initial_rng_states':True,'models':results}
     write(run/'initialization_validation.json',result);print(result)
 
 if __name__=='__main__':

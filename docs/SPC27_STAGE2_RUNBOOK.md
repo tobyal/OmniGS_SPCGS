@@ -8,7 +8,7 @@
 
 `stage_reset` 保留位置、零阶 SH 颜色、32 维语义及 decoder、bias、classifier、cbias、projection、text。尺度根据 SGI 位置的近邻距离重新计算；旋转设为单位四元数，不透明度设为 0.1，高阶 SH 和增密统计清零。高斯与映射优化器重新创建，不载入 SGI 的 Adam 状态。C0/C1/C2 各自直接读取同一 SGI，不能串联。
 
-`tools/check_stage2_initialization.py` 读取实际 LibTorch 归档，逐张量核对继承、重置和各组初始参数一致性。当前独立初始化、C0、C2 的继承误差均为零；C1 启动后再次纳入同一检查。
+`tools/check_stage2_initialization.py` 读取实际 LibTorch 归档，逐张量核对继承、重置和各组初始参数一致性。独立初始化、C0、C1、C2 的继承误差均为零，初始 CPU、CUDA、相机随机状态也完全一致。原生 CUDA 训练不保证逐位确定性；本轮单场景、单种子的微小差值不能解释为统计显著提升。
 
 ## SAM2 与 ISP
 
@@ -67,7 +67,7 @@
 .venv/bin/python -m spcgs.spc27_evaluate runs/industrial_spcgs/spc27_hieral_20261024 --action report
 ```
 
-`lpips` 与 `query` 对每组分别执行；报告会要求三组均已完成、重新渲染并通过查询检查，不会把部分结果写成正式完成。LPIPS 复用已安装的 v0.1 AlexNet 与缓存权重，在完整 2048×1024 ERP 上计算。查询复用原七类冻结文本向量，绕过已学习的类别校准头，不重新运行 CLIP。`tools/finish_spc27_evaluation.py` 的两个队列分别负责 C0 完成后在 GPU 2 启动 C1，以及 C2 完成后在 GPU 0 渲染 C2/C0；仅适用于本次已启动的 C0/C2。
+`lpips` 与 `query` 对每组分别执行；报告会要求三组均已完成、重新渲染并通过查询检查，不会把部分结果写成正式完成。LPIPS 复用已安装的 v0.1 AlexNet 与缓存权重，在完整 2048×1024 ERP 上计算。查询复用原七类冻结文本向量，绕过已学习的类别校准头，不重新运行 CLIP。`tools/finish_spc27_evaluation.py` 的 c1 队列在 GPU 0 启动独立 C1，与 C2 共享充足的显存；c2 队列在 C0 完成后用 GPU 2 评估 C0/C2。这只改变执行安排，不改变模型参数或优化步骤，且仅适用于本次已启动的 C0/C2。
 
 固定评估对应使用 1、14、27、48、56 号空间锚点、各自最近的两个未见真实相机，以及预定均匀随机种子 2、16、42。三帧都是实际拍摄 RGB；掩码只用于评估，不参与任何优化。所有模型用同样的区域评价，汇总三者共同可评估的区域，同时报告覆盖率、类别分布与熵，避免以共同错误类别造成的一致性冒充正确率。没有独立语义真值时，不报告未见视角 mIoU。
 
@@ -84,4 +84,4 @@
 | `05_spc/*/text_query` | 独立加载后的七类文本查询与验证 |
 | `07_report` | HTML 报告、全部视角浏览、固定对比图、损失曲线和定性检查 |
 
-正式 C0/C2 已启动；最终步数、有效 SPC 次数及比较结果以各组 `outputs.json`、`losses.jsonl` 和最终报告为准。此处不把运行中的任务写成已完成。
+正式 C0/C1/C2 均已启动；最终步数、有效 SPC 次数及比较结果以各组 `outputs.json`、`losses.jsonl` 和最终报告为准。此处不把运行中的任务写成已完成。

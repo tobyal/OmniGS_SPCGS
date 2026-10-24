@@ -106,6 +106,8 @@ def audit(run):
     for model in MODELS:
         folder=run/'05_spc'/model;rows=[json.loads(x) for x in (folder/'losses.jsonl').read_text().splitlines()]
         request=read(folder/'request.json');assert [r['step'] for r in rows]==list(range(1,10001))
+        execution=read(folder/'execution.json')
+        assert execution['binary']['sha256']==read(run/'code_provenance.json')['native']['sha256']
         assert request['stage_reset'] and request['archive']==cfg['sgi_archive'] and request['iterations']==10000
         assert {v['name'] for v in request['views']}==allowed and request['classes']==cache['classes']
         assert read(folder/'outputs.json')['status']=='completed'
@@ -133,6 +135,7 @@ def audit(run):
         evaluation=read(folder/'renders_all/metrics.json');assert len(evaluation['views'])==78
         results[model]={'steps':len(rows),'gaussians':modelmeta['gaussians'],'camera_counts':dict(Counter(orders[-1])),
             'archive':ref(folder/'final/model.pt'),'isp_events':len(events),'basic_valid_pairs':sum(r['isp_valid_pairs'] for r in rows),
+            'native_execution':execution,
             'attempted_pairs':2*len(events),'nonzero_spc_steps':sum((r['inter']+r['intra']+r['spc3d'])>0 for r in rows),
             'spc3d_nonzero_steps':sum(r['spc3d']>0 for r in rows),'total_formula_max_error':error,
             'loss_maxima':{key:max(r[key] for r in rows) for key in ['inter','intra','spc3d','local3d']},
@@ -142,6 +145,7 @@ def audit(run):
     assert orders[0]==orders[1]==orders[2]
     result={'status':'completed','initialization':init,'same_training_camera_sequence':True,'source_sgi_unchanged':True,
         'models':results,'run':str(run.resolve()),'semantic_gt_note':'Training-label fit only; no held-out mIoU exists.',
+        'reproducibility_note':'One scene and one seed. Initial RNG states and camera order match, but native CUDA optimization is not bitwise deterministic; observed differences do not establish statistical significance.',
         'sampling_note':'Basic mask validity is not correspondence accuracy; all failed events retained.'}
     write(run/'completion_audit.json',result);return result
 
@@ -184,14 +188,28 @@ def panels_and_curves(run):
             if (event/'outputs.json').exists():contact_sheet(event,out/f'online_{model}_{step}.jpg',f'{model.upper()} step {step}')
     write(out/'representative_views.json',views)
 
+def region_groups(regions):
+    # Descriptive groups fixed by inspecting captured RGB before final metrics.
+    # No pair is removed from the main evaluation because of this review.
+    floor={'view01_seed16','view01_seed42','view14_seed42','view27_seed42','view48_seed42','view56_seed42'}
+    common={tuple(x) for x in regions['common_pairs']};common3d={tuple(x) for x in regions['common_3d_pairs']};groups={}
+    for name,in_floor in [('floor_surface',True),('other_regions_including_uncertain_correspondences',False)]:
+        groups[name]={}
+        for model in MODELS:
+            rows=[r for r in regions['measurements'] if r['model']==model and (r['event'],r['pair']) in common and (r['event'] in floor)==in_floor]
+            gauss=[r['gaussian_semantic_KL'] for r in rows if (r['event'],r['pair']) in common3d]
+            groups[name][model]={'pairs':len(rows),'pairs_3d':len(gauss),'gaussian_semantic_KL':float(np.mean(gauss)) if gauss else None,
+                **{key:float(np.mean([r[key] for r in rows])) if rows else None for key in ['feature_cosine','region_class_distribution_KL','dominant_class_agrees']}}
+    return groups
+
 def report(run):
     run=Path(run);summary=audit(run);panels_and_curves(run);out=run/'07_report';regions=read(run/'06_comparison/fixed_region_consistency/metrics.json')
-    summary['region_consistency']=regions['common_pair_summary'];write(out/'summary.json',summary)
+    summary['region_consistency']=regions['common_pair_summary'];summary['descriptive_region_groups']=region_groups(regions);write(out/'summary.json',summary)
     body=['<!doctype html><html lang="zh"><meta charset="utf-8"><title>SPC27 第二阶段结果</title>',
         '<style>body{font:17px/1.65 system-ui;max-width:1450px;margin:36px auto;padding:0 24px;color:#182635}img{max-width:100%;height:auto}table{border-collapse:collapse;width:100%;margin:20px 0}td,th{padding:9px;border-bottom:1px solid #d5dce1;text-align:left}code{overflow-wrap:anywhere}a{color:#146da8}.note{background:#eef3f7;padding:16px}summary{cursor:pointer}</style>',
         '<h1>SGI → SPC：27 张工业全景的第二阶段训练</h1>',
         '<p>C0、C1、C2 各独立训练 10,000 步，均从修复 opacity 学习率后的 287,787 个 SGI 高斯开始。没有重跑 M1/M2、Wan360 或 CLIP 教师。</p>',
-        '<p>三组初始位置、DC 颜色、32 维语义及映射参数逐张量完全一致；尺度重新初始化，旋转为单位四元数，透明度为 0.1，高阶 SH 与优化器状态重置。27 张训练相机的实际抽样顺序也完全一致。</p>',
+        '<p>三组初始位置、DC 颜色、32 维语义及映射参数逐张量完全一致；尺度重新初始化，旋转为单位四元数，透明度为 0.1，高阶 SH 与优化器状态重置。初始随机状态与 27 张训练相机的实际抽样顺序也完全一致。原生 CUDA 优化并非逐位确定，本轮是单场景、单种子的观察性比较，微小差值不能视作统计显著提升。</p>',
         '<p>正式 M4 使用原始 SAM2 Hiera-L，224,430,130 个冻结参数。真实 RGB 与两个当前模型在线渲染伪视角组成序列，循环平移后分割并映回 ERP。面积检查只判断掩码是否可用，不能作为同一物体对应准确率。</p>',
         '<p class="note">下述跨视角指标是固定 SAM 区域上的一致性代理；共同预测错误的类别也可能获得较好一致性。没有未见视角的独立七类语义真值，不计算其 mIoU。训练标签拟合率仅作诊断。</p>',
         '<h2>训练与实际 SPC 执行</h2><table><tr><th>模型</th><th>步数 / 高斯数</th><th>ISP / 基本有效对应</th><th>非零 3D SPC 步数</th><th>最大语义梯度 inter / intra / 3D</th></tr>']
@@ -203,6 +221,11 @@ def report(run):
     for model,d in regions['common_pair_summary'].items():
         values=[d['feature_cosine'],d['region_class_distribution_KL'],d['dominant_class_agrees'],d['gaussian_semantic_KL']]
         body.append(f'<tr><td>{model.upper()}</td><td>{d["common_pairs"]} / {d["common_3d_pairs"]}</td>'+''.join(f'<td>{v:.6f}</td>' if v is not None else '<td>无可用值</td>' for v in values)+'</tr>')
+    body+=['</table><h3>地面与其余区域分开观察</h3><p>按最终模型评估前的 RGB 图像检查划分描述组，未据此过滤主统计。其余区域包括有身份歧义或对象漂移的掩码，不能称为人工核准对象准确率。</p><table><tr><th>区域组</th><th>模型</th><th>2D / 3D 对数</th><th>余弦 ↑</th><th>类别 KL ↓</th><th>主导类别一致 ↑</th><th>高斯 KL ↓</th></tr>']
+    for group,models in summary['descriptive_region_groups'].items():
+        for model,d in models.items():
+            values=[d['feature_cosine'],d['region_class_distribution_KL'],d['dominant_class_agrees'],d['gaussian_semantic_KL']]
+            body.append(f'<tr><td>{"地面" if group=="floor_surface" else "其余区域"}</td><td>{model.upper()}</td><td>{d["pairs"]} / {d["pairs_3d"]}</td>'+''.join(f'<td>{v:.6f}</td>' if v is not None else '<td>无可用值</td>' for v in values)+'</tr>')
     body+=['</table><h2>RGB 与训练标签拟合</h2><table><tr><th>模型</th><th>视角组 / 数量</th><th>PSNR ↑</th><th>SSIM ↑</th><th>LPIPS ↓</th></tr>']
     for model,d in summary['models'].items():
         for split in SPLITS:
@@ -214,6 +237,7 @@ def report(run):
         body.append('<h2>图像检查记录</h2><p>下列为助手逐图检查的定性观察，不是人工标注真值，也未用于训练或选择定量样本。</p>')
         for entry in read(notes)['observations']:
             body.append('<p><b>'+html.escape(entry['sample'])+'</b>：'+html.escape(entry['observation'])+'</p>')
+    for path in sorted(out.glob('eval_anchor_*.jpg')):body.append(f'<details><summary>固定评估样例：{path.stem}</summary><a href="{path.name}"><img loading="lazy" src="{path.name}"></a></details>')
     body.append('<h2>实际在线 M4：成功与失败样例</h2>')
     for path in sorted(out.glob('online_*.jpg')):body.append(f'<details><summary>{path.stem}</summary><a href="{path.name}"><img loading="lazy" src="{path.name}"></a></details>')
     body.append('<h2>全部真实视角浏览</h2><p>可切换全部 78 张真实视角。训练 27 张、未见 29 张、验证 6 张、测试 16 张分别标明；以下 RGB 为实际拍摄图像。</p>')
