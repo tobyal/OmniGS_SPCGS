@@ -1,9 +1,9 @@
-"""Compare C0/C1/C2 on the SAME SAM2 masks and SAME pseudo camera poses.
+"""Compare C0/C1/C2 on the SAME SAM2 masks and SAME camera poses.
 
 All measurements are consistency proxies, never ground-truth semantic accuracy.
 """
 from pathlib import Path
-import argparse,csv
+import argparse
 import numpy as np
 from .common import *
 from .pipeline import base_request
@@ -65,13 +65,16 @@ def evaluate_regions(run,max_events=4,events_manifest=None,gpu=None):
                     row['gaussian_semantic_KL']=float((q*(np.log(q)-np.log(gb.clip(1e-8)))).sum(1).mean())
                 results.append(row)
     common=set.intersection(*[{(r['event'],r['pair']) for r in results if r['model']==model and r['usable']} for model in ['c0','c1','c2']])
+    common3d=set.intersection(*[{(r['event'],r['pair']) for r in results if r['model']==model and r['usable'] and 'gaussian_semantic_KL' in r} for model in ['c0','c1','c2']])
     summaries={}
     for model in ['c0','c1','c2']:
         rows=[r for r in results if r['model']==model and (r['event'],r['pair']) in common]
-        summaries[model]={'common_pairs':len(rows)}
-        for key in ['feature_cosine','region_class_distribution_KL','dominant_class_agrees','gaussian_semantic_KL','real_coverage','target_coverage','real_entropy','target_entropy']:
+        summaries[model]={'common_pairs':len(rows),'common_3d_pairs':len(common3d)}
+        for key in ['feature_cosine','region_class_distribution_KL','dominant_class_agrees','real_coverage','target_coverage','real_entropy','target_entropy']:
             values=[r[key] for r in rows if key in r];summaries[model][key]=float(np.mean(values)) if values else None
-    write(out/'metrics.json',{'measurements':results,'common_pair_summary':summaries,'common_pairs':sorted(common),'note':source_note,
+        values=[r['gaussian_semantic_KL'] for r in rows if (r['event'],r['pair']) in common3d]
+        summaries[model]['gaussian_semantic_KL']=float(np.mean(values)) if values else None
+    write(out/'metrics.json',{'measurements':results,'common_pair_summary':summaries,'common_pairs':sorted(common),'common_3d_pairs':sorted(common3d),'note':source_note,
         'interpretation':'Consistency proxies may improve even when a shared class is wrong. Report coverage, class distribution and visual review alongside them.'})
     write(out/'inputs.json',{'events':[str(x) for x in events],'models':['c0','c1','c2'],'source_note':source_note});write(out/'config.json',cfg);write(out/'outputs.json',{'status':'completed','samples':len(results)})
 if __name__=='__main__':

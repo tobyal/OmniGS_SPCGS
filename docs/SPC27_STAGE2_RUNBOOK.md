@@ -62,7 +62,12 @@
 .venv/bin/python tools/run_spc27.py --stage render --model c2 --gpu 0
 .venv/bin/python tools/prepare_spc27_evaluation.py runs/industrial_spcgs/spc27_hieral_20261024
 .venv/bin/python -m spcgs.region_evaluation runs/industrial_spcgs/spc27_hieral_20261024 --events-manifest runs/industrial_spcgs/spc27_hieral_20261024/06_comparison/evaluation_correspondences/manifest.json
+.venv/bin/python -m spcgs.spc27_evaluate runs/industrial_spcgs/spc27_hieral_20261024 --action lpips --model c2 --gpu 0
+.venv/bin/python -m spcgs.spc27_evaluate runs/industrial_spcgs/spc27_hieral_20261024 --action query --model c2 --gpu 0
+.venv/bin/python -m spcgs.spc27_evaluate runs/industrial_spcgs/spc27_hieral_20261024 --action report
 ```
+
+`lpips` 与 `query` 对每组分别执行；报告会要求三组均已完成、重新渲染并通过查询检查，不会把部分结果写成正式完成。LPIPS 复用已安装的 v0.1 AlexNet 与缓存权重，在完整 2048×1024 ERP 上计算。查询复用原七类冻结文本向量，绕过已学习的类别校准头，不重新运行 CLIP。`tools/finish_spc27_evaluation.py` 的两个队列分别负责 C0 完成后在 GPU 2 启动 C1，以及 C2 完成后在 GPU 0 渲染 C2/C0；仅适用于本次已启动的 C0/C2。
 
 固定评估对应使用 1、14、27、48、56 号空间锚点、各自最近的两个未见真实相机，以及预定均匀随机种子 2、16、42。三帧都是实际拍摄 RGB；掩码只用于评估，不参与任何优化。所有模型用同样的区域评价，汇总三者共同可评估的区域，同时报告覆盖率、类别分布与熵，避免以共同错误类别造成的一致性冒充正确率。没有独立语义真值时，不报告未见视角 mIoU。
 
@@ -75,5 +80,8 @@
 | `05_spc/c1/isp,c2/isp` | 在线伪视角、SAM2、贡献高斯和逐事件诊断 |
 | `06_comparison/evaluation_correspondences` | 独立固定评估对应、原始 RGB 与掩码 |
 | `06_comparison/fixed_region_consistency` | 同区域二维/三维一致性与覆盖统计 |
+| `05_spc/*/renders_all` | 全部 78 个真实视角的 RGB、语义、贡献索引及指标 |
+| `05_spc/*/text_query` | 独立加载后的七类文本查询与验证 |
+| `07_report` | HTML 报告、全部视角浏览、固定对比图、损失曲线和定性检查 |
 
 正式 C0/C2 已启动；最终步数、有效 SPC 次数及比较结果以各组 `outputs.json`、`losses.jsonl` 和最终报告为准。此处不把运行中的任务写成已完成。
