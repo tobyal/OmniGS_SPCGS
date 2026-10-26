@@ -1,0 +1,104 @@
+{
+  "rows": [
+    {
+      "camera_id": "1-24",
+      "image_id": "2023-05-11_10.35.28",
+      "added_points": 81
+    },
+    {
+      "camera_id": "1-25",
+      "image_id": "2023-05-11_10.36.15",
+      "added_points": 101
+    },
+    {
+      "camera_id": "1-28",
+      "image_id": "2023-05-11_10.38.31",
+      "added_points": 38
+    },
+    {
+      "camera_id": "1-29",
+      "image_id": "2023-05-11_10.39.15",
+      "added_points": 62
+    },
+    {
+      "camera_id": "1-34",
+      "image_id": "2023-05-11_10.43.09",
+      "added_points": 47
+    },
+    {
+      "camera_id": "1-35",
+      "image_id": "2023-05-11_10.43.53",
+      "added_points": 89
+    },
+    {
+      "camera_id": "1-36",
+      "image_id": "2023-05-11_10.44.56",
+      "added_points": 90
+    },
+    {
+      "camera_id": "1-37",
+      "image_id": "2023-05-11_10.45.40",
+      "added_points": 74
+    },
+    {
+      "camera_id": "1-44",
+      "image_id": "2023-05-11_10.50.58",
+      "added_points": 55
+    },
+    {
+      "camera_id": "1-47",
+      "image_id": "2023-05-11_10.53.10",
+      "added_points": 39
+    },
+    {
+      "camera_id": "1-58",
+      "image_id": "2023-05-11_11.07.13",
+      "added_points": 63
+    },
+    {
+      "camera_id": "1-59",
+      "image_id": "2023-05-11_11.07.58",
+      "added_points": 57
+    },
+    {
+      "camera_id": "1-62",
+      "image_id": "2023-05-11_11.19.30",
+      "added_points": 110
+    },
+    {
+      "camera_id": "1-63",
+      "image_id": "2023-05-11_11.20.14",
+      "added_points": 123
+    },
+    {
+      "camera_id": "1-64",
+      "image_id": "2023-05-11_11.21.03",
+      "added_points": 115
+    },
+    {
+      "camera_id": "1-65",
+      "image_id": "2023-05-11_11.21.45",
+      "added_points": 51
+    },
+    {
+      "camera_id": "1-66",
+      "image_id": "2023-05-11_11.22.19",
+      "added_points": 34
+    },
+    {
+      "camera_id": "1-67",
+      "image_id": "2023-05-11_11.23.11",
+      "added_points": 37
+    },
+    {
+      "camera_id": "1-70",
+      "image_id": "2023-05-11_11.25.15",
+      "added_points": 51
+    },
+    {
+      "camera_id": "1-71",
+      "image_id": "2023-05-11_11.25.58",
+      "added_points": 62
+    }
+  ]
+}

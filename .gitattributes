@@ -13,3 +13,7 @@ CMakeLists.txt text eol=lf
 *.jpg binary
 *.jpeg binary
 *.ttf binary
+
+# Preserve the published experiment artifacts byte-for-byte (SHA256 manifest).
+# Generated SVG paths and captured tool output may contain intentional whitespace.
+docs/ipsgr_repaired20_6/** -text -whitespace

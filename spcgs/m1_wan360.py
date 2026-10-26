@@ -40,11 +40,11 @@ def extract_candidates(folder, cfg, videos):
     feature_dir = folder/'features'
     images = feature_dir/'images'
     images.mkdir(parents=True,exist_ok=True)
-    cache = ROOT/'runs/m1_cache/features'
+    cache = Path(geo.get('feature_cache',ROOT/'runs/m1_cache/features'))
     cache.mkdir(parents=True,exist_ok=True)
     describer = Path(geo['features'])/'image_describer.json'
     shutil.copy2(describer,feature_dir/'image_describer.json')
-    template = read(DATA/'openMVG/data_openmvg_train.json')
+    template = read(geo.get('scene_template',DATA/'openMVG/data_openmvg_train.json'))
     view_template=template['views'][0]
     scene = {**template,'root_path':str(images),'views':[],'extrinsics':[],'structure':[],'control_points':[]}
     scene['intrinsics']=copy.deepcopy(template['intrinsics'][:1])
@@ -221,7 +221,7 @@ def augment(folder,cfg,train,original_xyz,original_rgb,cached_videos=None,existi
     by_name=anchors['cameras'];centers=np.array([v['center'] for v in train])
     scores=[];registered=[];matching_stats=[]
     (folder/'registration').mkdir(exist_ok=True);(folder/'matches').mkdir(exist_ok=True)
-    match_cache=ROOT/'runs/m1_cache/matches';match_cache.mkdir(parents=True,exist_ok=True)
+    match_cache=Path(geo.get('match_cache',ROOT/'runs/m1_cache/matches'));match_cache.mkdir(parents=True,exist_ok=True)
     matcher_version=ref(ROOT/'spcgs/m1_geometry.py')
     cv2.setNumThreads(4)
     for candidate in candidates:

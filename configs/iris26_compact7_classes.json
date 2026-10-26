@@ -1,0 +1,197 @@
+{
+  "version": "iris26_compact7_v4",
+  "scope": "Current official_overlap_split_20261025: 20 train + 6 test; 2048x1024; tripod cleaned RGB",
+  "source": "Original official IRIS COCO 16 classes; instance-level Codex visual corrections are separately recorded. Not SAM candidate semantics.",
+  "classes": [
+    {
+      "id": 0,
+      "name": "piping",
+      "zh": "管道与阀件",
+      "color": [
+        31,
+        200,
+        226
+      ],
+      "official_ids": [
+        27,
+        29
+      ],
+      "definition": "工艺输送管路及其附着的阀体、执行器和压力表。",
+      "include": "直管、弯管、保温外层、法兰、阀门、管路附属执行器及仪表",
+      "exclude": "独立泵/电机/容器、通风管、桥架、支撑杆",
+      "prompts": [
+        "industrial process pipes with valve fittings",
+        "insulated fluid pipes and attached valve actuators",
+        "pressure gauges attached to industrial pipework"
+      ],
+      "rationale": "阀门占球面约0.299%，并入连续管路，避免小阀件成为独立稀碎类别。"
+    },
+    {
+      "id": 1,
+      "name": "equipment",
+      "zh": "设备与柜箱",
+      "color": [
+        245,
+        167,
+        57
+      ],
+      "official_ids": [
+        7,
+        16,
+        32
+      ],
+      "definition": "独立机械和电气装置及其机壳、柜箱、固定灯具。",
+      "include": "泵、电机、容器、控制柜、接线箱、设备外壳、固定灯具",
+      "exclude": "工艺管路附着阀件和仪表、土建基座、金属支撑、风道",
+      "prompts": [
+        "industrial machinery and electrical cabinets",
+        "pumps motors vessels and equipment housings",
+        "electrical boxes and fixed industrial light fixtures"
+      ],
+      "rationale": "合并机械设备、电气箱柜和较少的电气设备，保持独立装置与管路/结构的边界；9类中明确设备外壳按对象恢复。"
+    },
+    {
+      "id": 2,
+      "name": "building",
+      "zh": "建筑主体",
+      "color": [
+        134,
+        146,
+        168
+      ],
+      "official_ids": [
+        12,
+        19
+      ],
+      "definition": "建筑围护与土建主体，含门、地坪、混凝土基座及低矮台座边沿。",
+      "include": "地面、墙顶、建筑柱、混凝土基础、建筑门；逐对象确认的黄黑警示边沿、平台裙边及侧面；去相机支架后补全的底部地面",
+      "exclude": "金属立柱与支撑底脚、机柜、风道、栏杆及格栅；未确认的其他杂项",
+      "prompts": [
+        "industrial building floors walls and ceilings",
+        "concrete foundations columns and architectural doors",
+        "industrial floor curbs and low platform edges with yellow black warning stripes"
+      ],
+      "rationale": "门与土建结构合并；按用户确认将低矮警示边沿与底部补全地面归入建筑，保留与细长金属支撑的区别。"
+    },
+    {
+      "id": 3,
+      "name": "structural_frame",
+      "zh": "金属支撑与梁架",
+      "color": [
+        173,
+        116,
+        236
+      ],
+      "official_ids": [
+        6,
+        24
+      ],
+      "definition": "承重和固定管线/设备的金属立柱、横撑、梁及其连接底脚。",
+      "include": "穿孔型钢立柱、横撑、支架、吊架、金属梁、支撑件连接底脚",
+      "exclude": "设备外壳、栏杆与梯具、线缆桥架、混凝土基座；不能仅凭细长形状把电缆或管道改入",
+      "prompts": [
+        "metal support columns and steel cross braces",
+        "perforated steel strut frames supporting industrial pipes",
+        "metal beams brackets and bolted support feet"
+      ],
+      "rationale": "原6梁类约0.229%，与24支撑件合并；原9仅对白名单中经RGB确认的细长金属支撑逐对象纠正。"
+    },
+    {
+      "id": 4,
+      "name": "access_structure",
+      "zh": "检修通行设施",
+      "color": [
+        235,
+        102,
+        141
+      ],
+      "official_ids": [
+        2,
+        21,
+        31
+      ],
+      "definition": "人员检修通行、登高和防护设施。",
+      "include": "格栅平台、护栏、扶手、爬梯与护笼",
+      "exclude": "管道支撑、桥架、混凝土地坪",
+      "prompts": [
+        "industrial access ladders safety railings and grating platforms",
+        "maintenance walkways guardrails and caged ladders"
+      ],
+      "rationale": "格栅约0.130%、梯具约0.813%；与护栏统一成可辨认的检修通行设施。"
+    },
+    {
+      "id": 5,
+      "name": "cable_tray",
+      "zh": "电缆桥架",
+      "color": [
+        223,
+        206,
+        55
+      ],
+      "official_ids": [
+        5
+      ],
+      "definition": "承载和组织线缆的网篮或槽式桥架。",
+      "include": "网篮桥架、槽式桥架的可见主体",
+      "exclude": "独立梁架、格栅平台、游离电缆、管道",
+      "prompts": [
+        "overhead wire mesh cable trays",
+        "industrial cable baskets and cable routing trays"
+      ],
+      "rationale": "约8.900%球面面积，覆盖全部视角；外形与用途明确，保持独立。"
+    },
+    {
+      "id": 6,
+      "name": "hvac",
+      "zh": "通风风道",
+      "color": [
+        70,
+        190,
+        115
+      ],
+      "official_ids": [
+        30
+      ],
+      "definition": "通风系统风道、风口及明确属于该系统的外壳。",
+      "include": "金属风道、波纹圆风管、风口",
+      "exclude": "工艺输送管、独立储罐、桥架",
+      "prompts": [
+        "industrial ventilation ducts and air vents",
+        "metal HVAC ductwork with corrugated round ducts"
+      ],
+      "rationale": "约3.850%球面面积；与工艺管保留功能差别，不因同为长管外观而合并。"
+    }
+  ],
+  "semantic_source_codes": {
+    "1": "official labels mapped into merged taxonomy",
+    "2": "official miscellaneous region reassigned after Codex RGB inspection",
+    "3": "reconstructed nadir floor assigned building by user request; synthetic RGB provenance, not official truth",
+    "4": "former ignored component merged into its adjacent majority class; derived completion, not official truth"
+  },
+  "geometry_policy": "Preserve existing official CAD projected boundaries. This is class consolidation and selected object reassignment, not full boundary/occlusion relabeling.",
+  "artifact_policy": "All pixels have one of seven semantic classes. Reconstructed bottom floor remains building. Original RGB observation masks are preserved independently.",
+  "human_approved": false,
+  "training_started": false,
+  "legacy_models_note": "Existing checkpoints and previous default vocabulary are unchanged; training/evaluation must explicitly use this taxonomy and matching labels.",
+  "user_requested_revision": "v4: merge all residual ignored regions into neighboring classes; retain v3 curbs and bottom floor as building.",
+  "has_ignore_class": false,
+  "label_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "residual_official_ids": {
+    "9": "Reviewed objects keep their assigned class; remaining holes merge into adjacent classes.",
+    "13": "No separate fire class; residual regions merge into adjacent classes."
+  },
+  "initial_object_corrections": "iris26_misc_object_corrections.json",
+  "residual_completion": {
+    "method": "Per 8-connected v3 ignore component, select most frequent class among 4-neighbor boundary pixels; deterministic lowest-ID tie break. Decisions use unchanged v3 labels.",
+    "changes_only_previous_id": 255,
+    "creates_new_class": false
+  }
+}

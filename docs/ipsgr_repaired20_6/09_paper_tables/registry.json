@@ -1,0 +1,131 @@
+{
+  "T01": {
+    "status": "completed",
+    "raw_data": [
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/dataset_manifest.json",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/pixel_statistics.json"
+    ],
+    "script": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_protocol.py"
+  },
+  "T02": {
+    "status": "completed",
+    "script": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+      "bytes": 35306,
+      "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+    },
+    "raw_data": [
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/09_paper_tables/T02.json"
+    ]
+  },
+  "T03": {
+    "status": "completed",
+    "script": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+      "bytes": 35306,
+      "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+    },
+    "raw_data": [
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/09_paper_tables/T03.json"
+    ]
+  },
+  "T04": {
+    "status": "completed",
+    "script": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+      "bytes": 35306,
+      "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+    },
+    "raw_data": [
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/09_paper_tables/T04.json"
+    ]
+  },
+  "T05": {
+    "status": "completed",
+    "script": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+      "bytes": 35306,
+      "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+    },
+    "raw_data": [
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/09_paper_tables/T05.json"
+    ]
+  },
+  "T06": {
+    "status": "completed",
+    "script": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+      "bytes": 35306,
+      "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+    },
+    "raw_data": [
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/09_paper_tables/T06.json"
+    ]
+  },
+  "S_geometry_sources": {
+    "status": "completed",
+    "script": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+      "bytes": 35306,
+      "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+    },
+    "raw_data": [
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/09_paper_tables/S_geometry_sources.json"
+    ]
+  },
+  "S_geometry_class_support": {
+    "status": "completed",
+    "script": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+      "bytes": 35306,
+      "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+    },
+    "raw_data": [
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/09_paper_tables/S_geometry_class_support.json"
+    ]
+  },
+  "S_ISP_source_regions": {
+    "status": "completed",
+    "script": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+      "bytes": 35306,
+      "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+    },
+    "raw_data": [
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/09_paper_tables/S_ISP_source_regions.json"
+    ]
+  },
+  "S_per_class_IoU": {
+    "status": "completed",
+    "script": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+      "bytes": 35306,
+      "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+    },
+    "raw_data": [
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/09_paper_tables/S_per_class_IoU.json"
+    ]
+  },
+  "S_all_view_metrics": {
+    "status": "completed",
+    "script": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+      "bytes": 35306,
+      "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+    },
+    "raw_data": [
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/09_paper_tables/S_all_view_metrics.json"
+    ]
+  },
+  "S_training_intervals": {
+    "status": "completed",
+    "script": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+      "bytes": 35306,
+      "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+    },
+    "raw_data": [
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/09_paper_tables/S_training_intervals.json"
+    ]
+  }
+}

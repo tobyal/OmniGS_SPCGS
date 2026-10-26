@@ -23,6 +23,7 @@ class SamWorker:
         self.model.eval();self.model.requires_grad_(False)
         config_path=Path(sam2.__file__).parent/self.cfg
         self.provenance={'backend':Path(self.ckpt).stem,'checkpoint':self.ckpt,'sam_config':self.cfg,
+            'worker_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
             'checkpoint_sha256':hashlib.sha256(Path(self.ckpt).read_bytes()).hexdigest(),
             'configuration_path':str(config_path),'configuration_sha256':hashlib.sha256(config_path.read_bytes()).hexdigest(),
             'predictor_class':type(self.model).__name__,'parameters':sum(p.numel() for p in self.model.parameters()),
@@ -49,9 +50,17 @@ class SamWorker:
                 masks[index]=np.roll((logits[0,0]>0).cpu().numpy(),-shift,axis=1)
             del state
             proposals=self.generator.generate(np.roll(imgs[0],shift,axis=1))
-        regions=np.full((H,W),-1,dtype='i4')
+        regions=np.full((H,W),-1,dtype='i4');proposal_masks=[];proposal_metadata=[]
         for i,p in enumerate(sorted(proposals,key=lambda p:-p['area'])):
-            regions[np.roll(p['segmentation'],-shift,axis=1)]=i
+            original=np.roll(p['segmentation'],-shift,axis=1);regions[original]=i;proposal_masks.append(original)
+            ys,xs=np.nonzero(original)
+            proposal_metadata.append({'region_id':i,'area':int(p['area']),'predicted_iou':float(p['predicted_iou']),'stability_score':float(p['stability_score']),
+                'original_ERP_bbox_xyxy':[int(xs.min()),int(ys.min()),int(xs.max()+1),int(ys.max()+1)] if len(xs) else None,
+                'point_coords_original_ERP':[[float((x-shift)%W),float(y)] for x,y in p['point_coords']],
+                'mask_coordinates':'original unrolled ERP; mask may cross longitude seam'})
+        packed=np.packbits(np.asarray(proposal_masks,dtype='u1').reshape(-1,H,W),axis=-1)
+        np.savez_compressed(out/'automatic_masks.npz',packed=packed,shape=np.array([len(proposal_masks),H,W],dtype='i4'))
+        (out/'automatic_masks.json').write_text(json.dumps(proposal_metadata,indent=2))
         hs,ws=c['height'],c['width'];small=[]
         for i,mask in enumerate(masks):
             small.append(np.array(Image.fromarray(mask).resize((ws,hs),Image.Resampling.NEAREST)))
@@ -72,7 +81,8 @@ class SamWorker:
             'area_fractions':areas.tolist(),'area_ratios':ratios.tolist(),'automatic_masks':len(proposals),
             'seconds':time.time()-start,'worker_request_number':self.requests,'rgb_size':[W,H],'semantic_size':[ws,hs],
             'validity_note':'Area/nonempty gates only, not object correspondence accuracy. Original ERP coordinates restored before resizing.',
-            'masks':str(out/'masks.u8'),'regions':str(out/'regions.i32')}
+            'masks':str(out/'masks.u8'),'regions':str(out/'regions.i32'),'all_automatic_masks':str(out/'automatic_masks.npz'),
+            'all_automatic_mask_metadata':str(out/'automatic_masks.json')}
         (out/'outputs.json').write_text(json.dumps(result,indent=2));return result
 
 def client(c):

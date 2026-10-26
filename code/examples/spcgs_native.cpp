@@ -11,6 +11,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <numeric>
+#include <chrono>
 #include "include/gaussian_model.h"
 #include "include/gaussian_renderer.h"
 #include "include/loss_utils.h"
@@ -39,11 +40,13 @@ std::shared_ptr<GaussianKeyframe> camera(const Json::Value& j,int H,int W) {
     Eigen::Matrix3f R;Eigen::Vector3f C;for(int a=0;a<3;++a){C[a]=j["center"][a].asFloat();for(int b=0;b<3;++b)R(a,b)=j["rotation"][a][b].asFloat();}
     Eigen::Vector3f t=-R*C;f->setPose(Eigen::Quaterniond(R.cast<double>()),t.cast<double>());f->computeTransformTensors();return f;
 }
-struct Render {T rgb,sem,ids,weights,screen,visible,radii;};
-Render render(std::shared_ptr<GaussianModel> m,const Json::Value& cam,int H,int W,int HS,int WS,bool semantics=true) {
+struct Render {T rgb,sem,ids,weights,screen,visible,radii; double rgb_seconds=0,semantic_seconds=0;};
+Render render(std::shared_ptr<GaussianModel> m,const Json::Value& cam,int H,int W,int HS,int WS,bool semantics=true,bool timed=false) {
+    if(timed)torch::cuda::synchronize();auto start=std::chrono::steady_clock::now();
     auto f=camera(cam,H,W);GaussianPipelineParams pipe;T bg=torch::zeros({3},GPU),empty=torch::empty({0},GPU);
     auto rr=GaussianRenderer::renderLonlat(f,H,W,m,pipe,bg,empty,1.f,false);
     Render r;std::tie(r.rgb,r.screen,r.visible,r.radii)=rr;
+    if(timed){torch::cuda::synchronize();r.rgb_seconds=std::chrono::duration<double>(std::chrono::steady_clock::now()-start).count();start=std::chrono::steady_clock::now();}
     if(semantics && m->semantic_.defined()) {
         r.ids=torch::full({HS,WS},-1,torch::TensorOptions().dtype(torch::kInt32).device(torch::kCUDA));r.weights=torch::zeros({HS,WS},GPU);
         std::vector<T> chunks;for(int d=0;d<32;d+=3) {
@@ -54,6 +57,7 @@ Render render(std::shared_ptr<GaussianModel> m,const Json::Value& cam,int H,int 
             chunks.push_back(std::get<0>(result).slice(0,0,std::min(3,32-d)));
         } r.sem=torch::cat(chunks,0);
     }
+    if(timed){torch::cuda::synchronize();r.semantic_seconds=semantics?std::chrono::duration<double>(std::chrono::steady_clock::now()-start).count():0.;}
     return r;
 }
 
@@ -210,7 +214,7 @@ int main(int argc,char** argv) try {
     }
     if(action=="render") {torch::NoGradGuard g;
         if(c.isMember("query_text")){heads.text=raw(c["query_text"].asString(),{K,512});heads.classifier=torch::eye(K,GPU);heads.cbias=torch::zeros({K},GPU);}
-        for(auto& v:c["views"]){auto r=render(m,v,H,W,HS,WS,c.get("render_semantics",true).asBool());export_view(out,v["name"].asString(),r,heads);}return 0;}
+        Json::Value timings;for(auto& v:c["views"]){auto r=render(m,v,H,W,HS,WS,c.get("render_semantics",true).asBool(),true);export_view(out,v["name"].asString(),r,heads);Json::Value t;t["view"]=v["name"];t["rgb_seconds"]=r.rgb_seconds;t["semantic_seconds"]=r.semantic_seconds;timings.append(t);}writej(out/"render_timings.json",timings);return 0;}
     TORCH_CHECK(m->semantic_.defined(),"Real CLIP supervision required for training");
     if(c.get("stage_reset",false).asBool()) {
         torch::NoGradGuard g;auto xyz=m->xyz_.clone(),dc=m->features_dc_.clone(),sem=m->semantic_.clone();

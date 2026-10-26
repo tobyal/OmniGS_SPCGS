@@ -32,11 +32,12 @@ def targets(labels,text,smoothing=.05):
 def extract(run,cfg):
     import torch
     from transformers import CLIPModel,CLIPTokenizer
-    run=Path(run).resolve();protocol=read(run/'00_protocol/manifest.json');folder=run/'03_semantic/cache';folder.mkdir(parents=True,exist_ok=True)
+    run=Path(run).resolve();protocol_path=Path(cfg.get('protocol_manifest',run/'00_protocol/manifest.json'));protocol=read(protocol_path);folder=Path(cfg.get('teacher_directory',run/'03_semantic/cache'));folder.mkdir(parents=True,exist_ok=True)
     classes=protocol['classes']['classes'];assert [c['id'] for c in classes]==list(range(7))
     names=[c['name'] for c in classes];assert names==list(PROMPTS)
+    prompts={c['name']:c.get('prompts',PROMPTS[c['name']]) for c in classes}
     H,W=128,256;modeldir=ROOT/'weights/clip-vit-base-patch16'
-    inputs={'protocol':ref(run/'00_protocol/manifest.json'),'weights':ref(modeldir/'pytorch_model.bin'),'prompts':PROMPTS,'size':[H,W],'smoothing':.05,'schema':'official_prototypes_v1'}
+    inputs={'protocol':ref(protocol_path),'weights':ref(modeldir/'pytorch_model.bin'),'prompts':prompts,'size':[H,W],'smoothing':.05,'schema':'official_prototypes_v1'}
     key=signature(inputs)
     if (folder/'manifest.json').exists():
         result=read(folder/'manifest.json');assert result['signature']==key;return result
@@ -45,13 +46,13 @@ def extract(run,cfg):
     tokenizer=CLIPTokenizer.from_pretrained(modeldir,local_files_only=True);rows=[]
     with torch.inference_mode():
         for name in names:
-            tokens=tokenizer(PROMPTS[name],padding=True,return_tensors='pt');feat=model.get_text_features(**{k:v.cuda() for k,v in tokens.items()})
+            tokens=tokenizer(prompts[name],padding=True,return_tensors='pt');feat=model.get_text_features(**{k:v.cuda() for k,v in tokens.items()})
             feat=torch.nn.functional.normalize(feat,dim=-1);rows.append(torch.nn.functional.normalize(feat.mean(0),dim=0).cpu().numpy())
     text=np.stack(rows).astype('f4');assert text.shape==(7,512)
     # All seven prototypes are represented exactly in the initial 32D subspace.
     basis=np.linalg.qr(np.concatenate([text.T,np.eye(512,dtype='f4')],1))[0][:,:32].astype('f4')
     assert np.max(np.abs(text@basis@basis.T-text))<1e-5
-    text.tofile(folder/'text.f32');basis.tofile(folder/'decoder.f32');write(folder/'prompts.json',PROMPTS)
+    text.tofile(folder/'text.f32');basis.tofile(folder/'decoder.f32');write(folder/'prompts.json',prompts)
     label_rows={r['id']:r for r in protocol['labels']};views=[];counts=np.zeros(7,dtype=np.int64);palette=np.array([c['color'] for c in classes],dtype='u1')
     for v in protocol['train']:
         label_info=label_rows[v['name']];assert ref(label_info['label'])['sha256']==label_info['label_sha256']
@@ -67,7 +68,7 @@ def extract(run,cfg):
           'semantic_mask':str(base)+'_W.u8','mask_height':H,'mask_width':W,'valid_fraction':float(valid.mean()),'labels':str(base)+'_labels.png','label_provenance':label_info})
     result={'signature':key,'inputs':inputs,'views':views,'generated_views':[],'text':str(folder/'text.f32'),'decoder':str(folder/'decoder.f32'),
       'classes':names,'class_config':protocol['classes'],'feature_backend':'official_prototypes','adaptation':'Frozen CLIP text class-prototype supervision; not full image-CLIP distillation',
-      'semantic_valid_counts':counts.tolist(),'mean_valid_fraction':float(np.mean([v['valid_fraction'] for v in views])),'smoothing':.05,'scores_format':'log class probabilities; native applies softmax','frozen_text':True,'prompt_count':{k:len(v) for k,v in PROMPTS.items()}}
+      'semantic_valid_counts':counts.tolist(),'mean_valid_fraction':float(np.mean([v['valid_fraction'] for v in views])),'smoothing':.05,'scores_format':'log class probabilities; native applies softmax','frozen_text':True,'prompt_count':{k:len(v) for k,v in prompts.items()}}
     write(folder/'manifest.json',result);print('OFFICIAL TEACHER',result['mean_valid_fraction'],counts.tolist(),flush=True);return result
 
 def initialize(xyz,cache,dest):

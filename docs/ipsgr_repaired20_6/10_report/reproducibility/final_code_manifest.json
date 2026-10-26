@@ -1,0 +1,289 @@
+{
+  "created": 1792951466.6574643,
+  "base_git_commit": "ccb308f2dfd3dd5627f0e8984e842225ae6bb2fe",
+  "files": [
+    {
+      "repository_path": "code/examples/spcgs_native.cpp",
+      "snapshot": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/final_code/code/examples/spcgs_native.cpp",
+        "bytes": 31977,
+        "sha256": "6dd6d6fa6f916a5b4b07587dc4544615c5badf6fccc3bc0d95d34cda75b0c05e"
+      }
+    },
+    {
+      "repository_path": "configs/iris26_compact7_classes.json",
+      "snapshot": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/final_code/configs/iris26_compact7_classes.json",
+        "bytes": 7652,
+        "sha256": "0f595648302bcce36786429b4c341dce2d68133d9992e9e27bbb88af7a3aa721"
+      }
+    },
+    {
+      "repository_path": "docs/IPSGR_REPAIRED20_6.md",
+      "snapshot": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/final_code/docs/IPSGR_REPAIRED20_6.md",
+        "bytes": 4942,
+        "sha256": "5b24c091d26193a3447f0037f9c7249f24751a0960ab0d24912fc54c9b046acf"
+      }
+    },
+    {
+      "repository_path": "spcgs/common.py",
+      "snapshot": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/final_code/spcgs/common.py",
+        "bytes": 6969,
+        "sha256": "9ad4ff4190c5c5f3327e507c32700de169e7a8834c722247759be194a2636902"
+      }
+    },
+    {
+      "repository_path": "spcgs/ipsgr_analysis.py",
+      "snapshot": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/final_code/spcgs/ipsgr_analysis.py",
+        "bytes": 12542,
+        "sha256": "116061f0ce5b0a1d80728fd714ddd787c643625f75cf3a184779875114b824f0"
+      }
+    },
+    {
+      "repository_path": "spcgs/ipsgr_audit.py",
+      "snapshot": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/final_code/spcgs/ipsgr_audit.py",
+        "bytes": 6091,
+        "sha256": "89c925115c6ad7b819cf7ef24618e5c83c093dfc19526b7974ef1193fef1a343"
+      }
+    },
+    {
+      "repository_path": "spcgs/ipsgr_compat.py",
+      "snapshot": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/final_code/spcgs/ipsgr_compat.py",
+        "bytes": 1553,
+        "sha256": "17f8a67468183a000c60b99d36e9280c6a8cdc161b210fe85cb969bda91d4c17"
+      }
+    },
+    {
+      "repository_path": "spcgs/ipsgr_delivery.py",
+      "snapshot": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/final_code/spcgs/ipsgr_delivery.py",
+        "bytes": 3290,
+        "sha256": "0f97bbcb6b719fd1d5d3d991809eb0b18d8930dd3526b6d5b73060057384dfbd"
+      }
+    },
+    {
+      "repository_path": "spcgs/ipsgr_evaluate.py",
+      "snapshot": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/final_code/spcgs/ipsgr_evaluate.py",
+        "bytes": 7896,
+        "sha256": "f32e6f4bce4da7e2c650ff5e372f7e32fa28281b2e7d5b8161d639e8f21bf7c0"
+      }
+    },
+    {
+      "repository_path": "spcgs/ipsgr_geometry.py",
+      "snapshot": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/final_code/spcgs/ipsgr_geometry.py",
+        "bytes": 8890,
+        "sha256": "2255d20acc564cf9790f8566ca3c2e77974d0116631c4cbf96b1680c36fe62bc"
+      }
+    },
+    {
+      "repository_path": "spcgs/ipsgr_protocol.py",
+      "snapshot": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/final_code/spcgs/ipsgr_protocol.py",
+        "bytes": 14014,
+        "sha256": "e0c7d5bac37c6dc806e42efc8fdd951ed06234d301676cbe239408074137e324"
+      }
+    },
+    {
+      "repository_path": "spcgs/ipsgr_report.py",
+      "snapshot": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/final_code/spcgs/ipsgr_report.py",
+        "bytes": 35306,
+        "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+      }
+    },
+    {
+      "repository_path": "spcgs/ipsgr_supplement.py",
+      "snapshot": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/final_code/spcgs/ipsgr_supplement.py",
+        "bytes": 20202,
+        "sha256": "d398fa2c1df688e2630ba96372a3b1a96d9919e5b0db72454e37376d21be90f0"
+      }
+    },
+    {
+      "repository_path": "spcgs/ipsgr_training.py",
+      "snapshot": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/final_code/spcgs/ipsgr_training.py",
+        "bytes": 9519,
+        "sha256": "6885b9bb045c5a2bd3b90bf6376c40f7fefa7bf129629bb7d0c57ba9d2cb2034"
+      }
+    },
+    {
+      "repository_path": "spcgs/ipsgr_viewer.py",
+      "snapshot": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/final_code/spcgs/ipsgr_viewer.py",
+        "bytes": 10513,
+        "sha256": "0e6af14d7732da9bc605eb76d30d0031ec6ca7bf06924a32c9290dea43f74163"
+      }
+    },
+    {
+      "repository_path": "spcgs/m1_geometry.py",
+      "snapshot": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/final_code/spcgs/m1_geometry.py",
+        "bytes": 14173,
+        "sha256": "c6b018bb110748a12e8d3ead4bc9b1f56b295e4ef52909cdb48d21b241910fe5"
+      }
+    },
+    {
+      "repository_path": "spcgs/m1_wan360.py",
+      "snapshot": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/final_code/spcgs/m1_wan360.py",
+        "bytes": 26062,
+        "sha256": "d58d8cc650f52069895201a63057f307b442d8c310d367d5eb273768058c68a1"
+      }
+    },
+    {
+      "repository_path": "spcgs/official_teacher.py",
+      "snapshot": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/final_code/spcgs/official_teacher.py",
+        "bytes": 7641,
+        "sha256": "94c48e9c3188849216e8d50bb3e6315a493913ad1918a983f9efeb5c67cc80a1"
+      }
+    },
+    {
+      "repository_path": "spcgs/pipeline.py",
+      "snapshot": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/final_code/spcgs/pipeline.py",
+        "bytes": 13746,
+        "sha256": "1d3e22631bfbbc06df4a400d5bb22cb6da4e10f47a309745e21d7060317cb3c0"
+      }
+    },
+    {
+      "repository_path": "spcgs/sparse27.py",
+      "snapshot": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/final_code/spcgs/sparse27.py",
+        "bytes": 16746,
+        "sha256": "67f7b766ec57fc19e13f7c3603b46c4abc7ba21b70759e8df1d346a68914f41c"
+      }
+    },
+    {
+      "repository_path": "spcgs/wan360.py",
+      "snapshot": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/final_code/spcgs/wan360.py",
+        "bytes": 7442,
+        "sha256": "e0688f510850a3b228e196c557bf3b11b221371944b8dfccd135ffd6673acb28"
+      }
+    },
+    {
+      "repository_path": "tools/build.sh",
+      "snapshot": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/final_code/tools/build.sh",
+        "bytes": 612,
+        "sha256": "546d41fc1c77065323ee73c49112a73c664a892e1d6fdeb1231ea1048681b730"
+      }
+    },
+    {
+      "repository_path": "tools/check_official_teacher.py",
+      "snapshot": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/final_code/tools/check_official_teacher.py",
+        "bytes": 4057,
+        "sha256": "abfecfa42e71da24321bc6c7b764968614fbaa6835e9cecd30494fa702985a93"
+      }
+    },
+    {
+      "repository_path": "tools/check_stage2_initialization.py",
+      "snapshot": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/final_code/tools/check_stage2_initialization.py",
+        "bytes": 2860,
+        "sha256": "6f84d38245adf1c0a8314d3c86712815731bf7d788421ec7a4b42fa92b4ed058"
+      }
+    },
+    {
+      "repository_path": "tools/geometry_worker.py",
+      "snapshot": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/final_code/tools/geometry_worker.py",
+        "bytes": 719,
+        "sha256": "feef5579eb2048376b8e9af3deae10f32a485cf50d5f41ea8fcb394ba99e2ed6"
+      }
+    },
+    {
+      "repository_path": "tools/ipsgr_geometry_prefetch.py",
+      "snapshot": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/final_code/tools/ipsgr_geometry_prefetch.py",
+        "bytes": 2704,
+        "sha256": "13b851048156f63bf4f43bc0a02d06cd39b7d06863eeff7d53a3a8baf9def69e"
+      }
+    },
+    {
+      "repository_path": "tools/ipsgr_pipeline.py",
+      "snapshot": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/final_code/tools/ipsgr_pipeline.py",
+        "bytes": 5333,
+        "sha256": "9dc9a9088aad86f3fc3fc639cbab002f36dfa6701f5d80110feeee75281f892b"
+      }
+    },
+    {
+      "repository_path": "tools/ipsgr_resource_watch.py",
+      "snapshot": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/final_code/tools/ipsgr_resource_watch.py",
+        "bytes": 2321,
+        "sha256": "69b03d5d41e5307ca05a5094af313b088a9337d6273d05e2bb32dd743fba5c01"
+      }
+    },
+    {
+      "repository_path": "tools/ipsgr_wan_parallel.py",
+      "snapshot": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/final_code/tools/ipsgr_wan_parallel.py",
+        "bytes": 5672,
+        "sha256": "c215fce090eefab66e551e4ed9b9b4ca5e1d4f703aa9bac0ffe16f1d7b5b2a08"
+      }
+    },
+    {
+      "repository_path": "tools/run_ipsgr.py",
+      "snapshot": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/final_code/tools/run_ipsgr.py",
+        "bytes": 1565,
+        "sha256": "75186edf7b92f2fb21d1e91cad2f048219b6877eacfccb14f478e0d2729ccec6"
+      }
+    },
+    {
+      "repository_path": "tools/run_sparse27.py",
+      "snapshot": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/final_code/tools/run_sparse27.py",
+        "bytes": 1626,
+        "sha256": "71690d59c37866f5bc012752afe2bc68c4a18145b153186da0ac74e4c5010d4e"
+      }
+    },
+    {
+      "repository_path": "tools/run_spc27.py",
+      "snapshot": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/final_code/tools/run_spc27.py",
+        "bytes": 5501,
+        "sha256": "0467fed9e9e4649e89c3301404d8d895664c8130f30e1eee5931b1dbba0217f1"
+      }
+    },
+    {
+      "repository_path": "tools/sam2_worker.py",
+      "snapshot": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/final_code/tools/sam2_worker.py",
+        "bytes": 7865,
+        "sha256": "54dda7b9e28c00f67c657b2093ec95adebe9d760d0b10eff076e0bd55c53d38a"
+      }
+    },
+    {
+      "repository_path": "tools/wan360_worker.py",
+      "snapshot": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/final_code/tools/wan360_worker.py",
+        "bytes": 4969,
+        "sha256": "c5d02e07cb2fb40e3995ec6fa0d31ef5824c1c0b9b186dcdbc0bef72a7b6cf18"
+      }
+    }
+  ],
+  "tracked_changes": {
+    "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/tracked_changes.patch",
+    "bytes": 21190,
+    "sha256": "894870f2d21b44fdf16f0e0edb4bf6742f879d574373609a9bcc584a666fe2b7"
+  },
+  "native_binary": {
+    "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/code/bin/spcgs_native",
+    "bytes": 377424,
+    "sha256": "537e016db546c9d801f474731eb89242cf3b3271215a4c40ebb1ef9462ccc071"
+  },
+  "note": "Initial source snapshot retained alongside final source. Training input signatures identify the exact implementation and native binary for each model; resource-controller changes do not alter model hyperparameters."
+}

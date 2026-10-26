@@ -1,0 +1,2138 @@
+{
+  "schema": "ipsgr_repaired20_6_v1",
+  "frozen_at": 1792932832.2188778,
+  "train": [
+    {
+      "name": "2023-05-11_10.35.28",
+      "camera_id": "1-24",
+      "split": "train",
+      "image": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb/train/2023-05-11_10.35.28.png",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_10.35.28.png",
+      "rotation": [
+        [
+          -0.9614191071366761,
+          0.2743855913568688,
+          -0.019643006090152862
+        ],
+        [
+          0.02138452783863858,
+          0.0033569187698447873,
+          -0.9997656890819424
+        ],
+        [
+          -0.27425535984121596,
+          -0.9616138925536143,
+          -0.009095012163326793
+        ]
+      ],
+      "center": [
+        -0.26745196516666425,
+        1.0164069360555583,
+        0.3820769857222217
+      ],
+      "absolute_center_m": [
+        27.532945112,
+        14.927701565,
+        152.515693753
+      ],
+      "width": 2048,
+      "height": 1024,
+      "view_id": 54,
+      "original_train_index": 24,
+      "rgb_sha256": "7426c5aea00f1f74401096607ed3c5df49a0177a9d70b2151f82b59148549014",
+      "label_sha256": "c126b570bc1cfc6ba06c7eba20885331b94e783ba02cf38108beff829befa45a",
+      "rgb_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/images/2023-05-11_10.35.28.png",
+        "bytes": 2712914,
+        "sha256": "7426c5aea00f1f74401096607ed3c5df49a0177a9d70b2151f82b59148549014"
+      },
+      "label_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/semantics_iris26_compact7_v4/labels/2023-05-11_10.35.28.png",
+        "bytes": 31057,
+        "sha256": "c126b570bc1cfc6ba06c7eba20885331b94e783ba02cf38108beff829befa45a"
+      },
+      "rgb_observation_mask": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb_observation_masks/2023-05-11_10.35.28.png",
+        "bytes": 4882,
+        "sha256": "c6f054a768d54afedb480f23818dfd1c67c5ee0641c09ff48836e5a8c9837ea7"
+      },
+      "semantic_provenance": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/semantic_provenance/2023-05-11_10.35.28.png",
+        "bytes": 10088,
+        "sha256": "86bf40f07fbb4182c38e92e1902c8f79f232cf5d6316c6c228a6027ff1caf2ef"
+      },
+      "rmx": {
+        "path": "/mnt/sda/ubuntu/lkx/od/images_xphase_camera_info/2023-05-11_10.35.28.rmx",
+        "bytes": 282,
+        "sha256": "2109a99342a99a2834b493eabbdf72879252ff7eb1d35aa5cce74eea4b02b8d1"
+      },
+      "official_annotations_available": true,
+      "labels_are_repaired_derivatives": true
+    },
+    {
+      "name": "2023-05-11_10.36.15",
+      "camera_id": "1-25",
+      "split": "train",
+      "image": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb/train/2023-05-11_10.36.15.png",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_10.36.15.png",
+      "rotation": [
+        [
+          -0.9924278024360376,
+          0.11979094476799296,
+          -0.02715117867734715
+        ],
+        [
+          0.027797418191645898,
+          0.003726762748578841,
+          -0.9996066300206772
+        ],
+        [
+          -0.1196426366052517,
+          -0.992792143800004,
+          -0.00702842195206084
+        ]
+      ],
+      "center": [
+        -0.270230228166664,
+        1.015138089055558,
+        -0.4408451382777798
+      ],
+      "absolute_center_m": [
+        27.530166849,
+        14.926432718,
+        151.692771629
+      ],
+      "width": 2048,
+      "height": 1024,
+      "view_id": 55,
+      "original_train_index": 25,
+      "rgb_sha256": "9609833f7858a377abd13b7eb9104fef3180f08aa285f1817c21f5c71ce98fd1",
+      "label_sha256": "40054cb968b9172073e88f27730fe6fb71c03c76e38cf107b29e0875cd384e45",
+      "rgb_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/images/2023-05-11_10.36.15.png",
+        "bytes": 2794673,
+        "sha256": "9609833f7858a377abd13b7eb9104fef3180f08aa285f1817c21f5c71ce98fd1"
+      },
+      "label_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/semantics_iris26_compact7_v4/labels/2023-05-11_10.36.15.png",
+        "bytes": 34459,
+        "sha256": "40054cb968b9172073e88f27730fe6fb71c03c76e38cf107b29e0875cd384e45"
+      },
+      "rgb_observation_mask": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb_observation_masks/2023-05-11_10.36.15.png",
+        "bytes": 5159,
+        "sha256": "a30311f00f193204cdc872fe0c662c269df4894889d46af3e3f11cd907687ea0"
+      },
+      "semantic_provenance": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/semantic_provenance/2023-05-11_10.36.15.png",
+        "bytes": 10394,
+        "sha256": "c2b7ac4ac2d4aeda1b1f1158ee09c3a74b602eaffab12057691b12b13dd03306"
+      },
+      "rmx": {
+        "path": "/mnt/sda/ubuntu/lkx/od/images_xphase_camera_info/2023-05-11_10.36.15.rmx",
+        "bytes": 282,
+        "sha256": "8502a4d4ef8eb2666eb19f5a137664d4fc76c082e425fc017e56e7d1cb18d419"
+      },
+      "official_annotations_available": true,
+      "labels_are_repaired_derivatives": true
+    },
+    {
+      "name": "2023-05-11_10.38.31",
+      "camera_id": "1-28",
+      "split": "train",
+      "image": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb/train/2023-05-11_10.38.31.png",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_10.38.31.png",
+      "rotation": [
+        [
+          -0.9844247239888222,
+          0.1731150368516307,
+          -0.030645502368045235
+        ],
+        [
+          0.03127929192076404,
+          0.0009335680468486283,
+          -0.9995102472449382
+        ],
+        [
+          -0.17300164362359954,
+          -0.9849011688827263,
+          -0.006333943240399724
+        ]
+      ],
+      "center": [
+        1.221497820833335,
+        0.661946918055559,
+        0.3751715067222108
+      ],
+      "absolute_center_m": [
+        29.021894898,
+        14.573241547,
+        152.50878827399998
+      ],
+      "width": 2048,
+      "height": 1024,
+      "view_id": 6,
+      "original_train_index": 28,
+      "rgb_sha256": "78c34758bb53853404b417419ba858f448e3ce6b9765045a1ca52a827e89f19f",
+      "label_sha256": "b48afcc632712196b667d4be1d9f399d3f8be8c3964430b6b83d680236e83da8",
+      "rgb_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/images/2023-05-11_10.38.31.png",
+        "bytes": 2461631,
+        "sha256": "78c34758bb53853404b417419ba858f448e3ce6b9765045a1ca52a827e89f19f"
+      },
+      "label_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/semantics_iris26_compact7_v4/labels/2023-05-11_10.38.31.png",
+        "bytes": 29566,
+        "sha256": "b48afcc632712196b667d4be1d9f399d3f8be8c3964430b6b83d680236e83da8"
+      },
+      "rgb_observation_mask": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb_observation_masks/2023-05-11_10.38.31.png",
+        "bytes": 4840,
+        "sha256": "dfae2aa159c488409a0805e63785dac402fb48437eba8f3b5f2fa4df0c350d42"
+      },
+      "semantic_provenance": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/semantic_provenance/2023-05-11_10.38.31.png",
+        "bytes": 7444,
+        "sha256": "2df39e75489f8a2a505235587a6c1f7f6429a28886f1f01ad8ccaf1f15b5354b"
+      },
+      "rmx": {
+        "path": "/mnt/sda/ubuntu/lkx/od/images_xphase_camera_info/2023-05-11_10.38.31.rmx",
+        "bytes": 282,
+        "sha256": "36c9c2004929da831a29bd83056df0caff4f2fd0b68ab04e494df5effc8a684f"
+      },
+      "official_annotations_available": true,
+      "labels_are_repaired_derivatives": true
+    },
+    {
+      "name": "2023-05-11_10.39.15",
+      "camera_id": "1-29",
+      "split": "train",
+      "image": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb/train/2023-05-11_10.39.15.png",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_10.39.15.png",
+      "rotation": [
+        [
+          -0.9946758949031512,
+          -0.09831786752441174,
+          -0.03087816419522433
+        ],
+        [
+          0.03000969407504865,
+          0.010300251924286666,
+          -0.9994965347973038
+        ],
+        [
+          0.09858642076948032,
+          -0.9951017544632047,
+          -0.007294923173998985
+        ]
+      ],
+      "center": [
+        1.230429256833336,
+        0.6573495750555587,
+        -0.49071844927777875
+      ],
+      "absolute_center_m": [
+        29.030826334,
+        14.568644204,
+        151.642898318
+      ],
+      "width": 2048,
+      "height": 1024,
+      "view_id": 7,
+      "original_train_index": 29,
+      "rgb_sha256": "940a59f5e3e82d81ddebab0083c08607581df6bcd8003cb088c1093687797429",
+      "label_sha256": "d04a4e14fb4d38e988015465e7949fcebef65255e25039d94999bfce20b18909",
+      "rgb_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/images/2023-05-11_10.39.15.png",
+        "bytes": 2551735,
+        "sha256": "940a59f5e3e82d81ddebab0083c08607581df6bcd8003cb088c1093687797429"
+      },
+      "label_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/semantics_iris26_compact7_v4/labels/2023-05-11_10.39.15.png",
+        "bytes": 30572,
+        "sha256": "d04a4e14fb4d38e988015465e7949fcebef65255e25039d94999bfce20b18909"
+      },
+      "rgb_observation_mask": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb_observation_masks/2023-05-11_10.39.15.png",
+        "bytes": 5168,
+        "sha256": "84802399395cc9b1f72fd07955c72c2949958a4e129b3c0ebd4b9dcb41c62217"
+      },
+      "semantic_provenance": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/semantic_provenance/2023-05-11_10.39.15.png",
+        "bytes": 8733,
+        "sha256": "193433b7d38d7ca945da5b5ebe4c2a28243f0e7747b6fb7e1f822ce0633dd97c"
+      },
+      "rmx": {
+        "path": "/mnt/sda/ubuntu/lkx/od/images_xphase_camera_info/2023-05-11_10.39.15.rmx",
+        "bytes": 282,
+        "sha256": "14e0531b507ba129c877c8d40a3f30490138e4f385c9dd20c2152ae539bee099"
+      },
+      "official_annotations_available": true,
+      "labels_are_repaired_derivatives": true
+    },
+    {
+      "name": "2023-05-11_10.43.09",
+      "camera_id": "1-34",
+      "split": "train",
+      "image": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb/train/2023-05-11_10.43.09.png",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_10.43.09.png",
+      "rotation": [
+        [
+          -0.9859635654077122,
+          0.16470500562872026,
+          -0.027351577822041256
+        ],
+        [
+          0.028006195719162554,
+          0.0016531180562336916,
+          -0.9996063826337005
+        ],
+        [
+          -0.1645949594910242,
+          -0.9863414866675412,
+          -0.006242674796327745
+        ]
+      ],
+      "center": [
+        0.07022699183333714,
+        0.21223692405555994,
+        -0.44245952927775534
+      ],
+      "absolute_center_m": [
+        27.870624069,
+        14.123531553000001,
+        151.69115723800002
+      ],
+      "width": 2048,
+      "height": 1024,
+      "view_id": 21,
+      "original_train_index": 34,
+      "rgb_sha256": "a3de89183f883371730b229ae51c385399028a9341308c9f9684fa769b33cd96",
+      "label_sha256": "0430f666bfdda5cbdbb6e88ac8e8a22c51a38568dfd53cf49ed377ea10e73684",
+      "rgb_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/images/2023-05-11_10.43.09.png",
+        "bytes": 2663637,
+        "sha256": "a3de89183f883371730b229ae51c385399028a9341308c9f9684fa769b33cd96"
+      },
+      "label_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/semantics_iris26_compact7_v4/labels/2023-05-11_10.43.09.png",
+        "bytes": 30840,
+        "sha256": "0430f666bfdda5cbdbb6e88ac8e8a22c51a38568dfd53cf49ed377ea10e73684"
+      },
+      "rgb_observation_mask": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb_observation_masks/2023-05-11_10.43.09.png",
+        "bytes": 5199,
+        "sha256": "7340a3f3dbef6c5daed680bb7504bd97d9e270212f5d69a0bffdfcc6bf4fc89b"
+      },
+      "semantic_provenance": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/semantic_provenance/2023-05-11_10.43.09.png",
+        "bytes": 9461,
+        "sha256": "e0182b595e44d3d71fbf866ad577db1a0918bd213b4ab372b5b675b70fdd0628"
+      },
+      "rmx": {
+        "path": "/mnt/sda/ubuntu/lkx/od/images_xphase_camera_info/2023-05-11_10.43.09.rmx",
+        "bytes": 282,
+        "sha256": "7880859f3afdf0ac7c94732c2ff5ddc8802f70dcaab9131a909b0fd5f5a7cf9c"
+      },
+      "official_annotations_available": true,
+      "labels_are_repaired_derivatives": true
+    },
+    {
+      "name": "2023-05-11_10.43.53",
+      "camera_id": "1-35",
+      "split": "train",
+      "image": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb/train/2023-05-11_10.43.53.png",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_10.43.53.png",
+      "rotation": [
+        [
+          -0.9837566584974267,
+          0.1776768379540523,
+          -0.025569085173828627
+        ],
+        [
+          0.025987802016890157,
+          2.9400640756096358e-05,
+          -0.9996622596066798
+        ],
+        [
+          -0.17761607756143016,
+          -0.984088888459905,
+          -0.004646353563844886
+        ]
+      ],
+      "center": [
+        0.0765928798333384,
+        0.2032848250555599,
+        0.3862398577222166
+      ],
+      "absolute_center_m": [
+        27.876989957000003,
+        14.114579454000001,
+        152.519856625
+      ],
+      "width": 2048,
+      "height": 1024,
+      "view_id": 22,
+      "original_train_index": 35,
+      "rgb_sha256": "03dc22d87b387b9f8b7b95979732483e0d990d96c85f1b42680eb10427b8002e",
+      "label_sha256": "4d21c334a52ba7170dbe4d49f8c682fe28793e0d60158a49aaf41cb521cb12cb",
+      "rgb_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/images/2023-05-11_10.43.53.png",
+        "bytes": 2443933,
+        "sha256": "03dc22d87b387b9f8b7b95979732483e0d990d96c85f1b42680eb10427b8002e"
+      },
+      "label_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/semantics_iris26_compact7_v4/labels/2023-05-11_10.43.53.png",
+        "bytes": 27765,
+        "sha256": "4d21c334a52ba7170dbe4d49f8c682fe28793e0d60158a49aaf41cb521cb12cb"
+      },
+      "rgb_observation_mask": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb_observation_masks/2023-05-11_10.43.53.png",
+        "bytes": 4841,
+        "sha256": "bf12e72b83368ce4dcb1e673bc2c9b91e402be7bbd107affda43f8188445d413"
+      },
+      "semantic_provenance": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/semantic_provenance/2023-05-11_10.43.53.png",
+        "bytes": 8852,
+        "sha256": "87a59653fc012a29e5c957bb56f66ba4cc29e615120d26c21e366ebfdadb2e4e"
+      },
+      "rmx": {
+        "path": "/mnt/sda/ubuntu/lkx/od/images_xphase_camera_info/2023-05-11_10.43.53.rmx",
+        "bytes": 282,
+        "sha256": "935e62fb140a45784cb95cd8316d4667e60877a5cc3ced13f8d93d24f3d51f77"
+      },
+      "official_annotations_available": true,
+      "labels_are_repaired_derivatives": true
+    },
+    {
+      "name": "2023-05-11_10.44.56",
+      "camera_id": "1-36",
+      "split": "train",
+      "image": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb/train/2023-05-11_10.44.56.png",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_10.44.56.png",
+      "rotation": [
+        [
+          -0.9770475116269545,
+          0.21194905948825954,
+          -0.021348447381918347
+        ],
+        [
+          0.023069641428606028,
+          0.005650937987334771,
+          -0.9997178894789364
+        ],
+        [
+          -0.21176862767636723,
+          -0.9772643772705037,
+          -0.010410823702408104
+        ]
+      ],
+      "center": [
+        -0.7299446701666632,
+        0.39155163705556006,
+        0.3921943977222213
+      ],
+      "absolute_center_m": [
+        27.070452407,
+        14.302846266000001,
+        152.525811165
+      ],
+      "width": 2048,
+      "height": 1024,
+      "view_id": 58,
+      "original_train_index": 36,
+      "rgb_sha256": "d9ddb9646e4978c2097d48295d688e86a02c70cbf652a74d4e0b8c7c0c27af1d",
+      "label_sha256": "d4dd9c1b31b13b77e52fd25f4d381e480f9dd22ac0d6d42bbe01862801fc9860",
+      "rgb_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/images/2023-05-11_10.44.56.png",
+        "bytes": 2789945,
+        "sha256": "d9ddb9646e4978c2097d48295d688e86a02c70cbf652a74d4e0b8c7c0c27af1d"
+      },
+      "label_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/semantics_iris26_compact7_v4/labels/2023-05-11_10.44.56.png",
+        "bytes": 31526,
+        "sha256": "d4dd9c1b31b13b77e52fd25f4d381e480f9dd22ac0d6d42bbe01862801fc9860"
+      },
+      "rgb_observation_mask": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb_observation_masks/2023-05-11_10.44.56.png",
+        "bytes": 4873,
+        "sha256": "a6a6682e25ff8bd23a44cdf079ffb965ce8fd79f946f3501cfb5f11176ebf101"
+      },
+      "semantic_provenance": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/semantic_provenance/2023-05-11_10.44.56.png",
+        "bytes": 9255,
+        "sha256": "b26a7ae34a535ea7be684e74f808cb072cd3c31bb28abc0eb3bad6314e78301d"
+      },
+      "rmx": {
+        "path": "/mnt/sda/ubuntu/lkx/od/images_xphase_camera_info/2023-05-11_10.44.56.rmx",
+        "bytes": 282,
+        "sha256": "643e7ce584b2225f28d520e6a888f31b8b1f25e5f8ee65161bedac22bc44f481"
+      },
+      "official_annotations_available": true,
+      "labels_are_repaired_derivatives": true
+    },
+    {
+      "name": "2023-05-11_10.45.40",
+      "camera_id": "1-37",
+      "split": "train",
+      "image": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb/train/2023-05-11_10.45.40.png",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_10.45.40.png",
+      "rotation": [
+        [
+          -0.964517069162468,
+          0.2625401933889559,
+          -0.027918992631043606
+        ],
+        [
+          0.027904387392642616,
+          -0.003784802939152416,
+          -0.9996034315822215
+        ],
+        [
+          -0.26254174612522857,
+          -0.964913634540419,
+          -0.0036755162242359547
+        ]
+      ],
+      "center": [
+        -0.7304960851666671,
+        0.39023417205555866,
+        -0.40180659527777607
+      ],
+      "absolute_center_m": [
+        27.069900991999997,
+        14.301528801,
+        151.731810172
+      ],
+      "width": 2048,
+      "height": 1024,
+      "view_id": 8,
+      "original_train_index": 37,
+      "rgb_sha256": "d5b17fc8fa7d7d30cdd50691d3f5aebb777547c8f392e283b7147e74553deb3d",
+      "label_sha256": "8550470942c723cd4c44d825fbcadc4fd839a2b6ae07a47f96e4066ca416ef8d",
+      "rgb_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/images/2023-05-11_10.45.40.png",
+        "bytes": 2772713,
+        "sha256": "d5b17fc8fa7d7d30cdd50691d3f5aebb777547c8f392e283b7147e74553deb3d"
+      },
+      "label_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/semantics_iris26_compact7_v4/labels/2023-05-11_10.45.40.png",
+        "bytes": 32642,
+        "sha256": "8550470942c723cd4c44d825fbcadc4fd839a2b6ae07a47f96e4066ca416ef8d"
+      },
+      "rgb_observation_mask": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb_observation_masks/2023-05-11_10.45.40.png",
+        "bytes": 5147,
+        "sha256": "adae32bb10ca7992cc974a3dca0cf0802a8f4eb376041f7ca7c29bb86325b4fa"
+      },
+      "semantic_provenance": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/semantic_provenance/2023-05-11_10.45.40.png",
+        "bytes": 9613,
+        "sha256": "7cf631ac26bf4010a8d00a98428890dbae5c6805b3811ace2c96284557887cc1"
+      },
+      "rmx": {
+        "path": "/mnt/sda/ubuntu/lkx/od/images_xphase_camera_info/2023-05-11_10.45.40.rmx",
+        "bytes": 282,
+        "sha256": "240673ca6aaa0918343a9c8e1c63252fc169129a5d3d01618b1086f4752332f9"
+      },
+      "official_annotations_available": true,
+      "labels_are_repaired_derivatives": true
+    },
+    {
+      "name": "2023-05-11_10.50.58",
+      "camera_id": "1-44",
+      "split": "train",
+      "image": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb/train/2023-05-11_10.50.58.png",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_10.50.58.png",
+      "rotation": [
+        [
+          -0.9277331670264285,
+          0.3722573782662988,
+          -0.027122225672212837
+        ],
+        [
+          0.028548557736386853,
+          -0.0016807957772942902,
+          -0.9995909937453054
+        ],
+        [
+          -0.3721507095926123,
+          -0.9281280187839697,
+          -0.009068081266637554
+        ]
+      ],
+      "center": [
+        -0.03848468016666473,
+        -0.5181264509444414,
+        0.39637171272221394
+      ],
+      "absolute_center_m": [
+        27.761912397,
+        13.393168178,
+        152.52998848
+      ],
+      "width": 2048,
+      "height": 1024,
+      "view_id": 64,
+      "original_train_index": 44,
+      "rgb_sha256": "e5dd07f0be69062218ef4c13e42e65d07d2060f985ace7d06f44bf371cb91114",
+      "label_sha256": "505e60878ef03d28bba171b6b8d467b64ad6d184308c80da4f62bfa787b61183",
+      "rgb_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/images/2023-05-11_10.50.58.png",
+        "bytes": 2497012,
+        "sha256": "e5dd07f0be69062218ef4c13e42e65d07d2060f985ace7d06f44bf371cb91114"
+      },
+      "label_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/semantics_iris26_compact7_v4/labels/2023-05-11_10.50.58.png",
+        "bytes": 26107,
+        "sha256": "505e60878ef03d28bba171b6b8d467b64ad6d184308c80da4f62bfa787b61183"
+      },
+      "rgb_observation_mask": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb_observation_masks/2023-05-11_10.50.58.png",
+        "bytes": 4845,
+        "sha256": "2c5160f2be45bee95164c1d9394b4985e5489221ec9414313202a36f26cb89eb"
+      },
+      "semantic_provenance": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/semantic_provenance/2023-05-11_10.50.58.png",
+        "bytes": 8499,
+        "sha256": "81f4b4035dd266454f418ccedcfcc469bcabf6195fbba44da0b9728a82113ba1"
+      },
+      "rmx": {
+        "path": "/mnt/sda/ubuntu/lkx/od/images_xphase_camera_info/2023-05-11_10.50.58.rmx",
+        "bytes": 282,
+        "sha256": "f19c9d5a3831fe9cf49d296c19b7ef45d33340e18f45bf4b467a643204bb630d"
+      },
+      "official_annotations_available": true,
+      "labels_are_repaired_derivatives": true
+    },
+    {
+      "name": "2023-05-11_10.53.10",
+      "camera_id": "1-47",
+      "split": "train",
+      "image": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb/train/2023-05-11_10.53.10.png",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_10.53.10.png",
+      "rotation": [
+        [
+          -0.8288887317285264,
+          0.5588342223303909,
+          -0.025451569025540292
+        ],
+        [
+          0.025606029131938456,
+          -0.0075477652545748175,
+          -0.9996436177517245
+        ],
+        [
+          -0.558827166202189,
+          -0.8292450441166644,
+          -0.008053267807667004
+        ]
+      ],
+      "center": [
+        0.49538845283333544,
+        -0.9085758729444411,
+        0.47573648372221555
+      ],
+      "absolute_center_m": [
+        28.29578553,
+        13.002718756,
+        152.609353251
+      ],
+      "width": 2048,
+      "height": 1024,
+      "view_id": 25,
+      "original_train_index": 47,
+      "rgb_sha256": "d8dfc00c33c057b143988c30bdd89867312fd4a6e5d41c8bffacdba3f37d2821",
+      "label_sha256": "d5a0a7f3701752ead501c1091cda1b392483a73e91990f90121878bf80c15cb9",
+      "rgb_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/images/2023-05-11_10.53.10.png",
+        "bytes": 2418375,
+        "sha256": "d8dfc00c33c057b143988c30bdd89867312fd4a6e5d41c8bffacdba3f37d2821"
+      },
+      "label_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/semantics_iris26_compact7_v4/labels/2023-05-11_10.53.10.png",
+        "bytes": 28415,
+        "sha256": "d5a0a7f3701752ead501c1091cda1b392483a73e91990f90121878bf80c15cb9"
+      },
+      "rgb_observation_mask": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb_observation_masks/2023-05-11_10.53.10.png",
+        "bytes": 4880,
+        "sha256": "aaecb9aac5a328452c9612915f600859778f698e65729b8d6e74038de2b92f55"
+      },
+      "semantic_provenance": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/semantic_provenance/2023-05-11_10.53.10.png",
+        "bytes": 8746,
+        "sha256": "c7923242a89365dd59685163bb4bf4983d5b5fe91b3bb54d6809e79baac2e42d"
+      },
+      "rmx": {
+        "path": "/mnt/sda/ubuntu/lkx/od/images_xphase_camera_info/2023-05-11_10.53.10.rmx",
+        "bytes": 282,
+        "sha256": "b6c191203748e895a8c0e393a9a84f7c272ebafd7ed6ca8b38bd615e21a6619c"
+      },
+      "official_annotations_available": true,
+      "labels_are_repaired_derivatives": true
+    },
+    {
+      "name": "2023-05-11_11.07.13",
+      "camera_id": "1-58",
+      "split": "train",
+      "image": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb/train/2023-05-11_11.07.13.png",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_11.07.13.png",
+      "rotation": [
+        [
+          -0.9977675057795037,
+          0.06119440749436561,
+          -0.026744137712056533
+        ],
+        [
+          0.026847336895726208,
+          0.0008646657931214146,
+          -0.9996391713286716
+        ],
+        [
+          -0.06114920205657054,
+          -0.9981254915312401,
+          -0.002505642305871197
+        ]
+      ],
+      "center": [
+        0.28585367883333745,
+        -2.143675236944441,
+        0.45871800572223265
+      ],
+      "absolute_center_m": [
+        28.086250756000002,
+        11.767619392,
+        152.592334773
+      ],
+      "width": 2048,
+      "height": 1024,
+      "view_id": 12,
+      "original_train_index": 58,
+      "rgb_sha256": "9915552f06cc398a919274eb350fd27314da20af5f76cdb1e560513f2404e3e6",
+      "label_sha256": "e1ddb78de28d6051abdc6e2f1cf8b408fead4ce22ca4844958047e9492e8cd3f",
+      "rgb_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/images/2023-05-11_11.07.13.png",
+        "bytes": 2436261,
+        "sha256": "9915552f06cc398a919274eb350fd27314da20af5f76cdb1e560513f2404e3e6"
+      },
+      "label_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/semantics_iris26_compact7_v4/labels/2023-05-11_11.07.13.png",
+        "bytes": 25407,
+        "sha256": "e1ddb78de28d6051abdc6e2f1cf8b408fead4ce22ca4844958047e9492e8cd3f"
+      },
+      "rgb_observation_mask": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb_observation_masks/2023-05-11_11.07.13.png",
+        "bytes": 4884,
+        "sha256": "0a2e0d2bd28d15b87f5c3a4d31ca4304fc7099dfd1e65c8a339b3aac7f501755"
+      },
+      "semantic_provenance": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/semantic_provenance/2023-05-11_11.07.13.png",
+        "bytes": 10028,
+        "sha256": "70dea1daa18e0441ac7abba492da7a026b4d0f561733b725da70dfa3c37760e0"
+      },
+      "rmx": {
+        "path": "/mnt/sda/ubuntu/lkx/od/images_xphase_camera_info/2023-05-11_11.07.13.rmx",
+        "bytes": 282,
+        "sha256": "9de88d2ddc6ca7e36e369209e935bba787563ed210f59c28ddbb763271786e20"
+      },
+      "official_annotations_available": true,
+      "labels_are_repaired_derivatives": true
+    },
+    {
+      "name": "2023-05-11_11.07.58",
+      "camera_id": "1-59",
+      "split": "train",
+      "image": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb/train/2023-05-11_11.07.58.png",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_11.07.58.png",
+      "rotation": [
+        [
+          -0.986162465924261,
+          0.16375296352795576,
+          -0.025856483480793672
+        ],
+        [
+          0.02644487765159579,
+          0.0014139031929432493,
+          -0.9996492731572175
+        ],
+        [
+          -0.16365897240350957,
+          -0.9865003638182669,
+          -0.005724765344914118
+        ]
+      ],
+      "center": [
+        0.3043700048333342,
+        -2.166015967944441,
+        -0.3118353472777642
+      ],
+      "absolute_center_m": [
+        28.104767082,
+        11.745278661,
+        151.82178142
+      ],
+      "width": 2048,
+      "height": 1024,
+      "view_id": 13,
+      "original_train_index": 59,
+      "rgb_sha256": "afcc395492e7170df616db1d5a24bb2e95ae8007b65852edd4f7d2ceec0d316f",
+      "label_sha256": "027a42defa7bc26958e567b8fcec0303d4cbd2cb1cf3ea3af86a5c5ac2accb5f",
+      "rgb_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/images/2023-05-11_11.07.58.png",
+        "bytes": 2554664,
+        "sha256": "afcc395492e7170df616db1d5a24bb2e95ae8007b65852edd4f7d2ceec0d316f"
+      },
+      "label_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/semantics_iris26_compact7_v4/labels/2023-05-11_11.07.58.png",
+        "bytes": 29674,
+        "sha256": "027a42defa7bc26958e567b8fcec0303d4cbd2cb1cf3ea3af86a5c5ac2accb5f"
+      },
+      "rgb_observation_mask": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb_observation_masks/2023-05-11_11.07.58.png",
+        "bytes": 5162,
+        "sha256": "4721fc144e9ed22bb32b9baa27c07bcdc9e6b8fcf372d26e9d364eae020de9e8"
+      },
+      "semantic_provenance": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/semantic_provenance/2023-05-11_11.07.58.png",
+        "bytes": 10695,
+        "sha256": "67bc03cd7251255fb58bd24bd362cea7a94224a8ef0635f76286c5f6c1877ba0"
+      },
+      "rmx": {
+        "path": "/mnt/sda/ubuntu/lkx/od/images_xphase_camera_info/2023-05-11_11.07.58.rmx",
+        "bytes": 282,
+        "sha256": "536214b4913217c7c2fb098410978ff98e15c8a2f8af7dcfc0951850e2c1e3b8"
+      },
+      "official_annotations_available": true,
+      "labels_are_repaired_derivatives": true
+    },
+    {
+      "name": "2023-05-11_11.19.30",
+      "camera_id": "1-62",
+      "split": "train",
+      "image": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb/train/2023-05-11_11.19.30.png",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_11.19.30.png",
+      "rotation": [
+        [
+          -0.9719805737803389,
+          0.23402219361334953,
+          -0.022076618627841202
+        ],
+        [
+          0.022358811570477564,
+          -0.0014474955014204764,
+          -0.9997489626410868
+        ],
+        [
+          -0.23399540110608819,
+          -0.9722301773001953,
+          -0.0038255206222955647
+        ]
+      ],
+      "center": [
+        -1.214261553166665,
+        -1.583779787944442,
+        0.44285683172222434
+      ],
+      "absolute_center_m": [
+        26.586135524,
+        12.327514841,
+        152.576473599
+      ],
+      "width": 2048,
+      "height": 1024,
+      "view_id": 66,
+      "original_train_index": 62,
+      "rgb_sha256": "1dd6313697192d50c99032ce5eb59cd1c9462cc36d5b1ae3571cf49dba879bd7",
+      "label_sha256": "3867f026582955480fc155a04bb8a7ee3be2f6037a3a6e400c164228ef5505bc",
+      "rgb_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/images/2023-05-11_11.19.30.png",
+        "bytes": 2559449,
+        "sha256": "1dd6313697192d50c99032ce5eb59cd1c9462cc36d5b1ae3571cf49dba879bd7"
+      },
+      "label_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/semantics_iris26_compact7_v4/labels/2023-05-11_11.19.30.png",
+        "bytes": 28290,
+        "sha256": "3867f026582955480fc155a04bb8a7ee3be2f6037a3a6e400c164228ef5505bc"
+      },
+      "rgb_observation_mask": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb_observation_masks/2023-05-11_11.19.30.png",
+        "bytes": 4842,
+        "sha256": "c4ab51f5c1547cea80f0c4e05d7e8fcdbf17b7a047b39290c91f6585c2f2fbde"
+      },
+      "semantic_provenance": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/semantic_provenance/2023-05-11_11.19.30.png",
+        "bytes": 9226,
+        "sha256": "86ff444c1cea3df2ad83599d4f3bc5613896f5a034b1cab839c7a40d20d37b09"
+      },
+      "rmx": {
+        "path": "/mnt/sda/ubuntu/lkx/od/images_xphase_camera_info/2023-05-11_11.19.30.rmx",
+        "bytes": 282,
+        "sha256": "0a5797d53ee97d80c5461cfeaf3d6c6701ccdf20026abacea54c7df6bb89a7e1"
+      },
+      "official_annotations_available": true,
+      "labels_are_repaired_derivatives": true
+    },
+    {
+      "name": "2023-05-11_11.20.14",
+      "camera_id": "1-63",
+      "split": "train",
+      "image": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb/train/2023-05-11_11.20.14.png",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_11.20.14.png",
+      "rotation": [
+        [
+          -0.9951451985867173,
+          0.09551309119055651,
+          -0.023733586771229418
+        ],
+        [
+          0.023931120674344296,
+          0.0009230174105428236,
+          -0.9997131836192469
+        ],
+        [
+          -0.09546378995762217,
+          -0.995427745971592,
+          -0.003204271655574494
+        ]
+      ],
+      "center": [
+        -1.1953769131666618,
+        -1.5430764059444417,
+        -0.402961093277753
+      ],
+      "absolute_center_m": [
+        26.605020164000003,
+        12.368218223,
+        151.73065567400002
+      ],
+      "width": 2048,
+      "height": 1024,
+      "view_id": 67,
+      "original_train_index": 63,
+      "rgb_sha256": "5859ba02431db70156b957e2a3abc7067345810569413e48d65c0ce3d1dd25a5",
+      "label_sha256": "bf635071a1cf54bc5978b3009d07818ba817bd482265f05a69412f3921ccb057",
+      "rgb_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/images/2023-05-11_11.20.14.png",
+        "bytes": 2763697,
+        "sha256": "5859ba02431db70156b957e2a3abc7067345810569413e48d65c0ce3d1dd25a5"
+      },
+      "label_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/semantics_iris26_compact7_v4/labels/2023-05-11_11.20.14.png",
+        "bytes": 30119,
+        "sha256": "bf635071a1cf54bc5978b3009d07818ba817bd482265f05a69412f3921ccb057"
+      },
+      "rgb_observation_mask": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb_observation_masks/2023-05-11_11.20.14.png",
+        "bytes": 5193,
+        "sha256": "b30ce128d5e628f0799895c03b02625731b0649056c54f84f65a145732d1e582"
+      },
+      "semantic_provenance": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/semantic_provenance/2023-05-11_11.20.14.png",
+        "bytes": 9819,
+        "sha256": "026a4b971d383ac165f4eaa73770bd5c805184d33497aee8e2dd0744d1d3f368"
+      },
+      "rmx": {
+        "path": "/mnt/sda/ubuntu/lkx/od/images_xphase_camera_info/2023-05-11_11.20.14.rmx",
+        "bytes": 282,
+        "sha256": "8e412652e3f529ee16a197c281845c367b66d83128208381eb65348b23bb97d4"
+      },
+      "official_annotations_available": true,
+      "labels_are_repaired_derivatives": true
+    },
+    {
+      "name": "2023-05-11_11.21.03",
+      "camera_id": "1-64",
+      "split": "train",
+      "image": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb/train/2023-05-11_11.21.03.png",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_11.21.03.png",
+      "rotation": [
+        [
+          -0.9499371436350041,
+          0.3112619255171094,
+          -0.027118939248255862
+        ],
+        [
+          0.026473737422285308,
+          -0.006298584930449401,
+          -0.9996296659537319
+        ],
+        [
+          -0.3113174655708624,
+          -0.9503032892457308,
+          -0.0022570067079212986
+        ]
+      ],
+      "center": [
+        -1.8854931661666647,
+        -1.1645356379444411,
+        -0.39913892527778216
+      ],
+      "absolute_center_m": [
+        25.914903911,
+        12.746758991,
+        151.734477842
+      ],
+      "width": 2048,
+      "height": 1024,
+      "view_id": 68,
+      "original_train_index": 64,
+      "rgb_sha256": "3d194074c93bdab63a2f503ea19414b8ce9bc06ecef7329b101e54039691b878",
+      "label_sha256": "df5c769298a421ac2353fc2b7e9f3d406a0f8aa1afbb726ebb30ce2ab351fafc",
+      "rgb_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/images/2023-05-11_11.21.03.png",
+        "bytes": 2779346,
+        "sha256": "3d194074c93bdab63a2f503ea19414b8ce9bc06ecef7329b101e54039691b878"
+      },
+      "label_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/semantics_iris26_compact7_v4/labels/2023-05-11_11.21.03.png",
+        "bytes": 31463,
+        "sha256": "df5c769298a421ac2353fc2b7e9f3d406a0f8aa1afbb726ebb30ce2ab351fafc"
+      },
+      "rgb_observation_mask": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb_observation_masks/2023-05-11_11.21.03.png",
+        "bytes": 5188,
+        "sha256": "9d1fb7298798927b7e9f0aa534a635761982980ee70e5362ed2ffc9f8ab24a96"
+      },
+      "semantic_provenance": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/semantic_provenance/2023-05-11_11.21.03.png",
+        "bytes": 9675,
+        "sha256": "b892272db97624655651dcb83edf4d2ab13af9377b5e7aabfa2e68cd70d1bcff"
+      },
+      "rmx": {
+        "path": "/mnt/sda/ubuntu/lkx/od/images_xphase_camera_info/2023-05-11_11.21.03.rmx",
+        "bytes": 282,
+        "sha256": "d8af484c6b7c0b9495d7c4995eac41e9898d68311ed453ff3ee10c18588e997a"
+      },
+      "official_annotations_available": true,
+      "labels_are_repaired_derivatives": true
+    },
+    {
+      "name": "2023-05-11_11.21.45",
+      "camera_id": "1-65",
+      "split": "train",
+      "image": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb/train/2023-05-11_11.21.45.png",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_11.21.45.png",
+      "rotation": [
+        [
+          -0.909059243262267,
+          0.4159160685870491,
+          -0.02500232250267361
+        ],
+        [
+          0.02371328469665684,
+          -0.00826526603295337,
+          -0.9996846330249854
+        ],
+        [
+          -0.4159915532415651,
+          -0.9093654431901937,
+          -0.0023491196590410407
+        ]
+      ],
+      "center": [
+        -1.8972133931666662,
+        -1.2027800009444398,
+        0.4431326017222261
+      ],
+      "absolute_center_m": [
+        25.903183684,
+        12.708514628000001,
+        152.576749369
+      ],
+      "width": 2048,
+      "height": 1024,
+      "view_id": 69,
+      "original_train_index": 65,
+      "rgb_sha256": "926f1d9e72c525de6287ff62ed868101b2624a6fc6bce9213b14a4e09700d2c2",
+      "label_sha256": "0a93a0669102f896b42fd325b59ebaa36c89521e3fd7b85698be5be0c162018d",
+      "rgb_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/images/2023-05-11_11.21.45.png",
+        "bytes": 2569024,
+        "sha256": "926f1d9e72c525de6287ff62ed868101b2624a6fc6bce9213b14a4e09700d2c2"
+      },
+      "label_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/semantics_iris26_compact7_v4/labels/2023-05-11_11.21.45.png",
+        "bytes": 29405,
+        "sha256": "0a93a0669102f896b42fd325b59ebaa36c89521e3fd7b85698be5be0c162018d"
+      },
+      "rgb_observation_mask": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb_observation_masks/2023-05-11_11.21.45.png",
+        "bytes": 4850,
+        "sha256": "9b3498c9c2669ef9d2022152a51bfc77dbab32b271586d0f9649970fde0e84f6"
+      },
+      "semantic_provenance": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/semantic_provenance/2023-05-11_11.21.45.png",
+        "bytes": 8921,
+        "sha256": "ef17ef4829899fc47a051ac3743a448b83dffa207ff88eafd631a5ee0272362c"
+      },
+      "rmx": {
+        "path": "/mnt/sda/ubuntu/lkx/od/images_xphase_camera_info/2023-05-11_11.21.45.rmx",
+        "bytes": 282,
+        "sha256": "66150cb3a49f5e757ef280cfe5bb3e75533f04bdf932260db12a0ed94ea3c496"
+      },
+      "official_annotations_available": true,
+      "labels_are_repaired_derivatives": true
+    },
+    {
+      "name": "2023-05-11_11.22.19",
+      "camera_id": "1-66",
+      "split": "train",
+      "image": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb/train/2023-05-11_11.22.19.png",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_11.22.19.png",
+      "rotation": [
+        [
+          -0.905716431306057,
+          0.4230965286550157,
+          -0.02582776611122229
+        ],
+        [
+          0.02448566132860501,
+          -0.008607963512100593,
+          -0.9996631209329847
+        ],
+        [
+          -0.4231763207594694,
+          -0.906043724333572,
+          -0.0025634243169626383
+        ]
+      ],
+      "center": [
+        -2.2993632901666636,
+        -1.7161103339444423,
+        0.44388025272223786
+      ],
+      "absolute_center_m": [
+        25.501033787,
+        12.195184294999999,
+        152.57749702
+      ],
+      "width": 2048,
+      "height": 1024,
+      "view_id": 14,
+      "original_train_index": 66,
+      "rgb_sha256": "24bf64e36889809adb7710d51c3733db683f358489e35a5a879481d9f350486b",
+      "label_sha256": "4f896b3b78fb8dcf16c3026606f72feef1ca16310fe0dc6ebe0e17501267701b",
+      "rgb_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/images/2023-05-11_11.22.19.png",
+        "bytes": 2512325,
+        "sha256": "24bf64e36889809adb7710d51c3733db683f358489e35a5a879481d9f350486b"
+      },
+      "label_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/semantics_iris26_compact7_v4/labels/2023-05-11_11.22.19.png",
+        "bytes": 26513,
+        "sha256": "4f896b3b78fb8dcf16c3026606f72feef1ca16310fe0dc6ebe0e17501267701b"
+      },
+      "rgb_observation_mask": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb_observation_masks/2023-05-11_11.22.19.png",
+        "bytes": 4858,
+        "sha256": "6a88718b0db162b1f16a001cb4bbb75593c488593a442103038f6c29bb0bc7e7"
+      },
+      "semantic_provenance": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/semantic_provenance/2023-05-11_11.22.19.png",
+        "bytes": 8144,
+        "sha256": "772cef425f229751a24582ec63d70be1e1235d1ed13a19e71d833abb9d0c84fa"
+      },
+      "rmx": {
+        "path": "/mnt/sda/ubuntu/lkx/od/images_xphase_camera_info/2023-05-11_11.22.19.rmx",
+        "bytes": 282,
+        "sha256": "31e06f1ead0d6e88022ac101088b6a57a526f39ed38378e3311e7abbd08ddf5d"
+      },
+      "official_annotations_available": true,
+      "labels_are_repaired_derivatives": true
+    },
+    {
+      "name": "2023-05-11_11.23.11",
+      "camera_id": "1-67",
+      "split": "train",
+      "image": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb/train/2023-05-11_11.23.11.png",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_11.23.11.png",
+      "rotation": [
+        [
+          -0.9489160918854884,
+          0.314330189849601,
+          -0.027473301765261582
+        ],
+        [
+          0.027161853390414027,
+          -0.005371578168517584,
+          -0.9996166164427127
+        ],
+        [
+          -0.314357255811233,
+          -0.9492985188533127,
+          -0.003440613569948755
+        ]
+      ],
+      "center": [
+        -2.296380620166662,
+        -1.7335330299444411,
+        -0.40148183327775655
+      ],
+      "absolute_center_m": [
+        25.504016457000002,
+        12.177761599,
+        151.73213493400002
+      ],
+      "width": 2048,
+      "height": 1024,
+      "view_id": 15,
+      "original_train_index": 67,
+      "rgb_sha256": "5b0ced1fe16f93e70d84103e1fb501e07e50d53ce957968494ff7c741c9401e2",
+      "label_sha256": "7f51fe591a53314c2e09b3eb13809becfba0a72a50c03eb8d6116f149d010023",
+      "rgb_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/images/2023-05-11_11.23.11.png",
+        "bytes": 2731317,
+        "sha256": "5b0ced1fe16f93e70d84103e1fb501e07e50d53ce957968494ff7c741c9401e2"
+      },
+      "label_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/semantics_iris26_compact7_v4/labels/2023-05-11_11.23.11.png",
+        "bytes": 29686,
+        "sha256": "7f51fe591a53314c2e09b3eb13809becfba0a72a50c03eb8d6116f149d010023"
+      },
+      "rgb_observation_mask": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb_observation_masks/2023-05-11_11.23.11.png",
+        "bytes": 5191,
+        "sha256": "e10d1bedf15e69412def922fe2c2a2c0a7e02e715dc30a57caaefe1cf543c06a"
+      },
+      "semantic_provenance": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/semantic_provenance/2023-05-11_11.23.11.png",
+        "bytes": 8246,
+        "sha256": "0fa602cfc15e6b920b9046012fd18d2e4080e018ad40a56897847a5d2e4f172f"
+      },
+      "rmx": {
+        "path": "/mnt/sda/ubuntu/lkx/od/images_xphase_camera_info/2023-05-11_11.23.11.rmx",
+        "bytes": 282,
+        "sha256": "dcd3dad17562b8f79bb6f7e92dca49f97df0508cdaecb047bdba43a811dbaa3d"
+      },
+      "official_annotations_available": true,
+      "labels_are_repaired_derivatives": true
+    },
+    {
+      "name": "2023-05-11_11.25.15",
+      "camera_id": "1-70",
+      "split": "train",
+      "image": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb/train/2023-05-11_11.25.15.png",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_11.25.15.png",
+      "rotation": [
+        [
+          -0.981595129610444,
+          0.1892351450911054,
+          -0.025711114083282194
+        ],
+        [
+          0.025729152202632874,
+          -0.0023617188747629466,
+          -0.999666160781133
+        ],
+        [
+          -0.18923269340150772,
+          -0.9819289598266795,
+          -0.00255060810516
+        ]
+      ],
+      "center": [
+        -0.7642112981666642,
+        -2.522747420944441,
+        0.46455777672224485
+      ],
+      "absolute_center_m": [
+        27.036185779,
+        11.388547208,
+        152.59817454400002
+      ],
+      "width": 2048,
+      "height": 1024,
+      "view_id": 34,
+      "original_train_index": 70,
+      "rgb_sha256": "82e22d8be07b056cddb42cc616b966ecaf835c45b105ee05d007b3603fd0bd85",
+      "label_sha256": "90c1fa7a28b038924837fa81824fc87818f21dcd1ba104a6c01011d9d80222da",
+      "rgb_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/images/2023-05-11_11.25.15.png",
+        "bytes": 2486812,
+        "sha256": "82e22d8be07b056cddb42cc616b966ecaf835c45b105ee05d007b3603fd0bd85"
+      },
+      "label_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/semantics_iris26_compact7_v4/labels/2023-05-11_11.25.15.png",
+        "bytes": 27021,
+        "sha256": "90c1fa7a28b038924837fa81824fc87818f21dcd1ba104a6c01011d9d80222da"
+      },
+      "rgb_observation_mask": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb_observation_masks/2023-05-11_11.25.15.png",
+        "bytes": 4855,
+        "sha256": "736b544811a6d0cf5f355fb01d41847d01928b10ef109657f2c6838fb1d45b89"
+      },
+      "semantic_provenance": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/semantic_provenance/2023-05-11_11.25.15.png",
+        "bytes": 9408,
+        "sha256": "fac770e892e8c8c940d61fd4ad5e5397acf05e9b3607b087028fb7d53e0c5bbb"
+      },
+      "rmx": {
+        "path": "/mnt/sda/ubuntu/lkx/od/images_xphase_camera_info/2023-05-11_11.25.15.rmx",
+        "bytes": 282,
+        "sha256": "e81aab4e028962792bfb3ac023110ad0f87b42d3f68b8de9b796dc35094ac793"
+      },
+      "official_annotations_available": true,
+      "labels_are_repaired_derivatives": true
+    },
+    {
+      "name": "2023-05-11_11.25.58",
+      "camera_id": "1-71",
+      "split": "train",
+      "image": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb/train/2023-05-11_11.25.58.png",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_11.25.58.png",
+      "rotation": [
+        [
+          -0.9993943115024378,
+          -0.019918751522194522,
+          -0.028535127025572524
+        ],
+        [
+          0.028410113805605715,
+          0.006531226023278542,
+          -0.9995750139535229
+        ],
+        [
+          0.02009665569494129,
+          -0.9997802690713745,
+          -0.005961376137190137
+        ]
+      ],
+      "center": [
+        -0.7673857071666639,
+        -2.5295356509444407,
+        -0.40419052227775865
+      ],
+      "absolute_center_m": [
+        27.03301137,
+        11.381758978,
+        151.729426245
+      ],
+      "width": 2048,
+      "height": 1024,
+      "view_id": 72,
+      "original_train_index": 71,
+      "rgb_sha256": "575460e496c57571fe2a9fabe5871e8e2c358f2bdc13cdd2f16eeab99f1a5c93",
+      "label_sha256": "4a6732693fa7abd0d8d6da45f7c1e8e8bd593048390ae47796fb8c9f4ed0b047",
+      "rgb_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/images/2023-05-11_11.25.58.png",
+        "bytes": 2626386,
+        "sha256": "575460e496c57571fe2a9fabe5871e8e2c358f2bdc13cdd2f16eeab99f1a5c93"
+      },
+      "label_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/semantics_iris26_compact7_v4/labels/2023-05-11_11.25.58.png",
+        "bytes": 29760,
+        "sha256": "4a6732693fa7abd0d8d6da45f7c1e8e8bd593048390ae47796fb8c9f4ed0b047"
+      },
+      "rgb_observation_mask": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb_observation_masks/2023-05-11_11.25.58.png",
+        "bytes": 5192,
+        "sha256": "1e6bb8429679b5418c8e683d6c1bb68b18ef4bedc0a16bae614cb8d64d1cce22"
+      },
+      "semantic_provenance": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/semantic_provenance/2023-05-11_11.25.58.png",
+        "bytes": 9087,
+        "sha256": "f8a69df51a34b2988fbc3907717c58b721999eced4cacabac4ecc129d6c55cb1"
+      },
+      "rmx": {
+        "path": "/mnt/sda/ubuntu/lkx/od/images_xphase_camera_info/2023-05-11_11.25.58.rmx",
+        "bytes": 282,
+        "sha256": "9d7a50feb30c66c6d37dca23015046f144e8567752f9d5b71850f7c10dc5d0e3"
+      },
+      "official_annotations_available": true,
+      "labels_are_repaired_derivatives": true
+    }
+  ],
+  "test": [
+    {
+      "name": "2023-05-11_10.37.00",
+      "camera_id": "1-26",
+      "split": "test",
+      "image": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb/test/2023-05-11_10.37.00.png",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/test/2023-05-11_10.37.00.png",
+      "rotation": [
+        [
+          -0.9996296121119509,
+          0.0010817325524333787,
+          -0.027193169061282708
+        ],
+        [
+          0.027198566456157976,
+          0.005334535353679868,
+          -0.9996158165591871
+        ],
+        [
+          -0.0009362540469632918,
+          -0.9999851861838981,
+          -0.0053619810811116435
+        ]
+      ],
+      "center": [
+        0.45467910783333565,
+        0.7841696570555587,
+        -0.44527950727777466
+      ],
+      "absolute_center_m": [
+        28.255076185,
+        14.695464286,
+        151.68833726
+      ],
+      "width": 2048,
+      "height": 1024,
+      "view_id": 56,
+      "original_train_index": 26,
+      "rgb_sha256": "8a7bd678b54b76e83b6d2b60998c37870f26600035bbbfa81127f310c471a7ff",
+      "label_sha256": "80c0be7c0b3f8b11aec76e11970da53ac798b9af92fc6fc4140e17bb9d138337",
+      "rgb_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/images/2023-05-11_10.37.00.png",
+        "bytes": 2658306,
+        "sha256": "8a7bd678b54b76e83b6d2b60998c37870f26600035bbbfa81127f310c471a7ff"
+      },
+      "label_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/semantics_iris26_compact7_v4/labels/2023-05-11_10.37.00.png",
+        "bytes": 30614,
+        "sha256": "80c0be7c0b3f8b11aec76e11970da53ac798b9af92fc6fc4140e17bb9d138337"
+      },
+      "rgb_observation_mask": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb_observation_masks/2023-05-11_10.37.00.png",
+        "bytes": 5166,
+        "sha256": "93a3c775137118e7d426c0f3103317eca8f0bdcb429cec628077cf595f0010e0"
+      },
+      "semantic_provenance": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/semantic_provenance/2023-05-11_10.37.00.png",
+        "bytes": 10241,
+        "sha256": "5598bb99f2c2926ea9c2914bfbf51ff1325530314f6778a99c98c4493dab00dd"
+      },
+      "rmx": {
+        "path": "/mnt/sda/ubuntu/lkx/od/images_xphase_camera_info/2023-05-11_10.37.00.rmx",
+        "bytes": 282,
+        "sha256": "84c23e3f60f8b71bc94175590f7f081691ffc2ec04365c3db2d2ba9925c0f256"
+      },
+      "official_annotations_available": true,
+      "labels_are_repaired_derivatives": true
+    },
+    {
+      "name": "2023-05-11_10.37.48",
+      "camera_id": "1-27",
+      "split": "test",
+      "image": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb/test/2023-05-11_10.37.48.png",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/test/2023-05-11_10.37.48.png",
+      "rotation": [
+        [
+          -0.974340804449645,
+          0.22342082868594532,
+          -0.027260412573985374
+        ],
+        [
+          0.02780879893984179,
+          -0.000692038599538463,
+          -0.9996130210156828
+        ],
+        [
+          -0.22335323477832575,
+          -0.9747218343670475,
+          -0.005538783458115782
+        ]
+      ],
+      "center": [
+        0.46218882883333734,
+        0.7732467700555592,
+        0.3756514107222131
+      ],
+      "absolute_center_m": [
+        28.262585906,
+        14.684541399,
+        152.50926817799999
+      ],
+      "width": 2048,
+      "height": 1024,
+      "view_id": 57,
+      "original_train_index": 27,
+      "rgb_sha256": "12ba197be9bd55277dbb13ee91e7e2d51b0a760a423c5222b6cd5c1a130a7638",
+      "label_sha256": "df9e521ad2335c57df1f4da81dbfbd35745b7ae22cf55270f35dcbf8785930e0",
+      "rgb_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/images/2023-05-11_10.37.48.png",
+        "bytes": 2666638,
+        "sha256": "12ba197be9bd55277dbb13ee91e7e2d51b0a760a423c5222b6cd5c1a130a7638"
+      },
+      "label_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/semantics_iris26_compact7_v4/labels/2023-05-11_10.37.48.png",
+        "bytes": 29102,
+        "sha256": "df9e521ad2335c57df1f4da81dbfbd35745b7ae22cf55270f35dcbf8785930e0"
+      },
+      "rgb_observation_mask": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb_observation_masks/2023-05-11_10.37.48.png",
+        "bytes": 4943,
+        "sha256": "2575b369bdc2c4effaefc46c5b258210a492f51fc497e6aad8cbd56d15c8ffa5"
+      },
+      "semantic_provenance": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/semantic_provenance/2023-05-11_10.37.48.png",
+        "bytes": 9723,
+        "sha256": "a373fcb0a696a9a73e46f3f7815c6b01524c5949c8f0b407a79a603e34eb4416"
+      },
+      "rmx": {
+        "path": "/mnt/sda/ubuntu/lkx/od/images_xphase_camera_info/2023-05-11_10.37.48.rmx",
+        "bytes": 282,
+        "sha256": "582ef7dacc5911ac14d473d99fad7ecbd8d6f00033752410eaffbc52dc78bc05"
+      },
+      "official_annotations_available": true,
+      "labels_are_repaired_derivatives": true
+    },
+    {
+      "name": "2023-05-11_11.08.41",
+      "camera_id": "1-60",
+      "split": "test",
+      "image": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb/test/2023-05-11_11.08.41.png",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/test/2023-05-11_11.08.41.png",
+      "rotation": [
+        [
+          -0.9784268572930654,
+          0.20475162752399917,
+          -0.02752555092798574
+        ],
+        [
+          0.027759682627195362,
+          -0.0017293297584119911,
+          -0.9996131298852693
+        ],
+        [
+          -0.20472001599270412,
+          -0.9788124337404283,
+          -0.003991817516721518
+        ]
+      ],
+      "center": [
+        -0.46049532616666156,
+        -1.83188003294444,
+        -0.4058097912777896
+      ],
+      "absolute_center_m": [
+        27.339901751000003,
+        12.079414596000001,
+        151.72780697599998
+      ],
+      "width": 2048,
+      "height": 1024,
+      "view_id": 33,
+      "original_train_index": 60,
+      "rgb_sha256": "593a60480873e491e1fb8283c23d7aed4d6d86f30f9acb8a75c9e2f19e5e3877",
+      "label_sha256": "4f3fba49f112b0cf52f38d8cd4babd453fcf36b62ad8035949ca46ab9b2454e9",
+      "rgb_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/images/2023-05-11_11.08.41.png",
+        "bytes": 2623696,
+        "sha256": "593a60480873e491e1fb8283c23d7aed4d6d86f30f9acb8a75c9e2f19e5e3877"
+      },
+      "label_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/semantics_iris26_compact7_v4/labels/2023-05-11_11.08.41.png",
+        "bytes": 30227,
+        "sha256": "4f3fba49f112b0cf52f38d8cd4babd453fcf36b62ad8035949ca46ab9b2454e9"
+      },
+      "rgb_observation_mask": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb_observation_masks/2023-05-11_11.08.41.png",
+        "bytes": 5193,
+        "sha256": "0858433fe35e5eebc449883d2e4b4d05635b31516a91de309d11e0a3e9beb136"
+      },
+      "semantic_provenance": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/semantic_provenance/2023-05-11_11.08.41.png",
+        "bytes": 10383,
+        "sha256": "b65e348977216d673c98ce0d200c6b79d65ca41c0c13f620513fcebc846c7ecf"
+      },
+      "rmx": {
+        "path": "/mnt/sda/ubuntu/lkx/od/images_xphase_camera_info/2023-05-11_11.08.41.rmx",
+        "bytes": 282,
+        "sha256": "06ab15e4e0d9f8432c8280ae0d63f9567f4504616b4feb8056bd3400950a6a04"
+      },
+      "official_annotations_available": true,
+      "labels_are_repaired_derivatives": true
+    },
+    {
+      "name": "2023-05-11_11.18.15",
+      "camera_id": "1-61",
+      "split": "test",
+      "image": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb/test/2023-05-11_11.18.15.png",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/test/2023-05-11_11.18.15.png",
+      "rotation": [
+        [
+          -0.9951175863306567,
+          0.09730930096562873,
+          -0.016489066711875097
+        ],
+        [
+          0.01702638754004721,
+          0.004693928341251911,
+          -0.9998440224175287
+        ],
+        [
+          -0.09721672439855245,
+          -0.9952431195352762,
+          -0.006327836510847549
+        ]
+      ],
+      "center": [
+        -0.46522864916666506,
+        -1.8159910029444397,
+        0.4377625767222071
+      ],
+      "absolute_center_m": [
+        27.335168428,
+        12.095303626000002,
+        152.57137934399998
+      ],
+      "width": 2048,
+      "height": 1024,
+      "view_id": 65,
+      "original_train_index": 61,
+      "rgb_sha256": "a05b6af12bf5d14603226e299b36391a18015756bb28ff5f8eb5c9fbda761caf",
+      "label_sha256": "39b531e82871f3cda540ef13f6b0a7e0a19142a098835bec832e43dee6220d35",
+      "rgb_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/images/2023-05-11_11.18.15.png",
+        "bytes": 2487262,
+        "sha256": "a05b6af12bf5d14603226e299b36391a18015756bb28ff5f8eb5c9fbda761caf"
+      },
+      "label_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/semantics_iris26_compact7_v4/labels/2023-05-11_11.18.15.png",
+        "bytes": 27850,
+        "sha256": "39b531e82871f3cda540ef13f6b0a7e0a19142a098835bec832e43dee6220d35"
+      },
+      "rgb_observation_mask": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb_observation_masks/2023-05-11_11.18.15.png",
+        "bytes": 4834,
+        "sha256": "e6b4763e59a7ffb80dad53d9be36638b03ac7616af975a6a96d9ffeebc83b346"
+      },
+      "semantic_provenance": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/semantic_provenance/2023-05-11_11.18.15.png",
+        "bytes": 9849,
+        "sha256": "f59df99050e6ebcc09f31368306d8319b13a3931b93c9bda68d20ad5c197910c"
+      },
+      "rmx": {
+        "path": "/mnt/sda/ubuntu/lkx/od/images_xphase_camera_info/2023-05-11_11.18.15.rmx",
+        "bytes": 282,
+        "sha256": "d906c87dbdbffd3a157494bd3e202746a21182b54b41c92fa49695c6db5ede2b"
+      },
+      "official_annotations_available": true,
+      "labels_are_repaired_derivatives": true
+    },
+    {
+      "name": "2023-05-11_11.23.47",
+      "camera_id": "1-68",
+      "split": "test",
+      "image": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb/test/2023-05-11_11.23.47.png",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/test/2023-05-11_11.23.47.png",
+      "rotation": [
+        [
+          -0.9813053050401648,
+          0.19066035603851084,
+          -0.026239796784609356
+        ],
+        [
+          0.0263234170116435,
+          -0.0020944983595274705,
+          -0.9996512845955099
+        ],
+        [
+          -0.19064882904665437,
+          -0.9816538298768513,
+          -0.0029634897079879163
+        ]
+      ],
+      "center": [
+        -1.4866305601666632,
+        -2.0776463839444403,
+        -0.40189756627776774
+      ],
+      "absolute_center_m": [
+        26.313766517,
+        11.833648245000001,
+        151.731719201
+      ],
+      "width": 2048,
+      "height": 1024,
+      "view_id": 70,
+      "original_train_index": 68,
+      "rgb_sha256": "8425053dd23b5b53442838fd347cb9c86969fe56adae34d5fc3fbe112570fb95",
+      "label_sha256": "c3d41e232a2e6559f637d4a8bd35c53053413a471f87bf3e8fcf884268ec3f48",
+      "rgb_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/images/2023-05-11_11.23.47.png",
+        "bytes": 2722811,
+        "sha256": "8425053dd23b5b53442838fd347cb9c86969fe56adae34d5fc3fbe112570fb95"
+      },
+      "label_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/semantics_iris26_compact7_v4/labels/2023-05-11_11.23.47.png",
+        "bytes": 29741,
+        "sha256": "c3d41e232a2e6559f637d4a8bd35c53053413a471f87bf3e8fcf884268ec3f48"
+      },
+      "rgb_observation_mask": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb_observation_masks/2023-05-11_11.23.47.png",
+        "bytes": 5174,
+        "sha256": "65ae51a8ebbd8a980c3266103483ec95948a4c59f68ad0ece9e648b8ec5f77ea"
+      },
+      "semantic_provenance": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/semantic_provenance/2023-05-11_11.23.47.png",
+        "bytes": 8548,
+        "sha256": "61267212b7474e07bcaf899de000763eca933fb3890d6e48c3eb1b0ab4dd377d"
+      },
+      "rmx": {
+        "path": "/mnt/sda/ubuntu/lkx/od/images_xphase_camera_info/2023-05-11_11.23.47.rmx",
+        "bytes": 282,
+        "sha256": "ce09f2d6e64944a8bf70d6c6d5ba54ba2bee2a3681913246bf95ce74e6c97100"
+      },
+      "official_annotations_available": true,
+      "labels_are_repaired_derivatives": true
+    },
+    {
+      "name": "2023-05-11_11.24.32",
+      "camera_id": "1-69",
+      "split": "test",
+      "image": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb/test/2023-05-11_11.24.32.png",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/test/2023-05-11_11.24.32.png",
+      "rotation": [
+        [
+          -0.9588975765101176,
+          0.28241119545227417,
+          -0.027556386668807442
+        ],
+        [
+          0.027396355963748974,
+          -0.004516332566714543,
+          -0.9996144468844248
+        ],
+        [
+          -0.28242676474252754,
+          -0.9592828151402298,
+          -0.003406337285822094
+        ]
+      ],
+      "center": [
+        -1.4901555911666655,
+        -2.0825877029444406,
+        0.46887652872223384
+      ],
+      "absolute_center_m": [
+        26.310241486,
+        11.828706926,
+        152.602493296
+      ],
+      "width": 2048,
+      "height": 1024,
+      "view_id": 71,
+      "original_train_index": 69,
+      "rgb_sha256": "f2889a037ec704f7303b75df65c60198d0212e6fb126d0385310d152e29dce5d",
+      "label_sha256": "33ff70fb09d94c553b22acb39e4e4542bdb9a35f356c00c204238c1af76298cf",
+      "rgb_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/images/2023-05-11_11.24.32.png",
+        "bytes": 2516293,
+        "sha256": "f2889a037ec704f7303b75df65c60198d0212e6fb126d0385310d152e29dce5d"
+      },
+      "label_source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/semantics_iris26_compact7_v4/labels/2023-05-11_11.24.32.png",
+        "bytes": 28587,
+        "sha256": "33ff70fb09d94c553b22acb39e4e4542bdb9a35f356c00c204238c1af76298cf"
+      },
+      "rgb_observation_mask": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb_observation_masks/2023-05-11_11.24.32.png",
+        "bytes": 4859,
+        "sha256": "52983abeb1df18c96fac40760d8196f8eed717e6520f3c3bef8216b42a7b13b8"
+      },
+      "semantic_provenance": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/semantic_provenance/2023-05-11_11.24.32.png",
+        "bytes": 8691,
+        "sha256": "457dbfa4d103456c5372d4c8f750fe82f4d92f40b0dc69a4c19f59ec180b2a95"
+      },
+      "rmx": {
+        "path": "/mnt/sda/ubuntu/lkx/od/images_xphase_camera_info/2023-05-11_11.24.32.rmx",
+        "bytes": 282,
+        "sha256": "227d140429266567cc6a123632aa46ce86671ae6efce084ccc009780aecc734c"
+      },
+      "official_annotations_available": true,
+      "labels_are_repaired_derivatives": true
+    }
+  ],
+  "validation": [],
+  "unseen_train29": [],
+  "labels": [
+    {
+      "id": "2023-05-11_10.35.28",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_10.35.28.png",
+      "label_sha256": "c126b570bc1cfc6ba06c7eba20885331b94e783ba02cf38108beff829befa45a",
+      "valid_fraction": 1.0,
+      "label_kind": "repaired7_v4"
+    },
+    {
+      "id": "2023-05-11_10.36.15",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_10.36.15.png",
+      "label_sha256": "40054cb968b9172073e88f27730fe6fb71c03c76e38cf107b29e0875cd384e45",
+      "valid_fraction": 1.0,
+      "label_kind": "repaired7_v4"
+    },
+    {
+      "id": "2023-05-11_10.38.31",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_10.38.31.png",
+      "label_sha256": "b48afcc632712196b667d4be1d9f399d3f8be8c3964430b6b83d680236e83da8",
+      "valid_fraction": 1.0,
+      "label_kind": "repaired7_v4"
+    },
+    {
+      "id": "2023-05-11_10.39.15",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_10.39.15.png",
+      "label_sha256": "d04a4e14fb4d38e988015465e7949fcebef65255e25039d94999bfce20b18909",
+      "valid_fraction": 1.0,
+      "label_kind": "repaired7_v4"
+    },
+    {
+      "id": "2023-05-11_10.43.09",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_10.43.09.png",
+      "label_sha256": "0430f666bfdda5cbdbb6e88ac8e8a22c51a38568dfd53cf49ed377ea10e73684",
+      "valid_fraction": 1.0,
+      "label_kind": "repaired7_v4"
+    },
+    {
+      "id": "2023-05-11_10.43.53",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_10.43.53.png",
+      "label_sha256": "4d21c334a52ba7170dbe4d49f8c682fe28793e0d60158a49aaf41cb521cb12cb",
+      "valid_fraction": 1.0,
+      "label_kind": "repaired7_v4"
+    },
+    {
+      "id": "2023-05-11_10.44.56",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_10.44.56.png",
+      "label_sha256": "d4dd9c1b31b13b77e52fd25f4d381e480f9dd22ac0d6d42bbe01862801fc9860",
+      "valid_fraction": 1.0,
+      "label_kind": "repaired7_v4"
+    },
+    {
+      "id": "2023-05-11_10.45.40",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_10.45.40.png",
+      "label_sha256": "8550470942c723cd4c44d825fbcadc4fd839a2b6ae07a47f96e4066ca416ef8d",
+      "valid_fraction": 1.0,
+      "label_kind": "repaired7_v4"
+    },
+    {
+      "id": "2023-05-11_10.50.58",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_10.50.58.png",
+      "label_sha256": "505e60878ef03d28bba171b6b8d467b64ad6d184308c80da4f62bfa787b61183",
+      "valid_fraction": 1.0,
+      "label_kind": "repaired7_v4"
+    },
+    {
+      "id": "2023-05-11_10.53.10",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_10.53.10.png",
+      "label_sha256": "d5a0a7f3701752ead501c1091cda1b392483a73e91990f90121878bf80c15cb9",
+      "valid_fraction": 1.0,
+      "label_kind": "repaired7_v4"
+    },
+    {
+      "id": "2023-05-11_11.07.13",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_11.07.13.png",
+      "label_sha256": "e1ddb78de28d6051abdc6e2f1cf8b408fead4ce22ca4844958047e9492e8cd3f",
+      "valid_fraction": 1.0,
+      "label_kind": "repaired7_v4"
+    },
+    {
+      "id": "2023-05-11_11.07.58",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_11.07.58.png",
+      "label_sha256": "027a42defa7bc26958e567b8fcec0303d4cbd2cb1cf3ea3af86a5c5ac2accb5f",
+      "valid_fraction": 1.0,
+      "label_kind": "repaired7_v4"
+    },
+    {
+      "id": "2023-05-11_11.19.30",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_11.19.30.png",
+      "label_sha256": "3867f026582955480fc155a04bb8a7ee3be2f6037a3a6e400c164228ef5505bc",
+      "valid_fraction": 1.0,
+      "label_kind": "repaired7_v4"
+    },
+    {
+      "id": "2023-05-11_11.20.14",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_11.20.14.png",
+      "label_sha256": "bf635071a1cf54bc5978b3009d07818ba817bd482265f05a69412f3921ccb057",
+      "valid_fraction": 1.0,
+      "label_kind": "repaired7_v4"
+    },
+    {
+      "id": "2023-05-11_11.21.03",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_11.21.03.png",
+      "label_sha256": "df5c769298a421ac2353fc2b7e9f3d406a0f8aa1afbb726ebb30ce2ab351fafc",
+      "valid_fraction": 1.0,
+      "label_kind": "repaired7_v4"
+    },
+    {
+      "id": "2023-05-11_11.21.45",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_11.21.45.png",
+      "label_sha256": "0a93a0669102f896b42fd325b59ebaa36c89521e3fd7b85698be5be0c162018d",
+      "valid_fraction": 1.0,
+      "label_kind": "repaired7_v4"
+    },
+    {
+      "id": "2023-05-11_11.22.19",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_11.22.19.png",
+      "label_sha256": "4f896b3b78fb8dcf16c3026606f72feef1ca16310fe0dc6ebe0e17501267701b",
+      "valid_fraction": 1.0,
+      "label_kind": "repaired7_v4"
+    },
+    {
+      "id": "2023-05-11_11.23.11",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_11.23.11.png",
+      "label_sha256": "7f51fe591a53314c2e09b3eb13809becfba0a72a50c03eb8d6116f149d010023",
+      "valid_fraction": 1.0,
+      "label_kind": "repaired7_v4"
+    },
+    {
+      "id": "2023-05-11_11.25.15",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_11.25.15.png",
+      "label_sha256": "90c1fa7a28b038924837fa81824fc87818f21dcd1ba104a6c01011d9d80222da",
+      "valid_fraction": 1.0,
+      "label_kind": "repaired7_v4"
+    },
+    {
+      "id": "2023-05-11_11.25.58",
+      "label": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/train/2023-05-11_11.25.58.png",
+      "label_sha256": "4a6732693fa7abd0d8d6da45f7c1e8e8bd593048390ae47796fb8c9f4ed0b047",
+      "valid_fraction": 1.0,
+      "label_kind": "repaired7_v4"
+    }
+  ],
+  "classes": {
+    "version": "iris26_compact7_v4",
+    "scope": "Current official_overlap_split_20261025: 20 train + 6 test; 2048x1024; tripod cleaned RGB",
+    "source": "Original official IRIS COCO 16 classes; instance-level Codex visual corrections are separately recorded. Not SAM candidate semantics.",
+    "classes": [
+      {
+        "id": 0,
+        "name": "piping",
+        "zh": "管道与阀件",
+        "color": [
+          31,
+          200,
+          226
+        ],
+        "official_ids": [
+          27,
+          29
+        ],
+        "definition": "工艺输送管路及其附着的阀体、执行器和压力表。",
+        "include": "直管、弯管、保温外层、法兰、阀门、管路附属执行器及仪表",
+        "exclude": "独立泵/电机/容器、通风管、桥架、支撑杆",
+        "prompts": [
+          "industrial process pipes with valve fittings",
+          "insulated fluid pipes and attached valve actuators",
+          "pressure gauges attached to industrial pipework"
+        ],
+        "rationale": "阀门占球面约0.299%，并入连续管路，避免小阀件成为独立稀碎类别。"
+      },
+      {
+        "id": 1,
+        "name": "equipment",
+        "zh": "设备与柜箱",
+        "color": [
+          245,
+          167,
+          57
+        ],
+        "official_ids": [
+          7,
+          16,
+          32
+        ],
+        "definition": "独立机械和电气装置及其机壳、柜箱、固定灯具。",
+        "include": "泵、电机、容器、控制柜、接线箱、设备外壳、固定灯具",
+        "exclude": "工艺管路附着阀件和仪表、土建基座、金属支撑、风道",
+        "prompts": [
+          "industrial machinery and electrical cabinets",
+          "pumps motors vessels and equipment housings",
+          "electrical boxes and fixed industrial light fixtures"
+        ],
+        "rationale": "合并机械设备、电气箱柜和较少的电气设备，保持独立装置与管路/结构的边界；9类中明确设备外壳按对象恢复。"
+      },
+      {
+        "id": 2,
+        "name": "building",
+        "zh": "建筑主体",
+        "color": [
+          134,
+          146,
+          168
+        ],
+        "official_ids": [
+          12,
+          19
+        ],
+        "definition": "建筑围护与土建主体，含门、地坪、混凝土基座及低矮台座边沿。",
+        "include": "地面、墙顶、建筑柱、混凝土基础、建筑门；逐对象确认的黄黑警示边沿、平台裙边及侧面；去相机支架后补全的底部地面",
+        "exclude": "金属立柱与支撑底脚、机柜、风道、栏杆及格栅；未确认的其他杂项",
+        "prompts": [
+          "industrial building floors walls and ceilings",
+          "concrete foundations columns and architectural doors",
+          "industrial floor curbs and low platform edges with yellow black warning stripes"
+        ],
+        "rationale": "门与土建结构合并；按用户确认将低矮警示边沿与底部补全地面归入建筑，保留与细长金属支撑的区别。"
+      },
+      {
+        "id": 3,
+        "name": "structural_frame",
+        "zh": "金属支撑与梁架",
+        "color": [
+          173,
+          116,
+          236
+        ],
+        "official_ids": [
+          6,
+          24
+        ],
+        "definition": "承重和固定管线/设备的金属立柱、横撑、梁及其连接底脚。",
+        "include": "穿孔型钢立柱、横撑、支架、吊架、金属梁、支撑件连接底脚",
+        "exclude": "设备外壳、栏杆与梯具、线缆桥架、混凝土基座；不能仅凭细长形状把电缆或管道改入",
+        "prompts": [
+          "metal support columns and steel cross braces",
+          "perforated steel strut frames supporting industrial pipes",
+          "metal beams brackets and bolted support feet"
+        ],
+        "rationale": "原6梁类约0.229%，与24支撑件合并；原9仅对白名单中经RGB确认的细长金属支撑逐对象纠正。"
+      },
+      {
+        "id": 4,
+        "name": "access_structure",
+        "zh": "检修通行设施",
+        "color": [
+          235,
+          102,
+          141
+        ],
+        "official_ids": [
+          2,
+          21,
+          31
+        ],
+        "definition": "人员检修通行、登高和防护设施。",
+        "include": "格栅平台、护栏、扶手、爬梯与护笼",
+        "exclude": "管道支撑、桥架、混凝土地坪",
+        "prompts": [
+          "industrial access ladders safety railings and grating platforms",
+          "maintenance walkways guardrails and caged ladders"
+        ],
+        "rationale": "格栅约0.130%、梯具约0.813%；与护栏统一成可辨认的检修通行设施。"
+      },
+      {
+        "id": 5,
+        "name": "cable_tray",
+        "zh": "电缆桥架",
+        "color": [
+          223,
+          206,
+          55
+        ],
+        "official_ids": [
+          5
+        ],
+        "definition": "承载和组织线缆的网篮或槽式桥架。",
+        "include": "网篮桥架、槽式桥架的可见主体",
+        "exclude": "独立梁架、格栅平台、游离电缆、管道",
+        "prompts": [
+          "overhead wire mesh cable trays",
+          "industrial cable baskets and cable routing trays"
+        ],
+        "rationale": "约8.900%球面面积，覆盖全部视角；外形与用途明确，保持独立。"
+      },
+      {
+        "id": 6,
+        "name": "hvac",
+        "zh": "通风风道",
+        "color": [
+          70,
+          190,
+          115
+        ],
+        "official_ids": [
+          30
+        ],
+        "definition": "通风系统风道、风口及明确属于该系统的外壳。",
+        "include": "金属风道、波纹圆风管、风口",
+        "exclude": "工艺输送管、独立储罐、桥架",
+        "prompts": [
+          "industrial ventilation ducts and air vents",
+          "metal HVAC ductwork with corrugated round ducts"
+        ],
+        "rationale": "约3.850%球面面积；与工艺管保留功能差别，不因同为长管外观而合并。"
+      }
+    ],
+    "semantic_source_codes": {
+      "1": "official labels mapped into merged taxonomy",
+      "2": "official miscellaneous region reassigned after Codex RGB inspection",
+      "3": "reconstructed nadir floor assigned building by user request; synthetic RGB provenance, not official truth",
+      "4": "former ignored component merged into its adjacent majority class; derived completion, not official truth"
+    },
+    "geometry_policy": "Preserve existing official CAD projected boundaries. This is class consolidation and selected object reassignment, not full boundary/occlusion relabeling.",
+    "artifact_policy": "All pixels have one of seven semantic classes. Reconstructed bottom floor remains building. Original RGB observation masks are preserved independently.",
+    "human_approved": false,
+    "training_started": false,
+    "legacy_models_note": "Existing checkpoints and previous default vocabulary are unchanged; training/evaluation must explicitly use this taxonomy and matching labels.",
+    "user_requested_revision": "v4: merge all residual ignored regions into neighboring classes; retain v3 curbs and bottom floor as building.",
+    "has_ignore_class": false,
+    "label_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "residual_official_ids": {
+      "9": "Reviewed objects keep their assigned class; remaining holes merge into adjacent classes.",
+      "13": "No separate fire class; residual regions merge into adjacent classes."
+    },
+    "initial_object_corrections": "iris26_misc_object_corrections.json",
+    "residual_completion": {
+      "method": "Per 8-connected v3 ignore component, select most frequent class among 4-neighbor boundary pixels; deterministic lowest-ID tie break. Decisions use unchanged v3 labels.",
+      "changes_only_previous_id": 255,
+      "creates_new_class": false
+    }
+  },
+  "train_count": 20,
+  "test_count": 6,
+  "validation_count": 0,
+  "resolution": [
+    2048,
+    1024
+  ],
+  "semantic_resolution": [
+    256,
+    128
+  ],
+  "coordinate_system": "fixed OpenMVG world, camera axes +X right,+Y down,+Z ERP center; absolute RMX center minus shared origin",
+  "absolute_to_native_origin": [
+    27.800397077166664,
+    13.911294628944441,
+    152.13361676727777
+  ],
+  "source_split": {
+    "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/iris_camera_analysis_20261025/official_overlap_split_20261025/selected_split.json",
+    "bytes": 101131,
+    "sha256": "7f86b7d427635d63c81caa60ee9baf4b5e87d21d6a50ee0b604096eae3912909"
+  },
+  "source_rgb_manifest": {
+    "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/dataset_manifest.json",
+    "bytes": 64271,
+    "sha256": "75ff990b42236a8bd3e81f3eff2352e613fd7a2eb1d852cecabbdba4e5590251"
+  },
+  "source_semantic_manifest": {
+    "path": "/mnt/sda/ubuntu/lkx/od/datasets/iris_official20_6_no_tripod_2k_20261025/semantics_iris26_compact7_v4/manifest.json",
+    "bytes": 92520,
+    "sha256": "7e93103457fbc26474005c269e067d9247d4a89d21f46d5be43eea6b4262b70f"
+  },
+  "repair_policy": "Use fixed repaired RGB and all seven-class labels for supervision and primary full-frame evaluation. RGB synthesis provenance is kept separately. No reannotation or repair.",
+  "split_history": "Test image feature overlap was previously consulted for choosing the user-approved interpolation split; fixed before current experiments. Not a blind randomly sampled benchmark.",
+  "evaluation_protocol": {
+    "rgb": "full repaired ERP2048x1024; arithmetic mean across6 held-out test views; final10k checkpoint only",
+    "semantic": "GT nearest-neighbor256x128;7x8 confusion includes uncovered prediction column; uncovered valid GT is always an error; pooled mIoU and per-image metrics reported separately",
+    "semantic_highres_check": [
+      512,
+      256
+    ],
+    "test_labels_never_used_in_teacher": true,
+    "class_query_separate_from_classifier": true
+  },
+  "generated_semantic_loss": false,
+  "generated_semantic_note": "Wan360 RGB frames are geometry inputs only; no generated labels are fabricated. Train supervision uses exactly20 repaired real labels.",
+  "dataset_signature": "6a4ec4b582e9ce945a12814f77fc19166ef1744665166e7377b3bd5dd4b09f8a"
+}

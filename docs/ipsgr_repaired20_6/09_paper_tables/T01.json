@@ -1,0 +1,80 @@
+{
+  "protocol": {
+    "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/dataset_manifest.json",
+    "bytes": 91231,
+    "sha256": "1475de1542c60ac2bf1d3db0685e14137a0de2403e51a8002bfdea4d3ebdaf2f"
+  },
+  "classes": [
+    {
+      "id": 0,
+      "name": "piping",
+      "train_pixels": 11182153,
+      "train_fraction": 0.26660330295562745,
+      "train_views": 20,
+      "test_pixels": 3962531,
+      "test_fraction": 0.31491367022196454,
+      "test_views": 6
+    },
+    {
+      "id": 1,
+      "name": "equipment",
+      "train_pixels": 3528983,
+      "train_fraction": 0.08413751125335693,
+      "train_views": 20,
+      "test_pixels": 1042156,
+      "test_fraction": 0.08282311757405598,
+      "test_views": 6
+    },
+    {
+      "id": 2,
+      "name": "building",
+      "train_pixels": 17182799,
+      "train_fraction": 0.4096698522567749,
+      "train_views": 20,
+      "test_pixels": 5345188,
+      "test_fraction": 0.42479737599690753,
+      "test_views": 6
+    },
+    {
+      "id": 3,
+      "name": "structural_frame",
+      "train_pixels": 2705417,
+      "train_fraction": 0.0645021677017212,
+      "train_views": 20,
+      "test_pixels": 791204,
+      "test_fraction": 0.06287924448649089,
+      "test_views": 6
+    },
+    {
+      "id": 4,
+      "name": "access_structure",
+      "train_pixels": 888487,
+      "train_fraction": 0.021183180809020995,
+      "train_views": 20,
+      "test_pixels": 170857,
+      "test_fraction": 0.013578494389851889,
+      "test_views": 6
+    },
+    {
+      "id": 5,
+      "name": "cable_tray",
+      "train_pixels": 5028081,
+      "train_fraction": 0.11987879276275634,
+      "train_views": 20,
+      "test_pixels": 977449,
+      "test_fraction": 0.07768066724141438,
+      "test_views": 6
+    },
+    {
+      "id": 6,
+      "name": "hvac",
+      "train_pixels": 1427120,
+      "train_fraction": 0.03402519226074219,
+      "train_views": 20,
+      "test_pixels": 293527,
+      "test_fraction": 0.023327430089314777,
+      "test_views": 6
+    }
+  ],
+  "ignore_fraction": 0.0
+}

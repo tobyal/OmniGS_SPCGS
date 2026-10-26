@@ -1,0 +1,24 @@
+{
+  "event": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/IPSGR-Full/isp/500",
+  "frames": [
+    {
+      "frame": "real",
+      "eroded_pixels": 3270,
+      "unique_ids": 166,
+      "shared_with_source": 166
+    },
+    {
+      "frame": "pseudo_0",
+      "eroded_pixels": 3408,
+      "unique_ids": 142,
+      "shared_with_source": 85
+    },
+    {
+      "frame": "pseudo_1",
+      "eroded_pixels": 3659,
+      "unique_ids": 252,
+      "shared_with_source": 122
+    }
+  ],
+  "note": "IDs belong to this pre-update ISP snapshot. No old index is interpreted using a later densified/pruned checkpoint."
+}

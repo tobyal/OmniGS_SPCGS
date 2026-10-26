@@ -1,0 +1,69 @@
+{
+  "rows": [
+    {
+      "model": "B-RGB",
+      "GPU": 3,
+      "started_unix": 1792933422.8023179,
+      "finished_unix": 1792936243.3531864,
+      "seconds": 2820.5508663654327,
+      "steps": 10000
+    },
+    {
+      "model": "B-SEM",
+      "GPU": 3,
+      "started_unix": 1792933733.7972775,
+      "finished_unix": 1792939790.6931207,
+      "seconds": 6056.895841598511,
+      "steps": 10000
+    },
+    {
+      "model": "G-AUG",
+      "GPU": 0,
+      "started_unix": 1792938670.7253425,
+      "finished_unix": 1792942224.9948533,
+      "seconds": 3554.2695095539093,
+      "steps": 10000
+    },
+    {
+      "model": "ISLB",
+      "GPU": 2,
+      "started_unix": 1792938670.7235658,
+      "finished_unix": 1792942889.6941419,
+      "seconds": 4218.97057390213,
+      "steps": 10000
+    },
+    {
+      "model": "smoke-IPSGR-Full",
+      "GPU": 2,
+      "started_unix": 1792942898.4231277,
+      "finished_unix": 1792942987.9910107,
+      "seconds": 89.56787753105164,
+      "steps": 100
+    },
+    {
+      "model": "L-BOOT",
+      "GPU": 3,
+      "started_unix": 1792942898.3820422,
+      "finished_unix": 1792951430.8819776,
+      "seconds": 8532.499932289124,
+      "steps": 10000
+    },
+    {
+      "model": "CV-2D",
+      "GPU": 0,
+      "started_unix": 1792942991.7998536,
+      "finished_unix": 1792950435.5629034,
+      "seconds": 7443.763048410416,
+      "steps": 10000
+    },
+    {
+      "model": "IPSGR-Full",
+      "GPU": 2,
+      "started_unix": 1792942991.7830398,
+      "finished_unix": 1792950145.6606934,
+      "seconds": 7153.877651929855,
+      "steps": 10000
+    }
+  ],
+  "note": "Measured per-stage intervals; shared GPUs; Wan360 per-video absolute start times were not logged and are not inferred."
+}

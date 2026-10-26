@@ -1,0 +1,28 @@
+{
+  "rows": [
+    {
+      "set": "P0",
+      "piping": 1658,
+      "equipment": 1292,
+      "building": 3509,
+      "structural_frame": 1119,
+      "access_structure": 248,
+      "cable_tray": 655,
+      "hvac": 263,
+      "any_synthetic_RGB_observation_center": 1,
+      "all_synthetic_RGB_observation_centers": 0
+    },
+    {
+      "set": "P1_added",
+      "piping": 347,
+      "equipment": 253,
+      "building": 485,
+      "structural_frame": 153,
+      "access_structure": 34,
+      "cable_tray": 70,
+      "hvac": 37,
+      "any_synthetic_RGB_observation_center": 0,
+      "all_synthetic_RGB_observation_centers": 0
+    }
+  ]
+}

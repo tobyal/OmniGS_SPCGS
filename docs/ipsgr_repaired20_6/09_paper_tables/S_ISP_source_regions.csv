@@ -1,0 +1,15 @@
+﻿model,class,source_GT_dominant_events
+CV-2D,piping,22
+CV-2D,equipment,13
+CV-2D,building,32
+CV-2D,structural_frame,11
+CV-2D,access_structure,1
+CV-2D,cable_tray,15
+CV-2D,hvac,6
+IPSGR-Full,piping,22
+IPSGR-Full,equipment,13
+IPSGR-Full,building,32
+IPSGR-Full,structural_frame,11
+IPSGR-Full,access_structure,1
+IPSGR-Full,cable_tray,15
+IPSGR-Full,hvac,6

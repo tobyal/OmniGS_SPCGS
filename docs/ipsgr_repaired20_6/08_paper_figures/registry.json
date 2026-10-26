@@ -1,0 +1,289 @@
+{
+  "F01": {
+    "status": "completed",
+    "figures": [
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F01_sparse_problem.png"
+    ],
+    "raw_data": [
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/06_evaluation/B-RGB/metrics.json",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/06_evaluation/B-SEM/metrics.json"
+    ],
+    "script": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+      "bytes": 35306,
+      "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+    },
+    "note": "Fixed view1-68 chosen before results; visually inspect actual strengths and errors without assuming baseline failure."
+  },
+  "F02": {
+    "status": "completed",
+    "figures": [
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F02_method.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F02_method.pdf",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F02_method.svg"
+    ],
+    "raw_data": [
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/experiment_config.json",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/dataset_manifest.json"
+    ],
+    "script": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+      "bytes": 35306,
+      "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+    },
+    "note": "Diagram describes the implemented industrial adaptation, not an identical reproduction of every SPC-GS setting."
+  },
+  "F03": {
+    "status": "completed",
+    "figures": [
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F03_dual_domain_actual.png"
+    ],
+    "raw_data": [
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/IPSGR-Full/isp/500",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/IPSGR-Full/losses.jsonl"
+    ],
+    "script": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+      "bytes": 35306,
+      "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+    },
+    "note": "Actual maximum alpha*T IDs/weights; IDs belong to this event state, not the final densified Gaussian ordering."
+  },
+  "F04": {
+    "status": "completed",
+    "raw_data": [
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/dataset_manifest.json",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/pixel_statistics.json"
+    ],
+    "script": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_protocol.py",
+    "figures": [
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F04_cameras.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F04_cameras.pdf",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F04_classes.png"
+    ]
+  },
+  "F05": {
+    "status": "completed",
+    "figures": [
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F05_1-26.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F05_1-27.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F05_1-60.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F05_1-61.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F05_1-68.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F05_1-69.png"
+    ],
+    "raw_data": [
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/06_evaluation/B-RGB/metrics.json",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/06_evaluation/B-SEM/metrics.json",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/06_evaluation/G-AUG/metrics.json",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/06_evaluation/L-BOOT/metrics.json",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/06_evaluation/CV-2D/metrics.json",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/06_evaluation/IPSGR-Full/metrics.json"
+    ],
+    "script": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+      "bytes": 35306,
+      "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+    },
+    "note": "Every held-out view; nearest resizing for display only; primary native semantics256x128."
+  },
+  "F06": {
+    "status": "completed",
+    "figures": [
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F06_geometry.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F06_geometry.pdf",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F06_ISLB_training_previews.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F06_measured_training_observations.png"
+    ],
+    "raw_data": [
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/01_geometry/P0/metrics.json",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/01_geometry/P1/metrics.json",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/03_layout_bootstrap/final/model.pt",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/03_layout_bootstrap/representative_train_renders/evidence.json"
+    ],
+    "script": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+      "bytes": 35306,
+      "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+    },
+    "note": "All original data retained; viewport uses fixed P0 .5-99.5 percentiles, ISLB plotted with a fixed random sample up to60000. Projection previews are not visibility guarantees."
+  },
+  "F07": {
+    "status": "completed",
+    "figures": [
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_1-26_dense_piping.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_1-26_valve_and_equipment.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_1-26_tray_support_occlusion.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_1-27_dense_piping.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_1-27_valve_and_equipment.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_1-27_tray_support_occlusion.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_1-60_dense_piping.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_1-60_valve_tower_occlusion.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_1-60_tray_support.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_1-61_dense_piping.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_1-61_valve_tower_occlusion.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_1-61_equipment_and_piping.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_1-68_dense_piping.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_1-68_valve_tower_occlusion.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_1-68_equipment_and_piping.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_1-69_dense_piping.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_1-69_valve_tower_occlusion.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_1-69_equipment_and_piping.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_RGB_1-26_dense_piping.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_RGB_1-26_tray_support_occlusion.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_RGB_1-26_valve_and_equipment.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_RGB_1-27_dense_piping.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_RGB_1-27_tray_support_occlusion.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_RGB_1-27_valve_and_equipment.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_RGB_1-60_dense_piping.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_RGB_1-60_tray_support.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_RGB_1-60_valve_tower_occlusion.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_RGB_1-61_dense_piping.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_RGB_1-61_equipment_and_piping.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_RGB_1-61_valve_tower_occlusion.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_RGB_1-68_dense_piping.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_RGB_1-68_equipment_and_piping.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_RGB_1-68_valve_tower_occlusion.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_RGB_1-69_dense_piping.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_RGB_1-69_equipment_and_piping.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_RGB_1-69_valve_tower_occlusion.png"
+    ],
+    "raw_data": [
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/07_industrial_analysis/fixed_regions.json",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/09_paper_tables/T04.json"
+    ],
+    "script": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+      "bytes": 35306,
+      "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+    },
+    "note": "ROI location is fixed from RGB/GT; displayed coarse semantic pixels are not claimed as new detail."
+  },
+  "F08": {
+    "status": "completed",
+    "figures": [
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F08_consistency.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F08_consistency.pdf",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F08_object_pump_left_26_27.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F08_object_pump_right_26_27.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F08_object_control_cabinet_26_27.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F08_object_blue_vessel_60_61_68_69.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F08_object_front_cabinet_60_61_68_69.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F08_object_foreground_pump_68_69.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F08_object_tower_riser_blue_valve.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F08_object_corrugated_hvac.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F08_object_perforated_support_26_27.png"
+    ],
+    "raw_data": [
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/07_industrial_analysis/cross_view_results.json",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/07_industrial_analysis/fixed_regions.json"
+    ],
+    "script": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+      "bytes": 35306,
+      "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+    },
+    "note": "Small visually identified object/region set; no dense instance correspondence ground truth. Missing correctness categories are not fabricated."
+  },
+  "F09": {
+    "status": "completed",
+    "figures": [
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F09_success_500.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F09_lowest_validity_400.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F09_lowest_validity_zoom_400.png"
+    ],
+    "raw_data": [
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/IPSGR-Full/isp",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/04_cross_view/saved_event_validation.json"
+    ],
+    "script": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+      "bytes": 35306,
+      "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+    },
+    "note": "Mask success is a geometric/area proxy, not verified correspondence accuracy. Lowest-validity event is not called a failure if no rejected pairs occurred."
+  },
+  "F10": {
+    "status": "not_run_optional",
+    "reason": "Core six-model20-view experiment prioritized; no12-view experiment has been claimed."
+  },
+  "F11": {
+    "status": "completed",
+    "figures": [
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F11_class_queries.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F11_relative_queries.png"
+    ],
+    "raw_data": [
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/06_evaluation/IPSGR-Full/2023-05-11_11.23.47_query_response.npy",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/06_evaluation/IPSGR-Full/2023-05-11_11.23.47_query_probabilities.npy",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/06_evaluation/IPSGR-Full/metrics.json",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/viewer_manifest.json"
+    ],
+    "script": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+      "bytes": 35306,
+      "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+    },
+    "note": "Seven fixed classes queried through the trained mapping. Raw correlations and fixed-seven Softmax responses are separate displays; neither is unrestricted open vocabulary or calibrated confidence.",
+    "interactive_viewer": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/viewer.html"
+  },
+  "S_training_history": {
+    "status": "completed",
+    "figures": [
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/training_ISLB.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/training_B-RGB.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/training_B-SEM.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/training_G-AUG.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/training_L-BOOT.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/training_CV-2D.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/training_IPSGR-Full.png"
+    ],
+    "raw_data": [
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/03_layout_bootstrap/losses.jsonl",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/B-RGB/losses.jsonl",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/B-SEM/losses.jsonl",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/G-AUG/losses.jsonl",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/L-BOOT/losses.jsonl",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/CV-2D/losses.jsonl",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/IPSGR-Full/losses.jsonl"
+    ],
+    "script": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+      "bytes": 35306,
+      "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+    },
+    "note": "Actual training losses, gradients and Gaussian counts. Dashed lines mark configured opacity resets; these are not held-out evaluation curves."
+  },
+  "S_resource_execution": {
+    "status": "completed",
+    "figures": [
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/S_resource_execution.png",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/S_resource_execution.pdf"
+    ],
+    "raw_data": [
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/01_geometry/Wan360/fresh_generation_audit.json",
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/09_paper_tables/S_training_intervals.json"
+    ],
+    "script": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+      "bytes": 35306,
+      "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+    },
+    "note": "Operational resource records on shared GPUs; not a controlled hardware speedup benchmark."
+  },
+  "S_semantic_resolution": {
+    "status": "completed",
+    "figures": [
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/semantic_resolution_diagnostic.png"
+    ],
+    "raw_data": [
+      "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/07_industrial_analysis/resolution_audit.json"
+    ],
+    "script": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+      "bytes": 35306,
+      "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+    },
+    "note": "Fixed-GT sampling and erosion diagnostic; not SAM correspondence ground truth and not a change to the evaluation resolution."
+  }
+}

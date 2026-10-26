@@ -1,0 +1,1379 @@
+{
+  "schema": "iris26_object_reclassification_v2",
+  "user_constraint": "Keep selected slender metal support corrections. Reclassify RGB-verified low platform/curb/skirting records to building in all26 views. Never map all official miscellaneous to one class.",
+  "reviewer": "Codex visual review; not a blanket human approval of pixel masks",
+  "reviewed_sheets": [
+    "misc_sheet_01.jpg",
+    "misc_sheet_02.jpg",
+    "misc_sheet_03.jpg",
+    "misc_sheet_04.jpg",
+    "misc_sheet_05.jpg",
+    "misc_sheet_06.jpg",
+    "misc_sheet_07.jpg",
+    "misc_sheet_08.jpg",
+    "misc_sheet_09.jpg",
+    "misc_sheet_10.jpg",
+    "misc_sheet_11.jpg"
+  ],
+  "context_images": [
+    "1-64_up_context.jpg",
+    "small_curb_context.jpg"
+  ],
+  "user_example_matching_camera": "1-24",
+  "target_id_meanings": {
+    "0": "piping",
+    "1": "equipment",
+    "3": "structural_frame",
+    "255": "ignore",
+    "2": "building"
+  },
+  "unreviewed_misc_policy": "keep original source labels, exclude unresolved pixels from derived training labels",
+  "decisions": [
+    {
+      "annotation_id": 24441,
+      "target_id": 3,
+      "reason": "RGB shows a slender steel column, crossbar or connected support frame; selected object correction, not whole miscellaneous class."
+    },
+    {
+      "annotation_id": 14946,
+      "target_id": 3,
+      "reason": "RGB shows a slender steel column, crossbar or connected support frame; selected object correction, not whole miscellaneous class."
+    },
+    {
+      "annotation_id": 39562,
+      "target_id": 3,
+      "reason": "RGB shows a slender steel column, crossbar or connected support frame; selected object correction, not whole miscellaneous class."
+    },
+    {
+      "annotation_id": 667,
+      "target_id": 3,
+      "reason": "RGB shows a slender steel column, crossbar or connected support frame; selected object correction, not whole miscellaneous class."
+    },
+    {
+      "annotation_id": 9216,
+      "target_id": 3,
+      "reason": "RGB shows a slender steel column, crossbar or connected support frame; selected object correction, not whole miscellaneous class."
+    },
+    {
+      "annotation_id": 19603,
+      "target_id": 3,
+      "reason": "RGB shows a slender steel column, crossbar or connected support frame; selected object correction, not whole miscellaneous class."
+    },
+    {
+      "annotation_id": 1459,
+      "target_id": 3,
+      "reason": "RGB shows a slender steel column, crossbar or connected support frame; selected object correction, not whole miscellaneous class."
+    },
+    {
+      "annotation_id": 37687,
+      "target_id": 3,
+      "reason": "RGB shows a slender steel column, crossbar or connected support frame; selected object correction, not whole miscellaneous class."
+    },
+    {
+      "annotation_id": 2971,
+      "target_id": 3,
+      "reason": "RGB shows a slender steel column, crossbar or connected support frame; selected object correction, not whole miscellaneous class."
+    },
+    {
+      "annotation_id": 15254,
+      "target_id": 3,
+      "reason": "RGB shows a slender steel column, crossbar or connected support frame; selected object correction, not whole miscellaneous class."
+    },
+    {
+      "annotation_id": 9693,
+      "target_id": 3,
+      "reason": "RGB shows a slender steel column, crossbar or connected support frame; selected object correction, not whole miscellaneous class."
+    },
+    {
+      "annotation_id": 23862,
+      "target_id": 3,
+      "reason": "RGB shows a slender steel column, crossbar or connected support frame; selected object correction, not whole miscellaneous class."
+    },
+    {
+      "annotation_id": 34181,
+      "target_id": 1,
+      "reason": "Recognizable standalone cabinet or mechanical equipment housing; merge into equipment. Original CAD silhouette may still include paper/cable occlusions."
+    },
+    {
+      "annotation_id": 2374,
+      "target_id": 1,
+      "reason": "Recognizable standalone cabinet or mechanical equipment housing; merge into equipment. Original CAD silhouette may still include paper/cable occlusions."
+    },
+    {
+      "annotation_id": 42484,
+      "target_id": 1,
+      "reason": "Recognizable standalone cabinet or mechanical equipment housing; merge into equipment. Original CAD silhouette may still include paper/cable occlusions."
+    },
+    {
+      "annotation_id": 27180,
+      "target_id": 1,
+      "reason": "Recognizable standalone cabinet or mechanical equipment housing; merge into equipment. Original CAD silhouette may still include paper/cable occlusions."
+    },
+    {
+      "annotation_id": 43499,
+      "target_id": 1,
+      "reason": "Recognizable standalone cabinet or mechanical equipment housing; merge into equipment. Original CAD silhouette may still include paper/cable occlusions."
+    },
+    {
+      "annotation_id": 17270,
+      "target_id": 1,
+      "reason": "Recognizable standalone cabinet or mechanical equipment housing; merge into equipment. Original CAD silhouette may still include paper/cable occlusions."
+    },
+    {
+      "annotation_id": 1625,
+      "target_id": 1,
+      "reason": "Recognizable standalone cabinet or mechanical equipment housing; merge into equipment. Original CAD silhouette may still include paper/cable occlusions."
+    },
+    {
+      "annotation_id": 7560,
+      "target_id": 1,
+      "reason": "Recognizable standalone cabinet or mechanical equipment housing; merge into equipment. Original CAD silhouette may still include paper/cable occlusions."
+    },
+    {
+      "annotation_id": 10487,
+      "target_id": 1,
+      "reason": "Recognizable standalone cabinet or mechanical equipment housing; merge into equipment. Original CAD silhouette may still include paper/cable occlusions."
+    },
+    {
+      "annotation_id": 31149,
+      "target_id": 1,
+      "reason": "Recognizable standalone cabinet or mechanical equipment housing; merge into equipment. Original CAD silhouette may still include paper/cable occlusions."
+    },
+    {
+      "annotation_id": 17772,
+      "target_id": 1,
+      "reason": "Recognizable standalone cabinet or mechanical equipment housing; merge into equipment. Original CAD silhouette may still include paper/cable occlusions."
+    },
+    {
+      "annotation_id": 30015,
+      "target_id": 1,
+      "reason": "Recognizable standalone cabinet or mechanical equipment housing; merge into equipment. Original CAD silhouette may still include paper/cable occlusions."
+    },
+    {
+      "annotation_id": 14637,
+      "target_id": 1,
+      "reason": "Recognizable standalone cabinet or mechanical equipment housing; merge into equipment. Original CAD silhouette may still include paper/cable occlusions."
+    },
+    {
+      "annotation_id": 44832,
+      "target_id": 1,
+      "reason": "Recognizable standalone cabinet or mechanical equipment housing; merge into equipment. Original CAD silhouette may still include paper/cable occlusions."
+    },
+    {
+      "annotation_id": 23995,
+      "target_id": 1,
+      "reason": "Recognizable standalone cabinet or mechanical equipment housing; merge into equipment. Original CAD silhouette may still include paper/cable occlusions."
+    },
+    {
+      "annotation_id": 14629,
+      "target_id": 1,
+      "reason": "Recognizable standalone cabinet or mechanical equipment housing; merge into equipment. Original CAD silhouette may still include paper/cable occlusions."
+    },
+    {
+      "annotation_id": 21953,
+      "target_id": 1,
+      "reason": "Recognizable standalone cabinet or mechanical equipment housing; merge into equipment. Original CAD silhouette may still include paper/cable occlusions."
+    },
+    {
+      "annotation_id": 2369,
+      "target_id": 1,
+      "reason": "Recognizable standalone cabinet or mechanical equipment housing; merge into equipment. Original CAD silhouette may still include paper/cable occlusions."
+    },
+    {
+      "annotation_id": 14571,
+      "target_id": 1,
+      "reason": "Recognizable standalone cabinet or mechanical equipment housing; merge into equipment. Original CAD silhouette may still include paper/cable occlusions."
+    },
+    {
+      "annotation_id": 4217,
+      "target_id": 1,
+      "reason": "Recognizable standalone cabinet or mechanical equipment housing; merge into equipment. Original CAD silhouette may still include paper/cable occlusions."
+    },
+    {
+      "annotation_id": 2553,
+      "target_id": 1,
+      "reason": "Recognizable standalone cabinet or mechanical equipment housing; merge into equipment. Original CAD silhouette may still include paper/cable occlusions."
+    },
+    {
+      "annotation_id": 13179,
+      "target_id": 1,
+      "reason": "Recognizable standalone cabinet or mechanical equipment housing; merge into equipment. Original CAD silhouette may still include paper/cable occlusions."
+    },
+    {
+      "annotation_id": 35518,
+      "target_id": 1,
+      "reason": "Recognizable standalone cabinet or mechanical equipment housing; merge into equipment. Original CAD silhouette may still include paper/cable occlusions."
+    },
+    {
+      "annotation_id": 3340,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 683,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 34179,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 15262,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 27023,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 7556,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 17769,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 12016,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 40265,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 46202,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 17482,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 31145,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 7544,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 21691,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 13835,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 29275,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 39343,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 45977,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 15747,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 14427,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 41729,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 2662,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 21840,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 26228,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 12363,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 12967,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 8962,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 1682,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 4582,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 11775,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 31719,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 13258,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 6565,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 13689,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 1965,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 12159,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 30517,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 5959,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 26221,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 30504,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 15557,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 13827,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 21557,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 40012,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 13172,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 7083,
+      "target_id": 0,
+      "reason": "Orange actuator attached to pipe valve; grouped with piping and valve fittings, context confirmed in full 1-64 up RGB."
+    },
+    {
+      "annotation_id": 45197,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 3341,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 11860,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 19833,
+      "target_id": 0,
+      "reason": "Orange actuator attached to pipe valve; grouped with piping and valve fittings, context confirmed in full 1-64 up RGB."
+    },
+    {
+      "annotation_id": 24449,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 2918,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 17626,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 5055,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 29252,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 12749,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 38493,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 27183,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 38499,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 35315,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 21834,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 19117,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 21960,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 32028,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 4218,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 36387,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 39577,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 9882,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 37999,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 24446,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 36403,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 33994,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 7894,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 27697,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 15799,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 23420,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 30008,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 44234,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 17627,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 12152,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 42478,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 27174,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 3203,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 2438,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 36380,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 38480,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 16745,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 46228,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 9888,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 7898,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 43881,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 6685,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 7111,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 5548,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 41164,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 41340,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 27052,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 18772,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 3415,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 27780,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 11237,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 17633,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 1671,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 23427,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 40269,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 22820,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 32025,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 13693,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 15560,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 5047,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 3202,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 27706,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 17491,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 30773,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 2557,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 34184,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 12164,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 28425,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 42488,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 2446,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 5059,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 30018,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 27770,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 36391,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 22828,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 11229,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 7548,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 2922,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 2910,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 30763,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 17481,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 39586,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 23431,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 36405,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 45904,
+      "target_id": 0,
+      "reason": "Orange actuator attached to pipe valve; grouped with piping and valve fittings, context confirmed in full 1-64 up RGB."
+    },
+    {
+      "annotation_id": 14777,
+      "target_id": 0,
+      "reason": "Orange actuator attached to pipe valve; grouped with piping and valve fittings, context confirmed in full 1-64 up RGB."
+    },
+    {
+      "annotation_id": 39976,
+      "target_id": 0,
+      "reason": "Orange actuator attached to pipe valve; grouped with piping and valve fittings, context confirmed in full 1-64 up RGB."
+    },
+    {
+      "annotation_id": 25513,
+      "target_id": 0,
+      "reason": "Orange actuator attached to pipe valve; grouped with piping and valve fittings, context confirmed in full 1-64 up RGB."
+    },
+    {
+      "annotation_id": 37357,
+      "target_id": 0,
+      "reason": "Orange actuator attached to pipe valve; grouped with piping and valve fittings, context confirmed in full 1-64 up RGB."
+    },
+    {
+      "annotation_id": 8953,
+      "target_id": 0,
+      "reason": "Orange actuator attached to pipe valve; grouped with piping and valve fittings, context confirmed in full 1-64 up RGB."
+    },
+    {
+      "annotation_id": 18959,
+      "target_id": 0,
+      "reason": "Orange actuator attached to pipe valve; grouped with piping and valve fittings, context confirmed in full 1-64 up RGB."
+    },
+    {
+      "annotation_id": 12017,
+      "target_id": 0,
+      "reason": "Orange actuator attached to pipe valve; grouped with piping and valve fittings, context confirmed in full 1-64 up RGB."
+    },
+    {
+      "annotation_id": 8499,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 5048,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 27619,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 39578,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 37656,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 42360,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 2911,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 40657,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 2547,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 13683,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 21825,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 9663,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 15721,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 11230,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 5524,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 6729,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 44998,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 1970,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 10451,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 12045,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 32732,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 8648,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 40404,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 536,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 34810,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 36406,
+      "target_id": 3,
+      "reason": "Visually confirmed slender steel column/crossbar/frame or its connected bolted foot."
+    },
+    {
+      "annotation_id": 10503,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 21972,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 24009,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 6580,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 22821,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 14581,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 36379,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 1614,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 13189,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 7100,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 2384,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 30538,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 27695,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 21586,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 14646,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 27718,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 2437,
+      "target_id": 1,
+      "reason": "Recognizable cabinet or equipment housing; original CAD boundary retained with occlusion caveat."
+    },
+    {
+      "annotation_id": 42167,
+      "target_id": 0,
+      "reason": "Pipe-mounted actuator, valve fitting or pressure gauge; merged with the connected pipe system."
+    },
+    {
+      "annotation_id": 29196,
+      "target_id": 0,
+      "reason": "Pipe-mounted actuator, valve fitting or pressure gauge; merged with the connected pipe system."
+    },
+    {
+      "annotation_id": 42361,
+      "target_id": 0,
+      "reason": "Pipe-mounted actuator, valve fitting or pressure gauge; merged with the connected pipe system."
+    },
+    {
+      "annotation_id": 27698,
+      "target_id": 0,
+      "reason": "Pipe-mounted actuator, valve fitting or pressure gauge; merged with the connected pipe system."
+    },
+    {
+      "annotation_id": 15800,
+      "target_id": 0,
+      "reason": "Pipe-mounted actuator, valve fitting or pressure gauge; merged with the connected pipe system."
+    },
+    {
+      "annotation_id": 26303,
+      "target_id": 0,
+      "reason": "Pipe-mounted actuator, valve fitting or pressure gauge; merged with the connected pipe system."
+    },
+    {
+      "annotation_id": 40658,
+      "target_id": 0,
+      "reason": "Pipe-mounted actuator, valve fitting or pressure gauge; merged with the connected pipe system."
+    },
+    {
+      "annotation_id": 17483,
+      "target_id": 0,
+      "reason": "Pipe-mounted actuator, valve fitting or pressure gauge; merged with the connected pipe system."
+    },
+    {
+      "annotation_id": 37657,
+      "target_id": 0,
+      "reason": "Pipe-mounted actuator, valve fitting or pressure gauge; merged with the connected pipe system."
+    },
+    {
+      "annotation_id": 2439,
+      "target_id": 0,
+      "reason": "Pipe-mounted actuator, valve fitting or pressure gauge; merged with the connected pipe system."
+    },
+    {
+      "annotation_id": 15722,
+      "target_id": 0,
+      "reason": "Pipe-mounted actuator, valve fitting or pressure gauge; merged with the connected pipe system."
+    },
+    {
+      "annotation_id": 44235,
+      "target_id": 0,
+      "reason": "Pipe-mounted actuator, valve fitting or pressure gauge; merged with the connected pipe system."
+    },
+    {
+      "annotation_id": 30765,
+      "target_id": 0,
+      "reason": "Pipe-mounted actuator, valve fitting or pressure gauge; merged with the connected pipe system."
+    },
+    {
+      "annotation_id": 27620,
+      "target_id": 0,
+      "reason": "Pipe-mounted actuator, valve fitting or pressure gauge; merged with the connected pipe system."
+    },
+    {
+      "annotation_id": 9664,
+      "target_id": 0,
+      "reason": "Pipe-mounted actuator, valve fitting or pressure gauge; merged with the connected pipe system."
+    },
+    {
+      "annotation_id": 18958,
+      "target_id": 0,
+      "reason": "Pipe-mounted actuator, valve fitting or pressure gauge; merged with the connected pipe system."
+    },
+    {
+      "annotation_id": 6474,
+      "target_id": 0,
+      "reason": "Pipe-mounted actuator, valve fitting or pressure gauge; merged with the connected pipe system."
+    },
+    {
+      "annotation_id": 28426,
+      "target_id": 0,
+      "reason": "Pipe-mounted actuator, valve fitting or pressure gauge; merged with the connected pipe system."
+    },
+    {
+      "annotation_id": 21558,
+      "target_id": 0,
+      "reason": "Pipe-mounted actuator, valve fitting or pressure gauge; merged with the connected pipe system."
+    },
+    {
+      "annotation_id": 1439,
+      "target_id": 0,
+      "reason": "Pipe-mounted actuator, valve fitting or pressure gauge; merged with the connected pipe system."
+    },
+    {
+      "annotation_id": 29194,
+      "target_id": 0,
+      "reason": "Pipe-mounted actuator, valve fitting or pressure gauge; merged with the connected pipe system."
+    },
+    {
+      "annotation_id": 39316,
+      "target_id": 0,
+      "reason": "Pipe-mounted actuator, valve fitting or pressure gauge; merged with the connected pipe system."
+    },
+    {
+      "annotation_id": 42165,
+      "target_id": 0,
+      "reason": "Pipe-mounted actuator, valve fitting or pressure gauge; merged with the connected pipe system."
+    },
+    {
+      "annotation_id": 42359,
+      "target_id": 0,
+      "reason": "Pipe-mounted actuator, valve fitting or pressure gauge; merged with the connected pipe system."
+    },
+    {
+      "annotation_id": 40656,
+      "target_id": 0,
+      "reason": "Pipe-mounted actuator, valve fitting or pressure gauge; merged with the connected pipe system."
+    },
+    {
+      "annotation_id": 5960,
+      "target_id": 0,
+      "reason": "Pipe-mounted actuator, valve fitting or pressure gauge; merged with the connected pipe system."
+    },
+    {
+      "annotation_id": 40574,
+      "target_id": 0,
+      "reason": "Pipe-mounted actuator, valve fitting or pressure gauge; merged with the connected pipe system."
+    },
+    {
+      "annotation_id": 10504,
+      "target_id": 0,
+      "reason": "Pipe-mounted actuator, valve fitting or pressure gauge; merged with the connected pipe system."
+    },
+    {
+      "annotation_id": 17268,
+      "target_id": 0,
+      "reason": "Pipe-mounted actuator, valve fitting or pressure gauge; merged with the connected pipe system."
+    },
+    {
+      "annotation_id": 6892,
+      "target_id": 0,
+      "reason": "Pipe-mounted actuator, valve fitting or pressure gauge; merged with the connected pipe system."
+    },
+    {
+      "annotation_id": 15720,
+      "target_id": 0,
+      "reason": "Pipe-mounted actuator, valve fitting or pressure gauge; merged with the connected pipe system."
+    },
+    {
+      "annotation_id": 1659,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 26302,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 39315,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 42166,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 6475,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 29195,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 15551,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 27759,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 16465,
+      "target_id": 255,
+      "reason": "Platform curb or ambiguous/occluded small component; not forced into supports."
+    },
+    {
+      "annotation_id": 32018,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 18984,
+      "target_id": 255,
+      "reason": "Platform curb or ambiguous/occluded small component; not forced into supports."
+    },
+    {
+      "annotation_id": 527,
+      "target_id": 255,
+      "reason": "Platform curb or ambiguous/occluded small component; not forced into supports."
+    },
+    {
+      "annotation_id": 3395,
+      "target_id": 2,
+      "reason": "RGB-inspected low floor curb/platform skirt, including yellow-black hazard edge and its plain side: building per user request; not a slender steel support."
+    },
+    {
+      "annotation_id": 509,
+      "target_id": 2,
+      "reason": "Face-boundary fragment of the same floor curb/platform edge, verified in expanded RGB context; building per user request."
+    },
+    {
+      "annotation_id": 23192,
+      "target_id": 2,
+      "reason": "Face-boundary fragment of the same floor curb/platform edge, verified in expanded RGB context; building per user request."
+    },
+    {
+      "annotation_id": 38494,
+      "target_id": 2,
+      "reason": "Face-boundary fragment of the same floor curb/platform edge, verified in expanded RGB context; building per user request."
+    }
+  ],
+  "building_revision_reviewed_sheets": [
+    "misc_sheet_12.jpg",
+    "misc_sheet_13.jpg",
+    "misc_sheet_14.jpg",
+    "misc_sheet_15.jpg",
+    "misc_sheet_16.jpg",
+    "misc_sheet_17.jpg",
+    "misc_sheet_18.jpg",
+    "misc_sheet_19.jpg"
+  ],
+  "building_revision_records": 59
+}

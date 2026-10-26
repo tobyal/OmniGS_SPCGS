@@ -1,0 +1,51 @@
+{
+  "scope": "First99 formal steps, before any ISP; observational audit only; no training settings changed.",
+  "same_view_sequence": true,
+  "pairs": {
+    "L-BOOT vs CV-2D": {
+      "rgb": {
+        "first_step_difference": 0.0,
+        "mean_absolute_difference": 4.579473023462777e-07,
+        "max_absolute_difference": 6.3925981521606445e-06
+      },
+      "clip": {
+        "first_step_difference": 0.0,
+        "mean_absolute_difference": 2.802622438681246e-06,
+        "max_absolute_difference": 3.3855438232421875e-05
+      },
+      "local3d": {
+        "first_step_difference": 0.0,
+        "mean_absolute_difference": 0.0008621245923668447,
+        "max_absolute_difference": 0.0048885345458984375
+      },
+      "total": {
+        "first_step_difference": 0.0,
+        "mean_absolute_difference": 0.0008634202408068107,
+        "max_absolute_difference": 0.0048857927322387695
+      }
+    },
+    "CV-2D vs IPSGR-Full": {
+      "rgb": {
+        "first_step_difference": 0.0,
+        "mean_absolute_difference": 5.353881855203648e-07,
+        "max_absolute_difference": 5.0067901611328125e-06
+      },
+      "clip": {
+        "first_step_difference": 0.0,
+        "mean_absolute_difference": 2.432652194090564e-06,
+        "max_absolute_difference": 1.996755599975586e-05
+      },
+      "local3d": {
+        "first_step_difference": 0.0,
+        "mean_absolute_difference": 0.0008160947549222696,
+        "max_absolute_difference": 0.005795001983642578
+      },
+      "total": {
+        "first_step_difference": 0.0,
+        "mean_absolute_difference": 0.0008166155429801555,
+        "max_absolute_difference": 0.0057947635650634766
+      }
+    }
+  },
+  "interpretation": "Initial tensors and RNG were separately verified identical, but GPU floating-point training is not bitwise deterministic. The 100-step smoke uses position_lr_max_steps=100 whereas formal runs use10000; smoke trajectories are not a matched formal ablation."
+}

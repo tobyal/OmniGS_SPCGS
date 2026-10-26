@@ -1,0 +1,236 @@
+[
+  {
+    "camera_id": "1-24",
+    "dimensions_aligned": true,
+    "outside_repair_RGB_identical": true,
+    "repair_pixels": 99718,
+    "repair_semantics_building": true,
+    "semantic_ignore_pixels": 0,
+    "ERP_orientation_unchanged": true
+  },
+  {
+    "camera_id": "1-25",
+    "dimensions_aligned": true,
+    "outside_repair_RGB_identical": true,
+    "repair_pixels": 168310,
+    "repair_semantics_building": true,
+    "semantic_ignore_pixels": 0,
+    "ERP_orientation_unchanged": true
+  },
+  {
+    "camera_id": "1-28",
+    "dimensions_aligned": true,
+    "outside_repair_RGB_identical": true,
+    "repair_pixels": 100338,
+    "repair_semantics_building": true,
+    "semantic_ignore_pixels": 0,
+    "ERP_orientation_unchanged": true
+  },
+  {
+    "camera_id": "1-29",
+    "dimensions_aligned": true,
+    "outside_repair_RGB_identical": true,
+    "repair_pixels": 176540,
+    "repair_semantics_building": true,
+    "semantic_ignore_pixels": 0,
+    "ERP_orientation_unchanged": true
+  },
+  {
+    "camera_id": "1-34",
+    "dimensions_aligned": true,
+    "outside_repair_RGB_identical": true,
+    "repair_pixels": 168634,
+    "repair_semantics_building": true,
+    "semantic_ignore_pixels": 0,
+    "ERP_orientation_unchanged": true
+  },
+  {
+    "camera_id": "1-35",
+    "dimensions_aligned": true,
+    "outside_repair_RGB_identical": true,
+    "repair_pixels": 100794,
+    "repair_semantics_building": true,
+    "semantic_ignore_pixels": 0,
+    "ERP_orientation_unchanged": true
+  },
+  {
+    "camera_id": "1-36",
+    "dimensions_aligned": true,
+    "outside_repair_RGB_identical": true,
+    "repair_pixels": 99755,
+    "repair_semantics_building": true,
+    "semantic_ignore_pixels": 0,
+    "ERP_orientation_unchanged": true
+  },
+  {
+    "camera_id": "1-37",
+    "dimensions_aligned": true,
+    "outside_repair_RGB_identical": true,
+    "repair_pixels": 163270,
+    "repair_semantics_building": true,
+    "semantic_ignore_pixels": 0,
+    "ERP_orientation_unchanged": true
+  },
+  {
+    "camera_id": "1-44",
+    "dimensions_aligned": true,
+    "outside_repair_RGB_identical": true,
+    "repair_pixels": 101417,
+    "repair_semantics_building": true,
+    "semantic_ignore_pixels": 0,
+    "ERP_orientation_unchanged": true
+  },
+  {
+    "camera_id": "1-47",
+    "dimensions_aligned": true,
+    "outside_repair_RGB_identical": true,
+    "repair_pixels": 101476,
+    "repair_semantics_building": true,
+    "semantic_ignore_pixels": 0,
+    "ERP_orientation_unchanged": true
+  },
+  {
+    "camera_id": "1-58",
+    "dimensions_aligned": true,
+    "outside_repair_RGB_identical": true,
+    "repair_pixels": 101695,
+    "repair_semantics_building": true,
+    "semantic_ignore_pixels": 0,
+    "ERP_orientation_unchanged": true
+  },
+  {
+    "camera_id": "1-59",
+    "dimensions_aligned": true,
+    "outside_repair_RGB_identical": true,
+    "repair_pixels": 170003,
+    "repair_semantics_building": true,
+    "semantic_ignore_pixels": 0,
+    "ERP_orientation_unchanged": true
+  },
+  {
+    "camera_id": "1-62",
+    "dimensions_aligned": true,
+    "outside_repair_RGB_identical": true,
+    "repair_pixels": 97551,
+    "repair_semantics_building": true,
+    "semantic_ignore_pixels": 0,
+    "ERP_orientation_unchanged": true
+  },
+  {
+    "camera_id": "1-63",
+    "dimensions_aligned": true,
+    "outside_repair_RGB_identical": true,
+    "repair_pixels": 164955,
+    "repair_semantics_building": true,
+    "semantic_ignore_pixels": 0,
+    "ERP_orientation_unchanged": true
+  },
+  {
+    "camera_id": "1-64",
+    "dimensions_aligned": true,
+    "outside_repair_RGB_identical": true,
+    "repair_pixels": 165417,
+    "repair_semantics_building": true,
+    "semantic_ignore_pixels": 0,
+    "ERP_orientation_unchanged": true
+  },
+  {
+    "camera_id": "1-65",
+    "dimensions_aligned": true,
+    "outside_repair_RGB_identical": true,
+    "repair_pixels": 98854,
+    "repair_semantics_building": true,
+    "semantic_ignore_pixels": 0,
+    "ERP_orientation_unchanged": true
+  },
+  {
+    "camera_id": "1-66",
+    "dimensions_aligned": true,
+    "outside_repair_RGB_identical": true,
+    "repair_pixels": 98038,
+    "repair_semantics_building": true,
+    "semantic_ignore_pixels": 0,
+    "ERP_orientation_unchanged": true
+  },
+  {
+    "camera_id": "1-67",
+    "dimensions_aligned": true,
+    "outside_repair_RGB_identical": true,
+    "repair_pixels": 165138,
+    "repair_semantics_building": true,
+    "semantic_ignore_pixels": 0,
+    "ERP_orientation_unchanged": true
+  },
+  {
+    "camera_id": "1-70",
+    "dimensions_aligned": true,
+    "outside_repair_RGB_identical": true,
+    "repair_pixels": 97587,
+    "repair_semantics_building": true,
+    "semantic_ignore_pixels": 0,
+    "ERP_orientation_unchanged": true
+  },
+  {
+    "camera_id": "1-71",
+    "dimensions_aligned": true,
+    "outside_repair_RGB_identical": true,
+    "repair_pixels": 165337,
+    "repair_semantics_building": true,
+    "semantic_ignore_pixels": 0,
+    "ERP_orientation_unchanged": true
+  },
+  {
+    "camera_id": "1-26",
+    "dimensions_aligned": true,
+    "outside_repair_RGB_identical": true,
+    "repair_pixels": 168765,
+    "repair_semantics_building": true,
+    "semantic_ignore_pixels": 0,
+    "ERP_orientation_unchanged": true
+  },
+  {
+    "camera_id": "1-27",
+    "dimensions_aligned": true,
+    "outside_repair_RGB_identical": true,
+    "repair_pixels": 96156,
+    "repair_semantics_building": true,
+    "semantic_ignore_pixels": 0,
+    "ERP_orientation_unchanged": true
+  },
+  {
+    "camera_id": "1-60",
+    "dimensions_aligned": true,
+    "outside_repair_RGB_identical": true,
+    "repair_pixels": 165448,
+    "repair_semantics_building": true,
+    "semantic_ignore_pixels": 0,
+    "ERP_orientation_unchanged": true
+  },
+  {
+    "camera_id": "1-61",
+    "dimensions_aligned": true,
+    "outside_repair_RGB_identical": true,
+    "repair_pixels": 97929,
+    "repair_semantics_building": true,
+    "semantic_ignore_pixels": 0,
+    "ERP_orientation_unchanged": true
+  },
+  {
+    "camera_id": "1-68",
+    "dimensions_aligned": true,
+    "outside_repair_RGB_identical": true,
+    "repair_pixels": 164985,
+    "repair_semantics_building": true,
+    "semantic_ignore_pixels": 0,
+    "ERP_orientation_unchanged": true
+  },
+  {
+    "camera_id": "1-69",
+    "dimensions_aligned": true,
+    "outside_repair_RGB_identical": true,
+    "repair_pixels": 97456,
+    "repair_semantics_building": true,
+    "semantic_ignore_pixels": 0,
+    "ERP_orientation_unchanged": true
+  }
+]

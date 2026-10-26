@@ -8,8 +8,9 @@ from spcgs.common import ROOT,read,write,native
 from spcgs.official_teacher import targets
 
 def check(run,gpu=0):
-    out=Path(run)/'03_semantic/mask_validation';out.mkdir(parents=True,exist_ok=True)
-    cache=read(Path(run)/'03_semantic/cache/manifest.json');text=np.fromfile(cache['text'],dtype='f4').reshape(7,512)
+    base=Path(run)/('02_semantic_teacher' if (Path(run)/'00_dataset/dataset_manifest.json').exists() else '03_semantic')
+    out=base/'mask_validation';out.mkdir(parents=True,exist_ok=True)
+    cache=read(base/'cache/manifest.json');text=np.fromfile(cache['text'],dtype='f4').reshape(7,512)
     basis=np.fromfile(cache['decoder'],dtype='f4').reshape(512,32)
     labels=np.array([[0,1,255,2],[3,255,5,6]],dtype='u1');F,S,W=targets(labels,text);features=np.random.default_rng(8).normal(0,.2,(32,2,4)).astype('f4');features.tofile(out/'features.f32')
     base={'gpu':gpu,'seed':42,'action':'semantic_probe','height':2,'width':4,'semantic_height':2,'semantic_width':4,'classes':cache['classes'],
@@ -46,5 +47,6 @@ def check(run,gpu=0):
     print('MASK CHECKS PASSED',flush=True)
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser();parser.add_argument('--run',default='sparse27_official_sgi_20261024/opacity_lr_fixed');parser.add_argument('--gpu',type=int,default=0);args=parser.parse_args()
+    from spcgs.ipsgr_protocol import DEFAULT_RUN
+    parser=argparse.ArgumentParser();parser.add_argument('--run',default=str(DEFAULT_RUN));parser.add_argument('--gpu',type=int,default=0);args=parser.parse_args()
     check(ROOT/'runs/industrial_spcgs'/args.run,args.gpu)

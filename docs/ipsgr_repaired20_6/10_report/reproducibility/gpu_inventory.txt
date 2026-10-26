@@ -1,0 +1,64 @@
+Sun Oct 25 21:22:28 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 595.84                 Driver Version: 595.84         CUDA Version: 13.2     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA RTX A6000               Off |   00000000:31:00.0 Off |                  Off |
+| 52%   76C    P2            298W /  300W |   37473MiB /  49140MiB |    100%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA RTX A6000               Off |   00000000:4B:00.0 Off |                  Off |
+| 45%   72C    P2            277W /  300W |   38607MiB /  49140MiB |    100%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA RTX A6000               Off |   00000000:B1:00.0 Off |                  Off |
+| 41%   69C    P2            282W /  300W |   30310MiB /  49140MiB |    100%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA RTX A6000               Off |   00000000:CA:00.0 Off |                  Off |
+| 47%   73C    P2            281W /  300W |   28393MiB /  49140MiB |    100%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A            3538      G   /usr/lib/xorg/Xorg                        4MiB |
+|    0   N/A  N/A           77438    C+G   ...ac-sim/kit/python/bin/python3        184MiB |
+|    0   N/A  N/A          114267    C+G   ...development/isaac-sim/kit/kit        184MiB |
+|    0   N/A  N/A          693071      C   ...nda3/envs/gxl-vim2/bin/python       9958MiB |
+|    0   N/A  N/A          832156      C   ...61023/.venv_wan360/bin/python      26488MiB |
+|    0   N/A  N/A         2813258    C+G   ...ac-sim/kit/python/bin/python3        184MiB |
+|    0   N/A  N/A         2892085    C+G   ...ac-sim/kit/python/bin/python3        184MiB |
+|    0   N/A  N/A         3273863    C+G   ...ac-sim/kit/python/bin/python3        184MiB |
+|    1   N/A  N/A            3538      G   /usr/lib/xorg/Xorg                        4MiB |
+|    1   N/A  N/A           77438    C+G   ...ac-sim/kit/python/bin/python3       4924MiB |
+|    1   N/A  N/A          114267    C+G   ...development/isaac-sim/kit/kit       1832MiB |
+|    1   N/A  N/A          962399      C   ...61023/.venv_wan360/bin/python      26488MiB |
+|    1   N/A  N/A         2813258    C+G   ...ac-sim/kit/python/bin/python3       4935MiB |
+|    1   N/A  N/A         2892085      C   ...ac-sim/kit/python/bin/python3        148MiB |
+|    1   N/A  N/A         3273863      C   ...ac-sim/kit/python/bin/python3        148MiB |
+|    2   N/A  N/A            3538      G   /usr/lib/xorg/Xorg                        4MiB |
+|    2   N/A  N/A           77438      C   ...ac-sim/kit/python/bin/python3        148MiB |
+|    2   N/A  N/A          114267      C   ...development/isaac-sim/kit/kit        148MiB |
+|    2   N/A  N/A          962415      C   ...61023/.venv_wan360/bin/python      26488MiB |
+|    2   N/A  N/A         2813258      C   ...ac-sim/kit/python/bin/python3        148MiB |
+|    2   N/A  N/A         2892085    C+G   ...ac-sim/kit/python/bin/python3       3061MiB |
+|    2   N/A  N/A         3273863      C   ...ac-sim/kit/python/bin/python3        148MiB |
+|    3   N/A  N/A            3538      G   /usr/lib/xorg/Xorg                        4MiB |
+|    3   N/A  N/A           77438      C   ...ac-sim/kit/python/bin/python3        148MiB |
+|    3   N/A  N/A          114267      C   ...development/isaac-sim/kit/kit        148MiB |
+|    3   N/A  N/A          755101      C   ...amba3/.venv_fetnet/bin/python       6900MiB |
+|    3   N/A  N/A          967590      C   ...0261023/code/bin/spcgs_native       2160MiB |
+|    3   N/A  N/A         1037315      C   ...0261023/code/bin/spcgs_native       2498MiB |
+|    3   N/A  N/A         1171650      C   ...0261023/code/bin/spcgs_native        346MiB |
+|    3   N/A  N/A         2813258      C   ...ac-sim/kit/python/bin/python3        148MiB |
+|    3   N/A  N/A         2892085      C   ...ac-sim/kit/python/bin/python3        148MiB |
+|    3   N/A  N/A         3273863    C+G   ...ac-sim/kit/python/bin/python3       8583MiB |
+|    3   N/A  N/A         3493787      C   ...nda3/envs/gxl-vim2/bin/python       7210MiB |
++-----------------------------------------------------------------------------------------+

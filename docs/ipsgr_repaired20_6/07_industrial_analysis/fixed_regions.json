@@ -1,0 +1,631 @@
+{
+  "created": 1792933821.3326204,
+  "frozen_before_first_evaluation": true,
+  "used_predictions": false,
+  "selection": "Codex visual inspection of captured test RGB and fixed GT before computing any new model test metrics; no label changes.",
+  "roi_policy": "Rectangle pixels, all seven existing classes; no invented valve class.",
+  "identity_policy": "Small set of visually identified physical objects based on shape and local layout; GT-class intersection within tight rectangles isolates visible object pixels. These are reviewed region correspondences, not dense point matches or SAM-derived identities.",
+  "rois": [
+    {
+      "id": "1-26_dense_piping",
+      "camera_id": "1-26",
+      "image_id": "2023-05-11_10.37.00",
+      "category": "dense_piping",
+      "normalized_box": [
+        0.08,
+        0.02,
+        0.56,
+        0.34
+      ]
+    },
+    {
+      "id": "1-26_valve_and_equipment",
+      "camera_id": "1-26",
+      "image_id": "2023-05-11_10.37.00",
+      "category": "valve_and_equipment",
+      "normalized_box": [
+        0.29,
+        0.27,
+        0.53,
+        0.65
+      ]
+    },
+    {
+      "id": "1-26_tray_support_occlusion",
+      "camera_id": "1-26",
+      "image_id": "2023-05-11_10.37.00",
+      "category": "tray_support_occlusion",
+      "normalized_box": [
+        0.58,
+        0.02,
+        0.91,
+        0.65
+      ]
+    },
+    {
+      "id": "1-27_dense_piping",
+      "camera_id": "1-27",
+      "image_id": "2023-05-11_10.37.48",
+      "category": "dense_piping",
+      "normalized_box": [
+        0.06,
+        0.02,
+        0.55,
+        0.42
+      ]
+    },
+    {
+      "id": "1-27_valve_and_equipment",
+      "camera_id": "1-27",
+      "image_id": "2023-05-11_10.37.48",
+      "category": "valve_and_equipment",
+      "normalized_box": [
+        0.3,
+        0.44,
+        0.5,
+        0.79
+      ]
+    },
+    {
+      "id": "1-27_tray_support_occlusion",
+      "camera_id": "1-27",
+      "image_id": "2023-05-11_10.37.48",
+      "category": "tray_support_occlusion",
+      "normalized_box": [
+        0.56,
+        0.02,
+        0.89,
+        0.81
+      ]
+    },
+    {
+      "id": "1-60_dense_piping",
+      "camera_id": "1-60",
+      "image_id": "2023-05-11_11.08.41",
+      "category": "dense_piping",
+      "normalized_box": [
+        0.36,
+        0.01,
+        0.72,
+        0.47
+      ]
+    },
+    {
+      "id": "1-60_valve_tower_occlusion",
+      "camera_id": "1-60",
+      "image_id": "2023-05-11_11.08.41",
+      "category": "valve_tower_occlusion",
+      "normalized_box": [
+        0.68,
+        0.25,
+        0.91,
+        0.66
+      ]
+    },
+    {
+      "id": "1-60_tray_support",
+      "camera_id": "1-60",
+      "image_id": "2023-05-11_11.08.41",
+      "category": "tray_support",
+      "normalized_box": [
+        0.37,
+        0.05,
+        0.8,
+        0.4
+      ]
+    },
+    {
+      "id": "1-61_dense_piping",
+      "camera_id": "1-61",
+      "image_id": "2023-05-11_11.18.15",
+      "category": "dense_piping",
+      "normalized_box": [
+        0.34,
+        0.02,
+        0.79,
+        0.48
+      ]
+    },
+    {
+      "id": "1-61_valve_tower_occlusion",
+      "camera_id": "1-61",
+      "image_id": "2023-05-11_11.18.15",
+      "category": "valve_tower_occlusion",
+      "normalized_box": [
+        0.72,
+        0.3,
+        0.94,
+        0.76
+      ]
+    },
+    {
+      "id": "1-61_equipment_and_piping",
+      "camera_id": "1-61",
+      "image_id": "2023-05-11_11.18.15",
+      "category": "equipment_and_piping",
+      "normalized_box": [
+        0.52,
+        0.44,
+        0.73,
+        0.8
+      ]
+    },
+    {
+      "id": "1-68_dense_piping",
+      "camera_id": "1-68",
+      "image_id": "2023-05-11_11.23.47",
+      "category": "dense_piping",
+      "normalized_box": [
+        0.28,
+        0.01,
+        0.73,
+        0.44
+      ]
+    },
+    {
+      "id": "1-68_valve_tower_occlusion",
+      "camera_id": "1-68",
+      "image_id": "2023-05-11_11.23.47",
+      "category": "valve_tower_occlusion",
+      "normalized_box": [
+        0.72,
+        0.23,
+        0.98,
+        0.68
+      ]
+    },
+    {
+      "id": "1-68_equipment_and_piping",
+      "camera_id": "1-68",
+      "image_id": "2023-05-11_11.23.47",
+      "category": "equipment_and_piping",
+      "normalized_box": [
+        0.44,
+        0.36,
+        0.7,
+        0.77
+      ]
+    },
+    {
+      "id": "1-69_dense_piping",
+      "camera_id": "1-69",
+      "image_id": "2023-05-11_11.24.32",
+      "category": "dense_piping",
+      "normalized_box": [
+        0.26,
+        0.01,
+        0.73,
+        0.44
+      ]
+    },
+    {
+      "id": "1-69_valve_tower_occlusion",
+      "camera_id": "1-69",
+      "image_id": "2023-05-11_11.24.32",
+      "category": "valve_tower_occlusion",
+      "normalized_box": [
+        0.69,
+        0.28,
+        0.96,
+        0.83
+      ]
+    },
+    {
+      "id": "1-69_equipment_and_piping",
+      "camera_id": "1-69",
+      "image_id": "2023-05-11_11.24.32",
+      "category": "equipment_and_piping",
+      "normalized_box": [
+        0.4,
+        0.5,
+        0.66,
+        0.89
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "id": "pump_left_26_27",
+      "class_id": 1,
+      "identity_basis": "Left black vertical motor on the left insulated pump housing; matching flanges, neighboring pipe bend and red foundation plate.",
+      "observations": [
+        {
+          "camera_id": "1-26",
+          "image_id": "2023-05-11_10.37.00",
+          "normalized_box": [
+            0.165,
+            0.36,
+            0.23,
+            0.61
+          ]
+        },
+        {
+          "camera_id": "1-27",
+          "image_id": "2023-05-11_10.37.48",
+          "normalized_box": [
+            0.132,
+            0.55,
+            0.202,
+            0.78
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pump_right_26_27",
+      "class_id": 1,
+      "identity_basis": "Right pump motor beside the vertical insulated riser and red valve line; same paired layout and foundation.",
+      "observations": [
+        {
+          "camera_id": "1-26",
+          "image_id": "2023-05-11_10.37.00",
+          "normalized_box": [
+            0.35,
+            0.32,
+            0.458,
+            0.59
+          ]
+        },
+        {
+          "camera_id": "1-27",
+          "image_id": "2023-05-11_10.37.48",
+          "normalized_box": [
+            0.322,
+            0.5,
+            0.43,
+            0.78
+          ]
+        }
+      ]
+    },
+    {
+      "id": "control_cabinet_26_27",
+      "class_id": 1,
+      "identity_basis": "Tall white control cabinet at the right of the tower, with vertically aligned buttons and same flanking metal posts.",
+      "observations": [
+        {
+          "camera_id": "1-26",
+          "image_id": "2023-05-11_10.37.00",
+          "normalized_box": [
+            0.8,
+            0.28,
+            0.892,
+            0.63
+          ]
+        },
+        {
+          "camera_id": "1-27",
+          "image_id": "2023-05-11_10.37.48",
+          "normalized_box": [
+            0.765,
+            0.43,
+            0.845,
+            0.75
+          ]
+        }
+      ]
+    },
+    {
+      "id": "blue_vessel_60_61_68_69",
+      "class_id": 1,
+      "identity_basis": "Distinctive blue vertical vessel against the same red wall, behind the low gray cabinet.",
+      "observations": [
+        {
+          "camera_id": "1-60",
+          "image_id": "2023-05-11_11.08.41",
+          "normalized_box": [
+            0.207,
+            0.399,
+            0.263,
+            0.645
+          ]
+        },
+        {
+          "camera_id": "1-61",
+          "image_id": "2023-05-11_11.18.15",
+          "normalized_box": [
+            0.225,
+            0.53,
+            0.28,
+            0.742
+          ]
+        },
+        {
+          "camera_id": "1-68",
+          "image_id": "2023-05-11_11.23.47",
+          "normalized_box": [
+            0.201,
+            0.43,
+            0.238,
+            0.606
+          ]
+        },
+        {
+          "camera_id": "1-69",
+          "image_id": "2023-05-11_11.24.32",
+          "normalized_box": [
+            0.183,
+            0.523,
+            0.221,
+            0.691
+          ]
+        }
+      ]
+    },
+    {
+      "id": "front_cabinet_60_61_68_69",
+      "class_id": 1,
+      "identity_basis": "Same low light-gray cabinet with blue oval badge and small display, in front of the blue vessel and red wall.",
+      "observations": [
+        {
+          "camera_id": "1-60",
+          "image_id": "2023-05-11_11.08.41",
+          "normalized_box": [
+            0.291,
+            0.46,
+            0.418,
+            0.777
+          ]
+        },
+        {
+          "camera_id": "1-61",
+          "image_id": "2023-05-11_11.18.15",
+          "normalized_box": [
+            0.296,
+            0.641,
+            0.425,
+            0.86
+          ]
+        },
+        {
+          "camera_id": "1-68",
+          "image_id": "2023-05-11_11.23.47",
+          "normalized_box": [
+            0.235,
+            0.557,
+            0.336,
+            0.79
+          ]
+        },
+        {
+          "camera_id": "1-69",
+          "image_id": "2023-05-11_11.24.32",
+          "normalized_box": [
+            0.216,
+            0.624,
+            0.3,
+            0.82
+          ]
+        }
+      ]
+    },
+    {
+      "id": "foreground_pump_68_69",
+      "class_id": 1,
+      "identity_basis": "Foreground black vertical motor on the curved concrete foundation, beside the same downward insulated elbow.",
+      "observations": [
+        {
+          "camera_id": "1-68",
+          "image_id": "2023-05-11_11.23.47",
+          "normalized_box": [
+            0.476,
+            0.37,
+            0.585,
+            0.657
+          ]
+        },
+        {
+          "camera_id": "1-69",
+          "image_id": "2023-05-11_11.24.32",
+          "normalized_box": [
+            0.46,
+            0.59,
+            0.56,
+            0.82
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tower_riser_blue_valve",
+      "class_id": 0,
+      "identity_basis": "Same large insulated vertical tower riser with blue valve and yellow marker, immediately behind the gray safety railing; confirmed by neighboring orange actuator and red column.",
+      "observations": [
+        {
+          "camera_id": "1-60",
+          "image_id": "2023-05-11_11.08.41",
+          "normalized_box": [
+            0.745,
+            0.28,
+            0.785,
+            0.605
+          ]
+        },
+        {
+          "camera_id": "1-61",
+          "image_id": "2023-05-11_11.18.15",
+          "normalized_box": [
+            0.762,
+            0.4,
+            0.795,
+            0.688
+          ]
+        },
+        {
+          "camera_id": "1-68",
+          "image_id": "2023-05-11_11.23.47",
+          "normalized_box": [
+            0.805,
+            0.226,
+            0.857,
+            0.675
+          ]
+        },
+        {
+          "camera_id": "1-69",
+          "image_id": "2023-05-11_11.24.32",
+          "normalized_box": [
+            0.783,
+            0.367,
+            0.837,
+            0.762
+          ]
+        }
+      ]
+    },
+    {
+      "id": "corrugated_hvac",
+      "class_id": 6,
+      "identity_basis": "Same horizontal corrugated metal ventilation duct across the red wall and blue vessel, with the same elbow and overhead pipe crossings.",
+      "observations": [
+        {
+          "camera_id": "1-60",
+          "image_id": "2023-05-11_11.08.41",
+          "normalized_box": [
+            0.045,
+            0.195,
+            0.331,
+            0.367
+          ]
+        },
+        {
+          "camera_id": "1-61",
+          "image_id": "2023-05-11_11.18.15",
+          "normalized_box": [
+            0.032,
+            0.345,
+            0.35,
+            0.483
+          ]
+        },
+        {
+          "camera_id": "1-68",
+          "image_id": "2023-05-11_11.23.47",
+          "normalized_box": [
+            0.085,
+            0.365,
+            0.277,
+            0.457
+          ]
+        },
+        {
+          "camera_id": "1-69",
+          "image_id": "2023-05-11_11.24.32",
+          "normalized_box": [
+            0.079,
+            0.419,
+            0.309,
+            0.503
+          ]
+        }
+      ]
+    },
+    {
+      "id": "perforated_support_26_27",
+      "class_id": 3,
+      "identity_basis": "Perforated vertical steel post immediately right of the red column and paired pumps; matching bolted foot and overhead connection.",
+      "observations": [
+        {
+          "camera_id": "1-26",
+          "image_id": "2023-05-11_10.37.00",
+          "normalized_box": [
+            0.598,
+            0.22,
+            0.626,
+            0.723
+          ]
+        },
+        {
+          "camera_id": "1-27",
+          "image_id": "2023-05-11_10.37.48",
+          "normalized_box": [
+            0.568,
+            0.32,
+            0.598,
+            0.839
+          ]
+        }
+      ]
+    }
+  ],
+  "test_RGB_and_GT": [
+    {
+      "id": "2023-05-11_10.37.00",
+      "rgb": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb/test/2023-05-11_10.37.00.png",
+        "bytes": 2658306,
+        "sha256": "8a7bd678b54b76e83b6d2b60998c37870f26600035bbbfa81127f310c471a7ff"
+      },
+      "labels": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/test/2023-05-11_10.37.00.png",
+        "bytes": 30614,
+        "sha256": "80c0be7c0b3f8b11aec76e11970da53ac798b9af92fc6fc4140e17bb9d138337"
+      }
+    },
+    {
+      "id": "2023-05-11_10.37.48",
+      "rgb": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb/test/2023-05-11_10.37.48.png",
+        "bytes": 2666638,
+        "sha256": "12ba197be9bd55277dbb13ee91e7e2d51b0a760a423c5222b6cd5c1a130a7638"
+      },
+      "labels": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/test/2023-05-11_10.37.48.png",
+        "bytes": 29102,
+        "sha256": "df9e521ad2335c57df1f4da81dbfbd35745b7ae22cf55270f35dcbf8785930e0"
+      }
+    },
+    {
+      "id": "2023-05-11_11.08.41",
+      "rgb": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb/test/2023-05-11_11.08.41.png",
+        "bytes": 2623696,
+        "sha256": "593a60480873e491e1fb8283c23d7aed4d6d86f30f9acb8a75c9e2f19e5e3877"
+      },
+      "labels": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/test/2023-05-11_11.08.41.png",
+        "bytes": 30227,
+        "sha256": "4f3fba49f112b0cf52f38d8cd4babd453fcf36b62ad8035949ca46ab9b2454e9"
+      }
+    },
+    {
+      "id": "2023-05-11_11.18.15",
+      "rgb": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb/test/2023-05-11_11.18.15.png",
+        "bytes": 2487262,
+        "sha256": "a05b6af12bf5d14603226e299b36391a18015756bb28ff5f8eb5c9fbda761caf"
+      },
+      "labels": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/test/2023-05-11_11.18.15.png",
+        "bytes": 27850,
+        "sha256": "39b531e82871f3cda540ef13f6b0a7e0a19142a098835bec832e43dee6220d35"
+      }
+    },
+    {
+      "id": "2023-05-11_11.23.47",
+      "rgb": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb/test/2023-05-11_11.23.47.png",
+        "bytes": 2722811,
+        "sha256": "8425053dd23b5b53442838fd347cb9c86969fe56adae34d5fc3fbe112570fb95"
+      },
+      "labels": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/test/2023-05-11_11.23.47.png",
+        "bytes": 29741,
+        "sha256": "c3d41e232a2e6559f637d4a8bd35c53053413a471f87bf3e8fcf884268ec3f48"
+      }
+    },
+    {
+      "id": "2023-05-11_11.24.32",
+      "rgb": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/rgb/test/2023-05-11_11.24.32.png",
+        "bytes": 2516293,
+        "sha256": "f2889a037ec704f7303b75df65c60198d0212e6fb126d0385310d152e29dce5d"
+      },
+      "labels": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/labels/test/2023-05-11_11.24.32.png",
+        "bytes": 28587,
+        "sha256": "33ff70fb09d94c553b22acb39e4e4542bdb9a35f356c00c204238c1af76298cf"
+      }
+    }
+  ]
+}

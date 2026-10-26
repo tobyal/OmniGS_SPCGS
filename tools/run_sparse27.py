@@ -6,6 +6,10 @@ from spcgs.common import ROOT,default_config,read,write
 from spcgs.sparse27 import prepare_protocol,build_p0,build_m1,train
 
 def main():
+    if '--legacy27' not in sys.argv:
+        from spcgs.ipsgr_compat import main as current_main
+        return current_main('layout')
+    sys.argv.remove('--legacy27')
     p=argparse.ArgumentParser();p.add_argument('--run',default='sparse27_official_sgi_20261024/opacity_lr_fixed');p.add_argument('--stage',choices=['protocol','p0','m1','teacher','short','sgi','rgb','render','report'],required=True);p.add_argument('--gpu',type=int,default=0);p.add_argument('--model',choices=['short','sgi','rgb'],default='sgi');p.add_argument('--initial',action='store_true');p.add_argument('--representatives',action='store_true');a=p.parse_args()
     run=ROOT/'runs/industrial_spcgs'/a.run;cfg=default_config('full');cfg.update(seed=42,gpu=a.gpu,train_views=27)
     if a.stage=='protocol':prepare_protocol(run)

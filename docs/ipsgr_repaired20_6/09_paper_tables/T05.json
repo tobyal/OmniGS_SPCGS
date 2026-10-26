@@ -1,0 +1,74 @@
+{
+  "rows": [
+    {
+      "model": "B-SEM",
+      "correct_consistent": 1.0,
+      "wrong_consistent": 0.0,
+      "inconsistent": 0.0,
+      "dominant_consistent": 1.0,
+      "feature_cosine": 0.9918212911687923,
+      "probability_symmetric_KL": 0.017258085218231512,
+      "gaussian_symmetric_KL": 0.0007136391949869032,
+      "pair_count": 29,
+      "object_count": 9,
+      "continuous_pair_count": 29
+    },
+    {
+      "model": "G-AUG",
+      "correct_consistent": 1.0,
+      "wrong_consistent": 0.0,
+      "inconsistent": 0.0,
+      "dominant_consistent": 1.0,
+      "feature_cosine": 0.9933696515951838,
+      "probability_symmetric_KL": 0.01832381204316154,
+      "gaussian_symmetric_KL": 0.00045545280835714957,
+      "pair_count": 29,
+      "object_count": 9,
+      "continuous_pair_count": 29
+    },
+    {
+      "model": "L-BOOT",
+      "correct_consistent": 1.0,
+      "wrong_consistent": 0.0,
+      "inconsistent": 0.0,
+      "dominant_consistent": 1.0,
+      "feature_cosine": 0.9959991760254726,
+      "probability_symmetric_KL": 0.02388538446594819,
+      "gaussian_symmetric_KL": 0.00047050254854285456,
+      "pair_count": 29,
+      "object_count": 9,
+      "continuous_pair_count": 29
+    },
+    {
+      "model": "CV-2D",
+      "correct_consistent": 1.0,
+      "wrong_consistent": 0.0,
+      "inconsistent": 0.0,
+      "dominant_consistent": 1.0,
+      "feature_cosine": 0.9962601387505133,
+      "probability_symmetric_KL": 0.018492779708241577,
+      "gaussian_symmetric_KL": 0.0007895569268116171,
+      "pair_count": 29,
+      "object_count": 9,
+      "continuous_pair_count": 29
+    },
+    {
+      "model": "IPSGR-Full",
+      "correct_consistent": 1.0,
+      "wrong_consistent": 0.0,
+      "inconsistent": 0.0,
+      "dominant_consistent": 1.0,
+      "feature_cosine": 0.9955512274882449,
+      "probability_symmetric_KL": 0.019948545490985015,
+      "gaussian_symmetric_KL": 0.0008894898066034526,
+      "pair_count": 29,
+      "object_count": 9,
+      "continuous_pair_count": 29
+    }
+  ],
+  "identities": {
+    "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/07_industrial_analysis/fixed_regions.json",
+    "bytes": 16789,
+    "sha256": "e6a68a44e81fc9514ed9e5295810b032c7b45dd31b79b94abeb005d199d62400"
+  }
+}

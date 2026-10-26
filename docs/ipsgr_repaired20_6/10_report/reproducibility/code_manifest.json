@@ -1,0 +1,106 @@
+{
+  "created": 1792934547.091465,
+  "base_git_commit": "ccb308f2dfd3dd5627f0e8984e842225ae6bb2fe",
+  "files": [
+    {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/code/spcgs/ipsgr_analysis.py",
+      "bytes": 9770,
+      "sha256": "afd409c43f13d7c25387e5b44f6e3068d93bcf8e14e7ca9611e9cb2eb773258f"
+    },
+    {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/code/spcgs/ipsgr_compat.py",
+      "bytes": 1553,
+      "sha256": "17f8a67468183a000c60b99d36e9280c6a8cdc161b210fe85cb969bda91d4c17"
+    },
+    {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/code/spcgs/ipsgr_evaluate.py",
+      "bytes": 7896,
+      "sha256": "f32e6f4bce4da7e2c650ff5e372f7e32fa28281b2e7d5b8161d639e8f21bf7c0"
+    },
+    {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/code/spcgs/ipsgr_geometry.py",
+      "bytes": 8890,
+      "sha256": "2255d20acc564cf9790f8566ca3c2e77974d0116631c4cbf96b1680c36fe62bc"
+    },
+    {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/code/spcgs/ipsgr_protocol.py",
+      "bytes": 13460,
+      "sha256": "b0b63acbd1ecda9a75614a530c72c5e747beb7d51aa7a4bc52e461dc47ed89c3"
+    },
+    {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/code/spcgs/ipsgr_report.py",
+      "bytes": 23945,
+      "sha256": "33671529d29b44c6fa79115c2723287e6de31e0387debb0c5e333b57a89744bc"
+    },
+    {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/code/spcgs/ipsgr_training.py",
+      "bytes": 9519,
+      "sha256": "6885b9bb045c5a2bd3b90bf6376c40f7fefa7bf129629bb7d0c57ba9d2cb2034"
+    },
+    {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/code/tools/ipsgr_geometry_prefetch.py",
+      "bytes": 2704,
+      "sha256": "13b851048156f63bf4f43bc0a02d06cd39b7d06863eeff7d53a3a8baf9def69e"
+    },
+    {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/code/tools/ipsgr_pipeline.py",
+      "bytes": 3750,
+      "sha256": "7370ec573060ac65bef4004767f43a6a08d7aecd2a8fca3cc458822c26f78e93"
+    },
+    {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/code/tools/ipsgr_wan_parallel.py",
+      "bytes": 4122,
+      "sha256": "0b7ac63a0706e0ab59ad61be52e60263c2d3a60b7b2b6760adf9e44087938eb7"
+    },
+    {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/code/tools/run_ipsgr.py",
+      "bytes": 1565,
+      "sha256": "75186edf7b92f2fb21d1e91cad2f048219b6877eacfccb14f478e0d2729ccec6"
+    },
+    {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/code/spcgs/m1_geometry.py",
+      "bytes": 14173,
+      "sha256": "c6b018bb110748a12e8d3ead4bc9b1f56b295e4ef52909cdb48d21b241910fe5"
+    },
+    {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/code/spcgs/m1_wan360.py",
+      "bytes": 26062,
+      "sha256": "d58d8cc650f52069895201a63057f307b442d8c310d367d5eb273768058c68a1"
+    },
+    {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/code/spcgs/wan360.py",
+      "bytes": 7442,
+      "sha256": "e0688f510850a3b228e196c557bf3b11b221371944b8dfccd135ffd6673acb28"
+    },
+    {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/code/spcgs/official_teacher.py",
+      "bytes": 7641,
+      "sha256": "94c48e9c3188849216e8d50bb3e6315a493913ad1918a983f9efeb5c67cc80a1"
+    },
+    {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/code/tools/wan360_worker.py",
+      "bytes": 4969,
+      "sha256": "c5d02e07cb2fb40e3995ec6fa0d31ef5824c1c0b9b186dcdbc0bef72a7b6cf18"
+    },
+    {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/code/tools/sam2_worker.py",
+      "bytes": 6738,
+      "sha256": "869b1b0182bba75623f444a7b151431867eabd859c8cf764a84131150a0e2542"
+    },
+    {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/code/code/examples/spcgs_native.cpp",
+      "bytes": 31977,
+      "sha256": "6dd6d6fa6f916a5b4b07587dc4544615c5badf6fccc3bc0d95d34cda75b0c05e"
+    },
+    {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/reproducibility/code/tools/build.sh",
+      "bytes": 612,
+      "sha256": "546d41fc1c77065323ee73c49112a73c664a892e1d6fdeb1231ea1048681b730"
+    }
+  ],
+  "native_binary": {
+    "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/code/bin/spcgs_native",
+    "bytes": 377424,
+    "sha256": "537e016db546c9d801f474731eb89242cf3b3271215a4c40ebb1ef9462ccc071"
+  }
+}

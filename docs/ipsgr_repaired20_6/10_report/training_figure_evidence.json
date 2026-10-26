@@ -1,0 +1,25 @@
+{
+  "plots": [
+    "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/training_ISLB.png",
+    "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/training_B-RGB.png",
+    "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/training_B-SEM.png",
+    "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/training_G-AUG.png",
+    "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/training_L-BOOT.png",
+    "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/training_CV-2D.png",
+    "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/training_IPSGR-Full.png"
+  ],
+  "data": [
+    "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/03_layout_bootstrap/losses.jsonl",
+    "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/B-RGB/losses.jsonl",
+    "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/B-SEM/losses.jsonl",
+    "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/G-AUG/losses.jsonl",
+    "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/L-BOOT/losses.jsonl",
+    "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/CV-2D/losses.jsonl",
+    "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/IPSGR-Full/losses.jsonl"
+  ],
+  "script": {
+    "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+    "bytes": 35306,
+    "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+  }
+}

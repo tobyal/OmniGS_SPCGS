@@ -1,0 +1,50 @@
+{
+  "server_run_directory": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025",
+  "checkpoints": {
+    "ISLB": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/03_layout_bootstrap/final/model.pt",
+      "bytes": 315285693,
+      "sha256": "d3c7aa30856adc9fc296d3d65656be7fd7c67e7143ecb220404f2fdb6887618e"
+    },
+    "B-RGB": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/B-RGB/final/model.pt",
+      "bytes": 294682897,
+      "sha256": "3a97c4e149311f27144ebb104590da6caa9a64998dbc420a6c95d37548cffc8b"
+    },
+    "B-SEM": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/B-SEM/final/model.pt",
+      "bytes": 320604093,
+      "sha256": "eebf8934adf1f8679d704bc600c12ad7cee5f31a6c517481c9351651e274096f"
+    },
+    "G-AUG": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/G-AUG/final/model.pt",
+      "bytes": 318462845,
+      "sha256": "3b5d9eb879567a1197704ca3e96b3d993ca2696baa221b06c6240bfe01ea1ebc"
+    },
+    "L-BOOT": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/L-BOOT/final/model.pt",
+      "bytes": 388953789,
+      "sha256": "0554e15baeec2a55ef69b19af6f9417a439dabf95760aa8634cb1003d3c836bf"
+    },
+    "CV-2D": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/CV-2D/final/model.pt",
+      "bytes": 408073977,
+      "sha256": "dbd641c294bc4e2a5c68d8fa115e503bcf7b67a169f524046eaac33190b64541"
+    },
+    "IPSGR-Full": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/IPSGR-Full/final/model.pt",
+      "bytes": 407031289,
+      "sha256": "e7a86e15427eb38ef6076c2c64c586a9379a98ff81f768527f0fe45ba72a0249"
+    }
+  },
+  "complete_raw_data_directories": {
+    "00_dataset": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset",
+    "01_geometry": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/01_geometry",
+    "02_semantic_teacher": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/02_semantic_teacher",
+    "03_layout_bootstrap": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/03_layout_bootstrap",
+    "04_cross_view": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/04_cross_view",
+    "05_models": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models",
+    "06_evaluation": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/06_evaluation"
+  },
+  "review_archive_scope": "Reports, figures, tables, final test display images, training logs, protocol and compact geometry evidence. Full checkpoint archives, videos, floating-point render buffers and every ISP event remain saved in the server run directory."
+}

@@ -1,0 +1,138 @@
+{
+  "signature": "f94fdfc570f72397cafc68c6a6f576ca970736bc5a08ba176df4464bac4539bb",
+  "inputs": {
+    "checkpoint": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/B-RGB/final/model.pt",
+      "bytes": 294682897,
+      "sha256": "3a97c4e149311f27144ebb104590da6caa9a64998dbc420a6c95d37548cffc8b"
+    },
+    "dataset": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/dataset_manifest.json",
+      "bytes": 91231,
+      "sha256": "1475de1542c60ac2bf1d3db0685e14137a0de2403e51a8002bfdea4d3ebdaf2f"
+    },
+    "regions": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/07_industrial_analysis/fixed_regions.json",
+      "bytes": 16789,
+      "sha256": "e6a68a44e81fc9514ed9e5295810b032c7b45dd31b79b94abeb005d199d62400"
+    },
+    "implementation": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_evaluate.py",
+      "bytes": 7896,
+      "sha256": "f32e6f4bce4da7e2c650ff5e372f7e32fa28281b2e7d5b8161d639e8f21bf7c0"
+    },
+    "semantic_resolution": [
+      256,
+      128
+    ]
+  },
+  "model": "B-RGB",
+  "views": [
+    {
+      "id": "2023-05-11_10.37.00",
+      "camera_id": "1-26",
+      "split": "test",
+      "psnr": 23.247814690317483,
+      "ssim": 0.7247748374938965,
+      "lpips": 0.34328585863113403
+    },
+    {
+      "id": "2023-05-11_10.37.48",
+      "camera_id": "1-27",
+      "split": "test",
+      "psnr": 23.09988193326631,
+      "ssim": 0.6976659297943115,
+      "lpips": 0.35140419006347656
+    },
+    {
+      "id": "2023-05-11_11.08.41",
+      "camera_id": "1-60",
+      "split": "test",
+      "psnr": 23.421367083510127,
+      "ssim": 0.7692787051200867,
+      "lpips": 0.32316887378692627
+    },
+    {
+      "id": "2023-05-11_11.18.15",
+      "camera_id": "1-61",
+      "split": "test",
+      "psnr": 23.54840976688469,
+      "ssim": 0.7702063918113708,
+      "lpips": 0.3219406008720398
+    },
+    {
+      "id": "2023-05-11_11.23.47",
+      "camera_id": "1-68",
+      "split": "test",
+      "psnr": 21.327800240917462,
+      "ssim": 0.732524573802948,
+      "lpips": 0.3487270474433899
+    },
+    {
+      "id": "2023-05-11_11.24.32",
+      "camera_id": "1-69",
+      "split": "test",
+      "psnr": 18.663286427173862,
+      "ssim": 0.7148506045341492,
+      "lpips": 0.36172181367874146
+    }
+  ],
+  "test_count": 6,
+  "rgb_mean": {
+    "psnr": 22.218093357011654,
+    "ssim": 0.7348835070927938,
+    "lpips": 0.34170806407928467
+  },
+  "semantic_pooled": null,
+  "semantic_image_mean": null,
+  "direct_text_query_pooled": null,
+  "semantic_resolution": [
+    256,
+    128
+  ],
+  "classes": [
+    "piping",
+    "equipment",
+    "building",
+    "structural_frame",
+    "access_structure",
+    "cable_tray",
+    "hvac"
+  ],
+  "uncovered_prediction_index": 7,
+  "note": "Index7 is an evaluation error bucket, not an eighth model class. Full repaired ERP RGB; valid held-out GT only; uncovered GT errors retained. Classifier and frozen-prototype query reported separately.",
+  "lpips": "v0.1 AlexNet, full2048x1024 ERP, float RGB [-1,1], no crop.",
+  "render_timings": [
+    {
+      "rgb_seconds": 0.173657986,
+      "semantic_seconds": 0.0,
+      "view": "2023-05-11_10.37.00"
+    },
+    {
+      "rgb_seconds": 0.040869211,
+      "semantic_seconds": 0.0,
+      "view": "2023-05-11_10.37.48"
+    },
+    {
+      "rgb_seconds": 0.041526537,
+      "semantic_seconds": 0.0,
+      "view": "2023-05-11_11.08.41"
+    },
+    {
+      "rgb_seconds": 0.037967348,
+      "semantic_seconds": 0.0,
+      "view": "2023-05-11_11.18.15"
+    },
+    {
+      "rgb_seconds": 0.045888187,
+      "semantic_seconds": 0.0,
+      "view": "2023-05-11_11.23.47"
+    },
+    {
+      "rgb_seconds": 0.036095173,
+      "semantic_seconds": 0.0,
+      "view": "2023-05-11_11.24.32"
+    }
+  ],
+  "completed": 1792936451.2716472
+}

@@ -49,6 +49,10 @@ def render_model(run,cfg,protocol,cache,model,gpu,initial=False):
     print(evaluate_renders(target,views,cache)['groups'],flush=True)
 
 def main():
+    if '--legacy27' not in sys.argv:
+        from spcgs.ipsgr_compat import main as current_main
+        return current_main('cross_view')
+    sys.argv.remove('--legacy27')
     p=argparse.ArgumentParser();p.add_argument('--run',default=str(RUN));p.add_argument('--stage',choices=['prepare','initialize','isp','short','c0','c1','c2','render'],required=True)
     p.add_argument('--gpu',type=int,default=0);p.add_argument('--model',default='c2',choices=['initial','c0','c1','c2']);p.add_argument('--view-index',type=int,default=1);p.add_argument('--seed',type=int,default=42);p.add_argument('--initial',action='store_true');a=p.parse_args()
     run,cfg,protocol,cache,train,test=setup(a.run);cfg={**cfg,'gpu':a.gpu}

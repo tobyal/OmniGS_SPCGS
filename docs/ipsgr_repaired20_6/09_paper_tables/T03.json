@@ -1,0 +1,191 @@
+{
+  "rows": [
+    {
+      "before": "B-SEM",
+      "after": "G-AUG",
+      "module": "Wan360 geometry",
+      "psnr": 0.3081245732904847,
+      "ssim": 0.002364059289296505,
+      "lpips": -0.005840261777242062,
+      "mIoU": -0.0057910805161118795,
+      "mAcc": -0.004668991445971882
+    },
+    {
+      "before": "G-AUG",
+      "after": "L-BOOT",
+      "module": "ISLB preoptimization",
+      "psnr": 0.18343764715955757,
+      "ssim": 0.007690240939458137,
+      "lpips": -0.018923689921696962,
+      "mIoU": -0.0012589660559864102,
+      "mAcc": -0.0005393135888004386
+    },
+    {
+      "before": "L-BOOT",
+      "after": "CV-2D",
+      "module": "ICSC image domain",
+      "psnr": -0.0730118446391046,
+      "ssim": -0.0037002464135487134,
+      "lpips": 0.0038344760735829486,
+      "mIoU": 0.013502923926379862,
+      "mAcc": 0.006662646297262653
+    },
+    {
+      "before": "CV-2D",
+      "after": "IPSGR-Full",
+      "module": "ICSC Gaussian domain",
+      "psnr": -0.1229415815608732,
+      "ssim": -0.0004069308439891284,
+      "lpips": 0.0011339932680130005,
+      "mIoU": -0.00575865204980297,
+      "mAcc": -0.0005201891763967348
+    }
+  ],
+  "P0": {
+    "points": 8744,
+    "anchors_three_or_more_views": 2069,
+    "features": {
+      "2023-05-11_10.35.28": 13886,
+      "2023-05-11_10.36.15": 13313,
+      "2023-05-11_10.38.31": 10434,
+      "2023-05-11_10.39.15": 11453,
+      "2023-05-11_10.43.09": 11551,
+      "2023-05-11_10.43.53": 12508,
+      "2023-05-11_10.44.56": 13392,
+      "2023-05-11_10.45.40": 12621,
+      "2023-05-11_10.50.58": 9684,
+      "2023-05-11_10.53.10": 8818,
+      "2023-05-11_11.07.13": 8110,
+      "2023-05-11_11.07.58": 9661,
+      "2023-05-11_11.19.30": 10168,
+      "2023-05-11_11.20.14": 10465,
+      "2023-05-11_11.21.03": 12552,
+      "2023-05-11_11.21.45": 10301,
+      "2023-05-11_11.22.19": 9794,
+      "2023-05-11_11.23.11": 11545,
+      "2023-05-11_11.25.15": 9214,
+      "2023-05-11_11.25.58": 9930
+    },
+    "matched_pairs": 190,
+    "descriptor_matches": 50458,
+    "geometric_matches": 20782,
+    "tracks": 11507,
+    "rejected": {
+      "invalid point or negative ray depth": 256,
+      "reprojection": 354,
+      "duplicate point": 981,
+      "low real-real parallax": 127,
+      "conflicting observations within one camera": 112,
+      "isolated point": 933
+    },
+    "reprojection_spherical_px_2k": {
+      "min": 0.00012774898743436448,
+      "p10": 0.08258017833744419,
+      "median": 0.43189110863902264,
+      "p90": 1.309116103203493,
+      "max": 4.983993193506452
+    },
+    "max_track_error_px": {
+      "min": 0.0002215146298915848,
+      "p10": 0.08870947592533512,
+      "median": 0.5204003813237675,
+      "p90": 1.5602267828508694,
+      "max": 4.983993193506452
+    },
+    "parallax_deg": {
+      "min": 0.605434423340438,
+      "p10": 3.852435656399948,
+      "median": 14.265327675484347,
+      "p90": 33.09876795559109,
+      "max": 144.80299647294984
+    },
+    "seconds": 286.5657103061676,
+    "all_observations_train_only": true,
+    "features_extracted_from_repaired_RGB": true
+  },
+  "P1": {
+    "original_count": 8744,
+    "videos": 80,
+    "generated_sources": 20,
+    "generated_semantic_loss": false,
+    "videos_generated_this_invocation": 0,
+    "videos_reused": 80,
+    "registered_views": 74,
+    "selected_views": 74,
+    "added": 1379,
+    "enhanced_count": 10123,
+    "backend": "OpenMVG RootSIFT observations/descriptors; spherical 2D-3D localization and multiview ray triangulation",
+    "candidate_frames": 320,
+    "processed_candidates": 320,
+    "registered_candidates": 158,
+    "descriptor_matches": 638553,
+    "geometric_matches": 86907,
+    "triangulated_candidates": 2282,
+    "rejected": {
+      "insufficient real views": 56306,
+      "already observed original landmark": 8298,
+      "duplicate original point": 181,
+      "far from original scene support": 62,
+      "invalid point or negative ray depth": 67,
+      "reprojection": 192,
+      "duplicate real feature track": 2493,
+      "duplicate new point": 40,
+      "low real-generated parallax": 17
+    },
+    "before_density_filter": 1723,
+    "density_removed": 344,
+    "reprojection_px": {
+      "min": 0.11511033975971242,
+      "p10": 0.9070846278291885,
+      "median": 2.020118955750126,
+      "p90": 3.6356242432404797,
+      "max": 4.945572792632642
+    },
+    "parallax_deg": {
+      "min": 0.7009145721619549,
+      "p10": 4.2402075993694925,
+      "median": 14.30577696119717,
+      "p90": 26.720149732478692,
+      "max": 73.27724934972159
+    },
+    "new_point_distance_to_original": {
+      "min": 0.015003148928000436,
+      "p10": 0.023317351523552507,
+      "median": 0.06876024703082029,
+      "p90": 0.20998665254537377,
+      "max": 0.6464449669130282
+    },
+    "by_direction": {
+      "forward": 510,
+      "backward": 342,
+      "right": 284,
+      "left": 243
+    },
+    "by_source": {
+      "2023-05-11_10.35.28": 81,
+      "2023-05-11_10.36.15": 101,
+      "2023-05-11_10.38.31": 38,
+      "2023-05-11_10.39.15": 62,
+      "2023-05-11_10.43.09": 47,
+      "2023-05-11_10.43.53": 89,
+      "2023-05-11_10.44.56": 90,
+      "2023-05-11_10.45.40": 74,
+      "2023-05-11_10.50.58": 55,
+      "2023-05-11_10.53.10": 39,
+      "2023-05-11_11.07.13": 63,
+      "2023-05-11_11.07.58": 57,
+      "2023-05-11_11.19.30": 110,
+      "2023-05-11_11.20.14": 123,
+      "2023-05-11_11.21.03": 115,
+      "2023-05-11_11.21.45": 51,
+      "2023-05-11_11.22.19": 34,
+      "2023-05-11_11.23.11": 37,
+      "2023-05-11_11.25.15": 51,
+      "2023-05-11_11.25.58": 62
+    },
+    "fresh_videos_this_experiment": 80,
+    "old_videos_reused": 0,
+    "seconds": 345.52203845977783
+  },
+  "training_budget": "All core final stages10k; ISLB10k extra shared initialization, separately costed."
+}

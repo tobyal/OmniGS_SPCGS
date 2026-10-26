@@ -1,0 +1,99 @@
+{
+  "rows": [
+    {
+      "model": "B-RGB",
+      "gaussians": 345714,
+      "training_seconds_last_invocation": 2820.5508663654327,
+      "ISLB_extra_seconds": 0,
+      "archive_bytes_with_optimizer": 294682897,
+      "PLY_and_exported_sidecar_bytes": 130071915,
+      "mean_RGB_render_seconds": 0.062667407,
+      "mean_semantic_feature_render_seconds": 0.0,
+      "resumed": false
+    },
+    {
+      "model": "B-SEM",
+      "gaussians": 289104,
+      "training_seconds_last_invocation": 6056.895841598511,
+      "ISLB_extra_seconds": 0,
+      "archive_bytes_with_optimizer": 320604093,
+      "PLY_and_exported_sidecar_bytes": 108786555,
+      "mean_RGB_render_seconds": 0.05906048016666666,
+      "mean_semantic_feature_render_seconds": 0.24250945283333333,
+      "resumed": false
+    },
+    {
+      "model": "G-AUG",
+      "gaussians": 287172,
+      "training_seconds_last_invocation": 3554.2695095539093,
+      "ISLB_extra_seconds": 0,
+      "archive_bytes_with_optimizer": 318462845,
+      "PLY_and_exported_sidecar_bytes": 108060123,
+      "mean_RGB_render_seconds": 0.024760942999999997,
+      "mean_semantic_feature_render_seconds": 0.0823695495,
+      "resumed": false
+    },
+    {
+      "model": "L-BOOT",
+      "gaussians": 350792,
+      "training_seconds_last_invocation": 8532.499932289124,
+      "ISLB_extra_seconds": 4218.97057390213,
+      "archive_bytes_with_optimizer": 388953789,
+      "PLY_and_exported_sidecar_bytes": 131981243,
+      "mean_RGB_render_seconds": 0.04401603133333334,
+      "mean_semantic_feature_render_seconds": 0.22203221183333333,
+      "resumed": false
+    },
+    {
+      "model": "CV-2D",
+      "gaussians": 368040,
+      "training_seconds_last_invocation": 7443.763048410416,
+      "ISLB_extra_seconds": 4218.97057390213,
+      "archive_bytes_with_optimizer": 408073977,
+      "PLY_and_exported_sidecar_bytes": 138466491,
+      "mean_RGB_render_seconds": 0.028682904666666672,
+      "mean_semantic_feature_render_seconds": 0.10898320233333332,
+      "resumed": false
+    },
+    {
+      "model": "IPSGR-Full",
+      "gaussians": 367099,
+      "training_seconds_last_invocation": 7153.877651929855,
+      "ISLB_extra_seconds": 4218.97057390213,
+      "archive_bytes_with_optimizer": 407031289,
+      "PLY_and_exported_sidecar_bytes": 138112675,
+      "mean_RGB_render_seconds": 0.050644025,
+      "mean_semantic_feature_render_seconds": 0.20019932266666665,
+      "resumed": false
+    }
+  ],
+  "timing_environment": "Shared A6000 GPUs with concurrent external jobs; operational timings, not isolated throughput benchmark. Semantic timing is feature rasterization, excludes classification head/export.",
+  "ISLB": {
+    "status": "completed",
+    "signature": "33069b8e3b2f28119b1f472b96b41db05577e4444eec8755eae50cbd963b5287",
+    "iterations": 10000,
+    "model": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/03_layout_bootstrap/final/model.pt",
+      "bytes": 315285693,
+      "sha256": "d3c7aa30856adc9fc296d3d65656be7fd7c67e7143ecb220404f2fdb6887618e"
+    },
+    "gaussians": 284304,
+    "seconds_this_invocation": 4218.97057390213,
+    "started": 1792938670.7235658,
+    "finished": 1792942889.6941419,
+    "resumed": false
+  },
+  "Wan360": {
+    "status": "completed",
+    "jobs": 80,
+    "seconds": 4893.573292255402,
+    "seconds_since_first_single_gpu_launch": 5438.934237480164,
+    "summed_video_generation_seconds": 14395.744625091553,
+    "assignments": {
+      "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/01_geometry/Wan360/parallel_assignment.json",
+      "bytes": 3539,
+      "sha256": "5d2e2a7acdb6924d0fe76443dcc45eda26f98bc58ccc367e9fe10a8c55992411"
+    },
+    "all_fresh_for_this_experiment": true
+  }
+}

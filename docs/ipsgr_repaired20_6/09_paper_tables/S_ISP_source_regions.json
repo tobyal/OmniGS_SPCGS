@@ -1,0 +1,74 @@
+{
+  "rows": [
+    {
+      "model": "CV-2D",
+      "class": "piping",
+      "source_GT_dominant_events": 22
+    },
+    {
+      "model": "CV-2D",
+      "class": "equipment",
+      "source_GT_dominant_events": 13
+    },
+    {
+      "model": "CV-2D",
+      "class": "building",
+      "source_GT_dominant_events": 32
+    },
+    {
+      "model": "CV-2D",
+      "class": "structural_frame",
+      "source_GT_dominant_events": 11
+    },
+    {
+      "model": "CV-2D",
+      "class": "access_structure",
+      "source_GT_dominant_events": 1
+    },
+    {
+      "model": "CV-2D",
+      "class": "cable_tray",
+      "source_GT_dominant_events": 15
+    },
+    {
+      "model": "CV-2D",
+      "class": "hvac",
+      "source_GT_dominant_events": 6
+    },
+    {
+      "model": "IPSGR-Full",
+      "class": "piping",
+      "source_GT_dominant_events": 22
+    },
+    {
+      "model": "IPSGR-Full",
+      "class": "equipment",
+      "source_GT_dominant_events": 13
+    },
+    {
+      "model": "IPSGR-Full",
+      "class": "building",
+      "source_GT_dominant_events": 32
+    },
+    {
+      "model": "IPSGR-Full",
+      "class": "structural_frame",
+      "source_GT_dominant_events": 11
+    },
+    {
+      "model": "IPSGR-Full",
+      "class": "access_structure",
+      "source_GT_dominant_events": 1
+    },
+    {
+      "model": "IPSGR-Full",
+      "class": "cable_tray",
+      "source_GT_dominant_events": 15
+    },
+    {
+      "model": "IPSGR-Full",
+      "class": "hvac",
+      "source_GT_dominant_events": 6
+    }
+  ]
+}

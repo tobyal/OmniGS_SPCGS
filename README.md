@@ -3,19 +3,31 @@
 独立服务器工作目录：`/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/`。
 上游为 `../OmniGS_Structure/`；原版 `baseline_s0` 只读复制到 `baseline/checkpoint.ply`，不修改上游任何训练结果。完整相机协议为 56/6/16；历史基线使用 3,979 个训练集 SfM 点。
 
-## 当前 27 视角、七类语义实验
+## 当前实验：修复后 IRIS 20/6 七类 IPSGR
 
-当前正式流程仅用其中有官方语义标注的 27 张训练图，其余 29 张作为未见视角。第一阶段使用 7,421 点增强 SfM 和修复 opacity 学习率后的 287,787 高斯 SGI；第二阶段复用这些高斯及冻结七类 F/S/T/W 教师，使用原始 SAM2 Hiera-L 执行在线 ISP 与二维/三维 SPC。
+本轮 20 张训练、6 张测试、不设验证集的核心实验已于 2026-10-26 完成。80 个全新 Wan360 视频采用 GPU 0/1/2 并行生成；重新构建 P0/P1、教师和 ISLB，完成六组模型各 10,000 步训练及独立测试。P0 为 8,744 点，增强后 P1 为 10,123 点，新增 1,379 点。
+
+- [最终结果、六张测试图对照与浏览说明](docs/ipsgr_repaired20_6/README.md)
+- [完整中文报告](docs/ipsgr_repaired20_6/10_report/report.md)
+- [运行协议及复现入口](docs/IPSGR_REPAIRED20_6.md)
+
+主语义 mIoU：B-SEM 79.45%、G-AUG 78.87%、L-BOOT 78.75%、CV-2D 80.10%、IPSGR-Full 79.52%。本轮 CV-2D 语义表现最好；完整方法未超过 CV-2D，详见实际消融及局限分析。
+
+当前入口为 `tools/run_ipsgr.py`。旧的 `tools/run_sparse27.py`、`tools/run_spc27.py` 默认路由到当前流程；复现下面的历史 27 视角流程需要加 `--legacy27`。
+
+## 历史 27 视角、七类语义实验
+
+历史流程仅用其中有官方语义标注的 27 张训练图，其余 29 张作为未见视角。第一阶段使用 7,421 点增强 SfM 和修复 opacity 学习率后的 287,787 高斯 SGI；第二阶段复用这些高斯及冻结七类 F/S/T/W 教师，使用原始 SAM2 Hiera-L 执行在线 ISP 与二维/三维 SPC。
 
 - [稀疏 27 视角 SGI 说明](docs/SPARSE27_RUNBOOK.md)
 - [SGI → SPC 第二阶段运行说明](docs/SPC27_STAGE2_RUNBOOK.md)
 - [C0/C1/C2 正式训练结果与限制](docs/SPC27_STAGE2_RESULTS.md)
 
-第二阶段入口为 `tools/run_spc27.py`，输出在 `runs/industrial_spcgs/spc27_hieral_20261024`。复现当前实验应使用上述说明；以下 56 视角、20 类配置保留作历史记录。
+第二阶段入口为 `tools/run_spc27.py`，输出在 `runs/industrial_spcgs/spc27_hieral_20261024`。复现该历史实验应使用上述说明并加 `--legacy27`；以下 56 视角、20 类配置保留作历史记录。
 
 ## Git 仓库与数据接入
 
-源码仓库：[tobyal/OmniGS_SPCGS](https://github.com/tobyal/OmniGS_SPCGS)。Git 仅保存代码、配置、测试程序和说明；数据集、基线模型、CLIP/SAM2 权重、构建产物和实验输出保存在服务器工作目录中，由 `.gitignore` 排除。
+源码仓库：[tobyal/OmniGS_SPCGS](https://github.com/tobyal/OmniGS_SPCGS)。Git 保存代码、配置、测试程序、说明，以及 `docs/` 下明确发布的实验报告、图表、指标和测试显示资源。原始数据集、基线与训练模型、CLIP/SAM2 权重、Wan360 视频、构建产物和大型实验缓存保存在服务器工作目录中，由 `.gitignore` 排除。
 
 在同一服务器建立新的源码副本，可接入已有的只读输入：
 

@@ -1,0 +1,45 @@
+{
+  "data": {
+    "P0": {
+      "points": 8744,
+      "class_counts": [
+        1658,
+        1292,
+        3509,
+        1119,
+        248,
+        655,
+        263
+      ],
+      "any_synthetic_RGB_observation": 1,
+      "all_synthetic_RGB_observations": 0,
+      "mean_semantic_vote_agreement": 0.9773377316492596,
+      "evidence": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/07_industrial_analysis/P0_point_support.json",
+        "bytes": 2408991,
+        "sha256": "c2deadf763c87ea23b47619dc4a0f2ebd1709fb1d9e727e782a14a6a6659998f"
+      }
+    },
+    "P1_added": {
+      "points": 1379,
+      "class_counts": [
+        347,
+        253,
+        485,
+        153,
+        34,
+        70,
+        37
+      ],
+      "any_synthetic_RGB_observation": 0,
+      "all_synthetic_RGB_observations": 0,
+      "mean_semantic_vote_agreement": 0.9543268068648778,
+      "evidence": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/07_industrial_analysis/P1_added_point_support.json",
+        "bytes": 378878,
+        "sha256": "a3814ef9562d67b70d7cecb98b1dfae3d111a1421eb62285b12a537208fe0582"
+      }
+    }
+  },
+  "policy": "Only measured real feature observations are sampled. Derived class votes are analysis proxies, not new labels, visibility guarantees or geometric acceptance rules."
+}

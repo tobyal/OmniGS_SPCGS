@@ -1,0 +1,894 @@
+{
+  "dataset": {
+    "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/dataset_manifest.json",
+    "bytes": 91231,
+    "sha256": "1475de1542c60ac2bf1d3db0685e14137a0de2403e51a8002bfdea4d3ebdaf2f"
+  },
+  "P0": {
+    "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/01_geometry/P0/outputs.json",
+    "bytes": 707,
+    "sha256": "1226528d8cef59f4cf1630f5885b394f379bfee3ce9ed107e4f85d88fa0edf9c"
+  },
+  "P1": {
+    "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/01_geometry/P1/outputs.json",
+    "bytes": 86129,
+    "sha256": "4fc174103d66b38064c6b642da7e989366828b0e170174ce06d27b55503b32e7"
+  },
+  "teacher": {
+    "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/02_semantic_teacher/cache/manifest.json",
+    "bytes": 95040,
+    "sha256": "2b5164b94d036a7b8157f59a71593d6a0b1a5f4e1e1daa4cdaa906ad14c069ba"
+  },
+  "models": {
+    "B-RGB": {
+      "status": "completed",
+      "signature": "edab6bba4658d898b60e702df1a0ec973d10d834d5e8628c449fa1e521fbf636",
+      "iterations": 10000,
+      "model": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/B-RGB/final/model.pt",
+        "bytes": 294682897,
+        "sha256": "3a97c4e149311f27144ebb104590da6caa9a64998dbc420a6c95d37548cffc8b"
+      },
+      "gaussians": 345714,
+      "seconds_this_invocation": 2820.5508663654327,
+      "started": 1792933422.8023179,
+      "finished": 1792936243.3531864,
+      "resumed": false
+    },
+    "B-SEM": {
+      "status": "completed",
+      "signature": "b8c8933386be0f209ff3618e21ca0ae4d0a388412d3b53e4a6bee024512febfd",
+      "iterations": 10000,
+      "model": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/B-SEM/final/model.pt",
+        "bytes": 320604093,
+        "sha256": "eebf8934adf1f8679d704bc600c12ad7cee5f31a6c517481c9351651e274096f"
+      },
+      "gaussians": 289104,
+      "seconds_this_invocation": 6056.895841598511,
+      "started": 1792933733.7972775,
+      "finished": 1792939790.6931207,
+      "resumed": false
+    },
+    "G-AUG": {
+      "status": "completed",
+      "signature": "1914ccc7de241e0a2e1428428b91a8808b9f8cde0d1b164ac983dcce090c33e7",
+      "iterations": 10000,
+      "model": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/G-AUG/final/model.pt",
+        "bytes": 318462845,
+        "sha256": "3b5d9eb879567a1197704ca3e96b3d993ca2696baa221b06c6240bfe01ea1ebc"
+      },
+      "gaussians": 287172,
+      "seconds_this_invocation": 3554.2695095539093,
+      "started": 1792938670.7253425,
+      "finished": 1792942224.9948533,
+      "resumed": false
+    },
+    "L-BOOT": {
+      "status": "completed",
+      "signature": "9aaa14409deb4e1b946de178ec349e5a26615c982a68c9ef9c8d2dda167d626f",
+      "iterations": 10000,
+      "model": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/L-BOOT/final/model.pt",
+        "bytes": 388953789,
+        "sha256": "0554e15baeec2a55ef69b19af6f9417a439dabf95760aa8634cb1003d3c836bf"
+      },
+      "gaussians": 350792,
+      "seconds_this_invocation": 8532.499932289124,
+      "started": 1792942898.3820422,
+      "finished": 1792951430.8819776,
+      "resumed": false
+    },
+    "CV-2D": {
+      "status": "completed",
+      "signature": "454b8732e82d8f5c71903a5fc171fc1b3f5eff1a89e5b4bfb4168dfee1ec8fcc",
+      "iterations": 10000,
+      "model": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/CV-2D/final/model.pt",
+        "bytes": 408073977,
+        "sha256": "dbd641c294bc4e2a5c68d8fa115e503bcf7b67a169f524046eaac33190b64541"
+      },
+      "gaussians": 368040,
+      "seconds_this_invocation": 7443.763048410416,
+      "started": 1792942991.7998536,
+      "finished": 1792950435.5629034,
+      "resumed": false
+    },
+    "IPSGR-Full": {
+      "status": "completed",
+      "signature": "7f7095cb05348ff68ed9710d187b177111b67fe318be3059ebb0bf9136dda70d",
+      "iterations": 10000,
+      "model": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/IPSGR-Full/final/model.pt",
+        "bytes": 407031289,
+        "sha256": "e7a86e15427eb38ef6076c2c64c586a9379a98ff81f768527f0fe45ba72a0249"
+      },
+      "gaussians": 367099,
+      "seconds_this_invocation": 7153.877651929855,
+      "started": 1792942991.7830398,
+      "finished": 1792950145.6606934,
+      "resumed": false
+    }
+  },
+  "model_inputs": {
+    "B-RGB": {
+      "inputs": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/B-RGB/inputs.json",
+        "bytes": 1381,
+        "sha256": "e274073154de90de133cb3e0595bef64f8c3e00621b131dcaa47d2a3ad3accc1"
+      },
+      "configuration": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/B-RGB/fixed_request.json",
+        "bytes": 61396,
+        "sha256": "3e839d8000f8fcc53d42291fda9330d1e67ba3e3b7f2202d1d292ba21363f019"
+      }
+    },
+    "B-SEM": {
+      "inputs": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/B-SEM/inputs.json",
+        "bytes": 1656,
+        "sha256": "7f4700365dddb881c16d9fdc7582725c4d382830c5d299db9ad74da47b059642"
+      },
+      "configuration": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/B-SEM/fixed_request.json",
+        "bytes": 88901,
+        "sha256": "370d90db7e3b22f6a0440a1f4aa83d3b3af691bfecdf67571db602ea8ac53b4e"
+      }
+    },
+    "G-AUG": {
+      "inputs": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/G-AUG/inputs.json",
+        "bytes": 1665,
+        "sha256": "5547bf1498c90402ee3db878ea82f849e414884f8581e87381bab3d51a78ea64"
+      },
+      "configuration": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/G-AUG/fixed_request.json",
+        "bytes": 88911,
+        "sha256": "e79a3a6b7bd9311630fc93cba95d4ee44222a60cc79eea2aad6f4405be40bfe9"
+      }
+    },
+    "L-BOOT": {
+      "inputs": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/L-BOOT/inputs.json",
+        "bytes": 1395,
+        "sha256": "508355c9a5c5efd38d796f91e9441b73391c33d7c05cc14e024ff3b21a57ca03"
+      },
+      "configuration": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/L-BOOT/fixed_request.json",
+        "bytes": 88726,
+        "sha256": "95327fb84ce4fda5ecb691fbcb144703e502da2a887e2619af4a33c72475ec65"
+      }
+    },
+    "CV-2D": {
+      "inputs": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/CV-2D/inputs.json",
+        "bytes": 1395,
+        "sha256": "472c7196d04fe2d8d7992b8483c27897df0ee5ebbd0bec5bff108a589303740b"
+      },
+      "configuration": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/CV-2D/fixed_request.json",
+        "bytes": 88724,
+        "sha256": "fa24347a510e3986bee6d4ece39f535b05cce9e4cdeb4721d2cd11e93dabb740"
+      }
+    },
+    "IPSGR-Full": {
+      "inputs": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/IPSGR-Full/inputs.json",
+        "bytes": 1395,
+        "sha256": "c361cfe235a2e48b3fa5cd3b30d6316613ce46a43318551c11d679bc8dbef4b4"
+      },
+      "configuration": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/IPSGR-Full/fixed_request.json",
+        "bytes": 88728,
+        "sha256": "a02bb528b9f38eddaf80b5acbbcfea76476a93a14f268eabe028be8e115c7c81"
+      }
+    }
+  },
+  "initialization": {
+    "L-BOOT": {
+      "status": "passed",
+      "source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/03_layout_bootstrap/final/model.pt",
+        "bytes": 315285693,
+        "sha256": "d3c7aa30856adc9fc296d3d65656be7fd7c67e7143ecb220404f2fdb6887618e"
+      },
+      "gaussians": 284304,
+      "inherited_max_error": {
+        "xyz": 0.0,
+        "dc": 0.0,
+        "semantic": 0.0,
+        "decoder": 0.0,
+        "bias": 0.0,
+        "classifier": 0.0,
+        "cbias": 0.0,
+        "projection": 0.0,
+        "text": 0.0
+      },
+      "scale_log_max_error_vs_three_neighbor_init": 5.520683359350187e-07,
+      "optimizer_states_empty": true,
+      "independent_initializations": [
+        {
+          "model": "CV-2D",
+          "equal": {
+            "xyz": true,
+            "dc": true,
+            "semantic": true,
+            "decoder": true,
+            "bias": true,
+            "classifier": true,
+            "cbias": true,
+            "projection": true,
+            "text": true,
+            "scale": true,
+            "rotation": true,
+            "opacity": true,
+            "rest": true,
+            "cpu_rng": true,
+            "cuda_rng": true,
+            "camera_rng": true
+          }
+        },
+        {
+          "model": "IPSGR-Full",
+          "equal": {
+            "xyz": true,
+            "dc": true,
+            "semantic": true,
+            "decoder": true,
+            "bias": true,
+            "classifier": true,
+            "cbias": true,
+            "projection": true,
+            "text": true,
+            "scale": true,
+            "rotation": true,
+            "opacity": true,
+            "rest": true,
+            "cpu_rng": true,
+            "cuda_rng": true,
+            "camera_rng": true
+          }
+        }
+      ]
+    },
+    "CV-2D": {
+      "status": "passed",
+      "source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/03_layout_bootstrap/final/model.pt",
+        "bytes": 315285693,
+        "sha256": "d3c7aa30856adc9fc296d3d65656be7fd7c67e7143ecb220404f2fdb6887618e"
+      },
+      "gaussians": 284304,
+      "inherited_max_error": {
+        "xyz": 0.0,
+        "dc": 0.0,
+        "semantic": 0.0,
+        "decoder": 0.0,
+        "bias": 0.0,
+        "classifier": 0.0,
+        "cbias": 0.0,
+        "projection": 0.0,
+        "text": 0.0
+      },
+      "scale_log_max_error_vs_three_neighbor_init": 5.520683359350187e-07,
+      "optimizer_states_empty": true,
+      "independent_initializations": [
+        {
+          "model": "L-BOOT",
+          "equal": {
+            "xyz": true,
+            "dc": true,
+            "semantic": true,
+            "decoder": true,
+            "bias": true,
+            "classifier": true,
+            "cbias": true,
+            "projection": true,
+            "text": true,
+            "scale": true,
+            "rotation": true,
+            "opacity": true,
+            "rest": true,
+            "cpu_rng": true,
+            "cuda_rng": true,
+            "camera_rng": true
+          }
+        },
+        {
+          "model": "IPSGR-Full",
+          "equal": {
+            "xyz": true,
+            "dc": true,
+            "semantic": true,
+            "decoder": true,
+            "bias": true,
+            "classifier": true,
+            "cbias": true,
+            "projection": true,
+            "text": true,
+            "scale": true,
+            "rotation": true,
+            "opacity": true,
+            "rest": true,
+            "cpu_rng": true,
+            "cuda_rng": true,
+            "camera_rng": true
+          }
+        }
+      ]
+    },
+    "IPSGR-Full": {
+      "status": "passed",
+      "source": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/03_layout_bootstrap/final/model.pt",
+        "bytes": 315285693,
+        "sha256": "d3c7aa30856adc9fc296d3d65656be7fd7c67e7143ecb220404f2fdb6887618e"
+      },
+      "gaussians": 284304,
+      "inherited_max_error": {
+        "xyz": 0.0,
+        "dc": 0.0,
+        "semantic": 0.0,
+        "decoder": 0.0,
+        "bias": 0.0,
+        "classifier": 0.0,
+        "cbias": 0.0,
+        "projection": 0.0,
+        "text": 0.0
+      },
+      "scale_log_max_error_vs_three_neighbor_init": 5.520683359350187e-07,
+      "optimizer_states_empty": true,
+      "independent_initializations": [
+        {
+          "model": "L-BOOT",
+          "equal": {
+            "xyz": true,
+            "dc": true,
+            "semantic": true,
+            "decoder": true,
+            "bias": true,
+            "classifier": true,
+            "cbias": true,
+            "projection": true,
+            "text": true,
+            "scale": true,
+            "rotation": true,
+            "opacity": true,
+            "rest": true,
+            "cpu_rng": true,
+            "cuda_rng": true,
+            "camera_rng": true
+          }
+        },
+        {
+          "model": "CV-2D",
+          "equal": {
+            "xyz": true,
+            "dc": true,
+            "semantic": true,
+            "decoder": true,
+            "bias": true,
+            "classifier": true,
+            "cbias": true,
+            "projection": true,
+            "text": true,
+            "scale": true,
+            "rotation": true,
+            "opacity": true,
+            "rest": true,
+            "cpu_rng": true,
+            "cuda_rng": true,
+            "camera_rng": true
+          }
+        }
+      ]
+    }
+  },
+  "training": {
+    "B-RGB": {
+      "train_only": true,
+      "same_camera_sequence": true,
+      "isp_events": 0,
+      "expected_isp_events": 0,
+      "nonzero_gradient_events": {
+        "inter_semantic_grad_norm": 0,
+        "intra_semantic_grad_norm": 0,
+        "spc3d_semantic_grad_norm": 0
+      },
+      "isp_valid_pairs": 0,
+      "semantic_gradient_max": 0.0,
+      "RGB_only_semantic_state_unused": true
+    },
+    "B-SEM": {
+      "train_only": true,
+      "same_camera_sequence": true,
+      "isp_events": 0,
+      "expected_isp_events": 0,
+      "nonzero_gradient_events": {
+        "inter_semantic_grad_norm": 0,
+        "intra_semantic_grad_norm": 0,
+        "spc3d_semantic_grad_norm": 0
+      },
+      "isp_valid_pairs": 0,
+      "semantic_gradient_max": 0.5739697217941284,
+      "RGB_only_semantic_state_unused": false
+    },
+    "G-AUG": {
+      "train_only": true,
+      "same_camera_sequence": true,
+      "isp_events": 0,
+      "expected_isp_events": 0,
+      "nonzero_gradient_events": {
+        "inter_semantic_grad_norm": 0,
+        "intra_semantic_grad_norm": 0,
+        "spc3d_semantic_grad_norm": 0
+      },
+      "isp_valid_pairs": 0,
+      "semantic_gradient_max": 0.32925114035606384,
+      "RGB_only_semantic_state_unused": false
+    },
+    "L-BOOT": {
+      "train_only": true,
+      "same_camera_sequence": true,
+      "isp_events": 0,
+      "expected_isp_events": 0,
+      "nonzero_gradient_events": {
+        "inter_semantic_grad_norm": 0,
+        "intra_semantic_grad_norm": 0,
+        "spc3d_semantic_grad_norm": 0
+      },
+      "isp_valid_pairs": 0,
+      "semantic_gradient_max": 0.5662696957588196,
+      "RGB_only_semantic_state_unused": false
+    },
+    "CV-2D": {
+      "train_only": true,
+      "same_camera_sequence": true,
+      "isp_events": 100,
+      "expected_isp_events": 100,
+      "nonzero_gradient_events": {
+        "inter_semantic_grad_norm": 89,
+        "intra_semantic_grad_norm": 100,
+        "spc3d_semantic_grad_norm": 0
+      },
+      "isp_valid_pairs": 172,
+      "semantic_gradient_max": 2.976288080215454,
+      "RGB_only_semantic_state_unused": false
+    },
+    "IPSGR-Full": {
+      "train_only": true,
+      "same_camera_sequence": true,
+      "isp_events": 100,
+      "expected_isp_events": 100,
+      "nonzero_gradient_events": {
+        "inter_semantic_grad_norm": 89,
+        "intra_semantic_grad_norm": 100,
+        "spc3d_semantic_grad_norm": 76
+      },
+      "isp_valid_pairs": 170,
+      "semantic_gradient_max": 3.428802967071533,
+      "RGB_only_semantic_state_unused": false
+    }
+  },
+  "figures": {
+    "F01": {
+      "status": "completed",
+      "figures": [
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F01_sparse_problem.png"
+      ],
+      "raw_data": [
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/06_evaluation/B-RGB/metrics.json",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/06_evaluation/B-SEM/metrics.json"
+      ],
+      "script": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+        "bytes": 35306,
+        "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+      },
+      "note": "Fixed view1-68 chosen before results; visually inspect actual strengths and errors without assuming baseline failure."
+    },
+    "F02": {
+      "status": "completed",
+      "figures": [
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F02_method.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F02_method.pdf",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F02_method.svg"
+      ],
+      "raw_data": [
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/experiment_config.json",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/dataset_manifest.json"
+      ],
+      "script": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+        "bytes": 35306,
+        "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+      },
+      "note": "Diagram describes the implemented industrial adaptation, not an identical reproduction of every SPC-GS setting."
+    },
+    "F03": {
+      "status": "completed",
+      "figures": [
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F03_dual_domain_actual.png"
+      ],
+      "raw_data": [
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/IPSGR-Full/isp/500",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/IPSGR-Full/losses.jsonl"
+      ],
+      "script": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+        "bytes": 35306,
+        "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+      },
+      "note": "Actual maximum alpha*T IDs/weights; IDs belong to this event state, not the final densified Gaussian ordering."
+    },
+    "F04": {
+      "status": "completed",
+      "raw_data": [
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/dataset_manifest.json",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/pixel_statistics.json"
+      ],
+      "script": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_protocol.py",
+      "figures": [
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F04_cameras.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F04_cameras.pdf",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F04_classes.png"
+      ]
+    },
+    "F05": {
+      "status": "completed",
+      "figures": [
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F05_1-26.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F05_1-27.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F05_1-60.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F05_1-61.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F05_1-68.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F05_1-69.png"
+      ],
+      "raw_data": [
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/06_evaluation/B-RGB/metrics.json",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/06_evaluation/B-SEM/metrics.json",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/06_evaluation/G-AUG/metrics.json",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/06_evaluation/L-BOOT/metrics.json",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/06_evaluation/CV-2D/metrics.json",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/06_evaluation/IPSGR-Full/metrics.json"
+      ],
+      "script": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+        "bytes": 35306,
+        "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+      },
+      "note": "Every held-out view; nearest resizing for display only; primary native semantics256x128."
+    },
+    "F06": {
+      "status": "completed",
+      "figures": [
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F06_geometry.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F06_geometry.pdf",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F06_ISLB_training_previews.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F06_measured_training_observations.png"
+      ],
+      "raw_data": [
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/01_geometry/P0/metrics.json",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/01_geometry/P1/metrics.json",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/03_layout_bootstrap/final/model.pt",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/03_layout_bootstrap/representative_train_renders/evidence.json"
+      ],
+      "script": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+        "bytes": 35306,
+        "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+      },
+      "note": "All original data retained; viewport uses fixed P0 .5-99.5 percentiles, ISLB plotted with a fixed random sample up to60000. Projection previews are not visibility guarantees."
+    },
+    "F07": {
+      "status": "completed",
+      "figures": [
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_1-26_dense_piping.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_1-26_valve_and_equipment.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_1-26_tray_support_occlusion.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_1-27_dense_piping.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_1-27_valve_and_equipment.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_1-27_tray_support_occlusion.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_1-60_dense_piping.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_1-60_valve_tower_occlusion.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_1-60_tray_support.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_1-61_dense_piping.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_1-61_valve_tower_occlusion.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_1-61_equipment_and_piping.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_1-68_dense_piping.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_1-68_valve_tower_occlusion.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_1-68_equipment_and_piping.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_1-69_dense_piping.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_1-69_valve_tower_occlusion.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_1-69_equipment_and_piping.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_RGB_1-26_dense_piping.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_RGB_1-26_tray_support_occlusion.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_RGB_1-26_valve_and_equipment.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_RGB_1-27_dense_piping.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_RGB_1-27_tray_support_occlusion.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_RGB_1-27_valve_and_equipment.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_RGB_1-60_dense_piping.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_RGB_1-60_tray_support.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_RGB_1-60_valve_tower_occlusion.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_RGB_1-61_dense_piping.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_RGB_1-61_equipment_and_piping.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_RGB_1-61_valve_tower_occlusion.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_RGB_1-68_dense_piping.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_RGB_1-68_equipment_and_piping.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_RGB_1-68_valve_tower_occlusion.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_RGB_1-69_dense_piping.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_RGB_1-69_equipment_and_piping.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F07_RGB_1-69_valve_tower_occlusion.png"
+      ],
+      "raw_data": [
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/07_industrial_analysis/fixed_regions.json",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/09_paper_tables/T04.json"
+      ],
+      "script": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+        "bytes": 35306,
+        "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+      },
+      "note": "ROI location is fixed from RGB/GT; displayed coarse semantic pixels are not claimed as new detail."
+    },
+    "F08": {
+      "status": "completed",
+      "figures": [
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F08_consistency.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F08_consistency.pdf",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F08_object_pump_left_26_27.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F08_object_pump_right_26_27.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F08_object_control_cabinet_26_27.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F08_object_blue_vessel_60_61_68_69.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F08_object_front_cabinet_60_61_68_69.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F08_object_foreground_pump_68_69.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F08_object_tower_riser_blue_valve.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F08_object_corrugated_hvac.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F08_object_perforated_support_26_27.png"
+      ],
+      "raw_data": [
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/07_industrial_analysis/cross_view_results.json",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/07_industrial_analysis/fixed_regions.json"
+      ],
+      "script": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+        "bytes": 35306,
+        "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+      },
+      "note": "Small visually identified object/region set; no dense instance correspondence ground truth. Missing correctness categories are not fabricated."
+    },
+    "F09": {
+      "status": "completed",
+      "figures": [
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F09_success_500.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F09_lowest_validity_400.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F09_lowest_validity_zoom_400.png"
+      ],
+      "raw_data": [
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/IPSGR-Full/isp",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/04_cross_view/saved_event_validation.json"
+      ],
+      "script": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+        "bytes": 35306,
+        "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+      },
+      "note": "Mask success is a geometric/area proxy, not verified correspondence accuracy. Lowest-validity event is not called a failure if no rejected pairs occurred."
+    },
+    "F10": {
+      "status": "not_run_optional",
+      "reason": "Core six-model20-view experiment prioritized; no12-view experiment has been claimed."
+    },
+    "F11": {
+      "status": "completed",
+      "figures": [
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F11_class_queries.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/F11_relative_queries.png"
+      ],
+      "raw_data": [
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/06_evaluation/IPSGR-Full/2023-05-11_11.23.47_query_response.npy",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/06_evaluation/IPSGR-Full/2023-05-11_11.23.47_query_probabilities.npy",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/06_evaluation/IPSGR-Full/metrics.json",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/viewer_manifest.json"
+      ],
+      "script": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+        "bytes": 35306,
+        "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+      },
+      "note": "Seven fixed classes queried through the trained mapping. Raw correlations and fixed-seven Softmax responses are separate displays; neither is unrestricted open vocabulary or calibrated confidence.",
+      "interactive_viewer": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/10_report/viewer.html"
+    },
+    "S_training_history": {
+      "status": "completed",
+      "figures": [
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/training_ISLB.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/training_B-RGB.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/training_B-SEM.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/training_G-AUG.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/training_L-BOOT.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/training_CV-2D.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/training_IPSGR-Full.png"
+      ],
+      "raw_data": [
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/03_layout_bootstrap/losses.jsonl",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/B-RGB/losses.jsonl",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/B-SEM/losses.jsonl",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/G-AUG/losses.jsonl",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/L-BOOT/losses.jsonl",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/CV-2D/losses.jsonl",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/05_models/IPSGR-Full/losses.jsonl"
+      ],
+      "script": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+        "bytes": 35306,
+        "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+      },
+      "note": "Actual training losses, gradients and Gaussian counts. Dashed lines mark configured opacity resets; these are not held-out evaluation curves."
+    },
+    "S_resource_execution": {
+      "status": "completed",
+      "figures": [
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/S_resource_execution.png",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/S_resource_execution.pdf"
+      ],
+      "raw_data": [
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/01_geometry/Wan360/fresh_generation_audit.json",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/09_paper_tables/S_training_intervals.json"
+      ],
+      "script": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+        "bytes": 35306,
+        "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+      },
+      "note": "Operational resource records on shared GPUs; not a controlled hardware speedup benchmark."
+    },
+    "S_semantic_resolution": {
+      "status": "completed",
+      "figures": [
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/08_paper_figures/semantic_resolution_diagnostic.png"
+      ],
+      "raw_data": [
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/07_industrial_analysis/resolution_audit.json"
+      ],
+      "script": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+        "bytes": 35306,
+        "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+      },
+      "note": "Fixed-GT sampling and erosion diagnostic; not SAM correspondence ground truth and not a change to the evaluation resolution."
+    }
+  },
+  "tables": {
+    "T01": {
+      "status": "completed",
+      "raw_data": [
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/dataset_manifest.json",
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/00_dataset/pixel_statistics.json"
+      ],
+      "script": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_protocol.py"
+    },
+    "T02": {
+      "status": "completed",
+      "script": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+        "bytes": 35306,
+        "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+      },
+      "raw_data": [
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/09_paper_tables/T02.json"
+      ]
+    },
+    "T03": {
+      "status": "completed",
+      "script": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+        "bytes": 35306,
+        "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+      },
+      "raw_data": [
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/09_paper_tables/T03.json"
+      ]
+    },
+    "T04": {
+      "status": "completed",
+      "script": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+        "bytes": 35306,
+        "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+      },
+      "raw_data": [
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/09_paper_tables/T04.json"
+      ]
+    },
+    "T05": {
+      "status": "completed",
+      "script": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+        "bytes": 35306,
+        "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+      },
+      "raw_data": [
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/09_paper_tables/T05.json"
+      ]
+    },
+    "T06": {
+      "status": "completed",
+      "script": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+        "bytes": 35306,
+        "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+      },
+      "raw_data": [
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/09_paper_tables/T06.json"
+      ]
+    },
+    "S_geometry_sources": {
+      "status": "completed",
+      "script": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+        "bytes": 35306,
+        "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+      },
+      "raw_data": [
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/09_paper_tables/S_geometry_sources.json"
+      ]
+    },
+    "S_geometry_class_support": {
+      "status": "completed",
+      "script": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+        "bytes": 35306,
+        "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+      },
+      "raw_data": [
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/09_paper_tables/S_geometry_class_support.json"
+      ]
+    },
+    "S_ISP_source_regions": {
+      "status": "completed",
+      "script": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+        "bytes": 35306,
+        "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+      },
+      "raw_data": [
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/09_paper_tables/S_ISP_source_regions.json"
+      ]
+    },
+    "S_per_class_IoU": {
+      "status": "completed",
+      "script": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+        "bytes": 35306,
+        "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+      },
+      "raw_data": [
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/09_paper_tables/S_per_class_IoU.json"
+      ]
+    },
+    "S_all_view_metrics": {
+      "status": "completed",
+      "script": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+        "bytes": 35306,
+        "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+      },
+      "raw_data": [
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/09_paper_tables/S_all_view_metrics.json"
+      ]
+    },
+    "S_training_intervals": {
+      "status": "completed",
+      "script": {
+        "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_report.py",
+        "bytes": 35306,
+        "sha256": "a586ad76e0fe5ef58664ed4f6052a6ce4e345d1fb4a6cc2c89826c04f306305a"
+      },
+      "raw_data": [
+        "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/09_paper_tables/S_training_intervals.json"
+      ]
+    }
+  }
+}

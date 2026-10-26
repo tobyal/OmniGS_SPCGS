@@ -15,6 +15,9 @@ from .m1_geometry import load_features,triangulate_track,quantiles
 from .m1_wan360 import geometry_settings,point_previews
 
 def prepare_protocol(run,review_root=DEFAULT_RUN):
+    if (Path(run)/'00_dataset/dataset_manifest.json').exists():
+        from .ipsgr_protocol import check_inputs
+        return check_inputs(run)
     run=Path(run).resolve();run.mkdir(parents=True,exist_ok=True);out=run/'00_protocol'
     if (out/'manifest.json').exists():return read(out/'manifest.json')
     store=Store(review_root);all_train={c['name']:c for c in cameras('train')};train=[];unseen=[];labels=[]
@@ -63,6 +66,9 @@ def prepare_protocol(run,review_root=DEFAULT_RUN):
     print('PROTOCOL',len(train),'training views',flush=True);return protocol
 
 def build_p0(run,cfg):
+    if (Path(run)/'00_dataset/dataset_manifest.json').exists():
+        from .ipsgr_geometry import build_p0 as current
+        return current(Path(run),cfg)
     run=Path(run).resolve();protocol=prepare_protocol(run);out=run/'01_p0';out.mkdir(exist_ok=True)
     if (out/'outputs.json').exists():return read(out/'outputs.json')
     geo=geometry_settings(cfg);scene=read(geo['structure']);train=protocol['train'];by_name={v['name']:v for v in train}
@@ -112,6 +118,9 @@ def build_p0(run,cfg):
     write(out/'outputs.json',result);print('P0',metrics,flush=True);return result
 
 def build_m1(run,cfg):
+    if (Path(run)/'00_dataset/dataset_manifest.json').exists():
+        from .ipsgr_geometry import build_p1
+        return build_p1(Path(run),cfg)
     from .m1_wan360 import augment
     from collections import defaultdict,deque
     import shutil
@@ -156,6 +165,9 @@ def build_m1(run,cfg):
     print('M1 COMPLETE',metrics,flush=True);return result
 
 def train(run,cfg,kind):
+    if (Path(run)/'00_dataset/dataset_manifest.json').exists():
+        from .ipsgr_training import train as current
+        return current(Path(run),cfg,{'sgi':'ISLB','rgb':'B-RGB','short':'smoke-IPSGR-Full'}.get(kind,kind))
     from .common import native,signature
     from .pipeline import base_request
     from .features import init_semantics

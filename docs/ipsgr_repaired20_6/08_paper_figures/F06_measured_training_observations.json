@@ -1,0 +1,35 @@
+{
+  "counts": [
+    {
+      "camera_id": "1-24",
+      "P0_observations": 1441,
+      "new_observations": 150
+    },
+    {
+      "camera_id": "1-62",
+      "P0_observations": 972,
+      "new_observations": 181
+    },
+    {
+      "camera_id": "1-70",
+      "P0_observations": 937,
+      "new_observations": 134
+    }
+  ],
+  "source_P0": {
+    "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/01_geometry/P0/observations.json",
+    "bytes": 7526492,
+    "sha256": "cf87de68592c3eec5b8b1c2584c1445901cdcee20e6c115744d1970359a79e6f"
+  },
+  "source_new": {
+    "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/runs/industrial_ipsgr_20train_6test_repaired7_20261025/01_geometry/P1/observations.json",
+    "bytes": 1332898,
+    "sha256": "9056e5f614df5904b53f87d7d77007fdd5f7819423a2e242626c8f25dd889e87"
+  },
+  "script": {
+    "path": "/mnt/sda/ubuntu/lkx/od/OmniGS_SPCGS_20261023/spcgs/ipsgr_supplement.py",
+    "bytes": 20202,
+    "sha256": "d398fa2c1df688e2630ba96372a3b1a96d9919e5b0db72454e37376d21be90f0"
+  },
+  "note": "Only feature observations actually used in each train camera are marked: blue=P0, red=new. These are sparse geometric support, not dense visibility or surface ground truth."
+}

@@ -6,13 +6,19 @@ import torch
 from spcgs.common import ROOT,read,write,ref
 
 def check(run):
+    if (Path(run)/'00_dataset/dataset_manifest.json').exists():
+        from spcgs.ipsgr_training import reset_check
+        results=[reset_check(Path(run),Path(run)/'05_models'/name) for name in ['L-BOOT','CV-2D','IPSGR-Full'] if (Path(run)/'05_models'/name/'initial/model.pt').exists()]
+        assert results,'Second-stage initializations have not been generated yet'
+        write(Path(run)/'04_cross_view/initialization_validation.json',results)
+        return results
     run=Path(run).resolve();cfg=read(run/'config.json');source=torch.jit.load(cfg['sgi_archive'],map_location='cpu')
     results=[];first=None
     folders=[run/'03_stage_initialization',*sorted((run/'05_spc').glob('c[012]'))]
     for folder in folders:
         path=folder/'initial/model.pt'
         if not path.exists():continue
-        model=torch.jit.load(str(path),map_location='cpu');assert model.xyz.shape==(287787,3) and model.semantic.shape==(287787,32) and model.text.shape==(7,512)
+        model=torch.jit.load(str(path),map_location='cpu');N=len(source.xyz);assert model.xyz.shape==(N,3) and model.semantic.shape==(N,32) and model.text.shape==(7,512)
         inherited=['xyz','dc','semantic','decoder','bias','classifier','cbias','projection','text']
         errors={k:float((getattr(model,k)-getattr(source,k)).abs().max()) for k in inherited}
         assert all(x==0 for x in errors.values())

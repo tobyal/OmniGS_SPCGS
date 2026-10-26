@@ -83,7 +83,7 @@ def plan_generation(folder, cfg, train):
             if not w['reuse']:
                 output = folder / 'generation' / (source['name'] + '_' + direction)
             job = {'name': source['name'] + '_' + direction, 'source_training_view': source['name'],
-                   'image': source['image'], 'direction': direction, 'seed': cfg['seed'],
+                   'image': source['image'], 'source_rgb': ref(source['image']), 'direction': direction, 'seed': cfg['seed'],
                    'output': str(output), 'signature': key}
             stage_link = folder / 'generation' / job['name']
             stage_link.parent.mkdir(parents=True, exist_ok=True)

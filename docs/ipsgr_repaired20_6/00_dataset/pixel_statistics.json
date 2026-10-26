@@ -1,0 +1,1458 @@
+[
+  {
+    "camera_id": "1-24",
+    "split": "train",
+    "class_id": 0,
+    "class_name": "piping",
+    "pixels": 243798,
+    "erp_fraction": 0.11625194549560547
+  },
+  {
+    "camera_id": "1-24",
+    "split": "train",
+    "class_id": 1,
+    "class_name": "equipment",
+    "pixels": 168645,
+    "erp_fraction": 0.08041620254516602
+  },
+  {
+    "camera_id": "1-24",
+    "split": "train",
+    "class_id": 2,
+    "class_name": "building",
+    "pixels": 826843,
+    "erp_fraction": 0.3942694664001465
+  },
+  {
+    "camera_id": "1-24",
+    "split": "train",
+    "class_id": 3,
+    "class_name": "structural_frame",
+    "pixels": 167996,
+    "erp_fraction": 0.08010673522949219
+  },
+  {
+    "camera_id": "1-24",
+    "split": "train",
+    "class_id": 4,
+    "class_name": "access_structure",
+    "pixels": 68852,
+    "erp_fraction": 0.03283119201660156
+  },
+  {
+    "camera_id": "1-24",
+    "split": "train",
+    "class_id": 5,
+    "class_name": "cable_tray",
+    "pixels": 581192,
+    "erp_fraction": 0.2771339416503906
+  },
+  {
+    "camera_id": "1-24",
+    "split": "train",
+    "class_id": 6,
+    "class_name": "hvac",
+    "pixels": 39826,
+    "erp_fraction": 0.018990516662597656
+  },
+  {
+    "camera_id": "1-25",
+    "split": "train",
+    "class_id": 0,
+    "class_name": "piping",
+    "pixels": 274578,
+    "erp_fraction": 0.13092899322509766
+  },
+  {
+    "camera_id": "1-25",
+    "split": "train",
+    "class_id": 1,
+    "class_name": "equipment",
+    "pixels": 170998,
+    "erp_fraction": 0.08153820037841797
+  },
+  {
+    "camera_id": "1-25",
+    "split": "train",
+    "class_id": 2,
+    "class_name": "building",
+    "pixels": 1052406,
+    "erp_fraction": 0.501826286315918
+  },
+  {
+    "camera_id": "1-25",
+    "split": "train",
+    "class_id": 3,
+    "class_name": "structural_frame",
+    "pixels": 171283,
+    "erp_fraction": 0.08167409896850586
+  },
+  {
+    "camera_id": "1-25",
+    "split": "train",
+    "class_id": 4,
+    "class_name": "access_structure",
+    "pixels": 54504,
+    "erp_fraction": 0.025989532470703125
+  },
+  {
+    "camera_id": "1-25",
+    "split": "train",
+    "class_id": 5,
+    "class_name": "cable_tray",
+    "pixels": 322850,
+    "erp_fraction": 0.1539468765258789
+  },
+  {
+    "camera_id": "1-25",
+    "split": "train",
+    "class_id": 6,
+    "class_name": "hvac",
+    "pixels": 50533,
+    "erp_fraction": 0.024096012115478516
+  },
+  {
+    "camera_id": "1-28",
+    "split": "train",
+    "class_id": 0,
+    "class_name": "piping",
+    "pixels": 854622,
+    "erp_fraction": 0.4075155258178711
+  },
+  {
+    "camera_id": "1-28",
+    "split": "train",
+    "class_id": 1,
+    "class_name": "equipment",
+    "pixels": 252319,
+    "erp_fraction": 0.1203150749206543
+  },
+  {
+    "camera_id": "1-28",
+    "split": "train",
+    "class_id": 2,
+    "class_name": "building",
+    "pixels": 744039,
+    "erp_fraction": 0.3547854423522949
+  },
+  {
+    "camera_id": "1-28",
+    "split": "train",
+    "class_id": 3,
+    "class_name": "structural_frame",
+    "pixels": 100559,
+    "erp_fraction": 0.04795026779174805
+  },
+  {
+    "camera_id": "1-28",
+    "split": "train",
+    "class_id": 4,
+    "class_name": "access_structure",
+    "pixels": 14915,
+    "erp_fraction": 0.007112026214599609
+  },
+  {
+    "camera_id": "1-28",
+    "split": "train",
+    "class_id": 5,
+    "class_name": "cable_tray",
+    "pixels": 104859,
+    "erp_fraction": 0.050000667572021484
+  },
+  {
+    "camera_id": "1-28",
+    "split": "train",
+    "class_id": 6,
+    "class_name": "hvac",
+    "pixels": 25839,
+    "erp_fraction": 0.012320995330810547
+  },
+  {
+    "camera_id": "1-29",
+    "split": "train",
+    "class_id": 0,
+    "class_name": "piping",
+    "pixels": 616875,
+    "erp_fraction": 0.29414892196655273
+  },
+  {
+    "camera_id": "1-29",
+    "split": "train",
+    "class_id": 1,
+    "class_name": "equipment",
+    "pixels": 242588,
+    "erp_fraction": 0.11567497253417969
+  },
+  {
+    "camera_id": "1-29",
+    "split": "train",
+    "class_id": 2,
+    "class_name": "building",
+    "pixels": 979995,
+    "erp_fraction": 0.4672980308532715
+  },
+  {
+    "camera_id": "1-29",
+    "split": "train",
+    "class_id": 3,
+    "class_name": "structural_frame",
+    "pixels": 104338,
+    "erp_fraction": 0.049752235412597656
+  },
+  {
+    "camera_id": "1-29",
+    "split": "train",
+    "class_id": 4,
+    "class_name": "access_structure",
+    "pixels": 16435,
+    "erp_fraction": 0.00783681869506836
+  },
+  {
+    "camera_id": "1-29",
+    "split": "train",
+    "class_id": 5,
+    "class_name": "cable_tray",
+    "pixels": 108916,
+    "erp_fraction": 0.05193519592285156
+  },
+  {
+    "camera_id": "1-29",
+    "split": "train",
+    "class_id": 6,
+    "class_name": "hvac",
+    "pixels": 28005,
+    "erp_fraction": 0.013353824615478516
+  },
+  {
+    "camera_id": "1-34",
+    "split": "train",
+    "class_id": 0,
+    "class_name": "piping",
+    "pixels": 413335,
+    "erp_fraction": 0.19709348678588867
+  },
+  {
+    "camera_id": "1-34",
+    "split": "train",
+    "class_id": 1,
+    "class_name": "equipment",
+    "pixels": 143405,
+    "erp_fraction": 0.06838083267211914
+  },
+  {
+    "camera_id": "1-34",
+    "split": "train",
+    "class_id": 2,
+    "class_name": "building",
+    "pixels": 1047020,
+    "erp_fraction": 0.49925804138183594
+  },
+  {
+    "camera_id": "1-34",
+    "split": "train",
+    "class_id": 3,
+    "class_name": "structural_frame",
+    "pixels": 167161,
+    "erp_fraction": 0.07970857620239258
+  },
+  {
+    "camera_id": "1-34",
+    "split": "train",
+    "class_id": 4,
+    "class_name": "access_structure",
+    "pixels": 39276,
+    "erp_fraction": 0.018728256225585938
+  },
+  {
+    "camera_id": "1-34",
+    "split": "train",
+    "class_id": 5,
+    "class_name": "cable_tray",
+    "pixels": 226726,
+    "erp_fraction": 0.10811138153076172
+  },
+  {
+    "camera_id": "1-34",
+    "split": "train",
+    "class_id": 6,
+    "class_name": "hvac",
+    "pixels": 60229,
+    "erp_fraction": 0.028719425201416016
+  },
+  {
+    "camera_id": "1-35",
+    "split": "train",
+    "class_id": 0,
+    "class_name": "piping",
+    "pixels": 508866,
+    "erp_fraction": 0.2426462173461914
+  },
+  {
+    "camera_id": "1-35",
+    "split": "train",
+    "class_id": 1,
+    "class_name": "equipment",
+    "pixels": 138442,
+    "erp_fraction": 0.06601428985595703
+  },
+  {
+    "camera_id": "1-35",
+    "split": "train",
+    "class_id": 2,
+    "class_name": "building",
+    "pixels": 839151,
+    "erp_fraction": 0.40013837814331055
+  },
+  {
+    "camera_id": "1-35",
+    "split": "train",
+    "class_id": 3,
+    "class_name": "structural_frame",
+    "pixels": 191093,
+    "erp_fraction": 0.09112024307250977
+  },
+  {
+    "camera_id": "1-35",
+    "split": "train",
+    "class_id": 4,
+    "class_name": "access_structure",
+    "pixels": 30494,
+    "erp_fraction": 0.014540672302246094
+  },
+  {
+    "camera_id": "1-35",
+    "split": "train",
+    "class_id": 5,
+    "class_name": "cable_tray",
+    "pixels": 320350,
+    "erp_fraction": 0.1527547836303711
+  },
+  {
+    "camera_id": "1-35",
+    "split": "train",
+    "class_id": 6,
+    "class_name": "hvac",
+    "pixels": 68756,
+    "erp_fraction": 0.03278541564941406
+  },
+  {
+    "camera_id": "1-36",
+    "split": "train",
+    "class_id": 0,
+    "class_name": "piping",
+    "pixels": 259568,
+    "erp_fraction": 0.12377166748046875
+  },
+  {
+    "camera_id": "1-36",
+    "split": "train",
+    "class_id": 1,
+    "class_name": "equipment",
+    "pixels": 137303,
+    "erp_fraction": 0.06547117233276367
+  },
+  {
+    "camera_id": "1-36",
+    "split": "train",
+    "class_id": 2,
+    "class_name": "building",
+    "pixels": 879738,
+    "erp_fraction": 0.4194917678833008
+  },
+  {
+    "camera_id": "1-36",
+    "split": "train",
+    "class_id": 3,
+    "class_name": "structural_frame",
+    "pixels": 140473,
+    "erp_fraction": 0.06698274612426758
+  },
+  {
+    "camera_id": "1-36",
+    "split": "train",
+    "class_id": 4,
+    "class_name": "access_structure",
+    "pixels": 82323,
+    "erp_fraction": 0.03925466537475586
+  },
+  {
+    "camera_id": "1-36",
+    "split": "train",
+    "class_id": 5,
+    "class_name": "cable_tray",
+    "pixels": 559637,
+    "erp_fraction": 0.26685571670532227
+  },
+  {
+    "camera_id": "1-36",
+    "split": "train",
+    "class_id": 6,
+    "class_name": "hvac",
+    "pixels": 38110,
+    "erp_fraction": 0.018172264099121094
+  },
+  {
+    "camera_id": "1-37",
+    "split": "train",
+    "class_id": 0,
+    "class_name": "piping",
+    "pixels": 281941,
+    "erp_fraction": 0.13443994522094727
+  },
+  {
+    "camera_id": "1-37",
+    "split": "train",
+    "class_id": 1,
+    "class_name": "equipment",
+    "pixels": 142903,
+    "erp_fraction": 0.06814146041870117
+  },
+  {
+    "camera_id": "1-37",
+    "split": "train",
+    "class_id": 2,
+    "class_name": "building",
+    "pixels": 1096529,
+    "erp_fraction": 0.5228657722473145
+  },
+  {
+    "camera_id": "1-37",
+    "split": "train",
+    "class_id": 3,
+    "class_name": "structural_frame",
+    "pixels": 158994,
+    "erp_fraction": 0.07581424713134766
+  },
+  {
+    "camera_id": "1-37",
+    "split": "train",
+    "class_id": 4,
+    "class_name": "access_structure",
+    "pixels": 69612,
+    "erp_fraction": 0.03319358825683594
+  },
+  {
+    "camera_id": "1-37",
+    "split": "train",
+    "class_id": 5,
+    "class_name": "cable_tray",
+    "pixels": 303639,
+    "erp_fraction": 0.14478635787963867
+  },
+  {
+    "camera_id": "1-37",
+    "split": "train",
+    "class_id": 6,
+    "class_name": "hvac",
+    "pixels": 43534,
+    "erp_fraction": 0.020758628845214844
+  },
+  {
+    "camera_id": "1-44",
+    "split": "train",
+    "class_id": 0,
+    "class_name": "piping",
+    "pixels": 518366,
+    "erp_fraction": 0.2471761703491211
+  },
+  {
+    "camera_id": "1-44",
+    "split": "train",
+    "class_id": 1,
+    "class_name": "equipment",
+    "pixels": 134101,
+    "erp_fraction": 0.06394433975219727
+  },
+  {
+    "camera_id": "1-44",
+    "split": "train",
+    "class_id": 2,
+    "class_name": "building",
+    "pixels": 828615,
+    "erp_fraction": 0.3951144218444824
+  },
+  {
+    "camera_id": "1-44",
+    "split": "train",
+    "class_id": 3,
+    "class_name": "structural_frame",
+    "pixels": 96870,
+    "erp_fraction": 0.04619121551513672
+  },
+  {
+    "camera_id": "1-44",
+    "split": "train",
+    "class_id": 4,
+    "class_name": "access_structure",
+    "pixels": 18648,
+    "erp_fraction": 0.008892059326171875
+  },
+  {
+    "camera_id": "1-44",
+    "split": "train",
+    "class_id": 5,
+    "class_name": "cable_tray",
+    "pixels": 194030,
+    "erp_fraction": 0.09252071380615234
+  },
+  {
+    "camera_id": "1-44",
+    "split": "train",
+    "class_id": 6,
+    "class_name": "hvac",
+    "pixels": 306522,
+    "erp_fraction": 0.14616107940673828
+  },
+  {
+    "camera_id": "1-47",
+    "split": "train",
+    "class_id": 0,
+    "class_name": "piping",
+    "pixels": 852954,
+    "erp_fraction": 0.4067201614379883
+  },
+  {
+    "camera_id": "1-47",
+    "split": "train",
+    "class_id": 1,
+    "class_name": "equipment",
+    "pixels": 250222,
+    "erp_fraction": 0.11931514739990234
+  },
+  {
+    "camera_id": "1-47",
+    "split": "train",
+    "class_id": 2,
+    "class_name": "building",
+    "pixels": 664908,
+    "erp_fraction": 0.31705284118652344
+  },
+  {
+    "camera_id": "1-47",
+    "split": "train",
+    "class_id": 3,
+    "class_name": "structural_frame",
+    "pixels": 67950,
+    "erp_fraction": 0.032401084899902344
+  },
+  {
+    "camera_id": "1-47",
+    "split": "train",
+    "class_id": 4,
+    "class_name": "access_structure",
+    "pixels": 13716,
+    "erp_fraction": 0.0065402984619140625
+  },
+  {
+    "camera_id": "1-47",
+    "split": "train",
+    "class_id": 5,
+    "class_name": "cable_tray",
+    "pixels": 95509,
+    "erp_fraction": 0.045542240142822266
+  },
+  {
+    "camera_id": "1-47",
+    "split": "train",
+    "class_id": 6,
+    "class_name": "hvac",
+    "pixels": 151893,
+    "erp_fraction": 0.07242822647094727
+  },
+  {
+    "camera_id": "1-58",
+    "split": "train",
+    "class_id": 0,
+    "class_name": "piping",
+    "pixels": 775808,
+    "erp_fraction": 0.36993408203125
+  },
+  {
+    "camera_id": "1-58",
+    "split": "train",
+    "class_id": 1,
+    "class_name": "equipment",
+    "pixels": 237742,
+    "erp_fraction": 0.11336421966552734
+  },
+  {
+    "camera_id": "1-58",
+    "split": "train",
+    "class_id": 2,
+    "class_name": "building",
+    "pixels": 745043,
+    "erp_fraction": 0.35526418685913086
+  },
+  {
+    "camera_id": "1-58",
+    "split": "train",
+    "class_id": 3,
+    "class_name": "structural_frame",
+    "pixels": 71975,
+    "erp_fraction": 0.03432035446166992
+  },
+  {
+    "camera_id": "1-58",
+    "split": "train",
+    "class_id": 4,
+    "class_name": "access_structure",
+    "pixels": 9176,
+    "erp_fraction": 0.004375457763671875
+  },
+  {
+    "camera_id": "1-58",
+    "split": "train",
+    "class_id": 5,
+    "class_name": "cable_tray",
+    "pixels": 45289,
+    "erp_fraction": 0.021595478057861328
+  },
+  {
+    "camera_id": "1-58",
+    "split": "train",
+    "class_id": 6,
+    "class_name": "hvac",
+    "pixels": 212119,
+    "erp_fraction": 0.10114622116088867
+  },
+  {
+    "camera_id": "1-59",
+    "split": "train",
+    "class_id": 0,
+    "class_name": "piping",
+    "pixels": 584887,
+    "erp_fraction": 0.27889585494995117
+  },
+  {
+    "camera_id": "1-59",
+    "split": "train",
+    "class_id": 1,
+    "class_name": "equipment",
+    "pixels": 382030,
+    "erp_fraction": 0.18216609954833984
+  },
+  {
+    "camera_id": "1-59",
+    "split": "train",
+    "class_id": 2,
+    "class_name": "building",
+    "pixels": 858969,
+    "erp_fraction": 0.4095883369445801
+  },
+  {
+    "camera_id": "1-59",
+    "split": "train",
+    "class_id": 3,
+    "class_name": "structural_frame",
+    "pixels": 70713,
+    "erp_fraction": 0.03371858596801758
+  },
+  {
+    "camera_id": "1-59",
+    "split": "train",
+    "class_id": 4,
+    "class_name": "access_structure",
+    "pixels": 10381,
+    "erp_fraction": 0.004950046539306641
+  },
+  {
+    "camera_id": "1-59",
+    "split": "train",
+    "class_id": 5,
+    "class_name": "cable_tray",
+    "pixels": 62077,
+    "erp_fraction": 0.02960062026977539
+  },
+  {
+    "camera_id": "1-59",
+    "split": "train",
+    "class_id": 6,
+    "class_name": "hvac",
+    "pixels": 128095,
+    "erp_fraction": 0.0610804557800293
+  },
+  {
+    "camera_id": "1-62",
+    "split": "train",
+    "class_id": 0,
+    "class_name": "piping",
+    "pixels": 549821,
+    "erp_fraction": 0.2621750831604004
+  },
+  {
+    "camera_id": "1-62",
+    "split": "train",
+    "class_id": 1,
+    "class_name": "equipment",
+    "pixels": 140269,
+    "erp_fraction": 0.06688547134399414
+  },
+  {
+    "camera_id": "1-62",
+    "split": "train",
+    "class_id": 2,
+    "class_name": "building",
+    "pixels": 845711,
+    "erp_fraction": 0.40326642990112305
+  },
+  {
+    "camera_id": "1-62",
+    "split": "train",
+    "class_id": 3,
+    "class_name": "structural_frame",
+    "pixels": 225950,
+    "erp_fraction": 0.1077413558959961
+  },
+  {
+    "camera_id": "1-62",
+    "split": "train",
+    "class_id": 4,
+    "class_name": "access_structure",
+    "pixels": 36545,
+    "erp_fraction": 0.017426013946533203
+  },
+  {
+    "camera_id": "1-62",
+    "split": "train",
+    "class_id": 5,
+    "class_name": "cable_tray",
+    "pixels": 253443,
+    "erp_fraction": 0.12085103988647461
+  },
+  {
+    "camera_id": "1-62",
+    "split": "train",
+    "class_id": 6,
+    "class_name": "hvac",
+    "pixels": 45413,
+    "erp_fraction": 0.021654605865478516
+  },
+  {
+    "camera_id": "1-63",
+    "split": "train",
+    "class_id": 0,
+    "class_name": "piping",
+    "pixels": 493272,
+    "erp_fraction": 0.23521041870117188
+  },
+  {
+    "camera_id": "1-63",
+    "split": "train",
+    "class_id": 1,
+    "class_name": "equipment",
+    "pixels": 130971,
+    "erp_fraction": 0.062451839447021484
+  },
+  {
+    "camera_id": "1-63",
+    "split": "train",
+    "class_id": 2,
+    "class_name": "building",
+    "pixels": 1039290,
+    "erp_fraction": 0.4955720901489258
+  },
+  {
+    "camera_id": "1-63",
+    "split": "train",
+    "class_id": 3,
+    "class_name": "structural_frame",
+    "pixels": 175472,
+    "erp_fraction": 0.08367156982421875
+  },
+  {
+    "camera_id": "1-63",
+    "split": "train",
+    "class_id": 4,
+    "class_name": "access_structure",
+    "pixels": 40214,
+    "erp_fraction": 0.01917552947998047
+  },
+  {
+    "camera_id": "1-63",
+    "split": "train",
+    "class_id": 5,
+    "class_name": "cable_tray",
+    "pixels": 176843,
+    "erp_fraction": 0.08432531356811523
+  },
+  {
+    "camera_id": "1-63",
+    "split": "train",
+    "class_id": 6,
+    "class_name": "hvac",
+    "pixels": 41090,
+    "erp_fraction": 0.019593238830566406
+  },
+  {
+    "camera_id": "1-64",
+    "split": "train",
+    "class_id": 0,
+    "class_name": "piping",
+    "pixels": 509627,
+    "erp_fraction": 0.24300909042358398
+  },
+  {
+    "camera_id": "1-64",
+    "split": "train",
+    "class_id": 1,
+    "class_name": "equipment",
+    "pixels": 103013,
+    "erp_fraction": 0.049120426177978516
+  },
+  {
+    "camera_id": "1-64",
+    "split": "train",
+    "class_id": 2,
+    "class_name": "building",
+    "pixels": 899519,
+    "erp_fraction": 0.4289240837097168
+  },
+  {
+    "camera_id": "1-64",
+    "split": "train",
+    "class_id": 3,
+    "class_name": "structural_frame",
+    "pixels": 169518,
+    "erp_fraction": 0.08083248138427734
+  },
+  {
+    "camera_id": "1-64",
+    "split": "train",
+    "class_id": 4,
+    "class_name": "access_structure",
+    "pixels": 105775,
+    "erp_fraction": 0.05043745040893555
+  },
+  {
+    "camera_id": "1-64",
+    "split": "train",
+    "class_id": 5,
+    "class_name": "cable_tray",
+    "pixels": 287732,
+    "erp_fraction": 0.13720130920410156
+  },
+  {
+    "camera_id": "1-64",
+    "split": "train",
+    "class_id": 6,
+    "class_name": "hvac",
+    "pixels": 21968,
+    "erp_fraction": 0.01047515869140625
+  },
+  {
+    "camera_id": "1-65",
+    "split": "train",
+    "class_id": 0,
+    "class_name": "piping",
+    "pixels": 546700,
+    "erp_fraction": 0.26068687438964844
+  },
+  {
+    "camera_id": "1-65",
+    "split": "train",
+    "class_id": 1,
+    "class_name": "equipment",
+    "pixels": 108011,
+    "erp_fraction": 0.051503658294677734
+  },
+  {
+    "camera_id": "1-65",
+    "split": "train",
+    "class_id": 2,
+    "class_name": "building",
+    "pixels": 709439,
+    "erp_fraction": 0.3382868766784668
+  },
+  {
+    "camera_id": "1-65",
+    "split": "train",
+    "class_id": 3,
+    "class_name": "structural_frame",
+    "pixels": 155522,
+    "erp_fraction": 0.0741586685180664
+  },
+  {
+    "camera_id": "1-65",
+    "split": "train",
+    "class_id": 4,
+    "class_name": "access_structure",
+    "pixels": 64634,
+    "erp_fraction": 0.03081989288330078
+  },
+  {
+    "camera_id": "1-65",
+    "split": "train",
+    "class_id": 5,
+    "class_name": "cable_tray",
+    "pixels": 487783,
+    "erp_fraction": 0.23259305953979492
+  },
+  {
+    "camera_id": "1-65",
+    "split": "train",
+    "class_id": 6,
+    "class_name": "hvac",
+    "pixels": 25063,
+    "erp_fraction": 0.011950969696044922
+  },
+  {
+    "camera_id": "1-66",
+    "split": "train",
+    "class_id": 0,
+    "class_name": "piping",
+    "pixels": 705056,
+    "erp_fraction": 0.3361968994140625
+  },
+  {
+    "camera_id": "1-66",
+    "split": "train",
+    "class_id": 1,
+    "class_name": "equipment",
+    "pixels": 111025,
+    "erp_fraction": 0.05294084548950195
+  },
+  {
+    "camera_id": "1-66",
+    "split": "train",
+    "class_id": 2,
+    "class_name": "building",
+    "pixels": 631371,
+    "erp_fraction": 0.30106115341186523
+  },
+  {
+    "camera_id": "1-66",
+    "split": "train",
+    "class_id": 3,
+    "class_name": "structural_frame",
+    "pixels": 100650,
+    "erp_fraction": 0.04799365997314453
+  },
+  {
+    "camera_id": "1-66",
+    "split": "train",
+    "class_id": 4,
+    "class_name": "access_structure",
+    "pixels": 67732,
+    "erp_fraction": 0.03229713439941406
+  },
+  {
+    "camera_id": "1-66",
+    "split": "train",
+    "class_id": 5,
+    "class_name": "cable_tray",
+    "pixels": 457643,
+    "erp_fraction": 0.21822118759155273
+  },
+  {
+    "camera_id": "1-66",
+    "split": "train",
+    "class_id": 6,
+    "class_name": "hvac",
+    "pixels": 23675,
+    "erp_fraction": 0.011289119720458984
+  },
+  {
+    "camera_id": "1-67",
+    "split": "train",
+    "class_id": 0,
+    "class_name": "piping",
+    "pixels": 665793,
+    "erp_fraction": 0.3174748420715332
+  },
+  {
+    "camera_id": "1-67",
+    "split": "train",
+    "class_id": 1,
+    "class_name": "equipment",
+    "pixels": 109065,
+    "erp_fraction": 0.05200624465942383
+  },
+  {
+    "camera_id": "1-67",
+    "split": "train",
+    "class_id": 2,
+    "class_name": "building",
+    "pixels": 824777,
+    "erp_fraction": 0.39328432083129883
+  },
+  {
+    "camera_id": "1-67",
+    "split": "train",
+    "class_id": 3,
+    "class_name": "structural_frame",
+    "pixels": 104320,
+    "erp_fraction": 0.04974365234375
+  },
+  {
+    "camera_id": "1-67",
+    "split": "train",
+    "class_id": 4,
+    "class_name": "access_structure",
+    "pixels": 103674,
+    "erp_fraction": 0.04943561553955078
+  },
+  {
+    "camera_id": "1-67",
+    "split": "train",
+    "class_id": 5,
+    "class_name": "cable_tray",
+    "pixels": 268327,
+    "erp_fraction": 0.12794828414916992
+  },
+  {
+    "camera_id": "1-67",
+    "split": "train",
+    "class_id": 6,
+    "class_name": "hvac",
+    "pixels": 21196,
+    "erp_fraction": 0.010107040405273438
+  },
+  {
+    "camera_id": "1-70",
+    "split": "train",
+    "class_id": 0,
+    "class_name": "piping",
+    "pixels": 859596,
+    "erp_fraction": 0.40988731384277344
+  },
+  {
+    "camera_id": "1-70",
+    "split": "train",
+    "class_id": 1,
+    "class_name": "equipment",
+    "pixels": 201871,
+    "erp_fraction": 0.09625959396362305
+  },
+  {
+    "camera_id": "1-70",
+    "split": "train",
+    "class_id": 2,
+    "class_name": "building",
+    "pixels": 720070,
+    "erp_fraction": 0.3433561325073242
+  },
+  {
+    "camera_id": "1-70",
+    "split": "train",
+    "class_id": 3,
+    "class_name": "structural_frame",
+    "pixels": 156977,
+    "erp_fraction": 0.07485246658325195
+  },
+  {
+    "camera_id": "1-70",
+    "split": "train",
+    "class_id": 4,
+    "class_name": "access_structure",
+    "pixels": 18810,
+    "erp_fraction": 0.008969306945800781
+  },
+  {
+    "camera_id": "1-70",
+    "split": "train",
+    "class_id": 5,
+    "class_name": "cable_tray",
+    "pixels": 89250,
+    "erp_fraction": 0.042557716369628906
+  },
+  {
+    "camera_id": "1-70",
+    "split": "train",
+    "class_id": 6,
+    "class_name": "hvac",
+    "pixels": 50578,
+    "erp_fraction": 0.024117469787597656
+  },
+  {
+    "camera_id": "1-71",
+    "split": "train",
+    "class_id": 0,
+    "class_name": "piping",
+    "pixels": 666690,
+    "erp_fraction": 0.3179025650024414
+  },
+  {
+    "camera_id": "1-71",
+    "split": "train",
+    "class_id": 1,
+    "class_name": "equipment",
+    "pixels": 224060,
+    "erp_fraction": 0.10684013366699219
+  },
+  {
+    "camera_id": "1-71",
+    "split": "train",
+    "class_id": 2,
+    "class_name": "building",
+    "pixels": 949366,
+    "erp_fraction": 0.45269298553466797
+  },
+  {
+    "camera_id": "1-71",
+    "split": "train",
+    "class_id": 3,
+    "class_name": "structural_frame",
+    "pixels": 107603,
+    "erp_fraction": 0.05130910873413086
+  },
+  {
+    "camera_id": "1-71",
+    "split": "train",
+    "class_id": 4,
+    "class_name": "access_structure",
+    "pixels": 22771,
+    "erp_fraction": 0.01085805892944336
+  },
+  {
+    "camera_id": "1-71",
+    "split": "train",
+    "class_id": 5,
+    "class_name": "cable_tray",
+    "pixels": 81986,
+    "erp_fraction": 0.039093971252441406
+  },
+  {
+    "camera_id": "1-71",
+    "split": "train",
+    "class_id": 6,
+    "class_name": "hvac",
+    "pixels": 44676,
+    "erp_fraction": 0.021303176879882812
+  },
+  {
+    "camera_id": "1-26",
+    "split": "test",
+    "class_id": 0,
+    "class_name": "piping",
+    "pixels": 430477,
+    "erp_fraction": 0.20526742935180664
+  },
+  {
+    "camera_id": "1-26",
+    "split": "test",
+    "class_id": 1,
+    "class_name": "equipment",
+    "pixels": 174828,
+    "erp_fraction": 0.08336448669433594
+  },
+  {
+    "camera_id": "1-26",
+    "split": "test",
+    "class_id": 2,
+    "class_name": "building",
+    "pixels": 1013867,
+    "erp_fraction": 0.48344945907592773
+  },
+  {
+    "camera_id": "1-26",
+    "split": "test",
+    "class_id": 3,
+    "class_name": "structural_frame",
+    "pixels": 170484,
+    "erp_fraction": 0.08129310607910156
+  },
+  {
+    "camera_id": "1-26",
+    "split": "test",
+    "class_id": 4,
+    "class_name": "access_structure",
+    "pixels": 31766,
+    "erp_fraction": 0.015147209167480469
+  },
+  {
+    "camera_id": "1-26",
+    "split": "test",
+    "class_id": 5,
+    "class_name": "cable_tray",
+    "pixels": 238250,
+    "erp_fraction": 0.11360645294189453
+  },
+  {
+    "camera_id": "1-26",
+    "split": "test",
+    "class_id": 6,
+    "class_name": "hvac",
+    "pixels": 37480,
+    "erp_fraction": 0.017871856689453125
+  },
+  {
+    "camera_id": "1-27",
+    "split": "test",
+    "class_id": 0,
+    "class_name": "piping",
+    "pixels": 547926,
+    "erp_fraction": 0.26127147674560547
+  },
+  {
+    "camera_id": "1-27",
+    "split": "test",
+    "class_id": 1,
+    "class_name": "equipment",
+    "pixels": 179894,
+    "erp_fraction": 0.08578014373779297
+  },
+  {
+    "camera_id": "1-27",
+    "split": "test",
+    "class_id": 2,
+    "class_name": "building",
+    "pixels": 818354,
+    "erp_fraction": 0.39022159576416016
+  },
+  {
+    "camera_id": "1-27",
+    "split": "test",
+    "class_id": 3,
+    "class_name": "structural_frame",
+    "pixels": 177571,
+    "erp_fraction": 0.08467245101928711
+  },
+  {
+    "camera_id": "1-27",
+    "split": "test",
+    "class_id": 4,
+    "class_name": "access_structure",
+    "pixels": 25086,
+    "erp_fraction": 0.011961936950683594
+  },
+  {
+    "camera_id": "1-27",
+    "split": "test",
+    "class_id": 5,
+    "class_name": "cable_tray",
+    "pixels": 313220,
+    "erp_fraction": 0.1493549346923828
+  },
+  {
+    "camera_id": "1-27",
+    "split": "test",
+    "class_id": 6,
+    "class_name": "hvac",
+    "pixels": 35101,
+    "erp_fraction": 0.01673746109008789
+  },
+  {
+    "camera_id": "1-60",
+    "split": "test",
+    "class_id": 0,
+    "class_name": "piping",
+    "pixels": 620631,
+    "erp_fraction": 0.29593992233276367
+  },
+  {
+    "camera_id": "1-60",
+    "split": "test",
+    "class_id": 1,
+    "class_name": "equipment",
+    "pixels": 184099,
+    "erp_fraction": 0.08778524398803711
+  },
+  {
+    "camera_id": "1-60",
+    "split": "test",
+    "class_id": 2,
+    "class_name": "building",
+    "pixels": 1017704,
+    "erp_fraction": 0.4852790832519531
+  },
+  {
+    "camera_id": "1-60",
+    "split": "test",
+    "class_id": 3,
+    "class_name": "structural_frame",
+    "pixels": 98536,
+    "erp_fraction": 0.046985626220703125
+  },
+  {
+    "camera_id": "1-60",
+    "split": "test",
+    "class_id": 4,
+    "class_name": "access_structure",
+    "pixels": 20958,
+    "erp_fraction": 0.009993553161621094
+  },
+  {
+    "camera_id": "1-60",
+    "split": "test",
+    "class_id": 5,
+    "class_name": "cable_tray",
+    "pixels": 90548,
+    "erp_fraction": 0.04317665100097656
+  },
+  {
+    "camera_id": "1-60",
+    "split": "test",
+    "class_id": 6,
+    "class_name": "hvac",
+    "pixels": 64676,
+    "erp_fraction": 0.030839920043945312
+  },
+  {
+    "camera_id": "1-61",
+    "split": "test",
+    "class_id": 0,
+    "class_name": "piping",
+    "pixels": 847843,
+    "erp_fraction": 0.4042830467224121
+  },
+  {
+    "camera_id": "1-61",
+    "split": "test",
+    "class_id": 1,
+    "class_name": "equipment",
+    "pixels": 169374,
+    "erp_fraction": 0.0807638168334961
+  },
+  {
+    "camera_id": "1-61",
+    "split": "test",
+    "class_id": 2,
+    "class_name": "building",
+    "pixels": 797076,
+    "erp_fraction": 0.38007545471191406
+  },
+  {
+    "camera_id": "1-61",
+    "split": "test",
+    "class_id": 3,
+    "class_name": "structural_frame",
+    "pixels": 91473,
+    "erp_fraction": 0.04361772537231445
+  },
+  {
+    "camera_id": "1-61",
+    "split": "test",
+    "class_id": 4,
+    "class_name": "access_structure",
+    "pixels": 18988,
+    "erp_fraction": 0.009054183959960938
+  },
+  {
+    "camera_id": "1-61",
+    "split": "test",
+    "class_id": 5,
+    "class_name": "cable_tray",
+    "pixels": 85657,
+    "erp_fraction": 0.04084444046020508
+  },
+  {
+    "camera_id": "1-61",
+    "split": "test",
+    "class_id": 6,
+    "class_name": "hvac",
+    "pixels": 86741,
+    "erp_fraction": 0.041361331939697266
+  },
+  {
+    "camera_id": "1-68",
+    "split": "test",
+    "class_id": 0,
+    "class_name": "piping",
+    "pixels": 658961,
+    "erp_fraction": 0.31421709060668945
+  },
+  {
+    "camera_id": "1-68",
+    "split": "test",
+    "class_id": 1,
+    "class_name": "equipment",
+    "pixels": 165777,
+    "erp_fraction": 0.07904863357543945
+  },
+  {
+    "camera_id": "1-68",
+    "split": "test",
+    "class_id": 2,
+    "class_name": "building",
+    "pixels": 964062,
+    "erp_fraction": 0.4597005844116211
+  },
+  {
+    "camera_id": "1-68",
+    "split": "test",
+    "class_id": 3,
+    "class_name": "structural_frame",
+    "pixels": 112425,
+    "erp_fraction": 0.05360841751098633
+  },
+  {
+    "camera_id": "1-68",
+    "split": "test",
+    "class_id": 4,
+    "class_name": "access_structure",
+    "pixels": 40640,
+    "erp_fraction": 0.019378662109375
+  },
+  {
+    "camera_id": "1-68",
+    "split": "test",
+    "class_id": 5,
+    "class_name": "cable_tray",
+    "pixels": 122251,
+    "erp_fraction": 0.058293819427490234
+  },
+  {
+    "camera_id": "1-68",
+    "split": "test",
+    "class_id": 6,
+    "class_name": "hvac",
+    "pixels": 33036,
+    "erp_fraction": 0.015752792358398438
+  },
+  {
+    "camera_id": "1-69",
+    "split": "test",
+    "class_id": 0,
+    "class_name": "piping",
+    "pixels": 856693,
+    "erp_fraction": 0.40850305557250977
+  },
+  {
+    "camera_id": "1-69",
+    "split": "test",
+    "class_id": 1,
+    "class_name": "equipment",
+    "pixels": 168184,
+    "erp_fraction": 0.08019638061523438
+  },
+  {
+    "camera_id": "1-69",
+    "split": "test",
+    "class_id": 2,
+    "class_name": "building",
+    "pixels": 734125,
+    "erp_fraction": 0.35005807876586914
+  },
+  {
+    "camera_id": "1-69",
+    "split": "test",
+    "class_id": 3,
+    "class_name": "structural_frame",
+    "pixels": 140715,
+    "erp_fraction": 0.06709814071655273
+  },
+  {
+    "camera_id": "1-69",
+    "split": "test",
+    "class_id": 4,
+    "class_name": "access_structure",
+    "pixels": 33419,
+    "erp_fraction": 0.015935420989990234
+  },
+  {
+    "camera_id": "1-69",
+    "split": "test",
+    "class_id": 5,
+    "class_name": "cable_tray",
+    "pixels": 127523,
+    "erp_fraction": 0.06080770492553711
+  },
+  {
+    "camera_id": "1-69",
+    "split": "test",
+    "class_id": 6,
+    "class_name": "hvac",
+    "pixels": 36493,
+    "erp_fraction": 0.01740121841430664
+  }
+]

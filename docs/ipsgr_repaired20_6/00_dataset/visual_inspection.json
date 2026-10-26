@@ -1,0 +1,14 @@
+{
+  "reviewer": "Codex visual inspection",
+  "timestamp": 1792933902.8148048,
+  "views": 26,
+  "sources": "Frozen per-view RGB and semantic overlay alignment panels;20 training panels and6 individual test panels",
+  "observations": [
+    "No camera support is visibly retained in the nadir areas of the reviewed panels.",
+    "Nadir fill is floor-colored and the fixed labels assign it to building.",
+    "Semantic layout and ERP orientation agree at inspection resolution; no new rotation or crop was introduced.",
+    "Official CAD projection boundaries retain small local mismatches and low-resolution thin objects are difficult; this audit does not assert pixel-perfect human ground truth."
+  ],
+  "label_or_RGB_modifications": false,
+  "synthetic_bottom_not_official_ground_truth": true
+}

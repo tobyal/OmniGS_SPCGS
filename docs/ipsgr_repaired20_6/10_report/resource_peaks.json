@@ -1,0 +1,15 @@
+{
+  "started": 1792940643.6562574,
+  "updated": 1792951541.8747184,
+  "sample_interval_seconds": 3,
+  "per_model_observed_sum_MiB": {
+    "G-AUG": 7424,
+    "ISLB": 7322,
+    "other": 872,
+    "L-BOOT": 6300,
+    "smoke-IPSGR-Full": 7954,
+    "CV-2D": 11892,
+    "IPSGR-Full": 11904
+  },
+  "note": "Sampled process-resident memory, including persistent SAM for that model; not a CUDA allocator maximum. Observation begins during the running experiment."
+}
